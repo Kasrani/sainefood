@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css?family=Maitree');
+/* Reset */
+
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+
+	body {
+		line-height: 1;
+        background-color: #FAF9F6!important;
+	}
+
+	ol, ul {
+		list-style: none;
+	}
+
+	blockquote, q {
+		quotes: none;
+	}
+
+	blockquote:before, blockquote:after, q:before, q:after {
+		content: '';
+		content: none;
+	}
+
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	body {
+		-webkit-text-size-adjust: none;
+	}
+
+/* Body / Container */
+body {
+    padding-top: 90px;
+    background-color: #FAF9F6;
+}
+
+b.green {
+    color: #9DD4BF;
+}
+
+.container .headerrow {
+    width: 1140px!important;
+}
+
+.shadow{
+    -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.1);
+    -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.1);
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.1);
+}
+
+/* Header */
+#header {
+	position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #484848;
+    color: #FFF;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    font-family: 'Maitree', serif;
+    cursor: default;
+    }
+
+.logo {
+    width: 123px;
+}
+
+.connecter {
+    font-size: 14px;
+    position: relative;
+    height: 41px;
+    top: 4px;
+    text-align: right;
+    width: 123px;
+    margin-left : auto!important;
+}
+
+div.baseline {
+    font-size: 12px;
+    margin-left: 10px;
+    display: inline-block;
+    position: relative;
+    height: 41px;
+    top: 4px;   
+}
+
+/* Nav */
+
+#nav {
+	position: fixed;
+    top: 45px;
+    left: 0;
+    z-index: 1002;
+    background-color: #FFF;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    font-family: 'Maitree', serif;
+    cursor: default;
+    }
+
+	#nav ul {
+        position: relative;
+        z-index: 1001;
+        margin: 0 !important;
+    }
+
+#nav li {
+    display: inline-block;
+    margin-right: 1em;
+    top: 0;
+    position: relative;
+}
+
+#nav li > ul {
+    display: none;
+}
+
+#nav li a, #nav li span {
+    position: relative;
+    padding-bottom: 8px;
+    text-decoration: none;
+    color: #484848;
+}
+
+#nav li:hover, #nav li.active {
+    
+}
+
+#nav li:hover a, #nav li:hover span {
+    border-bottom: 2px solid #FF594F;
+}
+
+#nav li.active a, #nav li.active span {
+    background: #C1CAC5;
+    color: #fff;
+}
+
+#nav li.current a {
+    border-bottom: 2px solid #FF594F;
+    font-weight: 700;
+}
+/* main-content */
+.main-content{
+    margin: 30px 0px;
+    padding: 0px;
+    position: relative;
+    z-index: 1;
+    background-color: #FFF;
+}
+
+.main-content .content {
+    padding: 30px 15px;
+}
+
+.bandeau {
+    width: 100%;
+    height: 550px;
+    position: absolute;
+    z-index: -1;
+    background-image: url(../../images/bg-carousel.png);
+    background-size: cover;
+}
+/* Cours cuisine home */
+.cours-cuisne-home {
+    width: 100%;
+    height: auto;
+}
+
+.first-event {
+    width: 685px;
+    height: 267px;
+    margin: 0 0 5px 0;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+}
+
+.border-bloc {
+    border-right: 8px solid #F2F2F2;
+}
+
+img.absolute {
+    top: -24%;
+    width: 100%;
+    position: absolute;
+}
+
+.first-event-description {
+    height: 267px;
+    width: 390px;
+    position: absolute;
+    margin-left : auto!important;
+    display: inline-block;
+}
+
+h3.title-sf-3 {
+    font-family: 'Maitree', serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #CFCBC2;
+    padding-left: 10px;
+}
+
+hr.separateur {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border: 1px dashed #CFCBC2;
+}
+
+.first-event-description p {
+    padding: 5px 0 0 10px;
+    margin: 0;
+    font-family: 'Maitree', serif;
+    font-size: 13px;
+    color: #484848;
+    text-align: left;
+    line-height: 24px;
+}
+
+.sf-button-3 {
+    padding-left: 10px;
+    font-size: 14px;
+    font-family: 'Maitree', serif;
+    color: #9DD4BF;
+    font-weight: 600;
+}
+
+.btn.sf-button-3 {
+    margin-left: 10px;
+    border-color: #FF594F;
+    border-radius: 0;
+    color: #FF594F;
+    font-family: 'Maitree', serif;
+    font-weight: 700;
+    margin-top: 9px;
+}
+
+.btn.sf-button-3:hover {
+    background-color: #FF594F;
+    color: #FFF;
+    border-color: #FF594F;
+}
+
+/* equal card height */
+.row-equal > div[class*='col-'] {
+    display: flex;
+    flex: 1 0 auto;
+}
+
+.row-equal .card {
+   width: 100%;
+}
+
+/* ensure equal card height inside carousel */
+.carousel-inner>.row-equal.active, 
+.carousel-inner>.row-equal.next, 
+.carousel-inner>.row-equal.prev {
+    display: block;
+}
+
+.carousel-inner .carousel-item.active,\n.carousel-inner .carousel-item-next,\n.carousel-inner .carousel-item-prev {  display: flex;}\n\n.carousel-inner .carousel-item-right.active,\n.carousel-inner .carousel-item-next {  transform: translateX(55%);}\n\n.carousel-inner .carousel-item-left.active, \n.carousel-inner .carousel-item-prev {  transform: translateX(-25%);}\n  \n.carousel-inner .carousel-item-right,\n.carousel-inner .carousel-item-left{  transform: translateX(0);}
+
+.carousel-item, .d-block.col-3.img-fluid, .d-block.col-3 {
+    display: inline!important;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-item{
+    width: 168.5px!important;
+    height: auto;
+    float: left;
+}
+
+.carousel-item img {
+    width: 164.2px!important;
+    height: 117px!important;
+}
+
+.title-sf-5 {
+    font-family: 'Maitree', serif;
+    font-size: 14px;
+    color: #484848;
+    text-align: left;
+    font-weight: 600;
+}
+
+.carousel-control-next {
+    float: right;
+}
+
+.carousel-control-prev {
+    float: left;
+    margin-right: 5px;
+}
+.carousel-control-next, .carousel-control-prev {
+    background-color: #484848;
+    width: 32px!important;
+    line-height: 117px!important;
+    position: relative!important;
+    display: inline-block!important;
+}
+
+.carousel-control-prev.active { 
+    opacity: 1;
+}
+
+p {
+    font-family: 'Maitree', serif;
+    font-size: 14px;
+    color: #484848;
+}
+
+p.texte {
+    margin-bottom: 0!important;
+}
+
+.cours-infos {
+    display: inline-block;
+    
+}
+
+.semibold {
+    font-weight: 600;
+}
+
+.title-sf-2 {
+    font-family: 'Maitree', serif;
+    font-size: 28px;
+    color: #484848;
+    padding-left: 10px;
+    text-align: center;
+}
+
+/* Card */
+
+.card {
+    width: 336px;
+    border: 0!important;
+    border-radius: 0!important;
+    padding: 5px;
+    display: inline-block!important;
+}
+
+.card-img-top {
+    border-radius: 0!important;
+}
+
+.card-body {
+    background: #484848;
+    margin-top: 5px;
+}
+
+.card-title {
+    margin-bottom: 0.25rem!important;
+    color: #FFF!important;
+}
+
+.title-sf-4 {
+    font-family: 'Maitree', serif;
+    font-size: 18px;
+    text-align: left;
+    display: inline-block;
+}
+
+.card-prix {
+    text-align: right;
+    float: right;
+    color: #FFF!important;
+    margin-bottom: 0.25rem!important;
+}
+
+.card-text {
+    color: #9DD4BF;
+}
+
+.card-img-overlay {
+    background: rgba(72, 72, 72, 0.7);
+    display: none;
+    height: 217px;
+    right: 5px!important;
+    top: 5px!important;
+    bottom: 5px!important;
+    left: 5px!important;
+    padding: 35px!important;
+}
+
+.card:hover .card-img-overlay {
+    display: block!important;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.btn-produit {
+    border: 1px dashed #FFF;
+    padding: 35px 45px 45px 45px;
+    height: 100%;
+}
+
+.btn-produit span {
+    color: #FFF;
+    font-size: 45px; 
+}
+
+.btn-produit > span:first-child {
+    border-right: 1px dashed #FFF;
+    height: 82px;
+    padding-top: 18px;
+    padding-right: 40px;
+    float: left;
+}
+.btn-produit > span:last-child {
+    float: right;
+    height: 82px;
+    padding-top: 18px;
+}
+
+.justify-content-between, .justify-content-start.sf {
+    margin-top: 30px;
+}
+
+.justify-content-start.sf {
+    margin-bottom: 30px;
+}
+
+.justify-content-end .btn-link, .align-items-end .btn-link {
+    font-weight: 600!important;
+    color: #FF594F!important;
+    font-family: 'Maitree', serif;
+    margin-top: 15px;
+}
+
+.propos, .propos img {
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.atelier-description {
+    height: 267px;
+    width: 580px;
+}
+
+.temoignages-avis {
+    height: 267px;
+    width: 580px;
+}
+
+.atelier-description .title-sf-2 {
+    margin-left: 10px;
+}
+.atelier-description .title-sf-2, .temoignages-avis .title-sf-2 {
+    text-align: left;
+    margin-bottom: 0px;
+    padding-left: 0px!important;
+}
+
+.temoignages-avis p {
+    font-size: 28px;
+    line-height: 50px;
+}
+
+.temoignages-avis .icon-avis {
+    color: #9DD4BF;
+    font-size: 32px;
+    line-height: 2;
+}
+.atelier-description p {
+    font-size: 13px;
+    padding: 5px 0 0 10px;
+    line-height: 18px;
+}
+
+.temoignages, .temoignages img {
+    width: 570px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.temoignages.border-bloc {
+    border-left: 8px solid #F2F2F2!important;
+    border-right: none!important;
+}
+
+.align-items-end.temoignages span {
+    font-family: 'Maitree', serif;
+    font-size: 24px;
+    color: #9DD4BF;
+    text-align: left;
+}
+
+.align-items-end.temoignages span:last-child {
+    color: #BCBCBC!important;
+}
+
+.reco.sf {
+    margin-top: 100px;
+}
+
+.social {
+    font-family: 'Maitree', serif;
+    font-size: 40px;
+}
+
+.fb, .insta {
+    font-size: 37px;
+    color: #BCBCBC;
+}
+
+footer {
+    background-color: #484848;
+    height: 537px;
+}
