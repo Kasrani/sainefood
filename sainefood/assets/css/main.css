@@ -221,6 +221,7 @@ hr.separateur {
     margin-top: 10px;
     margin-bottom: 5px;
     border: 1px dashed #CFCBC2;
+    max-width: 1140px;
 }
 
 .first-event-description p {
@@ -529,4 +530,42 @@ p.texte {
 footer {
     background-color: #484848;
     height: 537px;
+}
+
+footer .container {
+    padding: 30px 30px 10px 30px;
+}
+.logo-2, .logo-2 img {
+    width: 260px;
+}
+
+footer .form-inline .btn-primary {
+    background-color: #FF594F!important;
+    border-radius: 0!important;
+    font-family: 'Maitree', serif;
+    font-size: 16px;
+}
+
+footer .form-inline .form-control {
+    border: 0!important;
+    border-radius: 0!important;
+}
+
+footer .form-inline label {
+    color: #FFF;
+    font-family: 'Maitree', serif;
+    font-size: 20px;
+    margin-right: 35px;
+}
+
+footer .justify-content-between {
+    margin-top: 0!important;
+    margin-bottom: 20px;
+}
+
+footer .form-inline .form-control::placeholder {
+    color: #CFCBC2;
+    font-family: 'Maitree', serif;
+    font-size: 16px;
+    opacity: 1; /* Firefox */
 }
