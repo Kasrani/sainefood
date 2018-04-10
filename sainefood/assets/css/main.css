@@ -76,18 +76,25 @@ b.green {
     cursor: default;
     }
 
+#header .d-flex .p-2 {
+    padding: 0!important;
+}
+
+#header .container {
+    padding: 0!important;
+}
+
+#header .d-flex .icon-panier {
+    margin-left: 13px;
+}
+
 .logo {
     width: 123px;
 }
 
 .connecter {
     font-size: 14px;
-    position: relative;
-    height: 41px;
-    top: 4px;
-    text-align: right;
-    width: 123px;
-    margin-left : auto!important;
+   
 }
 
 div.baseline {
@@ -529,13 +536,12 @@ p.texte {
 
 footer {
     background-color: #484848;
-    height: 537px;
 }
 
 footer .container {
     padding: 30px 30px 10px 30px;
 }
-.logo-2, .logo-2 img {
+.logo-2, .logo-2 img, .icon-footer, .icon-footer img {
     width: 260px;
 }
 
@@ -568,4 +574,28 @@ footer .form-inline .form-control::placeholder {
     font-family: 'Maitree', serif;
     font-size: 16px;
     opacity: 1; /* Firefox */
+}
+
+.title-groupe-footer {
+    font-family: 'Maitree', serif;
+    font-size: 18px;
+    color: #FFF;
+}
+
+.sous-title-footer {
+    color: #CFCBC2!important;
+    font-family: 'Maitree', serif;
+    font-size: 16px;
+}
+
+.btn-footer {
+    border-radius: 0px!important;
+    border-color: #FF594F!important;
+    color: #FF594F!important;
+    font-family: 'Maitree', serif;
+    font-size: 16px;
+}
+
+.end-footer {
+    margin-top: 35px;
 }
