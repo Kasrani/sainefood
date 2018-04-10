@@ -108,7 +108,7 @@ div.baseline {
 
 /* Nav */
 
-#nav {
+#nav, .nav-2 {
 	position: fixed;
     top: 45px;
     left: 0;
@@ -119,13 +119,18 @@ div.baseline {
     line-height: 45px;
     font-family: 'Maitree', serif;
     cursor: default;
-    }
+}
 
-	#nav ul {
-        position: relative;
-        z-index: 1001;
-        margin: 0 !important;
-    }
+.nav-2 {
+    top: 90px!important;
+    z-index: 1001!important;
+}
+
+#nav ul {
+    position: relative;
+    z-index: 1001;
+    margin: 0 !important;
+}
 
 #nav li {
     display: inline-block;
@@ -161,6 +166,7 @@ div.baseline {
 #nav li.current a {
     border-bottom: 2px solid #FF594F;
     font-weight: 700;
+    color: #FF594F;
 }
 /* main-content */
 .main-content{
@@ -169,6 +175,10 @@ div.baseline {
     position: relative;
     z-index: 1;
     background-color: #FFF;
+}
+
+.main-content-2 {
+    margin: 75px 0px 30px 0px;
 }
 
 .main-content .content {
@@ -473,10 +483,10 @@ p.texte {
     width: 580px;
 }
 
-.atelier-description .title-sf-2 {
+.atelier-description .title-sf-2, .cartouche-description .title-sf-2 {
     margin-left: 10px;
 }
-.atelier-description .title-sf-2, .temoignages-avis .title-sf-2 {
+.atelier-description .title-sf-2, .temoignages-avis .title-sf-2, .cartouche-description .title-sf-2 {
     text-align: left;
     margin-bottom: 0px;
     padding-left: 0px!important;
@@ -492,7 +502,7 @@ p.texte {
     font-size: 32px;
     line-height: 2;
 }
-.atelier-description p {
+.atelier-description p, .cartouche-description p {
     font-size: 13px;
     padding: 5px 0 0 10px;
     line-height: 18px;
@@ -598,4 +608,15 @@ footer .form-inline .form-control::placeholder {
 
 .end-footer {
     margin-top: 35px;
+}
+
+.cartouche, .cartouche img {
+    width: 266px;
+    height: 165px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.cartouche-description {
+    width: 900px;
 }
