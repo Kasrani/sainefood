@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?809isx');
-  src:  url('fonts/icomoon.eot?809isx#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?809isx') format('truetype'),
-    url('fonts/icomoon.woff?809isx') format('woff'),
-    url('fonts/icomoon.svg?809isx#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?28xx9q');
+  src:  url('fonts/icomoon.eot?28xx9q#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?28xx9q') format('truetype'),
+    url('fonts/icomoon.woff?28xx9q') format('woff'),
+    url('fonts/icomoon.svg?28xx9q#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,23 +24,32 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-add-panier:before {
-  content: "\e901";
-}
-.icon-panier:before {
-  content: "\e905";
-}
-.icon-details:before {
-  content: "\e902";
-}
-.icon-left:before {
-  content: "\e903";
-}
-.icon-right:before {
-  content: "\e904";
+.icon-agenda:before {
+  content: "\e900";
 }
 .icon-avis:before {
-  content: "\e900";
+  content: "\e901";
+}
+.icon-add-panier:before {
+  content: "\e902";
+}
+.icon-details:before {
+  content: "\e903";
+}
+.icon-left:before {
+  content: "\e904";
+}
+.icon-right:before {
+  content: "\e905";
+}
+.icon-panier:before {
+  content: "\e906";
+}
+.icon-facebook22:before {
+  content: "\ea93";
+}
+.icon-instagram2:before {
+  content: "\ea94";
 }
 .icon-facebook2:before {
   content: "\ea91";

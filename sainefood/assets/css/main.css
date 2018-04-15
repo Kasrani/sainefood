@@ -473,13 +473,26 @@ p.texte {
     color: #FFF;
     font-family: 'Maitree', serif;
     font-size: 12px;
+    position: relative;
 }
 
+.place-disponible-niv-1 span {
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .cartouche-bloc:hover {
-    -webkit-box-shadow: 0 0px 10px rgba(57, 63, 72, 0.1);
-    -moz-box-shadow: 0 0px 10px rgba(57, 63, 72, 0.1);
-    box-shadow: 0 0px 10px rgba(57, 63, 72, 0.1);
-    background-color: #FAF9F6;
+    -webkit-box-shadow: 0 0px 4px rgba(57, 63, 72, 0.15);
+    -moz-box-shadow: 0 0px 4px rgba(57, 63, 72, 0.15);
+    box-shadow: 0 0px 4px rgba(57, 63, 72, 0.15);
+    background-color: #FFF;
+}
+
+.cartouche-bloc:hover .cartouche-description .d-flex .p-2:nth-of-type(2), .cartouche-bloc:hover .cartouche-description .d-flex .p-2:last-child {
+    display: block!important;
 }
 
 .card:hover, .cartouche-bloc:hover {
@@ -518,13 +531,18 @@ p.texte {
     margin-bottom: 30px;
 }
 
-.justify-content-end .btn-link, .align-items-end .btn-link {
+.justify-content-end .btn-link, .d-flex .btn-link {
     font-weight: 600!important;
     color: #FF594F!important;
     font-family: 'Maitree', serif;
+    font-size: 14px;
     margin-top: 15px;
 }
 
+.d-flex .btn-link {
+    margin :0;
+    padding-right: 0;
+}
 .propos, .propos img {
     width: 500px;
     height: 300px;
@@ -676,6 +694,33 @@ footer .form-inline .form-control::placeholder {
     position: relative;
 }
 
+.cartouche img {
+    width: 258px;
+}
+
 .cartouche-description {
-    width: 900px;
+    padding: 15px 30px 15px 0;
+}
+
+.cartouche-description .p-2:last-child {
+    padding-right: 0px!important;
+    padding-left: 0px!important;
+}
+
+.cartouche-description .p-2 .icon-right {
+    line-height: 2.6;
+}
+
+.cartouche-description .p-2 .icon-agenda {
+    margin-right: 8px;
+}
+
+.cartouche-description .d-flex span {
+    font-family: 'Maitree', serif;
+    font-size: 14px;
+    color: #FF594F;
+}
+
+.cartouche-description .d-flex .p-2:nth-of-type(2), .cartouche-description .d-flex .p-2:last-child  {
+    display: none!important;
 }
