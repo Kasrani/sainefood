@@ -177,6 +177,9 @@ div.baseline {
     background-color: #FFF;
 }
 
+.main-content.atelier{
+    margin-top: 145px;
+}
 .main-content-2 {
     margin: 75px 0px 30px 0px;
 }
@@ -191,6 +194,15 @@ div.baseline {
     position: absolute;
     z-index: -1;
     background-image: url(../../images/bg-carousel.png);
+    background-size: cover;
+}
+
+.bandeau-atelier {
+    width: 100%;
+    height: 226px;
+    position: absolute;
+    z-index: -1;
+    background-image: url(../../images/bg-atelier.png);
     background-size: cover;
 }
 /* Cours cuisine home */
@@ -364,6 +376,7 @@ p.texte {
     color: #484848;
     padding-left: 10px;
     text-align: center;
+    line-height: initial;
 }
 
 /* Card */
@@ -736,4 +749,14 @@ footer .form-inline .form-control::placeholder {
 
 .cartouche-bloc .grey-bloc {
     background: rgba(72, 72, 72, 0.9)!important;
+}
+
+.atelier .separateur {
+    margin-bottom: 30px;
+}
+
+.atelier p {
+    margin: 80px 43px 50px 43px;
+    line-height: 2;
+    font-size: 24px;
 }
