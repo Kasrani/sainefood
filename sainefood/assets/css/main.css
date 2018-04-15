@@ -428,14 +428,23 @@ p.texte {
     z-index: 1111;
     padding: 35px!important;
 }
+
+.plats-bloc .cartouche-img-overlay {
+    height: 200px!important;
+}
+
 .cartouche-img-overlay .btn-produit {
     padding: 25px 15px 15px 15px;
+}
+
+.plats-bloc .cartouche-img-overlay .btn-produit {
+    padding: 40px 15px 15px 15px;
 }
 .cartouche-img-overlay .btn-produit > span:first-child {
     border-right: 1px dashed #FFF;
     height: 50px;
     padding-top: 0px;
-    padding-right: 25px;
+    padding-right: 35px;
     float: left;
 }
 .cartouche-img-overlay .btn-produit > span:last-child {
@@ -689,7 +698,7 @@ footer .form-inline .form-control::placeholder {
 
 .cartouche, .cartouche img {
     width: 266px;
-    height: 165px;
+    height: 200px;
     display: inline-block;
     position: relative;
 }
@@ -711,7 +720,7 @@ footer .form-inline .form-control::placeholder {
     line-height: 2.6;
 }
 
-.cartouche-description .p-2 .icon-agenda {
+.cartouche-description .p-2 .icon-agenda, .cartouche-description .p-2 .icon-price {
     margin-right: 8px;
 }
 
@@ -723,4 +732,8 @@ footer .form-inline .form-control::placeholder {
 
 .cartouche-description .d-flex .p-2:nth-of-type(2), .cartouche-description .d-flex .p-2:last-child  {
     display: none!important;
+}
+
+.cartouche-bloc .grey-bloc {
+    background: rgba(72, 72, 72, 0.9)!important;
 }
