@@ -165,7 +165,7 @@ div.baseline {
 
 #nav li.current a {
     border-bottom: 2px solid #FF594F;
-    font-weight: 700;
+    font-weight: 600;
     color: #FF594F;
 }
 /* main-content */
@@ -802,6 +802,41 @@ footer .form-inline .form-control::placeholder {
 
 }
 
-..contact form .d-flex .p-2 {
+.contact form .d-flex .p-2 {
     
 }
+
+.contact textarea {
+    height: 125px;
+}
+
+.contact form .form-group {
+    margin-bottom: 0px!important;
+}
+
+.contact .form-group:nth-of-type(5) input {
+    margin-bottom: 15px!important;
+}
+
+.contact .form-group input {
+    border: 1px solid #CFCBC2;
+}
+
+.contact .form-group input, .contact .form-group select, .contact .form-group textarea {
+    color: #484848;
+    font-family: 'Maitree', serif;
+    font-size: 16px;
+}
+
+
+.contact .form-group select option:checked {
+    background: linear-gradient(#f5f5f5, #f5f5f5);
+    background-color: #f5f5f5 !important; /* for IE */
+    color: #484848 !important;
+}
+
+.contact .form-group input:focus, .contact .form-group select:focus, .contact .form-group textarea:focus  {
+    box-shadow:  0 0 0 0.2rem rgba(188,188,188,.15);
+    border-color: #bcbcbc;
+}
+
