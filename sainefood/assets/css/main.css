@@ -840,3 +840,32 @@ footer .form-inline .form-control::placeholder {
     border-color: #bcbcbc;
 }
 
+.contact .g-recaptcha {
+    margin-bottom: 20px;
+}
+
+.contact .custom-control-label {
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.contact .custom-control-label a {
+    color: #FF594F;
+}
+
+.contact .btn-primary {
+    border-radius: 0px!important;
+    border-color: #FF594F!important;
+    color: #FFF!important;
+    font-family: 'Maitree', serif;
+    font-size: 16px;
+    background-color: #FF594F;
+    margin-top: 35px;
+}
+
+.contact .btn-primary:hover {
+    background-color: #FFF;
+    border-color: #FF594F!important;
+    color: #FF594F!important;
+    font-weight: 600;
+}
