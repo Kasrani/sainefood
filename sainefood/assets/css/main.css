@@ -835,7 +835,7 @@ footer .form-inline .form-control::placeholder {
     color: #484848 !important;
 }
 
-.contact .form-group input:focus, .contact .form-group select:focus, .contact .form-group textarea:focus  {
+.contact .form-group input:focus, .contact .form-group select:focus, .contact .form-group textarea:focus, .custom-control-input:focus  {
     box-shadow:  0 0 0 0.2rem rgba(188,188,188,.15);
     border-color: #bcbcbc;
 }
@@ -868,4 +868,26 @@ footer .form-inline .form-control::placeholder {
     border-color: #FF594F!important;
     color: #FF594F!important;
     font-weight: 600;
+}
+
+/* aspect désactivée */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+    box-shadow: none!important;
+    background-color: #bcbcbc!important;
+    border: 1px solid #bcbcbc!important;
+}
+/* styles de la coche (si cochée/désactivée) */
+[type="checkbox"]:checked + label:after {
+    color: #000!important;
+}
+/* on style aussi le label quand désactivé */
+[type="checkbox"]:disabled + label {
+    color: #000!important;
+}
+ 
+/* aspect au focus de l'élément */
+    [type="checkbox"]:checked:focus + label:before,
+    [type="checkbox"]:not(:checked):focus + label:before {
+    border: 1px solid #bcbcbc!important;
 }
