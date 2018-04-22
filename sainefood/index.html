@@ -7,6 +7,8 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
         <link rel="stylesheet" href="icons/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <meta name="google-signin-client_id" content="1096698373393-dam69ls1b1i2lamshtia49h7ensvn2au.apps.googleusercontent.com">
 	</head>
 	<body class="dd">
         <div id="header" class="navbar navbar-fixed-top">
@@ -16,7 +18,7 @@
                     <div class="p-2 baseline">Cours de cuisine & traiteur <b class="green">bio</b></div>
                 </div>
                 <div class="d-flex">
-                    <div class="ml-auto p-2 connecter">Se connecter</div>
+                    <div class="ml-auto p-2 connecter" data-toggle="modal" data-target="#gridSystemModal">Se connecter</div>
                     <div class="ml-auto p-2"><span class="icon-panier"></span></div>
                 </div>
             </div>
@@ -40,6 +42,51 @@
         <div class="bandeau">
         </div>
         
+        
+        <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="gridModalLabel">Grids in modals</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid bd-example-row">
+          <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 ml-auto">.col-md-3 .ml-auto</div>
+            <div class="col-md-2 ml-auto">.col-md-2 .ml-auto</div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 ml-auto">.col-md-6 .ml-auto</div>
+          </div>
+          <div class="row">
+            <div class="col-sm-9">
+              Level 1: .col-sm-9
+              <div class="row">
+                <div class="col-8 col-sm-6">
+                  Level 2: .col-8 .col-sm-6
+                </div>
+                <div class="col-4 col-sm-6">
+                  Level 2: .col-4 .col-sm-6
+                </div>
+              </div>
+            </div>
+          </div>
+            
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
         <div class="container main-content shadow">
             <div class="content">
                 <div class="cours-cuisne-home">
