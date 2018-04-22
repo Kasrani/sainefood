@@ -822,7 +822,7 @@ footer .form-inline .form-control::placeholder {
     border: 1px solid #CFCBC2;
 }
 
-.contact .form-group input, .contact .form-group select, .contact .form-group textarea {
+.contact .form-group input, .contact .form-group select, .contact .form-group textarea, .modal-body .form-group input {
     color: #484848;
     font-family: 'Maitree', serif;
     font-size: 16px;
@@ -835,7 +835,7 @@ footer .form-inline .form-control::placeholder {
     color: #484848 !important;
 }
 
-.contact .form-group input:focus, .contact .form-group select:focus, .contact .form-group textarea:focus, .custom-control-input:focus  {
+.contact .form-group input:focus, .contact .form-group select:focus, .contact .form-group textarea:focus, .custom-control-input:focus, .modal-body .form-group input:focus  {
     box-shadow:  0 0 0 0.2rem rgba(188,188,188,.15);
     border-color: #bcbcbc;
 }
@@ -863,6 +863,20 @@ footer .form-inline .form-control::placeholder {
     margin-top: 35px;
 }
 
+.modal-body .btn-primary {
+    border-radius: 0px!important;
+    border-color: #FF594F!important;
+    color: #FFF!important;
+    font-family: 'Maitree', serif;
+    font-size: 18x;
+    background-color: #FF594F;
+    font-weight: 600;
+}
+
+.modal-body .btn-primary:hover  {
+    background-color: #FF594F;
+    color: #FFF!important;
+}
 .contact .btn-primary:hover {
     background-color: #FFF;
     border-color: #FF594F!important;
@@ -960,4 +974,17 @@ footer .form-inline .form-control::placeholder {
 
 #myFIX {
     width: 380px;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.modal-content a {
+    color: #9DD4BF;
+    font-weight: 600;
+}
+
+.modal-footer {
+    justify-content: center!important;
 }

@@ -44,48 +44,38 @@
         
         
         <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="gridModalLabel">Grids in modals</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-      </div>
-      <div class="modal-body">
-        <div class="container-fluid bd-example-row">
-          <div class="row">
-            <div class="col-md-4">.col-md-4</div>
-            <div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
-          </div>
-          <div class="row">
-            <div class="col-md-3 ml-auto">.col-md-3 .ml-auto</div>
-            <div class="col-md-2 ml-auto">.col-md-2 .ml-auto</div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 ml-auto">.col-md-6 .ml-auto</div>
-          </div>
-          <div class="row">
-            <div class="col-sm-9">
-              Level 1: .col-sm-9
-              <div class="row">
-                <div class="col-8 col-sm-6">
-                  Level 2: .col-8 .col-sm-6
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="g-signin2 btn-lg" data-onsuccess="onSignIn"></div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid bd-example-row">
+                            <div class="">
+                                <form>
+                                  <div class="form-group">
+                                      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                  </div>
+                                  <div class="form-group">
+                                      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                  </div>
+
+
+                                  <div class="form-group">
+                                      <button type="submit" class="btn btn-primary btn-lg btn-block">Connexion</button>
+                                  </div>
+                                </form>
+                                <span class="text-center"><a href="">Mot de passe oublié ?</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <span class="text-center">Vous n'avez pas de compte ?&nbsp;<a href="">Inscription</a></span>
+                    </div>
                 </div>
-                <div class="col-4 col-sm-6">
-                  Level 2: .col-4 .col-sm-6
-                </div>
-              </div>
             </div>
-          </div>
-            
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-      </div>
-    </div>
-  </div>
-</div>
 
         <div class="container main-content shadow">
             <div class="content">

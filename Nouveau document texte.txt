@@ -1,0 +1,4 @@
+Google Sign-In for Websites :
+https://developers.google.com/identity/sign-in/web/sign-in#before_you_begin
+Google API :
+https://console.developers.google.com/apis/dashboard?project=sainefood-201917
