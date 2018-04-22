@@ -891,3 +891,73 @@ footer .form-inline .form-control::placeholder {
     [type="checkbox"]:not(:checked):focus + label:before {
     border: 1px solid #bcbcbc!important;
 }
+
+.icon-retour {
+    color: #FF594F!important;
+    padding-right: 10px;
+}
+
+.icon-retour:hover {
+    border: none important;
+}
+
+#nav ul a:hover {
+    border: none !important;
+    text-decoration: none;
+}
+
+#nav ul .retour {
+    color: #484848!important;
+    font-family: 'Maitree', serif;
+    font-size: 16px;
+}
+#nav ul .retour:hover {
+    color: #FF594F!important;
+}
+
+.container-model {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+.p-2.commande-block {
+    padding: 0px !important;
+    margin: 0px !important;
+    height: 430px;
+    margin-left : auto!important;
+}
+.p-2.commande-block .content {
+    height: 400px;
+}
+
+.commande-block .position-fixed {
+    height: 430px;
+    width: inherit;
+    
+}
+
+.container-model .p-2 {
+    padding: 0px!important;
+}
+
+.container-model .main-content .content {
+    padding: 30px 30px;
+}
+
+.container-model .title-sf-2 {
+    padding-left: 0px!important;
+}
+
+.container-model .title-sf-4 {
+    color: #FF594F!important;
+    font-size: 24px!important;
+}
+
+.align-self-end .main-content {
+    margin: 0px 0px 0px 0px!important;
+}
+
+
+#myFIX {
+    width: 380px;
+}
