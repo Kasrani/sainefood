@@ -21,3 +21,19 @@ var absolu = document.getElementById("myFIX");
     absolu.classList.remove("align-self-end");
 
 }}
+
+$("#inscription").hide()
+$("#connexion-link").hide()
+function show() {
+    $("#connexion").hide()
+    $("#inscription").show()
+    $("#connexion-link").show()
+    $("#inscription-link").hide()
+}
+
+function hide() {
+    $("#connexion").show()
+    $("#inscription").hide()
+    $("#connexion-link").hide()
+    $("#inscription-link").show()
+}

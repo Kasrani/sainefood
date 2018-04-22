@@ -47,31 +47,50 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><br><br>
-                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <!--<div class="g-signin2" data-onsuccess="onSignIn"></div>-->
                     </div>
                     <div class="modal-body">
                         <div class="container-fluid bd-example-row">
-                            <div class="">
+                            <div id="connexion" class="">
                                 <form>
                                   <div class="form-group">
-                                      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                      <input type="email" class="form-control" id="inputEmail3" placeholder="Adresse e-mail">
                                   </div>
                                   <div class="form-group">
                                       <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
                                   </div>
-
-
                                   <div class="form-group">
                                       <button type="submit" class="btn btn-primary btn-lg btn-block">Connexion</button>
                                   </div>
                                 </form>
                                 <span class="text-center"><a href="">Mot de passe oublié ?</a></span>
                             </div>
+                            <div id="inscription" class="">
+                                <form>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Adresse e-mail">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputEmail3" placeholder="Prénom">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputEmail3" placeholder="Nom">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="inputPassword3" placeholder="Créer un mot de passe">
+                                    </div>
+                                    <div class="form-group">
+                                      <button type="submit" class="btn btn-primary btn-lg btn-block">Inscription</button>
+                                  </div>
+                                    
+                                </form>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <span class="text-center">Vous n'avez pas de compte ?&nbsp;<a href="">Inscription</a></span>
+                        <span id="inscription-link" class="text-center">Vous n'avez pas de compte ?&nbsp;<button class="btn btn-link" onclick="show()">Inscription</button></span>
+                        <span id="connexion-link" class="text-center">Vous avez déjà un compte Sainefood ?&nbsp;<button class="btn btn-link" onclick="hide()">Connexion</button></span>
                     </div>
                 </div>
             </div>
@@ -328,6 +347,7 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="assets/js/content.js"></script>
     </body>
     
 </html>

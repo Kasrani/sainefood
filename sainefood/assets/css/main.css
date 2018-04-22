@@ -980,12 +980,13 @@ footer .form-inline .form-control::placeholder {
     text-align: center;
 }
 
-.modal-content a {
+.modal-content a, .modal-content .btn-link {
     color: #9DD4BF;
     font-weight: 600;
+    font-size: 16px;
 }
 
-.modal-content a:hover {
+.modal-content a:hover, .modal-content .btn-link:hover {
     color: #9DD4BF;
 }
 
