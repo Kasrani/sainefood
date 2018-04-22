@@ -985,6 +985,10 @@ footer .form-inline .form-control::placeholder {
     font-weight: 600;
 }
 
+.modal-content a:hover {
+    color: #9DD4BF;
+}
+
 .modal-footer {
     justify-content: center!important;
 }
