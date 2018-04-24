@@ -9,12 +9,12 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 //3.1.2 Checking the values are existing in the database or not
 $query = "SELECT * FROM `user` WHERE email='$email' and password='$password'";
-$result = mysqli_query($connection, $query) or die(mysqli_error($connection));
-$row = mysqli_fetch_assoc($result);
+$result = pg_query($connection, $query) or die(mysqli_error($connection));
+$row = pg_fetch_assoc($result);
 $user = $row['prenom'];
 $pass = $row['password'];
 $name = $row['nom'];
-$count = mysqli_num_rows($result);
+$count = pg_num_rows($result);
 //3.1.2 If the posted values are equal to the database values, then session will be created for the user.
 if ($count == 1){
 $_SESSION['email'] = $email;
