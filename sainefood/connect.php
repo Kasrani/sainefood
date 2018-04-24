@@ -1,13 +1,10 @@
 <?php
-$maConnexion = mysqli_connect("localhost","root","","sainefood");
-if(!isset($_POST['email']) && !isset($_POST['password']))
-{
-    header('Location: index.php');
-    Exit;
+//$maConnexion = mysqli_connect("localhost","root","","sainefood");
+
+$connection = mysqli_connect("localhost","root","","sainefood");
+if (!$connection){
+    die("Database Connection Failed" . mysqli_error($connection));
 }
-else
-{
-    echo 'nooooo';
-}
+
 ?>
 

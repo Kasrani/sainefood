@@ -925,6 +925,7 @@ footer .form-inline .form-control::placeholder {
     font-family: 'Maitree', serif;
     font-size: 16px;
 }
+
 #nav ul .retour:hover {
     color: #FF594F!important;
 }
@@ -946,8 +947,19 @@ footer .form-inline .form-control::placeholder {
 
 .commande-block .position-fixed {
     height: 430px;
-    width: inherit;
-    
+    width: inherit; 
+}
+
+a.user {
+    color: #FF594F!important;
+}
+
+a.user:hover {
+    text-decoration: none;
+}
+
+input[value] {
+    color: #C1CAC5 !important;
 }
 
 .container-model .p-2 {
@@ -992,4 +1004,8 @@ footer .form-inline .form-control::placeholder {
 
 .modal-footer {
     justify-content: center!important;
+}
+
+.account h3.title-sf-3 {
+    color: #FF594F!important;
 }

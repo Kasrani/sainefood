@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -18,22 +22,22 @@
                     <div class="p-2 baseline">Cours de cuisine & traiteur <b class="green">bio</b></div>
                 </div>
                 <div class="d-flex">
-                    <div class="ml-auto p-2 connecter" data-toggle="modal" data-target="#gridSystemModal">Se connecter</div>
+                    <div class="ml-auto p-2 connecter" data-toggle="modal" data-target="#gridSystemModal"><?php if (isset($_SESSION['user'])){echo "Bonjour ";}else {echo "Se connecter";}?></div>
+                    <a href="account.php" class="user">&nbsp;<?php if (isset($_SESSION['user'])){echo $_SESSION['user'];}   else {echo "";}?></a>
                     <div class="ml-auto p-2"><span class="icon-panier"></span></div>
                 </div>
             </div>
-        </div>
-            
+        </div>   
         <nav id="nav" class="navbar navbar-fixed-top shadow">
             <div class="container">
                 <div class="row headerow">
                     <ul>
-                        <li class="current"><a href="index.html">Home</a></li>
-                        <li><a href="a%20propos.html">À propos</a></li>
-                        <li><a href="cours-cuisine.html">Cours de cuisine</a></li>
-                        <li><a href="livraison.html">Livraison</a></li>
-                        <li><a href="no-sidebar.html">Actualités</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li class="current"><a href="index.php">Home</a></li>
+                        <li><a href="a%20propos.php">À propos</a></li>
+                        <li><a href="cours-cuisine.php">Cours de cuisine</a></li>
+                        <li><a href="livraison.php">Livraison</a></li>
+                        <li><a href="no-sidebar.php">Actualités</a></li>
+                        <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -53,7 +57,7 @@
                     <div class="modal-body">
                         <div class="container-fluid bd-example-row">
                             <div id="connexion" class="">
-                                <form action="connect.php" method="post">
+                                <form action="check.php" method="post">
                                   <div class="form-group">
                                       <input type="email" class="form-control" name="email" value="<?php if(!empty($_POST['email'])) { echo htmlspecialchars($_POST['email'], ENT_QUOTES); } ?>" placeholder="Adresse e-mail">
                                   </div>
