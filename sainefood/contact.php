@@ -51,26 +51,26 @@
                 </h4>
                 <hr class="separateur">
                 <p class="text-right">* Obligatoire</p>
-                <form>
+                <form action="mailContact.php" method="post">
                     <div class="d-flex form-row">
                         <div class="mr-auto p-2 form-group col-md-5">
-                            <label for="exampleFormControlInput1">Nom / Prénom  *</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                            <label for="">Nom / Prénom  *</label>
+                            <input type="text" name="nomPrenom" class="form-control" id="" placeholder="">
                         </div>
                         <div class="p-2 form-group col-md-5">
-                            <label for="exampleFormControlSelect1">Sujet de la demande *</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
+                            <label for="">Sujet de la demande *</label>
+                            <select class="form-control" id="">
                                 <option>Choix 1</option>
                                 <option>Choix 2</option>
                             </select>
                         </div>
                         <div class="mr-auto p-2 form-group col-md-5">
-                            <label for="exampleFormControlInput1">Raison social *</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                            <label for="">Raison social *</label>
+                            <input type="text" name="raisonSocial" class="form-control" id="" placeholder="">
                         </div>
                         <div class="p-2 form-group col-md-5">
-                            <label for="exampleFormControlInput1">Nombre de participants *</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
+                            <label for="">Nombre de participants *</label>
+                            <select class="form-control" id="">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -83,14 +83,14 @@
                             </select>
                         </div>
                         <div class="mr-auto p-2 form-group col-md-5">
-                            <label for="exampleFormControlInput1">E-mail *</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
-                            <label for="exampleFormControlInput1">Téléphone *</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                            <label for="">E-mail *</label>
+                            <input type="email" name="email" class="form-control" id="" placeholder="">
+                            <label for="">Téléphone *</label>
+                            <input type="text" name="telephone" class="form-control" id="" placeholder="">
                         </div>
                         <div class="p-2 form-group col-md-5">
-                            <label for="exampleFormControlTextarea1">Message *</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <label for="">Message *</label>
+                            <textarea class="form-control" name="message" id="" rows="3"></textarea>
                         </div>
                     </div>
                     <div class="d-flex form-row">
