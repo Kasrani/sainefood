@@ -70,8 +70,8 @@ if (!$mail->send()) {
     $message = 'This is a message.';
 
     echo "<SCRIPT type='text/javascript'> //not showing me this
+        window.location.replace(\"https://sainefood.herokuapp.com/contact.php\");
         alert('$message');
-        
     </SCRIPT>";
     mysql_close();
 }
@@ -90,5 +90,5 @@ function save_mail($mail)
     imap_close($imapStream);
     return $result;
 }
-header('Location: index.php');
+
 ?>
