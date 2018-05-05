@@ -25,7 +25,7 @@ $mail->isSMTP();
 // 0 = off (for production use)
 // 1 = client messages
 // 2 = client and server messages
-$mail->SMTPDebug = 2;
+$mail->SMTPDebug = 1;
 //Set the hostname of the mail server
 $mail->Host = 'smtp.gmail.com';
 // use
