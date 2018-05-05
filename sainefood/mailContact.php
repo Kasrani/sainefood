@@ -71,9 +71,10 @@ if (!$mail->send()) {
 
     echo "<SCRIPT type='text/javascript'> //not showing me this
         alert('$message');
-        window.location.replace(\"https://sainefood.herokuapp.com/contact.php\");
+        
     </SCRIPT>";
     mysql_close();
+    header('Location: index.php');
 }
 //Section 2: IMAP
 //IMAP commands requires the PHP IMAP Extension, found at: https://php.net/manual/en/imap.setup.php
