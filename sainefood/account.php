@@ -68,7 +68,7 @@ session_start();
                         </form>
                     </div>";
                     echo "<br><br><br><hr class='separateur'>";
-                    echo "<br><h4 class='title-sf-4 semibold'>Ajouter un évenement :</h4>";
+                    echo "<br><h4 class='title-sf-4 semibold'>Gestion des cours de cuisine :</h4>";
                     echo "<br><br>
                     <div class='contact'>
                         <form action='addEvent.php' method='post'>
@@ -94,50 +94,44 @@ session_start();
                                 <button type='submit' class='btn btn-primary float-right shadow'>Ajouter</button><br>
                             </div>
                         </form>
-                    </div><br><br><br><hr class='separateur'>";
-                    echo "<br><h4 class='title-sf-4 semibold'>Ajouter un plat :</h4>";
-                    echo "<br><br>
-                    <div class='contact'>
-                        <form>
+                    </div><br><br><br><hr id='gestion' class='separateur'>";
+                    echo "<br><h4 class='title-sf-4 semibold'>Gestion des plats :</h4>";
+                    echo "<br>";
+                            $maConnexion = mysqli_connect("us-cdbr-iron-east-04.cleardb.net","bc79c844c05827","11e8e8f1","heroku_a4f632ea2ba8ee3");
+                            $rec = "SELECT * FROM `plat`";
+                            $result = mysqli_query($maConnexion,$rec);
+                            $selectOption = null;
+                            $test = null;
+                    echo "
+                            <div class='contact'>
+                            <form method='GET' action='#gestion'>
+                            <div class='d-flex contact'>
+                                <button type='submit' name='add' class='p-2 mr-2 btn btn-primary shadow'>Ajouter</button>
+                                <button type='submit' name='update' class='p-2 mr-2 btn btn-primary shadow'>Modifier</button>
+                                <button type='submit' name='delete' class='p-2 mr-2 btn btn-primary shadow'>Supprimer</button>
+                              </div><br>
                             <div class='d-flex form-row'>
-                                <div class='mr-auto p-2 form-group col-md-5'>
-                                    <label for='exampleFormControlInput1'>Intitulé  *</label>
-                                    <input type='text' class='form-control' id='exampleFormControlInput1' placeholder=''>
-                                </div>
-                                <div class='p-2 form-group col-md-5'>
-                                    <label for='exampleFormControlInput1'>Prix  *</label>
-                                    <input type='text' class='form-control' id='exampleFormControlInput1' placeholder=''>
-                                </div>
-                                <div class='p-2 form-group col-md-5'>
-                                    <label for='exampleFormControlInput1'>Détails  *</label>
-                                    <textarea class='form-control' id='exampleFormControlTextarea1' rows='3'></textarea>
-                                </div>
-                                <div class='ml-auto p-2 form-group col-md-5'>
-                                    <label for='exampleFormControlInput1'>Ingrédients : *</label>
-                                    <textarea class='form-control' id='exampleFormControlTextarea1' rows='3'></textarea>
-                                </div>
-                                <div class='mr-auto p-2 form-group col-md-5'>
-                                    <label>Nutrition :</label>
-                                    <input class='form-control mb-4' type='text' name='energie[]' placeholder='Energie' value=''/>
-                                    <input class='form-control mb-4' type='text' name='lipide[]' placeholder='Lipide' value=''/>
-                                    <input class='form-control mb-4' type='text' name='gras[]' placeholder='Dont acides gras saturés' value=''/>
-                                    <input class='form-control mb-4' type='text' name='glucides[]' placeholder='Glucides' value=''/>
-                                    <input class='form-control mb-4' type='text' name='proteines[]' placeholder='Protéines' value=''/>
-                                    <input class='form-control mb-4' type='text' name='sel[]' placeholder='Sel' value=''/>
-                                    <input class='form-control mb-4' type='text' name='fibres[]' placeholder='Fibres' value=''/>
-                                </div>
-                                <div class='ml-auto p-2 form-group col-md-5'>
-                                    <label>Sourcing :</label>
-                                    <input class='form-control mb-4' type='text' name='energie[]' placeholder='' value=''/>
-                                    <input class='form-control mb-4' type='text' name='lipide[]' placeholder='' value=''/>
-                                    <input class='form-control mb-4' type='text' name='gras[]' placeholder='' value=''/>
-                                </div>
+                            <div class='p-2 form-group col-md-5'>
+                            <select class='form-control' name='selectOption'>
+                                        <option>choisir un plat</option>";
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo "<option>" . $row['nom'] . "</option>";
+                                        }             
+                            echo " </select>
                             </div>
-                            <div class='p-2'>
-                                <button type='submit' class='btn btn-primary float-right shadow'>Ajouter</button><br>
-                            </div>
-                        </form>
-                    </div><br><br>";
+                            </form>
+                        </div>";
+
+                        if (isset($_GET['add'])) {
+                            require('add.php');
+                        } else if (isset($_GET['update'])){
+                            require('update.php');
+                        } else if (isset($_GET['delete'])) {
+                            require('delete.php');
+                        }
+                         //require('add.php');
+                        
+                    echo "</div><br><br>";
                 }else {
                 echo "<h2 class='title-sf-2 text-center'>Bonjour  " . $_SESSION['user'] . "</h2> ";
                     echo "<h3 class='title-sf-3 text-center'>Bienvenue sur votre espace utilisateur</h3><br><br>";

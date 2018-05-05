@@ -1,3 +1,18 @@
+<?php
+// Start the session
+session_start();
+if (isset($_GET['nom'])) {
+    $plat = $_GET['nom'];
+}
+if (isset($_GET['l'])) {
+    $plat = $_GET['l'];
+}
+$maConnexion = mysqli_connect("us-cdbr-iron-east-04.cleardb.net","bc79c844c05827","11e8e8f1","heroku_a4f632ea2ba8ee3");
+$query = "SELECT * FROM `plat` WHERE nom='$plat'";
+$result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
+$row = mysqli_fetch_assoc($result);
+
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -17,7 +32,8 @@
                     <div class="p-2 baseline">Cours de cuisine & traiteur <b class="green">bio</b></div>
                 </div>
                 <div class="d-flex">
-                    <div class="ml-auto p-2 connecter">Se connecter</div>
+                    <div class="ml-auto p-2 connecter" data-toggle="modal" data-target="#gridSystemModal"><?php if (isset($_SESSION['user'])){echo "Bonjour ";}else {echo "Se connecter";}?></div>
+                    <a href="account.php" class="user">&nbsp;<?php if (isset($_SESSION['user'])){echo $_SESSION['user'];}   else {echo "";}?></a>
                     <div class="ml-auto p-2"><span class="icon-panier"></span></div>
                 </div>
             </div>
@@ -35,78 +51,188 @@
         <div class="container d-flex container-model position-relative ">
             <div  class="col-md-7 main-content shadow p-2 position-relative">
                 <div class="content">
-                    <h2 class="title-sf-2 semibold text-left">Seasonal pasta bowl</h2>
-                    <img class="img-fluid" src="images/Plats/plat-1.jpg" alt=""><br><br>
-                    <h4 class="title-sf-4">Détails</h4>
+                    <?php
+                    echo "
+                    <h2 class='title-sf-2 semibold text-left'>" . $row['nom'] . "</h2>
+                    <img class='img-fluid' src='images/Plats/" . $row['image'] . "' alt=''><br><br>
+                    <h4 class='title-sf-4'>Détails</h4>
                     <p>
-                        Une entrée healthy & gourmande - des carottes fondantes marinées dans du sirop d'érable, de la cannelle, de l'ail et du cumin. Un peu de menthe et de coriandre pour la fraîcheur et des cacahuète pour le croquant.
+                        " . $row['details'] . "
                     </p>
-                    <h4 class="title-sf-4">Ingrédients</h4>
+                    <h4 class='title-sf-4'>Ingrédients</h4>
                     <p>
-                        Ail, cumin, poivre, sel, carotte, cannelle, coriandre, cacahuète, menthe, huile de tournesol, sirop d'érable, jus de citron bio
+                        " . $row['ingredients'] . "
                     </p>
-                    <h4 class="title-sf-4">Informations Nutritionnelles</h4>
+                    <h4 class='title-sf-4'>Informations Nutritionnelles</h4>
                     <p>
                         Ail, cumin, poivre, sel, carotte, cannelle, coriandre, cacahuète, menthe, huile de tournesol, sirop d'érable, jus de citron bio
                     </p><br>
-                    <table class="table table-striped">
+                    <table class='table table-striped'>
                         <tbody>
                             <tr>
-                                <th scope="col">Energie</th>
-                                <td scope="col">155 kcal</td>
+                                <th scope='col'>Energie</th>
+                                <td scope='col''>155 kcal</td>
                             </tr>
                             <tr>
-                                <th scope="col">Lipide</th>
-                                <td scope="col">10 g</td>
+                                <th scope='col'>Lipide</th>
+                                <td scope='col'>10 g</td>
                             </tr>
                             <tr>
-                                <th scope="col">Dont acides gras saturés</th>
-                                <td scope="col">2g</td>
+                                <th scope='col'>Dont acides gras saturés</th>
+                                <td scope='col'>2g</td>
                             </tr>
                             <tr>
-                                <th scope="col">Glucides</th>
-                                <td scope="col">13g</td>
+                                <th scope='col'>Glucides</th>
+                                <td scope='col'>13g</td>
                             </tr>
                             <tr>
-                                <th scope="col">Dont sucres</th>
-                                <td scope="col">10.8g</td>
+                                <th scope='col'>Dont sucres</th>
+                                <td scope='col'>10.8g</td>
                             </tr>
                             <tr>
-                                <th scope="col">Protéines</th>
-                                <td scope="col">3 g</td>
+                                <th scope='col'>Protéines</th>
+                                <td scope='col'>3 g</td>
                             </tr>
                             <tr>
-                                <th scope="col">Sel</th>
-                                <td scope="col">0.5 g</td>
+                                <th scope='col'>Sel</th>
+                                <td scope='col'>0.5 g</td>
                             </tr>
                             <tr>
-                                <th scope="col">Fibres</th>
-                                <td scope="col">4 g</td>
+                                <th scope='col'>Fibres</th>
+                                <td scope='col'>4 g</td>
                             </tr>
                         </tbody>
                     </table>
-                    <h4 class="title-sf-4">Sourcing</h4><br><br>
-                    <table class="table table-striped">
+                    <h4 class='title-sf-4'>Sourcing</h4><br><br>
+                    <table class='table table-striped'>
                         <tbody>
                             <tr>
-                                <td scope="col">88% d'ingrédients françaisl</td>
+                                <td scope='col'>88% d ingrédients françaisl</td>
                             </tr>
                             <tr>
-                                <td scope="col">100% de légumes/fruits de saison</td>
+                                <td scope='col'>100% de légumes/fruits de saison</td>
                             </tr>
                             <tr>
-                                <td scope="col">52g d'empreinte CO2</td>
+                                <td scope='col'>52g d empreinte CO2</td>
                             </tr>
                             <tr>
                         </tbody>
                     </table>
-                    <h4 class="title-sf-4">Avis clients</h4>
+                    <h4 class='title-sf-4'>Avis clients</h4>
+                    ";
+                    ?>
                 </div>
             </div>
             <div id="myFIX" class="col-md-4 p-2 commande-block position-relative">
                 <div id="myFIXED" class="main-content p-2 shadow position-fixed">
                     <div class="content">
                         <h2 class="title-sf-2 semibold">Votre commande</h2>
+                        <?php
+//session_start();
+include_once("fonctions-panier.php");
+
+$erreur = false;
+
+$action = (isset($_POST['action'])? $_POST['action']:  (isset($_GET['action'])? $_GET['action']:null )) ;
+if($action !== null)
+{
+   if(!in_array($action,array('ajout', 'suppression', 'refresh')))
+   $erreur=true;
+
+   //récuperation des variables en POST ou GET
+   $l = (isset($_POST['l'])? $_POST['l']:  (isset($_GET['l'])? $_GET['l']:null )) ;
+   $p = (isset($_POST['p'])? $_POST['p']:  (isset($_GET['p'])? $_GET['p']:null )) ;
+   $q = (isset($_POST['q'])? $_POST['q']:  (isset($_GET['q'])? $_GET['q']:null )) ;
+
+   //Suppression des espaces verticaux
+   $l = preg_replace('#\v#', '',$l);
+   //On verifie que $p soit un float
+   $p = floatval($p);
+
+   //On traite $q qui peut etre un entier simple ou un tableau d'entier
+    
+   if (is_array($q)){
+      $QteArticle = array();
+      $i=0;
+      foreach ($q as $contenu){
+         $QteArticle[$i++] = intval($contenu);
+      }
+   }
+   else
+   $q = intval($q);
+    
+}
+
+if (!$erreur){
+   switch($action){
+      Case "ajout":
+         ajouterArticle($l,$q,$p);
+         break;
+
+      Case "suppression":
+         supprimerArticle($l);
+         break;
+
+      Case "refresh" :
+         for ($i = 0 ; $i < count($QteArticle) ; $i++)
+         {
+            modifierQTeArticle($_SESSION['panier']['libelleProduit'][$i],round($QteArticle[$i]));
+         }
+         break;
+
+      Default:
+         break;
+   }
+}
+
+?>
+
+<form class="panier" method="get" action="produit.php">
+<table>
+	<!--<tr>
+        <td>Quantité</td>
+		<td>Libellé</td>
+		<td colspan="2">Prix/U</td>
+		<td>Action</td>
+	</tr>-->
+
+
+	<?php
+	if (creationPanier())
+	{
+	   $nbArticles=count($_SESSION['panier']['libelleProduit']);
+	   if ($nbArticles <= 0)
+	   echo "<tr><td>Votre panier est vide </ td></tr>";
+	   else
+	   {
+	      for ($i=0 ;$i < $nbArticles ; $i++)
+	      {
+	         echo "<tr>";
+            echo "<td><div class='form-group'><input type=\"number\" class='form-control' name=\"q[]\" value=\"".htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."\"/></div></td>";
+	         echo "<td>".htmlspecialchars($_SESSION['panier']['libelleProduit'][$i])."</ td>";
+	         echo "<td colspan='2'>".htmlspecialchars($_SESSION['panier']['prixProduit'][$i])."  €</td>";
+	         echo "<td><a href=\"".htmlspecialchars("produit.php?action=suppression&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">X</a></td>";
+	         echo "</tr>";
+	      }
+
+	      echo "<tr>";
+	      echo "<td colspan=\"3\">Total (TVA incl.)</td>";
+	      echo "<td colspan=\"1\">". MontantGlobal() . " € </td>";
+	      echo "</tr>";
+	      echo "<tr><td colspan=\"4\">";
+	      echo "<input class='btn btn-link' type=\"submit\" value=\"Calculer\"/>";
+	      echo "<input type=\"hidden\" name=\"action\" value=\"refresh\"/>";
+           echo "<input type=\"hidden\" name=\"nom\" value='" . $row['nom'] . "'/>";
+
+	      echo "</td></tr>";
+	   }
+	}
+	?>
+</table>
+</form>
+                        <?php
+echo "<a class='float-left' href='produit.php?nom=" . $row['nom'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter au panier</a>";
+                        ?>
                     </div>
                 </div>
             </div>

@@ -452,16 +452,16 @@ p.texte {
 }
 
 .plats-bloc .cartouche-img-overlay .btn-produit {
-    padding: 40px 15px 15px 15px;
+    padding: 40px 25px 15px 25px;
 }
-.cartouche-img-overlay .btn-produit > span:first-child {
+.cartouche-img-overlay .btn-produit > a:first-child {
     border-right: 1px dashed #FFF;
     height: 50px;
     padding-top: 0px;
-    padding-right: 35px;
+    padding-right: 27px;
     float: left;
 }
-.cartouche-img-overlay .btn-produit > span:last-child {
+.cartouche-img-overlay .btn-produit > a:last-child {
     float: right;
     height: 50px;
     padding-top: 0px;
@@ -542,14 +542,17 @@ p.texte {
     font-size: 45px; 
 }
 
-.btn-produit > span:first-child {
+.btn-produit > a:first-child {
     border-right: 1px dashed #FFF;
     height: 82px;
     padding-top: 18px;
     padding-right: 40px;
     float: left;
 }
-.btn-produit > span:last-child {
+.btn-produit > a:hover {
+    text-decoration: none;
+}
+.btn-produit > a:last-child {
     float: right;
     height: 82px;
     padding-top: 18px;
@@ -731,7 +734,13 @@ footer .form-inline .form-control::placeholder {
 }
 
 .cartouche-description {
-    padding: 15px 30px 15px 0;
+    padding: 0px 30px 15px 0;
+    height: 200px;
+    width: 75%;
+}
+
+.cartouche-description p {
+    height: 80px;
 }
 
 .cartouche-description .p-2:last-child {
@@ -915,10 +924,7 @@ footer .form-inline .form-control::placeholder {
     border: none important;
 }
 
-#nav ul a:hover {
-    border: none !important;
-    text-decoration: none;
-}
+
 
 #nav ul .retour {
     color: #484848!important;
@@ -1009,3 +1015,4 @@ input[value] {
 .account h3.title-sf-3 {
     color: #FF594F!important;
 }
+

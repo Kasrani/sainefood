@@ -140,7 +140,7 @@
                             <img class="" src="images/Events/event-4.jpg" alt="Sainefood">   
                         </div>
                         <div class="cartouche-description">
-                            <h2 class="title-sf-2 semibold">Brunch « feel good » zoom sur l’assaisonnement</h2><hr class="separateur">
+                            <h2 class="title-sf-2 semibold">Brunch « feel good »</h2><hr class="separateur">
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante.
                             </p>

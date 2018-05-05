@@ -172,8 +172,8 @@ session_start();
                             <div class="card shadow">
                                 <div class="card-img-overlay">
                                     <div class="btn-produit">
-                                        <span class="icon-add-panier"></span>
-                                        <span class="icon-details"></span>
+                                        <a class="float-left" href="panier.php?action=ajout&amp;l=LIBELLEPRODUIT&amp;q=QUANTITEPRODUIT&amp;p=PRIXPRODUIT"><span class="icon-add-panier"></span></a>
+                                        <a class="float-right" href="produit.php?nom=Salade+bio"><span class="icon-details"></span></a>
                                     </div>
                                 </div>
                                 <img class="card-img-top" src="images/Plats/plat-1.jpg" alt="Card image cap">
@@ -278,7 +278,7 @@ session_start();
                     <hr class="separateur">
                     <div class="livraison">
                         <h2 class="title-sf-2 semibold">Zone de Livraison</h2>
-                        <img src="images/zone-de-livraison.png" alt="zone de livraison">
+                        <img src="images/zone-de-livraison.png" class="img-fluid" alt="zone de livraison">
                     </div>
                     <div class="d-flex justify-content-start sf reco">
                         <div class="temoignages-avis">

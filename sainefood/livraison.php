@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -16,7 +20,8 @@
                     <div class="p-2 baseline">Cours de cuisine & traiteur <b class="green">bio</b></div>
                 </div>
                 <div class="d-flex">
-                    <div class="ml-auto p-2 connecter">Se connecter</div>
+                    <div class="ml-auto p-2 connecter" data-toggle="modal" data-target="#gridSystemModal"><?php if (isset($_SESSION['user'])){echo "Bonjour ";}else {echo "Se connecter";}?></div>
+                    <a href="account.php" class="user">&nbsp;<?php if (isset($_SESSION['user'])){echo $_SESSION['user'];}   else {echo "";}?></a>
                     <div class="ml-auto p-2"><span class="icon-panier"></span></div>
                 </div>
             </div>
@@ -38,155 +43,40 @@
         </nav>
         <div class="container main-content shadow">
             <div class="content">
-                <div class="cartouche-bloc plats-bloc">
-                    <div class="d-flex justify-content-start">
-                        <div class="cartouche border-bloc">
-                            <div class="cartouche-img-overlay">
-                                <div class="btn-produit">
-                                    <span class="icon-add-panier"></span>
-                                    <span class="icon-details"></span>
+                <?php
+                $maConnexion = mysqli_connect("us-cdbr-iron-east-04.cleardb.net","bc79c844c05827","11e8e8f1","heroku_a4f632ea2ba8ee3");
+                $rec = "SELECT * FROM `plat`";
+                $result = mysqli_query($maConnexion,$rec);
+
+                while ($row = $result->fetch_assoc()) {
+                    echo "
+                    <div class='cartouche-bloc plats-bloc'>
+                        <div class='d-flex justify-content-start'>
+                            <div class='cartouche border-bloc'>
+                                <div class='cartouche-img-overlay'>
+                                    <div class='btn-produit'>
+                                        <a class='float-left' href='#'><span class='icon-add-panier'></span></a>
+                                        <a class='float-right' href='produit.php?nom=" . $row['nom'] . "'><span class='icon-details'></span></a>
+                                    </div>
                                 </div>
+                                <img class='img-fluid' src='images/Plats/" . $row['image'] . "' alt='Sainefood'>   
                             </div>
-                            <img class="" src="images/Plats/plat-1.jpg" alt="Sainefood">   
-                        </div>
-                        <div class="cartouche-description">
-                            <h2 class="title-sf-2 semibold">Seasonal pasta bowl</h2><hr class="separateur">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante.
-                            </p>
-                            <div class="d-flex">
-                                <div class="mr-auto p-2"><span class="icon-price"></span><span class="semibold">6,90 €</span></div>
-                                <div class="p-2"><button type="button" class="btn btn-link">Voir plus </button></div>
-                                <div class="p-2"><span class="icon-right"></span></div>
+                            <div class='cartouche-description'>
+                                <h2 class='title-sf-2 semibold'>" . $row['nom'] . "</h2><hr class='separateur'>
+                                <p>"
+                                    . $row['details'] .
+                                "</p>
+                                <div class='d-flex mt-auto p-2'>
+                                    <div class='mr-auto p-2'><span class='icon-price'></span><span class='semibold'>" . $row['prix'] . " €</span></div>
+                                    <div class='p-2'><a href='produit.php?nom=" . $row['nom'] . "' class='btn-link'>Voir plus </a></div>
+                                    <div class='p-2'><span class='icon-right'></span></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="cartouche-bloc plats-bloc">
-                    <div class="d-flex justify-content-start">
-                        <div class="cartouche border-bloc">
-                            <div class="cartouche-img-overlay">
-                                <div class="btn-produit">
-                                    <span class="icon-add-panier"></span>
-                                    <span class="icon-details"></span>
-                                </div>
-                            </div>
-                            <img class="" src="images/Plats/plat-2.jpg" alt="Sainefood">   
-                        </div>
-                        <div class="cartouche-description">
-                            <h2 class="title-sf-2 semibold">Linguine IGP al ragu</h2><hr class="separateur">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante.
-                            </p>
-                            <div class="d-flex">
-                                <div class="mr-auto p-2"><span class="icon-price"></span><span class="semibold">7,90 €</span></div>
-                                <div class="p-2"><button type="button" class="btn btn-link">Voir plus </button></div>
-                                <div class="p-2"><span class="icon-right"></span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="cartouche-bloc plats-bloc">
-                    <div class="d-flex justify-content-start">
-                        <div class="cartouche border-bloc">
-                            <div class="cartouche-img-overlay">
-                                <div class="btn-produit">
-                                    <span class="icon-add-panier"></span>
-                                    <span class="icon-details"></span>
-                                </div>
-                            </div>
-                            <img class="" src="images/Plats/plat-3.jpg" alt="Sainefood">   
-                        </div>
-                        <div class="cartouche-description">
-                            <h2 class="title-sf-2 semibold">Curry veggie</h2><hr class="separateur">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante.
-                            </p>
-                            <div class="d-flex">
-                                <div class="mr-auto p-2"><span class="icon-price"></span><span class="semibold">11,90 €</span></div>
-                                <div class="p-2"><button type="button" class="btn btn-link">Voir plus </button></div>
-                                <div class="p-2"><span class="icon-right"></span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="cartouche-bloc plats-bloc">
-                    <div class="d-flex justify-content-start">
-                        <div class="cartouche border-bloc">
-                            <div class="cartouche-img-overlay">
-                                <div class="btn-produit">
-                                    <span class="icon-add-panier"></span>
-                                    <span class="icon-details"></span>
-                                </div>
-                            </div>
-                            <img class="" src="images/Plats/plat-4.jpg" alt="Sainefood">   
-                        </div>
-                        <div class="cartouche-description">
-                            <h2 class="title-sf-2 semibold">Risotto au potimarron</h2><hr class="separateur">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante.
-                            </p>
-                            <div class="d-flex">
-                                <div class="mr-auto p-2"><span class="icon-price"></span><span class="semibold">7,90 €</span></div>
-                                <div class="p-2"><button type="button" class="btn btn-link">Voir plus </button></div>
-                                <div class="p-2"><span class="icon-right"></span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="cartouche-bloc plats-bloc">
-                    <div class="d-flex justify-content-start">
-                        <div class="cartouche border-bloc">
-                            <div class="cartouche-img-overlay">
-                                <div class="btn-produit">
-                                    <span class="icon-add-panier"></span>
-                                    <span class="icon-details"></span>
-                                </div>
-                            </div>
-                            <img class="" src="images/Plats/plat-5.jpg" alt="Sainefood">   
-                        </div>
-                        <div class="cartouche-description">
-                            <h2 class="title-sf-2 semibold">Salade healthy</h2><hr class="separateur">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante.
-                            </p>
-                            <div class="d-flex">
-                                <div class="mr-auto p-2"><span class="icon-price"></span><span class="semibold">5,90 €</span></div>
-                                <div class="p-2"><button type="button" class="btn btn-link">Voir plus </button></div>
-                                <div class="p-2"><span class="icon-right"></span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="cartouche-bloc plats-bloc">
-                    <div class="d-flex justify-content-start">
-                        <div class="cartouche border-bloc">
-                            <div class="cartouche-img-overlay">
-                                <div class="btn-produit">
-                                    <span class="icon-add-panier"></span>
-                                    <span class="icon-details"></span>
-                                </div>
-                            </div>
-                            <img class="" src="images/Plats/plat-6.jpg" alt="Sainefood">   
-                        </div>
-                        <div class="cartouche-description">
-                            <h2 class="title-sf-2 semibold">Salade de chou</h2><hr class="separateur">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante.
-                            </p>
-                            <div class="d-flex">
-                                <div class="mr-auto p-2"><span class="icon-price"></span><span class="semibold">8,90 €</span></div>
-                                <div class="p-2"><button type="button" class="btn btn-link">Voir plus </button></div>
-                                <div class="p-2"><span class="icon-right"></span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    ";
+                }
+                ?>
             </div>
         </div>
         <footer>
