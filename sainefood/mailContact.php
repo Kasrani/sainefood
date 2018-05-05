@@ -27,26 +27,26 @@ $mail->isSMTP();
 // 2 = client and server messages
 $mail->SMTPDebug = 1;
 //Set the hostname of the mail server
-$mail->Host = 'smtp.gmail.com';
+$mail->Host = 'smtp.hotmail.fr';
 // use
 // $mail->Host = gethostbyname('smtp.gmail.com');
 // if your network does not support SMTP over IPv6
 //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
-$mail->Port = 465;
+$mail->Port = 25;
 //Set the encryption system to use - ssl (deprecated) or tls
 $mail->SMTPSecure = 'ssl';
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
 //Username to use for SMTP authentication - use full email address for gmail
-$mail->Username = "kasrani.mourad@gmail.com";
+$mail->Username = "kasrani@hotmail.fr";
 //Password to use for SMTP authentication
-$mail->Password = "aqwzsxedc123";
+$mail->Password = "aqwzsxedc1234+";
 //Set who the message is to be sent from
-$mail->setFrom('mkasrani@garagescore.com', 'First Last');
+$mail->setFrom('kasrani.mourad@gmail.com', 'First Last');
 //Set an alternative reply-to address
-$mail->addReplyTo('kasrani@hotmail.fr', 'First Last');
+$mail->addReplyTo('kasrani.mourad@gmail.com', 'First Last');
 //Set who the message is to be sent to
-$mail->addAddress($email, 'John Doe');
+$mail->addAddress('kasrani.mourad@gmail.com', 'John Doe');
 //Set the subject line
 $mail->Subject = 'PHPMailer GMail SMTP test';
 $mail->Body = "This Mail Check .Mail send Using SMTP Gmail Server";
