@@ -74,7 +74,6 @@ if (!$mail->send()) {
         
     </SCRIPT>";
     mysql_close();
-    header('Location: index.php');
 }
 //Section 2: IMAP
 //IMAP commands requires the PHP IMAP Extension, found at: https://php.net/manual/en/imap.setup.php
@@ -91,5 +90,5 @@ function save_mail($mail)
     imap_close($imapStream);
     return $result;
 }
-
+header('Location: index.php');
 ?>
