@@ -55,8 +55,7 @@ $mail->Body = "<div class=''><img src='https://sainefood.herokuapp.com/images/ic
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //Replace the plain text body with one created manually
-$mail->AltBody = 'This is a plain-text message body';
-//Attach an image file
+$mail->AltBody = 'This is a plain-text message bodyr';
 //send the message, check for errors
 if (!$mail->send()) {
     //echo "Mailer Error: " . $mail->ErrorInfo;
