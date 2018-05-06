@@ -61,6 +61,7 @@ $mail->Body = "
     </center>
     
 ";
+header('Location: messageEnvoye.php');
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //Replace the plain text body with one created manually
