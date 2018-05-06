@@ -52,14 +52,13 @@ $demande = 'Demande de cours de cuisine';
 //Set the subject line
 $mail->Subject = 'Sujet de votre demande';
 $mail->Body = "
-<div align='center' style='max-width:612px; min-height:600px; background-color:#fcfcfc;'>
-    <center>
+
+    <center style='max-width:612px; min-height:600px;'>
         <img src='https://sainefood.herokuapp.com/images/mail-en-tete.png' alt='Sainefood'>
         <br><br>
         <h1 style='color:#ff594f; font-size:22px;'>" . $demande . "</h1>
     </center> 
-    <p style='color:#484848; font-size:14px;'>" . $message . "</p>
-</div>
+    <p style='color:#484848; font-size:14px; text-align:left; line-height: 20px;'>" . $message . "</p>
 ";
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
