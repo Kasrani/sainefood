@@ -47,11 +47,16 @@ $mail->setFrom('contact@sainefood.fr', 'Sainefood contact');
 $mail->addReplyTo($email, $nomPrenom);
 //Set who the message is to be sent to
 $mail->addAddress('kasrani.mourad@gmail.com', 'Sainefood');
-
+$demande = 'Demande de cours de cuisine';
 
 //Set the subject line
 $mail->Subject = 'Sujet de votre demande';
-$mail->Body = "<center><img src='https://sainefood.herokuapp.com/images/mail-en-tete.png' alt='Sainefood'></center> <br><br><br>" . $message;
+$mail->Body = "<center>
+<img src='https://sainefood.herokuapp.com/images/mail-en-tete.png' alt='Sainefood'>
+<br><br><br>
+<h1 style='color=#ff594f; font-size=22px;'>" . $demande . "</h1>
+</center> 
+" . $message;
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //Replace the plain text body with one created manually
