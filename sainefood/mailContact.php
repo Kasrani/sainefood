@@ -58,8 +58,8 @@ $mail->Body = "<center style='max-width:612px; min-height:600px;'>
 <p style='color:#484848; font-size:14px; text-align:left; line-height: 24px;'>" . $message . "</p><br><br><br>
 <span style='font-size:14px; color:#757575;'>Une question, une remarque ? Contactez notre équipe à</span>
 <a href='#'>contact@saine-food.fr</a><br><br>
-<span style='font-size:14px; color:#757575; text-align:left;'>Cordialement,</span><br><br>
-<b style='font-size:14px; color:#757575; text-align:left;'>L équipe Sainefood</b>
+<span style='color:#757575; font-size:14px; text-align:left;'>Cordialement,</span><br><br>
+<b style='color:#757575; font-size:14px; text-align:left;'>L équipe Sainefood</b><br><br><br>
 <img src='https://sainefood.herokuapp.com/images/mail-pied.png' alt='social'>
 </center>";
 //header('Location: messageEnvoye.php');
