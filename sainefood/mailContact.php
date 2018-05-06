@@ -57,11 +57,11 @@ $mail->Body = "
         <img src='https://sainefood.herokuapp.com/images/mail-en-tete.png' alt='Sainefood'>
         <br><br>
         <h1 style='color:#ff594f; font-size:22px;'>" . $demande . "</h1>
-        <p style='color:#484848; font-size:14px; text-align:left; line-height: 20px;'>" . $message . "</p>
+        
     </center>
     
 ";
-header('Location: messageEnvoye.php');
+//header('Location: messageEnvoye.php');
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //Replace the plain text body with one created manually
