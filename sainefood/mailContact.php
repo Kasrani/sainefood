@@ -42,16 +42,16 @@ $mail->Username = "kasrani.mourad@gmail.com";
 //Password to use for SMTP authentication
 $mail->Password = "aqwzsxedc123";
 //Set who the message is to be sent from
-$mail->setFrom('example@gmail.com', 'First Last');
+$mail->setFrom('contact@sainefood.fr', 'Sainefood contact');
 //Set an alternative reply-to address
-$mail->addReplyTo('kasrani.mourad@gmail.com', 'First Last');
+$mail->addReplyTo('kasrani.mourad@gmail.com', 'Sainefood contact');
 //Set who the message is to be sent to
-$mail->addAddress('kasrani.mourad@gmail.com', 'John Doe');
+$mail->addAddress($email, $nomPrenom);
 
 
 //Set the subject line
-$mail->Subject = 'PHPMailer GMail SMTP test';
-$mail->Body = "This Mail Check .Mail send Using SMTP Gmail Server";
+$mail->Subject = 'Sainefood contact';
+$mail->Body = $message;
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //Replace the plain text body with one created manually
@@ -67,8 +67,7 @@ if (!$mail->send()) {
     #if (save_mail($mail)) {
     #    echo "Message saved!";
     #}
-    $message = 'This is a message.';
-
+    
     /*echo "<SCRIPT type='text/javascript'> //not showing me this
         window.location.replace(\"https://sainefood.herokuapp.com/contact.php\");
         alert('$message');
