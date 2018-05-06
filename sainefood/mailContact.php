@@ -55,7 +55,7 @@ $mail->Body = "<center style='max-width:612px; min-height:600px;'>
 <img src='https://sainefood.herokuapp.com/images/mail-en-tete.png' alt='Sainefood'>
 <br><br>
 <h1 style='color:#ff594f; font-size:22px;'>" . $demande . "</h1>
-<p>" . $message . "</p>
+<p style='color:#484848; font-size:14px; text-align:left; line-height: 24px;'>" . $message . "</p>
 </center>";
 //header('Location: messageEnvoye.php');
 //Read an HTML message body from an external file, convert referenced images to embedded,
