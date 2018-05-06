@@ -50,7 +50,7 @@ $mail->addAddress('kasrani.mourad@gmail.com', 'Sainefood contact');
 
 
 //Set the subject line
-$mail->Subject = 'Sainefood contact';
+$mail->Subject = 'Sujet de votre demande';
 $mail->Body = $message;
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
