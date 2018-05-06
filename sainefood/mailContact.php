@@ -51,7 +51,7 @@ $mail->addAddress('kasrani.mourad@gmail.com', 'Sainefood');
 
 //Set the subject line
 $mail->Subject = 'Sujet de votre demande';
-$mail->Body = "<div class=''><img src='https://sainefood.herokuapp.com/images/icon-footer.png' alt='Sainefood'></div> <br><br><br>" . $message;
+$mail->Body = "<div class='text-center'><img src='https://sainefood.herokuapp.com/images/mail-en-tete.png' alt='Sainefood'></div> <br><br><br>" . $message;
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //Replace the plain text body with one created manually
