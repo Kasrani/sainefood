@@ -46,7 +46,7 @@ $mail->setFrom('contact@sainefood.fr', 'Sainefood contact');
 //Set an alternative reply-to address
 $mail->addReplyTo($email, $nomPrenom);
 //Set who the message is to be sent to
-$mail->addAddress('kasrani.mourad@gmail.com', 'Sainefood contact');
+$mail->addAddress('kasrani.mourad@gmail.com', 'Sainefood');
 
 
 //Set the subject line
