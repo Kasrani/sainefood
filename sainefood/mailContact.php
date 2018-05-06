@@ -55,12 +55,7 @@ $mail->Body = "<center style='max-width:612px; min-height:600px;'>
 <img src='https://sainefood.herokuapp.com/images/mail-en-tete.png' alt='Sainefood'>
 <br><br>
 <h1 style='color:#ff594f; font-size:22px;'>" . $demande . "</h1><br><br><br>
-<p style='color:#484848; font-size:14px; text-align:left; line-height: 24px;'>" . $message . "</p><br><br><br>
-<span style='font-size:14px; color:#757575;'>Une question, une remarque ? Contactez notre équipe à </span><a href='contact@saine-food.fr'>contact@saine-food.fr</a><br><br>
-<span style='font-size:14px; color:#757575;'>Cordialement,</span><br><br>
-<b style='font-size:14px; color:#757575;'>L’équipe Sainefood</b>
-<img src='https://sainefood.herokuapp.com/images/mail-pied.png' alt='social'>
-</center>";
+<p style='color:#484848; font-size:14px; text-align:left; line-height: 24px;'>" . $message . "</p><br><br><br><span style='font-size:14px; color:#757575;'>Une question, une remarque ? Contactez notre équipe à</span><a href='contact@saine-food.fr'>contact@saine-food.fr</a><br><br><span style='font-size:14px; color:#757575; text-align:left;'>Cordialement,</span><br><br><b style='font-size:14px; color:#757575; text-align:left;'>L’équipe Sainefood</b><img src='https://sainefood.herokuapp.com/images/mail-pied.png' alt='social'></center>";
 //header('Location: messageEnvoye.php');
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
