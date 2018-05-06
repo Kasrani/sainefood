@@ -74,7 +74,7 @@ if (!$mail->send()) {
         alert('$message');
     </SCRIPT>";
     mysql_close(); */
-    header('Location: contact.php');
+    header('Location: messageEnvoye.php');
 }
 //Section 2: IMAP
 //IMAP commands requires the PHP IMAP Extension, found at: https://php.net/manual/en/imap.setup.php
