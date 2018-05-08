@@ -42,44 +42,38 @@ $mail->Username = "kasrani.mourad@gmail.com";
 //Password to use for SMTP authentication
 $mail->Password = "aqwzsxedc123";
 //Set who the message is to be sent from
-$mail->setFrom('contact@sainefood.fr', 'Sainefood contact');
+$mail->setFrom('example@gmail.com', 'First Last');
 //Set an alternative reply-to address
-$mail->addReplyTo($email, $nomPrenom);
+$mail->addReplyTo('kasrani.mourad@gmail.com', 'First Last');
 //Set who the message is to be sent to
-$mail->addAddress('kasrani.mourad@gmail.com', 'Sainefood');
-$demande = 'Demande de cours de cuisine';
+$mail->addAddress('kasrani.mourad@gmail.com', 'John Doe');
+
 
 //Set the subject line
-$mail->Subject = 'Sujet de votre demande';
-$mail->Body = "<center style='max-width:612px; min-height:600px;'>
-<img src='https://sainefood.herokuapp.com/images/mail-en-tete.png' alt='Sainefood'>
-<br><br>
-<h1 style='color:#ff594f; font-size:22px;'>" . $demande . "</h1><br><br><br>
-<p style='color:#484848; font-size:14px; text-align:left; line-height: 24px;'>" . $message . "</p><br><br><br>
-<img style='max-width:612px;' src='https://sainefood.herokuapp.com/images/mail-pied.png' alt='social'>
-</center>";
-//header('Location: messageEnvoye.php');
+$mail->Subject = 'PHPMailer GMail SMTP test';
+$mail->Body = "This Mail Check .Mail send Using SMTP Gmail Server";
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //Replace the plain text body with one created manually
-$mail->AltBody = 'This is a plain-text message bodyr';
+$mail->AltBody = 'This is a plain-text message body';
+//Attach an image file
 //send the message, check for errors
 if (!$mail->send()) {
-    //echo "Mailer Error: " . $mail->ErrorInfo;
+    echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
-    //echo "Message sent!";
+    echo "Message sent!";
     //Section 2: IMAP
     //Uncomment these to save your message in the 'Sent Mail' folder.
     #if (save_mail($mail)) {
     #    echo "Message saved!";
     #}
-    
-    /*echo "<SCRIPT type='text/javascript'> //not showing me this
+    $message = 'This is a message.';
+
+    echo "<SCRIPT type='text/javascript'> //not showing me this
         window.location.replace(\"https://sainefood.herokuapp.com/contact.php\");
         alert('$message');
     </SCRIPT>";
-    mysql_close(); */
-    header('Location: confirmation-demande-contact.php');
+    mysql_close();
 }
 //Section 2: IMAP
 //IMAP commands requires the PHP IMAP Extension, found at: https://php.net/manual/en/imap.setup.php

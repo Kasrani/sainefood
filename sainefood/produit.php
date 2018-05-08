@@ -7,7 +7,7 @@ if (isset($_GET['nom'])) {
 if (isset($_GET['l'])) {
     $plat = $_GET['l'];
 }
-$maConnexion = mysqli_connect("localhost","root","","sainefood");
+$maConnexion = mysqli_connect("us-cdbr-iron-east-04.cleardb.net","bc79c844c05827","11e8e8f1","heroku_a4f632ea2ba8ee3");
 $query = "SELECT * FROM `plat` WHERE nom='$plat'";
 $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
 $row = mysqli_fetch_assoc($result);
