@@ -97,7 +97,7 @@ session_start();
                     </div><br><br><br><hr id='gestion' class='separateur'>";
                     echo "<br><h4 class='title-sf-4 semibold'>Gestion des plats :</h4>";
                     echo "<br>";
-                            $maConnexion = mysqli_connect("localhost","root","","sainefood");
+                            $maConnexion = mysqli_connect("us-cdbr-iron-east-04.cleardb.net","bc79c844c05827","11e8e8f1","heroku_a4f632ea2ba8ee3");
                             $rec = "SELECT * FROM `plat`";
                             $result = mysqli_query($maConnexion,$rec);
                             $selectOption = null;
