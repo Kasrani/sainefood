@@ -67,13 +67,7 @@ if (!$mail->send()) {
     #if (save_mail($mail)) {
     #    echo "Message saved!";
     #}
-    $message = 'This is a message.';
-
-    echo "<SCRIPT type='text/javascript'> //not showing me this
-        window.location.replace(\"https://sainefood.herokuapp.com/contact.php\");
-        alert('$message');
-    </SCRIPT>";
-    mysql_close();
+    header('Location: confirmation-demande-contact.php');
 }
 //Section 2: IMAP
 //IMAP commands requires the PHP IMAP Extension, found at: https://php.net/manual/en/imap.setup.php
