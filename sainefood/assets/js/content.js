@@ -10,6 +10,12 @@ var element = document.getElementById("myFIXED");
     
 var absolu = document.getElementById("myFIX");
     absolu.classList.add("align-self-end");
+    
+    var absolu = document.getElementById("vide");
+    absolu.classList.add("btn-commender-fixed-down");
+    
+    var absolu = document.getElementById("paypal-btn");
+    absolu.classList.add("paypal-btn-fixed-down");
 
 
 } else {
@@ -37,3 +43,23 @@ function hide() {
     $("#connexion-link").hide()
     $("#inscription-link").show()
 }
+$('td.delete-block').addClass('hover');
+$(function(){
+  $('tr.border-panier').hover(function() {
+    $('td.delete-block').removeClass('hover');
+  }, function() {
+    $('td.delete-block').addClass('hover');
+  })
+})
+
+$('.border-panier .quantite').addClass('hover');
+
+$(function(){
+  $('tr.border-panier').hover(function() {
+    $('.border-panier .quantite').removeClass('hover');
+  }, function() {
+    $('.border-panier .quantite').addClass('hover');
+  })
+})
+
+

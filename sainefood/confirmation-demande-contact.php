@@ -37,12 +37,13 @@
                 </div>
             </div>
         </nav>
-        <div class="bandeau bandeau-contact">
-        </div>
-        <div class="container main-content shadow contact">
+        <div class="container main-content shadow confirmation contact">
             <div class="content">
-                <h2 class="title-sf-2 semibold">Merci pour votre intéret</h2>
-                <h3 class="title-sf-3 text-center">l'equipe sainefood va vous contacter dans les meilleurs delais</h3>
+                <h2 class="title-sf-2 semibold">Confirmaion demande de contact</h2><br>
+                <h4 class="title-sf-4 text-center">Bonjour</h4>
+                <h4 class="title-sf-4 text-center">Votre demande a bien été prise en compte</h4>
+                <h4 class="title-sf-4 text-center">Nous vous recontacterons rappidement pour donner suite à votre demande</h4><br>
+                <h4 class="title-sf-4 text-center semibold red_sf">L'équipe sainefood</h4>
             </div>
         </div>
         <footer>

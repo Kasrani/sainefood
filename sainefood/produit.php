@@ -7,7 +7,7 @@ if (isset($_GET['nom'])) {
 if (isset($_GET['l'])) {
     $plat = $_GET['l'];
 }
-$maConnexion = mysqli_connect("us-cdbr-iron-east-04.cleardb.net","bc79c844c05827","11e8e8f1","heroku_a4f632ea2ba8ee3");
+$maConnexion = mysqli_connect("localhost","root","","sainefood");
 $query = "SELECT * FROM `plat` WHERE nom='$plat'";
 $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
 $row = mysqli_fetch_assoc($result);
@@ -23,6 +23,7 @@ $row = mysqli_fetch_assoc($result);
         <link rel="stylesheet" href="icons/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src='https://www.google.com/recaptcha/api.js'></script>
+        <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 	</head>
 	<body class="dd">
         <div id="header" class="navbar navbar-fixed-top">
@@ -126,7 +127,7 @@ $row = mysqli_fetch_assoc($result);
             <div id="myFIX" class="col-md-4 p-2 commande-block position-relative">
                 <div id="myFIXED" class="main-content p-2 shadow position-fixed">
                     <div class="content">
-                        <h2 class="title-sf-2 semibold">Votre commande</h2>
+                        <h2 class="title-sf-2 semibold">Votre commande</h2><br>
                         <?php
 //session_start();
 include_once("fonctions-panier.php");
@@ -187,52 +188,109 @@ if (!$erreur){
 
 ?>
 
-<form class="panier" method="get" action="produit.php">
-<table>
+<form class="panier d-flex align-items-start flex-column" method="get" action="produit.php">
+<table class="commande mb-auto p-2">
 	<!--<tr>
         <td>Quantité</td>
 		<td>Libellé</td>
 		<td colspan="2">Prix/U</td>
 		<td>Action</td>
 	</tr>-->
-
-
+    <tbody class="commande-block-max">
 	<?php
 	if (creationPanier())
 	{
 	   $nbArticles=count($_SESSION['panier']['libelleProduit']);
 	   if ($nbArticles <= 0)
-	   echo "<tr><td>Votre panier est vide </ td></tr>";
+	   echo "<div id='vide' class='btn-commander' style='width: calc(100% - 60px);'><button class='btn btn-primary btn-block shadow semibold'><a href=''>Votre panier est vide</a></button></div>";
 	   else
 	   {
 	      for ($i=0 ;$i < $nbArticles ; $i++)
 	      {
-	         echo "<tr>";
-            echo "<td><div class='form-group'><input type=\"number\" class='form-control' name=\"q[]\" value=\"".htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."\"/></div></td>";
-	         echo "<td>".htmlspecialchars($_SESSION['panier']['libelleProduit'][$i])."</ td>";
-	         echo "<td colspan='2'>".htmlspecialchars($_SESSION['panier']['prixProduit'][$i])."  €</td>";
-	         echo "<td><a href=\"".htmlspecialchars("produit.php?action=suppression&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">X</a></td>";
+	         echo "<tr class='border-panier'>";
+              echo "<td><div class='quantite'><input style='display:none;' type=\"text\" name=\"q[]\" value=\"".htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."\"/><input type=\"button\" value=\"-\" onclick=\"document.forms[0].elements[".(3 * $i)."].value = parseFloat(document.forms[0].elements[".(3 * $i)."].value) - 1; document.forms[0].submit();\"><input type=\"button\" value=\"+\" onclick=\"document.forms[0].elements[".(3 * $i)."].value = parseFloat(document.forms[0].elements[".(3 * $i)."].value) + 1; document.forms[0].submit();\"></div></td>";
+            echo "<td><span>".htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."</span></td>";
+              echo "<td><span>x</span></td>";
+	         echo "<td class='red_sf'>".htmlspecialchars($_SESSION['panier']['libelleProduit'][$i])."</ td>";
+	         echo "<td class='' style='text-align: right;' colspan='2'>".htmlspecialchars($_SESSION['panier']['prixProduit'][$i])."  €</td>";
+	         echo "<td class='delete-block'><a style='font-size:12px;' class='delete semibold' href=\"".htmlspecialchars("produit.php?action=suppression&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">x</a></td>";
 	         echo "</tr>";
 	      }
-
-	      echo "<tr>";
-	      echo "<td colspan=\"3\">Total (TVA incl.)</td>";
-	      echo "<td colspan=\"1\">". MontantGlobal() . " € </td>";
+	      echo "<tr class='total-panier'>";
+	      echo "<td class='semibold' colspan=\"4\">Total <span>(TVA incl.)</span></td>";
+	      echo "<td class='semibold' colspan=\"1\">". MontantGlobal() . " € </td>";
 	      echo "</tr>";
 	      echo "<tr><td colspan=\"4\">";
-	      echo "<input class='btn btn-link' type=\"submit\" value=\"Calculer\"/>";
+	      //echo "<input class='btn btn-link' type=\"submit\" value=\"Calculer\"/>";
 	      echo "<input type=\"hidden\" name=\"action\" value=\"refresh\"/>";
            echo "<input type=\"hidden\" name=\"nom\" value='" . $row['nom'] . "'/>";
-
 	      echo "</td></tr>";
+           echo "<div id='vide' class='btn-commander' style='width: calc(100% - 60px);'><div class='btn btn-primary btn-block shadow semibold'><a href='#paypal-button'>Finaliser votre commande</div></a></div>";
+           echo "<center id='paypal-btn' class='' style='position: absolute;left: 50%;-webkit-transform: translateX(-50%);transform: translateX(-50%); top:300px;'><div id='paypal-button'></div></center>";
 	   }
+        
 	}
+    
 	?>
+    </tbody>
 </table>
+    
+    <?php
+echo "<a class='btn btn-link' style='width:100%;' href='produit.php?nom=" . $row['nom'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter ce produit à votre panier</a>";
+    
+
+    ?>
 </form>
-                        <?php
-echo "<a class='float-left' href='produit.php?nom=" . $row['nom'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter au panier</a>";
-                        ?>
+                        
+
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<?php
+echo "
+<script>
+    paypal.Button.render({
+
+        env: 'production', // Or 'sandbox'
+        
+        commit: true, // Show a 'Pay Now' button
+
+      style: {
+        color: 'silver',
+        size: 'small',
+      },
+
+        client: {
+            sandbox:    'Afl68vN8kFWHLxiJcpXUDPJ6iPiMcyoHt5Zl_cB7IC4tKhMCRglROaNeQ4dmxLVLeW7ehK3JkCVNRXHE',
+            production: 'AWdrr0AhrLc8S2cPbWJRc3yE7tOs-fo-MUuROSa6oHUufYLHU-1mblbSSoZKHaypdrOVi3Q9yWMa_o76'
+        },
+
+        commit: true, // Show a 'Pay Now' button
+
+        payment: function(data, actions) {
+            return actions.payment.create({
+                payment: {
+                    transactions: [
+                        {
+                            amount: { total: '" . MontantGlobal() . "', currency: 'EUR' }
+                        }
+                    ]
+                }
+            });
+        },
+
+        onAuthorize: function(data, actions) {
+            return actions.payment.execute().then(function(payment) {
+
+                // The payment is complete!
+                // You can now show a confirmation message to the customer
+            });
+        }
+
+    }, '#paypal-button');
+</script>
+";
+    ?>
+
+                        
                     </div>
                 </div>
             </div>

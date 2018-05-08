@@ -180,6 +180,11 @@ div.baseline {
 .main-content.atelier, .main-content.contact {
     margin-top: 145px;
 }
+
+.contact.confirmation {
+    margin-top: 30px!important;
+}
+
 .main-content-2 {
     margin: 75px 0px 30px 0px;
 }
@@ -202,6 +207,9 @@ div.baseline {
     background-image: url(../../images/bg-atelier.png);
 }
 
+.red_sf {
+    color: #FF594F!important;
+}
 .bandeau.bandeau-contact {
     height: 226px;
     background-image: url(../../images/bg-contact.png);
@@ -862,7 +870,7 @@ footer .form-inline .form-control::placeholder {
     color: #FF594F;
 }
 
-.contact .btn-primary {
+.contact .btn-primary, .panier .btn-primary {
     border-radius: 0px!important;
     border-color: #FF594F!important;
     color: #FFF!important;
@@ -872,6 +880,10 @@ footer .form-inline .form-control::placeholder {
     margin-top: 35px;
 }
 
+.panier .btn-primary a {
+    color: #FFF!important;
+    text-decoration: none;
+}
 .modal-body .btn-primary {
     border-radius: 0px!important;
     border-color: #FF594F!important;
@@ -886,11 +898,17 @@ footer .form-inline .form-control::placeholder {
     background-color: #FF594F;
     color: #FFF!important;
 }
-.contact .btn-primary:hover {
+.contact .btn-primary:hover{
     background-color: #FFF;
     border-color: #FF594F!important;
     color: #FF594F!important;
     font-weight: 600;
+}
+.panier .btn-primary {
+    margin-top: auto!important;
+}
+.panier .btn-primary:hover {
+    background-color: #FF594F!important;
 }
 
 /* aspect désactivée */
@@ -924,8 +942,6 @@ footer .form-inline .form-control::placeholder {
     border: none important;
 }
 
-
-
 #nav ul .retour {
     color: #484848!important;
     font-family: 'Maitree', serif;
@@ -956,6 +972,11 @@ footer .form-inline .form-control::placeholder {
     width: inherit; 
 }
 
+.commande {
+    width: 100%;
+    color: #484848!important;
+    font-family: 'Maitree', serif;
+}
 a.user {
     color: #FF594F!important;
 }
@@ -989,7 +1010,6 @@ input[value] {
     margin: 0px 0px 0px 0px!important;
 }
 
-
 #myFIX {
     width: 380px;
 }
@@ -1016,3 +1036,78 @@ input[value] {
     color: #FF594F!important;
 }
 
+.total-panier  {
+    border-top: 1px dashed #CFCBC2;
+}
+.total-panier > td {
+    padding-top: 10px;
+}
+.total-panier > td:last-child, .border-panier > td:last-child {
+    text-align: right;
+}
+.total-panier > td:first-child, .border-panier > td:first-child {
+    text-align: left;
+}
+
+.border-panier > td:nth-of-type(2) {
+    width: 24px;
+}
+
+.total-panier  span {
+    color: #cfcbc2;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.panier .delete {
+    color: #FF594F;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.delete-block {
+    position: absolute;
+    right: 70px;
+    padding: 0px 4px 0px 4px;
+}
+
+.hover {
+    display: none;
+}
+.border-panier .quantite {
+    position: absolute;
+    left: 15px
+}
+.border-panier .quantite input {
+    padding-right: 10px;
+}
+.border-panier .quantite input {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #FF594F!important;
+    font-weight: 600;
+}
+
+.btn-commander {
+    position: absolute;
+    top: 370px;
+}
+
+.btn-commender-fixed-down {
+    top: calc(100% - 60px);
+}
+
+.paypal-btn-fixed-down {
+    top: calc(100% - 125px)!important;
+}
+
+.commande-block-max tr {
+    display:table;
+    width:100%;
+}
+.commande-block-max {
+    display: block;
+    height: 220px!important;
+    overflow: auto;
+}
