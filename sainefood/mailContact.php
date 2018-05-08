@@ -50,8 +50,15 @@ $mail->addAddress('kasrani.mourad@gmail.com', 'John Doe');
 
 
 //Set the subject line
-$mail->Subject = 'PHPMailer GMail SMTP test';
-$mail->Body = "This Mail Check .Mail send Using SMTP Gmail Server";
+$demande = 'Demande de cours de cuisine';
+$mail->Subject = 'Sujet de votre demande';
+$mail->Body = "<center style='max-width:612px; min-height:600px;'>
+<img src='https://sainefood.herokuapp.com/images/mail-en-tete.png' alt='Sainefood'>
+<br><br>
+<h1 style='color:#ff594f; font-size:22px;'>" . $demande . "</h1>
+<p>" . $message . "</p>
+</center>
+    <p style='color:#484848; font-size:14px; text-align:left; line-height: 20px;'>" . $message . "</p>";
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //Replace the plain text body with one created manually
