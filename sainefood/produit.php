@@ -24,6 +24,19 @@ $row = mysqli_fetch_assoc($result);
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src='https://www.google.com/recaptcha/api.js'></script>
         <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+        <link rel="icon" href="favicon.png" type="image/png">
+        <link rel="icon" sizes="32x32" href="favicon-32.png" type="image/png">
+        <link rel="icon" sizes="64x64" href="favicon-64.png" type="image/png">
+        <link rel="icon" sizes="96x96" href="favicon-96.png" type="image/png">
+        <link rel="icon" sizes="196x196" href="favicon-196.png" type="image/png">
+        <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png">
+        <meta name="msapplication-TileImage" content="favicon-144.png">
+        <meta name="msapplication-TileColor" content="#FFFFFF">
 	</head>
 	<body class="dd">
         <div id="header" class="navbar navbar-fixed-top">
