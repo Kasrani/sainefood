@@ -15,7 +15,7 @@ b.green{color:#9DD4BF;}
 #header .container{padding:0!important;}
 #header .d-flex .icon-panier{margin-left:13px;}
 .logo{width:123px;}
-.connecter{font-size:14px;}
+.connecter{font-size:14px; cursor: pointer;}
 div.baseline{font-size:12px;margin-left:10px;display:inline-block;position:relative;height:41px;top:4px;}
 #nav, .nav-2{position:fixed;top:45px;left:0;z-index:1002;background-color:#FFF;width:100%;height:45px;line-height:45px;font-family:'Maitree', serif;cursor:default;}
 .nav-2{top:90px!important;z-index:1001!important;}
@@ -210,3 +210,6 @@ input[value]{color:#C1CAC5 !important;}
 .paypal-btn-fixed-down{top:calc(100% - 125px)!important;}
 .commande-block-max tr{display:table;width:100%;}
 .commande-block-max{display:block;height:220px!important;overflow:auto;}
+.custom-404{background-color:#f5f5f5;}
+.custom-404 h5{color:#bcbcbc;font-family:'Maitree', serif;font-size:18px;}
+.custom-404 .btn-primary{font-family:'Maitree', serif;font-size:16px;background-color:#FF594F!important;border:#FF594F!important;border-radius:20px;}

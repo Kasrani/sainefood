@@ -1,6 +1,12 @@
 <?php
+include("authDB.php");
 // Start the session
 session_start();
+//if  authentication successful 
+if(!$_SESSION['user']){
+   header("location:index.php");
+   die;
+}
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -60,19 +66,19 @@ session_start();
                             <div class='d-flex form-row'>
                                 <div class='mr-auto p-2 form-group col-md-5'>
                                     <label for=''>Nom</label>
-                                    <input type='text' name='nomUp' value='" . $_SESSION['name'] .  "' class='form-control' id='' placeholder=''>
+                                    <input type='text' name='nomUp' value='" . $_SESSION['name'] .  "' class='form-control' placeholder=''>
                                 </div>
                                 <div class='p-2 form-group col-md-5'>
                                     <label for=''>Email</label>
-                                    <input type='email' name='emailUp' value='" . $_SESSION['email'] .  "' class='form-control' id='' placeholder=''>
+                                    <input type='email' name='emailUp' value='" . $_SESSION['email'] .  "' class='form-control' placeholder=''>
                                 </div>
                                 <div class='mr-auto p-2 form-group col-md-5'>
                                     <label for=''>Prenom</label>
-                                    <input type='text' name='prenomUp' value='" . $_SESSION['user'] .  "' class='form-control' id='' placeholder=''>
+                                    <input type='text' name='prenomUp' value='" . $_SESSION['user'] .  "' class='form-control' placeholder=''>
                                 </div>
                                 <div class='p-2 form-group col-md-5'>
                                     <label for=''>Mot de passe</label>
-                                    <input type='password' name='passwordUp' value='" . $_SESSION['pass'] .  "' class='form-control' id='' placeholder=''>
+                                    <input type='password' name='passwordUp' value='" . $_SESSION['pass'] .  "' class='form-control' placeholder=''>
                                 </div>
                             </div>
                             <div class='p-2'>
@@ -88,19 +94,19 @@ session_start();
                             <div class='d-flex form-row'>
                                 <div class='mr-auto p-2 form-group col-md-5'>
                                     <label for=''>Intitulé  *</label>
-                                    <input type='text' name='intitule' class='form-control' id='' placeholder=''>
+                                    <input type='text' name='intitule' class='form-control' placeholder=''>
                                 </div>
                                 <div class='p-2 form-group col-md-5'>
                                     <label for=''>Date  *</label>
-                                    <input type='date' name='date' class='form-control' id='' placeholder=''>
+                                    <input type='date' name='date' class='form-control' placeholder=''>
                                 </div>
                                 <div class='mr-auto  p-2 form-group col-md-5'>
                                     <label for=''>Nombre de participants maximum  *</label>
-                                    <input type='number' name='nbParticipants' value='9' class='form-control' id='' placeholder=''>
+                                    <input type='number' name='nbParticipants' value='9' class='form-control' placeholder=''>
                                 </div>
                                 <div class='ml-auto p-2 form-group col-md-5'>
                                     <label for=''>Détails  *</label>
-                                    <textarea name='details' class='form-control' id='' rows='3'></textarea>
+                                    <textarea name='details' class='form-control' rows='3'></textarea>
                                 </div>
                             </div>
                             <div class='p-2'>
@@ -110,7 +116,6 @@ session_start();
                     </div><br><br><br><hr id='gestion' class='separateur'>";
                     echo "<br><h4 class='title-sf-4 semibold'>Gestion des plats :</h4>";
                     echo "<br>";
-                            $maConnexion = mysqli_connect("us-cdbr-iron-east-04.cleardb.net","bc79c844c05827","11e8e8f1","heroku_a4f632ea2ba8ee3");
                             $rec = "SELECT * FROM `plat`";
                             $result = mysqli_query($maConnexion,$rec);
                             $selectOption = null;
@@ -154,19 +159,19 @@ session_start();
                             <div class='d-flex form-row'>
                                 <div class='mr-auto p-2 form-group col-md-5'>
                                     <label for=''>Nom</label>
-                                    <input type='text' name='nomUp' value='" . $_SESSION['name'] .  "' class='form-control' id='' placeholder=''>
+                                    <input type='text' name='nomUp' value='" . $_SESSION['name'] .  "' class='form-control' placeholder=''>
                                 </div>
                                 <div class='p-2 form-group col-md-5'>
                                     <label for=''>Email</label>
-                                    <input type='email' name='emailUp' value='" . $_SESSION['email'] .  "' class='form-control' id='' placeholder=''>
+                                    <input type='email' name='emailUp' value='" . $_SESSION['email'] .  "' class='form-control' placeholder=''>
                                 </div>
                                 <div class='mr-auto p-2 form-group col-md-5'>
                                     <label for=''>Prenom</label>
-                                    <input type='text' name='prenomUp' value='" . $_SESSION['user'] .  "' class='form-control' id='' placeholder=''>
+                                    <input type='text' name='prenomUp' value='" . $_SESSION['user'] .  "' class='form-control' placeholder=''>
                                 </div>
                                 <div class='p-2 form-group col-md-5'>
                                     <label for=''>Mot de passe</label>
-                                    <input type='password' name='passwordUp' value='" . $_SESSION['pass'] .  "' class='form-control' id='' placeholder=''>
+                                    <input type='password' name='passwordUp' value='" . $_SESSION['pass'] .  "' class='form-control' placeholder=''>
                                 </div>
                             </div>
                             <div class='p-2'>
@@ -218,11 +223,17 @@ session_start();
             </div>
             
         </footer>
-        <script src="assets/js/main.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="assets/js/content.js"></script>
+        <script src="assets/js/main.js"></script>
+        <?php 
+        
+            if (isset($_SESSION['user'])){
+                echo "<script src='assets/js/autoLogout.js'></script>";
+            }
+        ?>
     </body>
     
 </html>

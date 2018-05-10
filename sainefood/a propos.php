@@ -1,3 +1,8 @@
+<?php
+include("authDB.php");
+// Start the session
+session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -29,7 +34,8 @@
                     <div class="p-2 baseline">Cours de cuisine & traiteur <b class="green">bio</b></div>
                 </div>
                 <div class="d-flex">
-                    <div class="ml-auto p-2 connecter">Se connecter</div>
+                    <div class="ml-auto p-2 connecter" data-toggle="modal" data-target="#gridSystemModal"><?php if (isset($_SESSION['user'])){echo "Bonjour ";}else {echo "Se connecter";}?></div>
+                    <a href="account.php" class="user">&nbsp;<?php if (isset($_SESSION['user'])){echo $_SESSION['user'];}   else {echo "";}?></a>
                     <div class="ml-auto p-2"><span class="icon-panier"></span></div>
                 </div>
             </div>
@@ -50,6 +56,58 @@
             </div>
         </nav>
         <div class="bandeau bandeau-atelier">
+        </div>
+        <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <!--<div class="g-signin2" data-onsuccess="onSignIn"></div>-->
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid bd-example-row">
+                            <div id="connexion" class="">
+                                <form action="check.php" method="post">
+                                  <div class="form-group">
+                                      <input type="email" class="form-control" name="email" value="<?php if(!empty($_POST['email'])) { echo htmlspecialchars($_POST['email'], ENT_QUOTES); } ?>" placeholder="Adresse e-mail">
+                                  </div>
+                                  <div class="form-group">
+                                      <input type="password" class="form-control" name="password" value="" id="inputPassword3" placeholder="Password">
+                                  </div>
+                                  <div class="form-group">
+                                      <button type="submit" class="btn btn-primary btn-lg btn-block">Connexion</button>
+                                  </div>
+                                </form>
+                                <span class="text-center"><a href="">Mot de passe oublié ?</a></span>
+                            </div>
+                            <div id="inscription" class="">
+                                <form action="create.php" method="POST">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" name="email" placeholder="Adresse e-mail">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="prenom" placeholder="Prénom">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="nom" placeholder="Nom">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" name="password" placeholder="Créer un mot de passe">
+                                    </div>
+                                    <div class="form-group">
+                                      <button type="submit" class="btn btn-primary btn-lg btn-block">Inscription</button>
+                                  </div>
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <span id="inscription-link" class="text-center">Vous n'avez pas de compte ?&nbsp;<button class="btn btn-link" onclick="show()">Inscription</button></span>
+                        <span id="connexion-link" class="text-center">Vous avez déjà un compte Sainefood ?&nbsp;<button class="btn btn-link" onclick="hide()">Connexion</button></span>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="container main-content shadow atelier">
             <div class="content">
@@ -98,18 +156,24 @@
                 </div>
                 <div class="d-flex p-2 sous-title-footer end-footer">© 2018<br>Tous droits réservés. Mentions légales</div>
             </div>
-           <script type="text/javascript">
-    window._chatlio = window._chatlio||[];
-    !function(){ var t=document.getElementById("chatlio-widget-embed");if(t&&window.ChatlioReact&&_chatlio.init)return void _chatlio.init(t,ChatlioReact);for(var e=function(t){return function(){_chatlio.push([t].concat(arguments)) }},i=["configure","identify","track","show","hide","isShown","isOnline", "page", "open", "showOrHide"],a=0;a<i.length;a++)_chatlio[i[a]]||(_chatlio[i[a]]=e(i[a]));var n=document.createElement("script"),c=document.getElementsByTagName("script")[0];n.id="chatlio-widget-embed",n.src="https://w.chatlio.com/w.chatlio-widget.js",n.async=!0,n.setAttribute("data-embed-version","2.3");
-       n.setAttribute('data-widget-id','c4647cb2-60ec-44fe-6c64-0238350faa1b');
-       c.parentNode.insertBefore(n,c);
-    }();
-</script> 
         </footer>
-        <script src="assets/js/main.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="assets/js/main.js"></script>
+        <?php 
+        
+            if (isset($_SESSION['user'])){
+                echo "<script src='assets/js/autoLogout.js'></script>";
+            }
+        ?>
+        <script type="text/javascript">
+            window._chatlio = window._chatlio||[];
+            !function(){ var t=document.getElementById("chatlio-widget-embed");if(t&&window.ChatlioReact&&_chatlio.init)return void _chatlio.init(t,ChatlioReact);for(var e=function(t){return function(){_chatlio.push([t].concat(arguments)) }},i=["configure","identify","track","show","hide","isShown","isOnline", "page", "open", "showOrHide"],a=0;a<i.length;a++)_chatlio[i[a]]||(_chatlio[i[a]]=e(i[a]));var n=document.createElement("script"),c=document.getElementsByTagName("script")[0];n.id="chatlio-widget-embed",n.src="https://w.chatlio.com/w.chatlio-widget.js",n.async=!0,n.setAttribute("data-embed-version","2.3");
+               n.setAttribute('data-widget-id','c4647cb2-60ec-44fe-6c64-0238350faa1b');
+               c.parentNode.insertBefore(n,c);
+            }();
+        </script> 
     </body>
     
 </html>

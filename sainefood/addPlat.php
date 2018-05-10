@@ -32,7 +32,7 @@ if(isset($_FILES['image'])){
     echo $image;
 
 
-$maConnexion = mysqli_connect("us-cdbr-iron-east-04.cleardb.net","bc79c844c05827","11e8e8f1","heroku_a4f632ea2ba8ee3");
+include("authDB.php");
 
 mysqli_query($maConnexion,"INSERT INTO plat (nom,prix,details,image,ingredients,nutrition,sourcing) VALUES ('$intitule','$prix','$details','$image','$ingredients','$nutrition','$sourcing')") 
 or die(mysqli_error($maConnexion));

@@ -1,6 +1,6 @@
 <?php  //Start the Session
+include("authDB.php");
 session_start();
- require('connect.php');
 //3. If the form is submitted or not.
 //3.1 If the form is submitted
 if (isset($_POST['email']) and isset($_POST['password'])){
@@ -9,7 +9,7 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 //3.1.2 Checking the values are existing in the database or not
 $query = "SELECT * FROM `user` WHERE email='$email' and password='$password'";
-$result = mysqli_query($connection, $query) or die(mysqli_error($connection));
+$result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
 $row = mysqli_fetch_assoc($result);
 $user = $row['prenom'];
 $pass = $row['password'];

@@ -17,7 +17,8 @@
                     <div class="p-2 baseline">Cours de cuisine & traiteur <b class="green">bio</b></div>
                 </div>
                 <div class="d-flex">
-                    <div class="ml-auto p-2 connecter">Se connecter</div>
+                    <div class="ml-auto p-2 connecter" data-toggle="modal" data-target="#gridSystemModal"><?php if (isset($_SESSION['user'])){echo "Bonjour ";}else {echo "Se connecter";}?></div>
+                    <a href="account.php" class="user">&nbsp;<?php if (isset($_SESSION['user'])){echo $_SESSION['user'];}   else {echo "";}?></a>
                     <div class="ml-auto p-2"><span class="icon-panier"></span></div>
                 </div>
             </div>

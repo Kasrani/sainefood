@@ -1,4 +1,5 @@
 <?php
+include("authDB.php");
 $plat = $_GET['selectOption'];
 
 if ($plat <> "choisir un plat") {
