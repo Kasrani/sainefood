@@ -60,6 +60,7 @@ $mail->Body = "<body style='width:612px; margin:auto; text-align:center;'>
 <br><br><br>
 <h3 style='color:#484848;text-align:left;'>Cher(e)" .$prenom. "</h3><br>
 <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>Votre demande d'ouverture de compte est terminée.</p>
+<p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et hendrerit metus, sit amet efficitur ante. Sed euismod dictum nisl, eget congue libero dictum eu. Nunc eget tincidunt tellus, sed porta ante. Fusce feugiat urna maximus sapien varius congue. Pellentesque elementum lorem non sem feugiat, eu gravida erat gravida. Proin lacinia purus ut suscipit imperdiet. Nullam pharetra elementum volutpat.</p>
 </center>
 </body>
 ";
