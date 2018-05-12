@@ -78,7 +78,7 @@ $mail->Body = "<body style='width:612px; margin:auto; text-align:center;'>
 <p style='color:#484848; font-size:14px; text-align:left; line-height: 20px;'>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et hendrerit metus, sit amet efficitur ante. Sed euismod dictum nisl, eget congue libero dictum eu. Nunc eget tincidunt tellus, sed porta ante. Fusce feugiat urna maximus sapien varius congue. Pellentesque elementum lorem non sem feugiat, eu gravida erat gravida. Proin lacinia purus ut suscipit imperdiet. Nullam pharetra elementum volutpat.
 </p>
-<br><br>
+<br>
 <p style='color:#484848; font-size:14px; text-align:left; line-height: 20px;'>A bientôt sur votre Espace Client,</p>
 <br>
 <h3 style='color:#484848; text-align:left;'>L'équipe Sainefood</h3>
@@ -98,13 +98,14 @@ $mail->AltBody = 'This is a plain-text message body';
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
+    header('Location: confirmation-ouverture-compte.php');
     echo "Message sent!";
     //Section 2: IMAP
     //Uncomment these to save your message in the 'Sent Mail' folder.
     #if (save_mail($mail)) {
     #    echo "Message saved!";
     #}
-    header('Location: confirmation-ouverture-compte.php');
+    
 }
 //Section 2: IMAP
 //IMAP commands requires the PHP IMAP Extension, found at: https://php.net/manual/en/imap.setup.php
