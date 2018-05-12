@@ -57,6 +57,8 @@ $mail->Body = "<body style='width:612px; margin:auto; text-align:center;'>
 <img src='https://sainefood.herokuapp.com/images/mail-en-tete.png' alt='Sainefood'>
 <br><br><br>
 <h1 style='color:#ff594f; font-size:22px;'>Confirmation demande d'ouverture de compte</h1>
+<br><br><br>
+<h3 style='color:#484848;text-align:left;'>Cher(e)" .$prenom. "</h3><br>
 </center>
 </body>
 ";
