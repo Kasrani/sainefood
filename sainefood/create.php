@@ -68,8 +68,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et hendrerit m
 <br>
 <h3 style='color:#484848;text-align:left;'>L'équipe Sainefood</h3>
 <br>
-<hr style='border:0.5px dashed #CFCBC2;'>
 <br>
+<a style='color:#FF594F;font-size:18px;text-align:left;text-decoration:none;' href='saine-food.fr'>saine-food.fr</a>
 <br><br>
 </center>
 </body>
