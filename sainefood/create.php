@@ -1,38 +1,25 @@
 <?php
-
 //create.php
-
 $email = null;
 $prenom = null;
 $nom = null;
 $password = null;
-
-    //On récupère les variables 
-    
-	$email=$_POST['email'];
-    $prenom = $_POST['prenom'];
-    $nom = $_POST['nom'];
-    $password = $_POST['password'];
-
-
-
+//On récupère les variables  
+$email=$_POST['email'];
+$prenom = $_POST['prenom'];
+$nom = $_POST['nom'];
+$password = $_POST['password'];
 include("authDB.php");
-
 mysqli_query($maConnexion,"INSERT INTO user (email,prenom,nom,password) VALUES ('$email','$prenom','$nom','$password')") 
 or die(mysqli_error($maConnexion));
-
 //On envoie un mail de cofirmation
-
 date_default_timezone_set('Etc/UTC');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 require 'PHPMailer/src/Exception.php';
-
- 
 //Create a new PHPMailer instance
 $mail = new PHPMailer;
 //Tell PHPMailer to use SMTP
@@ -63,8 +50,6 @@ $mail->setFrom('kasrani.mourad@gmail.com', "L'equipe sainefood");
 $mail->addReplyTo('kasrani.mourad@gmail.com', "L'equipe sainefood");
 //Set who the message is to be sent to
 $mail->addAddress($email, $prenom);
-
-
 //Set the subject line
 $mail->Subject = 'Confirmation de creation de votre compte';
 $mail->Body = "<body style='width:612px; margin:auto; text-align:center;'>
@@ -98,14 +83,13 @@ $mail->AltBody = 'This is a plain-text message body';
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
-    header('Location: confirmation-ouverture-compte.php');
     echo "Message sent!";
     //Section 2: IMAP
     //Uncomment these to save your message in the 'Sent Mail' folder.
     #if (save_mail($mail)) {
     #    echo "Message saved!";
     #}
-    
+    header('Location: confirmation-ouverture-compte.php');
 }
 //Section 2: IMAP
 //IMAP commands requires the PHP IMAP Extension, found at: https://php.net/manual/en/imap.setup.php
@@ -122,6 +106,4 @@ function save_mail($mail)
     imap_close($imapStream);
     return $result;
 }
-
-//Redirection page d'accueil
 ?>
