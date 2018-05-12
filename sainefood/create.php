@@ -66,39 +66,32 @@ $mail->addAddress($email, $prenom);
 
 
 //Set the subject line
-$mail->Subject = 'Confirmation de création de votre compte';
-$mail->Body = "<center style='max-width:612px; min-height:600px;'>
+$mail->Subject = 'Confirmation de creation de votre compte';
+$mail->Body = "<body style='width:612px; margin:auto; text-align:center;'>
+<center>
 <img src='https://sainefood.herokuapp.com/images/mail-en-tete.png' alt='Sainefood'>
-<br><br>
+<br><br><br>
 <h1 style='color:#ff594f; font-size:22px;'>Confirmation demande d'ouverture de compte</h1>
-<h3>Cher(e)" .$prenom. "</h3>
+<br><br><br>
+<h3 style='color:#ff594f; text-align:left;'>Cher(e)" .$prenom. "</h3><br>
 <p style='color:#484848; font-size:14px; text-align:left; line-height: 20px;'>Votre demande d'ouverture de compte est terminée.</p>
 <p style='color:#484848; font-size:14px; text-align:left; line-height: 20px;'>A bientôt sur votre Espace Client,</p>
-<strong>L'équipe Sainefood</strong>
-<br>
+<h2 style='color:#ff594f; text-align:left;'>L'équipe Sainefood</h2>
+<br><br>
 <hr style='border:1px dashed #CFCBC2;max-width:1140px;'>
-<br>
-<a style='color:#FF594F; font-size:18px; text-align:left href='saine-food.fr'></a>
-<br>
+<br><br>
+<a style='color:#FF594F; font-size:18px; text-align:left text-decoration:none;' href='saine-food.fr'>saine-food.fr</a>
+<br><br>
 </center>
-    ";
+</body>
+";
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //Replace the plain text body with one created manually
 $mail->AltBody = 'This is a plain-text message body';
 //Attach an image file
-//send the message, check for errors
-if (!$mail->send()) {
-    echo "Mailer Error: " . $mail->ErrorInfo;
-} else {
-    echo "Message sent!";
-    //Section 2: IMAP
-    //Uncomment these to save your message in the 'Sent Mail' folder.
-    #if (save_mail($mail)) {
-    #    echo "Message saved!";
-    #}
-    header('Location: index.php');
-}
+//redirection
+header('Location: index.php');
 //Section 2: IMAP
 //IMAP commands requires the PHP IMAP Extension, found at: https://php.net/manual/en/imap.setup.php
 //Function to call which uses the PHP imap_*() functions to save messages: https://php.net/manual/en/book.imap.php
