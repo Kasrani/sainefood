@@ -53,18 +53,14 @@ $mail->addAddress($email, $prenom);
 //Set the subject line
 $mail->Subject = 'Confirmation de creation de votre compte';
 $mail->Body = "<body style='width:612px; margin:auto; text-align:center;'>
-<center>
 <img src='https://sainefood.herokuapp.com/images/mail-en-tete.png' alt='Sainefood'>
 <br><br><br>
 <h1 style='color:#ff594f; font-size:22px;'>Confirmation demande d'ouverture de compte</h1>
 <br><br><br>
-<h3 style='color:#484848;text-align:left;'>Cher(e)" .$prenom. "</h3><br>
+<h3 style='color:#484848;text-align:left;'>Cher(e) " .$prenom. "</h3><br>
 <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>Votre demande d'ouverture de compte est terminée.</p>
 <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>A bientôt sur votre Espace Client,</p>
 <h3 style='color:#484848;text-align:left;'>L'équipe Sainefood</h3>
-<hr style='border:0.5px dashed #CFCBC2;'>
-<a style='color:#FF594F;font-size:18px;text-align:left;text-decoration:none;' href='saine-food.fr'>saine-food.fr</a>
-</center>
 </body>
 ";
 //Read an HTML message body from an external file, convert referenced images to embedded,
