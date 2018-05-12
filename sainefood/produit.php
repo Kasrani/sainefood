@@ -57,7 +57,7 @@ $row = mysqli_fetch_assoc($result);
             <div class="container">
                 <div class="row headerow">
                     <ul>
-                        <a href="return.php"><span class="icon-retour"></span><span class="retour">Retour</span></a>
+                        <a href="javascript:history.back()"><span class="icon-retour"></span><span class="retour">Retour</span></a>
                     </ul>
                 </div>
             </div>
