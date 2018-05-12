@@ -63,7 +63,6 @@ $mail->Body = "<body style='width:612px; margin:auto; text-align:center;'>
 <br>
 <br>
 <br>
-<hr style='border:0.5px dashed #CFCBC2;'>
 <br>
 <a style='color:#FF594F;font-size:18px;text-align:left;text-decoration:none;' href='saine-food.fr'>saine-food.fr</a>
 <br><br>
