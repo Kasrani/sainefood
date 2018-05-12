@@ -58,11 +58,11 @@ $mail->Username = "kasrani.mourad@gmail.com";
 //Password to use for SMTP authentication
 $mail->Password = "aqwzsxedc123";
 //Set who the message is to be sent from
-$mail->setFrom('example@gmail.com', "L'equipe sainefood");
+$mail->setFrom('kasrani.mourad@gmail.com', "L'equipe sainefood");
 //Set an alternative reply-to address
 $mail->addReplyTo('kasrani.mourad@gmail.com', "L'equipe sainefood");
 //Set who the message is to be sent to
-$mail->addAddress('kasrani.mourad@gmail.com', 'John Doe');
+$mail->addAddress($email, $prenom);
 
 
 //Set the subject line
@@ -97,7 +97,7 @@ if (!$mail->send()) {
     #if (save_mail($mail)) {
     #    echo "Message saved!";
     #}
-    header('Location: confirmation-demande-contact.php');
+    header('Location: index.php');
 }
 //Section 2: IMAP
 //IMAP commands requires the PHP IMAP Extension, found at: https://php.net/manual/en/imap.setup.php
@@ -116,5 +116,4 @@ function save_mail($mail)
 }
 
 //Redirection page d'accueil
-header('Location: index.php');
 ?>
