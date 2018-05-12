@@ -59,7 +59,6 @@ $mail->Body = "<body style='width:612px; margin:auto; text-align:center;'>
 <br><br><br>
 <h3 style='color:#484848;text-align:left;'>Cher(e) " .$prenom. "</h3><br>
 <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>Votre demande d'ouverture de compte est terminée.</p>
-<p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis sem fringilla, tempus diam id, scelerisque velit. Nullam tincidunt mauris dui, ut porttitor nisi tristique eu. Aenean sed sem quam. Vestibulum scelerisque in mauris a ullamcorper. Donec ultricies lectus in leo sagittis, at sagittis velit laoreet. Etiam tincidunt erat eget mollis blandit. Sed accumsan quam non urna viverra laoreet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fringilla, metus nec posuere pharetra, dui sem viverra eros, nec dignissim risus diam ut diam. Maecenas fringilla imperdiet sem, eu venenatis nisi dictum et. Duis tempor enim a erat commodo, nec volutpat urna sagittis. Curabitur at sem vulputate, varius elit eget, sollicitudin ligula.</p>
 <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>A bientôt sur votre Espace Client,</p>
 <h3 style='color:#484848;text-align:left;'>L'équipe Sainefood</h3>
 </body>
