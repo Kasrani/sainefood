@@ -119,7 +119,7 @@ session_start();
             <div class="content">
                 <div class="cours-cuisne-home">
                     <div class="first-event border-bloc">
-                        <img class="absolute" src="images/Events/event-1.jpg" alt="Sainefood">
+                        <img class="img-fluid" src="images/Events/event-1.jpg" alt="Sainefood">
                     </div>
                     <div class="first-event-description">
                         <h3 class="title-sf-3">Description</h3><hr class="separateur">
