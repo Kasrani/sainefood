@@ -129,7 +129,7 @@ session_start();
                         <div class="sf-button-3"><span>Voir plus</span></div>
                         <button type="button" class="btn btn-outline-primary sf-button-3">je réserve ma place</button>
                     </div>
-                    <h6 class="title-sf-5">Programmes à venir (9)</h3>
+                    <h6 class="title-sf-5">Programmes à venir (9)</h6>
                     <div class="mx-auto my-auto">
                         <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
                             <div class="carousel-inner w-100" role="listbox">

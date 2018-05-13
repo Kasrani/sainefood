@@ -206,7 +206,7 @@ input[value]{color:#C1CAC5 !important;}
 .border-panier .quantite input{padding-right:10px;}
 .border-panier .quantite input{background:none;border:none;cursor:pointer;color:#FF594F!important;font-weight:600;}
 .btn-commander{position:absolute;top:370px;}
-#recipeCarousel{height: 159px;overflow-x:scroll;overflow-y:hidden;}
+#recipeCarousel{height: 159px;overflow:hidden;}
 .btn-commender-fixed-down{top:calc(100% - 60px);}
 .paypal-btn-fixed-down{top:calc(100% - 125px)!important;}
 .commande-block-max tr{display:table;width:100%;}
@@ -224,6 +224,7 @@ input[value]{color:#C1CAC5 !important;}
     .main-content .content{padding:15px 0px;}
     .first-event-description{display:none!important;}
     #nav ul {height: 46px;overflow-x:scroll;overflow-y:hidden;}
-    .main-content{margin:15px 0px;}
+    .main-content{margin:15px;width:345px!important;}
     .border-bloc{border-right:none;}
+    .justify-content-between, .justify-content-start.sf{margin-top: 0px!important;}
 }
