@@ -19,7 +19,7 @@ b.green{color:#9DD4BF;}
 div.baseline{font-size:12px;margin-left:10px;display:inline-block;position:relative;height:41px;top:4px;}
 #nav, .nav-2{position:fixed;top:45px;left:0;z-index:1002;background-color:#FFF;height:45px;line-height:45px;font-family:'Maitree', serif;cursor:default;}
 .nav-2{top:90px!important;z-index:1001!important;}
-#nav ul{position:relative;z-index:1001;margin:0 !important;}
+#nav ul{position:relative;z-index:1001;margin:0 !important;height: 46px;overflow: hidden;}
 #nav li{display:inline-block;margin-right:1em;top:0;position:relative;}
 #nav li > ul{display:none;}
 #nav li a, #nav li span{position:relative;padding-bottom:8px;text-decoration:none;color:#484848;font-size:16px;}
@@ -101,7 +101,7 @@ p.texte{margin-bottom:0!important;}
 .justify-content-start.sf{margin-bottom:30px;}
 .justify-content-end .btn-link, .d-flex .btn-link{font-weight:600!important;color:#FF594F!important;font-family:'Maitree', serif;font-size:14px;margin-top:15px;}
 .d-flex .btn-link{margin:0;padding-right:0;}
-.propos, .propos img{width:500px;height:300px;overflow:hidden;display:inline-block;}
+.propos img{height:300px;display:inline-block;}
 .atelier-description{height:267px;width:580px;}
 .temoignages-avis{height:267px;width:580px;}
 .atelier-description .title-sf-2, .cartouche-description .title-sf-2{margin-left:10px;}
@@ -206,6 +206,7 @@ input[value]{color:#C1CAC5 !important;}
 .border-panier .quantite input{padding-right:10px;}
 .border-panier .quantite input{background:none;border:none;cursor:pointer;color:#FF594F!important;font-weight:600;}
 .btn-commander{position:absolute;top:370px;}
+#recipeCarousel{height: 159px;overflow-x:scroll;overflow-y:hidden;}
 .btn-commender-fixed-down{top:calc(100% - 60px);}
 .paypal-btn-fixed-down{top:calc(100% - 125px)!important;}
 .commande-block-max tr{display:table;width:100%;}
@@ -219,9 +220,10 @@ input[value]{color:#C1CAC5 !important;}
     and (max-device-width : 667px) 
     and (orientation : portrait) {
     .baseline {display:none!important;}
-    #nav ul {height: 46px;overflow: hidden;}
     .first-event{height:auto;margin:0px;}
     .main-content .content{padding:15px 0px;}
+    .first-event-description{display:none!important;}
+    #nav ul {height: 46px;overflow-x:scroll;overflow-y:hidden;}
     .main-content{margin:15px 0px;}
     .border-bloc{border-right:none;}
 }
