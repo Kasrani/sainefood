@@ -73,7 +73,7 @@ p.texte{margin-bottom:0!important;}
 .title-sf-4{font-family:'Maitree', serif;font-size:18px;text-align:left;display:inline-block;}
 .card-prix{text-align:right;float:right;color:#FFF!important;margin-bottom:0.25rem!important;}
 .card-text{color:#9DD4BF;}
-.card-img-overlay{background:rgba(72, 72, 72, 0.7);display:none;height:217px;right:5px!important;top:5px!important;bottom:5px!important;left:5px!important;padding:35px!important;}
+.card-img-overlay{background:rgba(72, 72, 72, 0.7);display:none;height:212px;right:20px!important;top:10px!important;bottom:5px!important;left:20px!important;padding:35px!important;}
 .cartouche-img-overlay{background:rgba(72, 72, 72, 0.7);position:absolute;display:none;width:100%;height:165px;z-index:1111;padding:35px!important;}
 .plats-bloc .cartouche-img-overlay{height:200px!important;}
 .cartouche-img-overlay .btn-produit{padding:25px 15px 15px 15px;}
@@ -102,17 +102,16 @@ p.texte{margin-bottom:0!important;}
 .justify-content-end .btn-link, .d-flex .btn-link{font-weight:600!important;color:#FF594F!important;font-family:'Maitree', serif;font-size:14px;margin-top:15px;}
 .d-flex .btn-link{margin:0;padding-right:0;}
 .propos img{height:300px;display:inline-block;}
-.atelier-description{height:267px;width:580px;}
-.temoignages-avis{height:267px;width:580px;}
+.atelier-description{width:580px;}
 .atelier-description .title-sf-2, .cartouche-description .title-sf-2{margin-left:10px;}
 .atelier-description .title-sf-2, .temoignages-avis .title-sf-2, .cartouche-description .title-sf-2{text-align:left;margin-bottom:0px;padding-left:0px!important;}
-.temoignages-avis p{font-size:28px;line-height:50px;}
+.temoignages-avis p{font-size:26px;}
 .temoignages-avis .icon-avis{color:#9DD4BF;font-size:32px;line-height:2;}
 .atelier-description p, .cartouche-description p{font-size:13px;padding:5px 0 0 10px;line-height:18px;}
-.temoignages, .temoignages img{width:570px;overflow:hidden;display:inline-block;}
-.temoignages.border-bloc{border-left:8px solid #F2F2F2!important;border-right:none!important;}
-.align-items-end.temoignages span{font-family:'Maitree', serif;font-size:24px;color:#9DD4BF;text-align:left;}
-.align-items-end.temoignages span:last-child{color:#BCBCBC!important;}
+.temoignages .border-bloc{border-left:8px solid #F2F2F2!important;border-right:none!important;}
+.align-items-end.temoignages span{font-family:'Maitree', serif;font-size:26px;text-align:left;}
+.align-items-end.temoignages .poste{color:#BCBCBC!important;}
+.align-items-end.temoignages .name{color:#9DD4BF!important;}
 .reco.sf{margin-top:100px;}
 .social{font-family:'Maitree', serif;font-size:40px;}
 .fb, .insta{font-size:37px;color:#BCBCBC;}
@@ -214,6 +213,8 @@ input[value]{color:#C1CAC5 !important;}
 .custom-404{background-color:#f5f5f5;}
 .custom-404 h5{color:#bcbcbc;font-family:'Maitree', serif;font-size:18px;}
 .custom-404 .btn-primary{font-family:'Maitree', serif;font-size:16px;background-color:#FF594F!important;border:#FF594F!important;border-radius:20px;}
+.row{margin-left: 0px!important;margin-right: 0px!important;}
+.card-content{width: 100%;padding: 5px;}
 
 @media only screen 
     and (min-device-width : 375px) 
@@ -226,5 +227,9 @@ input[value]{color:#C1CAC5 !important;}
     #nav ul {height: 46px;overflow-x:scroll;overflow-y:hidden;}
     .main-content{margin:15px;width:345px!important;}
     .border-bloc{border-right:none;}
+    .temoignages .border-bloc{border-left:none!important;}
     .justify-content-between, .justify-content-start.sf{margin-top: 0px!important;}
+    .col-md-4, .col-md-6, .col-md-7{padding-left: 0px!important;padding-right: 0px!important;}
+    .card-img-overlay{background:rgba(72, 72, 72, 0.7);display:none;height:203px;right:5px!important;top:10px!important;bottom:5px!important;left:5px!important;padding:35px!important;}
+    
 }
