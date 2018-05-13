@@ -37,7 +37,7 @@ div.baseline{font-size:12px;margin-left:10px;display:inline-block;position:relat
 .red_sf{color:#FF594F!important;}
 .bandeau.bandeau-contact{height:226px;background-image:url(../../images/bg-contact.png);}
 .cours-cuisne-home{width:100%;height:auto;}
-.first-event{width:685px;height:267px;margin:0 0 5px 0;overflow:hidden;position:relative;display:inline-block;}
+.first-event{height:267px;margin:0 0 5px 0;overflow:hidden;position:relative;display:inline-block;}
 .border-bloc{border-right:8px solid #F2F2F2;}
 img.absolute{top:-24%;width:100%;position:absolute;}
 .first-event-description{height:267px;width:390px;position:absolute;margin-left:auto!important;display:inline-block;}
@@ -215,9 +215,9 @@ input[value]{color:#C1CAC5 !important;}
 .custom-404 .btn-primary{font-family:'Maitree', serif;font-size:16px;background-color:#FF594F!important;border:#FF594F!important;border-radius:20px;}
 
 @media only screen 
-    and (max-device-width: 640px), 
-    only screen and (max-device-width: 667px), 
-    only screen and (max-width: 480px) {
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) 
+    and (orientation : portrait) {
     .baseline {display:none!important;}
     #nav li a, #nav li span{padding-bottom:10px;font-size:13px;}
     #nav li{margin-right:5px;}
