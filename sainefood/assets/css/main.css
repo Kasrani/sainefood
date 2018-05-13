@@ -214,7 +214,10 @@ input[value]{color:#C1CAC5 !important;}
 .custom-404 h5{color:#bcbcbc;font-family:'Maitree', serif;font-size:18px;}
 .custom-404 .btn-primary{font-family:'Maitree', serif;font-size:16px;background-color:#FF594F!important;border:#FF594F!important;border-radius:20px;}
 
-@media screen and (min-width: 200px) and (max-width: 640px) {
+@media only screen 
+    and (max-device-width: 640px), 
+    only screen and (max-device-width: 667px), 
+    only screen and (max-width: 480px) {
     .baseline {display:none!important;}
     #nav li a, #nav li span{padding-bottom:10px;font-size:13px;}
     #nav li{margin-right:5px;}
