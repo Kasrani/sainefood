@@ -288,14 +288,15 @@ session_start();
                         </div>
                     </div>
                     <hr class="separateur">
+                    <h2 class="title-sf-2 semibold title-hidden">L'atelier Sainefood</h2>
                     <div class="d-flex justify-content-start sf row">
                         <div class="propos col-md-6">
                             <img class="img-fluid border-bloc" src="images/sainefood.jpg" alt="Sainefood">   
                         </div>
                         <div class="atelier-description col-md-6">
-                            <h2 class="title-sf-2 semibold">L'atelier Sainefood</h2><hr class="separateur">
+                            <h2 class="title-sf-2 semibold title-block">L'atelier Sainefood</h2><hr class="separateur">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante. Integer luctus tellus vel sem molestie aliquam. Suspendisse in arcu elit. Donec mattis ligula pretium, ultricies odio luctus, dictum turpis. Aenean ligula ex, lacinia at imperdiet nec, lobortis et metus. Pellentesque elementum sapien nisl, in interdum justo dictum ac. Etiam venenatis, dolor nec elementum elementum, augue mi sodales urna, ut laoreet nisi quam nec ligula. Morbi molestie nulla tellus, nec porta lorem laoreet vitae. Nibh, mollis id nibh ac, consectetur molestie urna.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante. Integer luctus tellus vel sem molestie aliquam. Suspendisse in arcu elit. Donec mattis ligula pretium, ultricies odio luctus, dictum turpis. Aenean ligula ex, lacinia at imperdiet nec, lobortis et metus.
                             </p>
                             <div class="d-flex align-items-end">
                                 <button type="button" class="btn btn-link">Voir plus</button>
@@ -335,34 +336,36 @@ session_start();
         </div>
         <footer>
             <div class="container">
-                <div class="d-flex justify-content-between">
-                    <div class="logo-2"><img src="images/Logo-2.svg" alt="Sainefood"></div>
-                    <form class="form-inline">
-                        <div class="form-group mb-2">
+                <div class="d-flex justify-content-between row">
+                    <div class="logo-2 col-md-5"><img src="images/Logo-2.svg" alt="Sainefood"></div>
+                    <form class="form-inline col-md-7">
+                        <div class="form-group">
                             <label>Recevez notre Newsletter !</label>
                             <input type="text" class="form-control" id="staticEmail2" value="" placeholder="Votre e-mail">
+                            <button type="submit" class="btn btn-primary">S’inscrire</button>
                         </div>
-                        <button type="submit" class="btn btn-primary mb-2">S’inscrire</button>
                     </form>
                 </div>
             </div>
-            <hr class="separateur">
+            <div class="container"><hr class="separateur"></div>
             <div class="container">
-                <div class="d-flex justify-content-between">
-                    <div class="icon-footer"><img src="images/icon-footer.png" alt=""></div>
-                    <div class="d-flex flex-column">
+                <div class="d-flex justify-content-between row">
+                    <div class="d-flex flex-column col-md-3">
+                        <div class="icon-footer"><img src="images/icon-footer.png" alt=""></div>
+                    </div>
+                    <div class="d-flex flex-column col-md-3">
                         <div class="p-2 title-groupe-footer">En savoir plus</div>
                         <div class="p-2 sous-title-footer">Concept</div>
                         <div class="p-2 sous-title-footer">Zone de livraison</div>
                         <div class="p-2 sous-title-footer">FAQ</div>
                     </div>
-                    <div class="d-flex flex-column">
+                    <div class="d-flex flex-column col-md-3">
                         <div class="p-2 title-groupe-footer">Nos valeurs</div>
                         <div class="p-2 sous-title-footer">Nos engagements</div>
                         <div class="p-2 sous-title-footer">Blog</div>
                         <div class="p-2 sous-title-footer">Nos partenaires</div>
                     </div>
-                    <div class="d-flex flex-column">
+                    <div class="d-flex flex-column col-md-3">
                         <div class="p-2"><button type="button" class="btn btn-outline-primary btn-footer">Nous contacter</button></div>
                         <div class="p-2 title-groupe-footer">PARIS</div>
                         <div class="p-2 sous-title-footer">42,<br>avenue Versailles,<br> 75012</div>
