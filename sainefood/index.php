@@ -184,90 +184,102 @@ session_start();
                     <div class="producteur">
                         <h2 class="title-sf-2 semibold">Du producteur à l’assiette</h2>
                         <div class="d-flex justify-content-between row">
-                            <div class="card shadow col-md-4">
-                                <div class="card-img-overlay">
-                                    <div class="btn-produit">
-                                        <a class="float-left" href="panier.php?action=ajout&amp;l=LIBELLEPRODUIT&amp;q=QUANTITEPRODUIT&amp;p=PRIXPRODUIT"><span class="icon-add-panier"></span></a>
-                                        <a class="float-right" href="produit.php?nom=Salade+bio"><span class="icon-details"></span></a>
+                            <div class="card col-md-4">
+                                <div class="card-content shadow">
+                                    <div class="card-img-overlay">
+                                        <div class="btn-produit">
+                                            <a class="float-left" href="panier.php?action=ajout&amp;l=LIBELLEPRODUIT&amp;q=QUANTITEPRODUIT&amp;p=PRIXPRODUIT"><span class="icon-add-panier"></span></a>
+                                            <a class="float-right" href="produit.php?nom=Salade+bio"><span class="icon-details"></span></a>
+                                        </div>
+                                    </div>
+                                    <img class="card-img-top" src="images/Plats/plat-1.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title title-sf-4">Seasonal pasta bowl</h4>
+                                        <span class="card-prix title-sf-4">6,90 €</span>
+                                        <p class="card-text">Un plat végétarien généreux..</p>
                                     </div>
                                 </div>
-                                <img class="card-img-top" src="images/Plats/plat-1.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title title-sf-4">Seasonal pasta bowl</h4>
-                                    <span class="card-prix title-sf-4">6,90 €</span>
-                                    <p class="card-text">Un plat végétarien généreux..</p>
+                            </div>
+                            <div class="card col-md-4">
+                                <div class="card-content shadow">
+                                    <div class="card-img-overlay">
+                                        <div class="btn-produit">
+                                            <span class="icon-add-panier"></span>
+                                            <span class="icon-details"></span>
+                                        </div>
+                                    </div>
+                                    <img class="card-img-top" src="images/Plats/plat-2.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title title-sf-4">Linguine IGP al ragu</h4>
+                                        <span class="card-prix title-sf-4">8,95 €</span>
+                                        <p class="card-text">Un plat végétarien généreux..</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="card shadow col-md-4">
-                                <div class="card-img-overlay">
-                                    <div class="btn-produit">
-                                        <span class="icon-add-panier"></span>
-                                        <span class="icon-details"></span>
+                                <div class="card-content shadow">
+                                    <div class="card-img-overlay">
+                                        <div class="btn-produit">
+                                            <span class="icon-add-panier"></span>
+                                            <span class="icon-details"></span>
+                                        </div>
                                     </div>
-                                </div>
-                                <img class="card-img-top" src="images/Plats/plat-2.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title title-sf-4">Linguine IGP al ragu</h4>
-                                    <span class="card-prix title-sf-4">8,95 €</span>
-                                    <p class="card-text">Un plat végétarien généreux..</p>
-                                </div>
-                            </div>
-                            <div class="card shadow col-md-4">
-                                <div class="card-img-overlay">
-                                    <div class="btn-produit">
-                                        <span class="icon-add-panier"></span>
-                                        <span class="icon-details"></span>
+                                    <img class="card-img-top" src="images/Plats/plat-3.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title title-sf-4">Curry veggie</h4>
+                                        <span class="card-prix title-sf-4">6,90 €</span>
+                                        <p class="card-text">Un plat végétarien généreux..</p>
                                     </div>
-                                </div>
-                                <img class="card-img-top" src="images/Plats/plat-3.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title title-sf-4">Curry veggie</h4>
-                                    <span class="card-prix title-sf-4">6,90 €</span>
-                                    <p class="card-text">Un plat végétarien généreux..</p>
                                 </div>
                             </div>
                         </div><!-- d-flex justify-content-between -->
                         <div class="d-flex justify-content-between row">
-                            <div class="card shadow col-md-4">
-                                <div class="card-img-overlay">
-                                    <div class="btn-produit">
-                                        <span class="icon-add-panier"></span>
-                                        <span class="icon-details"></span>
+                            <div class="card col-md-4">
+                                <div class="card-content shadow">
+                                    <div class="card-img-overlay">
+                                        <div class="btn-produit">
+                                            <span class="icon-add-panier"></span>
+                                            <span class="icon-details"></span>
+                                        </div>
                                     </div>
-                                </div>
-                                <img class="card-img-top" src="images/Plats/plat-4.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title title-sf-4">Risotto au potimarron</h4>
-                                    <span class="card-prix title-sf-4">6,90 €</span>
-                                    <p class="card-text">Un plat végétarien généreux..</p>
+                                    <img class="card-img-top" src="images/Plats/plat-4.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title title-sf-4">Risotto au potimarron</h4>
+                                        <span class="card-prix title-sf-4">6,90 €</span>
+                                        <p class="card-text">Un plat végétarien généreux..</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="card shadow col-md-4">
-                                <div class="card-img-overlay">
-                                    <div class="btn-produit">
-                                        <span class="icon-add-panier"></span>
-                                        <span class="icon-details"></span>
+                            <div class="card col-md-4">
+                                <div class="card-content shadow">
+                                    <div class="card-img-overlay">
+                                        <div class="btn-produit">
+                                            <span class="icon-add-panier"></span>
+                                            <span class="icon-details"></span>
+                                        </div>
                                     </div>
-                                </div>
-                                <img class="card-img-top" src="images/Plats/plat-5.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title title-sf-4">Salade healthy</h4>
-                                    <span class="card-prix title-sf-4">8,50 €</span>
-                                    <p class="card-text">Un plat végétarien généreux..</p>
+                                    <img class="card-img-top" src="images/Plats/plat-5.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title title-sf-4">Salade healthy</h4>
+                                        <span class="card-prix title-sf-4">8,50 €</span>
+                                        <p class="card-text">Un plat végétarien généreux..</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="card shadow col-md-4">
-                                <div class="card-img-overlay">
-                                    <div class="btn-produit">
-                                        <span class="icon-add-panier"></span>
-                                        <span class="icon-details"></span>
+                            <div class="card col-md-4">
+                                <div class="card-content shadow">
+                                    <div class="card-img-overlay">
+                                        <div class="btn-produit">
+                                            <span class="icon-add-panier"></span>
+                                            <span class="icon-details"></span>
+                                        </div>
                                     </div>
-                                </div>
-                                <img class="card-img-top" src="images/Plats/plat-6.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title title-sf-4">Salade de choul</h4>
-                                    <span class="card-prix title-sf-4">8,20 €</span>
-                                    <p class="card-text">Un plat végétarien généreux..</p>
+                                    <img class="card-img-top" src="images/Plats/plat-6.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title title-sf-4">Salade de choul</h4>
+                                        <span class="card-prix title-sf-4">8,20 €</span>
+                                        <p class="card-text">Un plat végétarien généreux..</p>
+                                    </div>
                                 </div>
                             </div>
                         </div><!-- d-flex justify-content-between -->
@@ -276,11 +288,11 @@ session_start();
                         </div>
                     </div>
                     <hr class="separateur">
-                    <div class="d-flex justify-content-start sf">
-                        <div class="propos border-bloc">
-                            <img class="" src="images/sainefood.jpg" alt="Sainefood">   
+                    <div class="d-flex justify-content-start sf row">
+                        <div class="propos col-md-6">
+                            <img class="img-fluid border-bloc" src="images/sainefood.jpg" alt="Sainefood">   
                         </div>
-                        <div class="atelier-description">
+                        <div class="atelier-description col-md-6">
                             <h2 class="title-sf-2 semibold">L'atelier Sainefood</h2><hr class="separateur">
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante. Integer luctus tellus vel sem molestie aliquam. Suspendisse in arcu elit. Donec mattis ligula pretium, ultricies odio luctus, dictum turpis. Aenean ligula ex, lacinia at imperdiet nec, lobortis et metus. Pellentesque elementum sapien nisl, in interdum justo dictum ac. Etiam venenatis, dolor nec elementum elementum, augue mi sodales urna, ut laoreet nisi quam nec ligula. Morbi molestie nulla tellus, nec porta lorem laoreet vitae. Nibh, mollis id nibh ac, consectetur molestie urna.
@@ -295,25 +307,23 @@ session_start();
                         <h2 class="title-sf-2 semibold">Zone de Livraison</h2>
                         <img src="images/zone-de-livraison.png" class="img-fluid" alt="zone de livraison">
                     </div>
-                    <div class="d-flex justify-content-start sf reco">
-                        <div class="temoignages-avis">
+                    <div class="d-flex justify-content-start sf reco row">
+                        <div class="temoignages-avis col-md-5">
                             <h2 class="title-sf-2 semibold">Ils recommandent Sainefood</h2><hr class="separateur">
                             <span class="icon-avis"></span>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper.
                             </p>
                             <hr class="separateur">
                             <div class="d-flex align-items-end temoignages">
-                                <span>Chantal Beligat</span>
-                                <span>,&nbsp;</span>
-                                <span>Conseillère en immobilier Doubs</span>
+                                <span class="name">Chantal,&nbsp;<span class="poste">Conseillère en immobilier</span></span>
                             </div>
                         </div>
-                        <div class="temoignages border-bloc">
-                            <img class="" src="images/temoignages.jpg" alt="Sainefood">   
+                        <div class="temoignages col-md-7">
+                            <img class="img-fluid border-bloc" src="images/temoignages.jpg" alt="Sainefood">   
                         </div>
                     </div>
-                    <div class="d-flex">
+                    <div class="d-flex row">
                         <div class="mr-auto p-2 social">Suivez-nous sur les réseaux sociaux !</div>
                         <div class="p-2 fb"><span class="icon-facebook2"></span></div>
                         <div class="p-2 insta"><span class="icon-instagram"></span></div>
