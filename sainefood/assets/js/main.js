@@ -11,3 +11,22 @@ $("#inscription").hide()
 $("#connexion-link").hide()
 $("#inscription-link").show()}$('td.delete-block').addClass('hover');$(function(){$('tr.border-panier').hover(function(){$('td.delete-block').removeClass('hover');},function(){$('td.delete-block').addClass('hover');})})
 $('.border-panier .quantite').addClass('hover');$(function(){$('tr.border-panier').hover(function(){$('.border-panier .quantite').removeClass('hover');},function(){$('.border-panier .quantite').addClass('hover');})})
+
+
+$(document).ready(function() {
+
+    // Detect ios 11_x_x affected  
+    // NEED TO BE UPDATED if new versions are affected
+    var ua = navigator.userAgent,
+    iOS = /iPad|iPhone|iPod/.test(ua),
+    iOS11 = /OS 11_0|OS 11_1|OS 11_2/.test(ua);
+
+    // ios 11 bug caret position
+    if ( iOS && iOS11 ) {
+
+        // Add CSS class to body
+        $("body").addClass("iosBugFixCaret");
+
+    }
+
+});

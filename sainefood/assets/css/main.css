@@ -218,6 +218,7 @@ input[value]{color:#C1CAC5 !important;}
 .title-hidden{display: none;}
 .atelier-description p {line-height: 24px;}
 footer .form-group .form-control + .btn {border: none!important;}
+body.iosBugFixCaret.modal-open { position: fixed; width: 100%; }
 
 @media only screen 
     and (min-device-width : 375px) 
