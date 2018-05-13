@@ -218,7 +218,7 @@ input[value]{color:#C1CAC5 !important;}
 .title-hidden{display: none;}
 .atelier-description p {line-height: 24px;}
 footer .form-group .form-control + .btn {border: none!important;}
-body.iosBugFixCaret.modal-open { position: fixed; width: 100%; }
+body.iosBugFixCaret.modal-open {position: fixed; width: 100%;}
 
 @media only screen 
     and (min-device-width : 375px) 
@@ -228,12 +228,12 @@ body.iosBugFixCaret.modal-open { position: fixed; width: 100%; }
     .first-event{height:auto;margin:0px;}
     .main-content .content{padding:15px 0px;}
     .first-event-description{display:none!important;}
-    #nav ul {height: 46px;overflow-x:scroll;overflow-y:hidden;}
+    #nav ul {height: 46px; overflow-x:auto;overflow-y:auto;}
     .main-content{margin:15px;width:345px!important;}
     .border-bloc{border-right:none;}
     .temoignages .border-bloc{border-left:none!important;}
     .justify-content-between, .justify-content-start.sf{margin-top: 0px!important;}
-    .col-md-4, .col-md-6, .col-md-5, .col-md-7{padding-left: 0px!important;padding-right: 0px!important;}
+    .col-md-3, .col-md-4, .col-md-6, .col-md-5, .col-md-7{padding-left: 0px!important;padding-right: 0px!important;}
     .card-img-overlay{background:rgba(72, 72, 72, 0.7);display:none;height:203px;right:5px!important;top:10px!important;bottom:5px!important;left:5px!important;padding:35px!important;}
     .title-hidden{display:block;}
     .title-block{display:none!important;}

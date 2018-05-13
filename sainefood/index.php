@@ -44,7 +44,6 @@ session_start();
             </div>
         </div>   
         <nav id="nav" class="navbar navbar-fixed-top shadow container-fluid">
-            <div class="container">
                 <div class="row headerow">
                     <ul>
                         <li class="current"><a href="index.php">Home</a></li>
@@ -55,7 +54,6 @@ session_start();
                         <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>
-            </div>
         </nav>
         
         <div class="bandeau">
@@ -290,10 +288,10 @@ session_start();
                     <hr class="separateur">
                     <h2 class="title-sf-2 semibold title-hidden">L'atelier Sainefood</h2>
                     <div class="d-flex justify-content-start sf row">
-                        <div class="propos col-md-6">
+                        <div class="propos col-md-5">
                             <img class="img-fluid border-bloc" src="images/sainefood.jpg" alt="Sainefood">   
                         </div>
-                        <div class="atelier-description col-md-6">
+                        <div class="atelier-description col-md-7">
                             <h2 class="title-sf-2 semibold title-block">L'atelier Sainefood</h2><hr class="separateur">
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante. Integer luctus tellus vel sem molestie aliquam. Suspendisse in arcu elit. Donec mattis ligula pretium, ultricies odio luctus, dictum turpis. Aenean ligula ex, lacinia at imperdiet nec, lobortis et metus.
@@ -347,7 +345,11 @@ session_start();
                     </form>
                 </div>
             </div>
-            <hr class="separateur">
+            <div class="row">
+                <div class="col-md-12">
+                    <hr class="separateur">
+                </div>
+            </div>
             <div class="container">
                 <div class="d-flex justify-content-between row">
                     <div class="d-flex flex-column col-md-3">
