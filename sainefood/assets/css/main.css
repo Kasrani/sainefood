@@ -226,4 +226,6 @@ input[value]{color:#C1CAC5 !important;}
     #nav ul {height: 46px;overflow-x:scroll;overflow-y:hidden;}
     .main-content{margin:15px 0px;}
     .border-bloc{border-right:none;}
+    #recipeCarousel{display:none;}
+    .recipeCarousel{display:none;}
 }
