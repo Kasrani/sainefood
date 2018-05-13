@@ -239,7 +239,7 @@ footer .form-group .form-control + .btn {border: none!important;}
     .title-block + hr{display: none!important;}
     .atelier-description p{text-align: center;}
     .icon-footer{display:none!important;}
-    footer .justify-content-between .logo-2{text-align: center;}
+    footer .justify-content-between .logo-2{text-align: center;margin-bottom: 35px!important;}
     footer .form-group .form-control{display: inline;width: inherit;}
     footer .form-group .form-control + .btn {border:none!important;margin-left:-4px;margin-top:-4px;}
     

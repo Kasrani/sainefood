@@ -347,7 +347,7 @@ session_start();
                     </form>
                 </div>
             </div>
-            <div class="container"><hr class="separateur"></div>
+            <hr class="separateur">
             <div class="container">
                 <div class="d-flex justify-content-between row">
                     <div class="d-flex flex-column col-md-3">
