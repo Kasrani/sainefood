@@ -129,7 +129,7 @@ session_start();
                         <div class="sf-button-3"><span>Voir plus</span></div>
                         <button type="button" class="btn btn-outline-primary sf-button-3">je réserve ma place</button>
                     </div>
-                    <h6 class="title-sf-5 recipeCarousel">Programmes à venir (9)</h3>
+                    <h6 class="title-sf-5">Programmes à venir (9)</h3>
                     <div class="mx-auto my-auto">
                         <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
                             <div class="carousel-inner w-100" role="listbox">
@@ -276,11 +276,11 @@ session_start();
                         </div>
                     </div>
                     <hr class="separateur">
-                    <div class="d-flex justify-content-start sf row">
-                        <div class="propos col-md-6">
-                            <img class="img-fluid" src="images/sainefood.jpg" alt="Sainefood">   
+                    <div class="d-flex justify-content-start sf">
+                        <div class="propos border-bloc">
+                            <img class="" src="images/sainefood.jpg" alt="Sainefood">   
                         </div>
-                        <div class="atelier-description col-md-6">
+                        <div class="atelier-description">
                             <h2 class="title-sf-2 semibold">L'atelier Sainefood</h2><hr class="separateur">
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante. Integer luctus tellus vel sem molestie aliquam. Suspendisse in arcu elit. Donec mattis ligula pretium, ultricies odio luctus, dictum turpis. Aenean ligula ex, lacinia at imperdiet nec, lobortis et metus. Pellentesque elementum sapien nisl, in interdum justo dictum ac. Etiam venenatis, dolor nec elementum elementum, augue mi sodales urna, ut laoreet nisi quam nec ligula. Morbi molestie nulla tellus, nec porta lorem laoreet vitae. Nibh, mollis id nibh ac, consectetur molestie urna.
