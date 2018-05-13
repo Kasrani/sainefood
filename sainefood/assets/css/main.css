@@ -220,7 +220,7 @@ input[value]{color:#C1CAC5 !important;}
     and (orientation : portrait) {
     .baseline {display:none!important;}
     #nav li a, #nav li span{padding-bottom:10px;font-size:11px;}
-    #nav li{margin-right:4px;}
+    #nav li{margin-right:3.8px;}
     .first-event{height:auto;margin:0px;}
     .main-content .content{padding:15px 0px;}
     .main-content{margin:15px 0px;}
