@@ -30,7 +30,7 @@ session_start();
         
 	</head>
 	<body class="dd">
-        <div id="header" class="navbar navbar-fixed-top">
+        <div id="header" class="navbar navbar-fixed-top container-fluid">
             <div class="container">
                 <div class="d-flex">
                     <div class="p-2"><img src="images/Logo.svg" alt="Sainefood"></div>
@@ -43,7 +43,7 @@ session_start();
                 </div>
             </div>
         </div>   
-        <nav id="nav" class="navbar navbar-fixed-top shadow">
+        <nav id="nav" class="navbar navbar-fixed-top shadow container-fluid">
             <div class="container">
                 <div class="row headerow">
                     <ul>
@@ -183,8 +183,8 @@ session_start();
                     <hr class="separateur">
                     <div class="producteur">
                         <h2 class="title-sf-2 semibold">Du producteur à l’assiette</h2>
-                        <div class="d-flex justify-content-between">
-                            <div class="card shadow">
+                        <div class="d-flex justify-content-between row">
+                            <div class="card shadow col-md-4">
                                 <div class="card-img-overlay">
                                     <div class="btn-produit">
                                         <a class="float-left" href="panier.php?action=ajout&amp;l=LIBELLEPRODUIT&amp;q=QUANTITEPRODUIT&amp;p=PRIXPRODUIT"><span class="icon-add-panier"></span></a>
@@ -198,7 +198,7 @@ session_start();
                                     <p class="card-text">Un plat végétarien généreux..</p>
                                 </div>
                             </div>
-                            <div class="card shadow">
+                            <div class="card shadow col-md-4">
                                 <div class="card-img-overlay">
                                     <div class="btn-produit">
                                         <span class="icon-add-panier"></span>
@@ -212,7 +212,7 @@ session_start();
                                     <p class="card-text">Un plat végétarien généreux..</p>
                                 </div>
                             </div>
-                            <div class="card shadow">
+                            <div class="card shadow col-md-4">
                                 <div class="card-img-overlay">
                                     <div class="btn-produit">
                                         <span class="icon-add-panier"></span>
@@ -227,8 +227,8 @@ session_start();
                                 </div>
                             </div>
                         </div><!-- d-flex justify-content-between -->
-                        <div class="d-flex justify-content-between">
-                            <div class="card shadow">
+                        <div class="d-flex justify-content-between row">
+                            <div class="card shadow col-md-4">
                                 <div class="card-img-overlay">
                                     <div class="btn-produit">
                                         <span class="icon-add-panier"></span>
@@ -242,7 +242,7 @@ session_start();
                                     <p class="card-text">Un plat végétarien généreux..</p>
                                 </div>
                             </div>
-                            <div class="card shadow">
+                            <div class="card shadow col-md-4">
                                 <div class="card-img-overlay">
                                     <div class="btn-produit">
                                         <span class="icon-add-panier"></span>
@@ -256,7 +256,7 @@ session_start();
                                     <p class="card-text">Un plat végétarien généreux..</p>
                                 </div>
                             </div>
-                            <div class="card shadow">
+                            <div class="card shadow col-md-4">
                                 <div class="card-img-overlay">
                                     <div class="btn-produit">
                                         <span class="icon-add-panier"></span>

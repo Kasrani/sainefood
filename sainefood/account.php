@@ -34,7 +34,7 @@ if(!$_SESSION['user']){
         <meta name="msapplication-TileColor" content="#FFFFFF">
 	</head>
 	<body class="dd">
-        <div id="header" class="navbar navbar-fixed-top">
+        <div id="header" class="navbar navbar-fixed-top container-fluid">
             <div class="container">
                 <div class="d-flex">
                     <div class="p-2"><img src="images/Logo.svg" alt="Sainefood"></div>
@@ -46,7 +46,7 @@ if(!$_SESSION['user']){
                 </div>
             </div>
         </div>   
-        <nav id="nav" class="navbar navbar-fixed-top shadow">
+        <nav id="nav" class="navbar navbar-fixed-top shadow container-fluid">
             <div class="container">
                 <div class="row headerow">
                     <a href="index.php"><span class="icon-retour"></span><span class="retour">Retour</span></a>
