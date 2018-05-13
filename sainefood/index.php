@@ -44,6 +44,7 @@ session_start();
             </div>
         </div>   
         <nav id="nav" class="navbar navbar-fixed-top shadow container-fluid">
+            <div class="container">
                 <div class="row headerow">
                     <ul>
                         <li class="current"><a href="index.php">Home</a></li>
@@ -54,6 +55,7 @@ session_start();
                         <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>
+            </div>
         </nav>
         
         <div class="bandeau">

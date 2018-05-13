@@ -214,6 +214,7 @@ input[value]{color:#C1CAC5 !important;}
 .custom-404 h5{color:#bcbcbc;font-family:'Maitree', serif;font-size:18px;}
 .custom-404 .btn-primary{font-family:'Maitree', serif;font-size:16px;background-color:#FF594F!important;border:#FF594F!important;border-radius:20px;}
 .row{margin-left: 0px!important;margin-right: 0px!important;}
+#nav .row{margin-left: -15px!important;margin-right: -15px!important;}
 .card-content{width: 100%;padding: 5px;}
 .title-hidden{display: none;}
 .atelier-description p {line-height: 24px;}
