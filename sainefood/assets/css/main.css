@@ -219,7 +219,7 @@ input[value]{color:#C1CAC5 !important;}
     and (max-device-width : 667px) 
     and (orientation : portrait) {
     .baseline {display:none!important;}
-    #nav li a, #nav li span{padding-bottom:10px;font-size:10px;}
+    #nav li a, #nav li span{padding-bottom:10px;font-size:11px;}
     #nav li{margin-right:4px;}
     .first-event{height:auto;margin:0px;}
     .main-content .content{padding:15px 0px;}
