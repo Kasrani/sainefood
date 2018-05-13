@@ -41,5 +41,15 @@ $(function()
         });
 
         timeChecker();
-    }  
+    }
+    if(typeof(Storage) !== "undefined") 
+    {
+        $(document).touchmove(function()
+        {
+            var timeStamp = new Date();
+            sessionStorage.setItem("lastTimeStamp",timeStamp);
+        });
+
+        timeChecker();
+    } 
 });
