@@ -1,4 +1,12 @@
-/*
+
+/**
+ * Document   : Auto Logout Script
+ * Author     : josephtinsley
+ * Description: Force a logout automatically after a certain amount of time using HTML/JQuery/PHP. 
+ * http://twitter.com/josephtinsley 
+*/
+
+
 $(function()
 {
 
@@ -18,7 +26,7 @@ $(function()
         var currentTime = new Date();
         var pastTime    = new Date(timeString);
         var timeDiff    = currentTime - pastTime;
-        var minPast     = Math.floor( (timeDiff/30000) ); 
+        var minPast     = Math.floor( (timeDiff/60000) ); 
 
         if( minPast > maxMinutes)
         {
@@ -42,5 +50,6 @@ $(function()
 
         timeChecker();
     }  
-});
-*/
+});//END JQUERY
+
+
