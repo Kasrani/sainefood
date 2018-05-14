@@ -186,34 +186,40 @@ if(!$_SESSION['user']){
         </div>
         <footer>
             <div class="container">
-                <div class="d-flex justify-content-between">
-                    <div class="logo-2"><img src="images/Logo-2.svg" alt="Sainefood"></div>
-                    <form class="form-inline">
-                        <div class="form-group mb-2">
+                <div class="d-flex justify-content-between row">
+                    <div class="logo-2 col-md-5"><img src="images/Logo-2.svg" alt="Sainefood"></div>
+                    <form class="form-inline col-md-7">
+                        <div class="form-group">
                             <label>Recevez notre Newsletter !</label>
                             <input type="text" class="form-control" id="staticEmail2" value="" placeholder="Votre e-mail">
+                            <button type="submit" class="btn btn-primary">S’inscrire</button>
                         </div>
-                        <button type="submit" class="btn btn-primary mb-2">S’inscrire</button>
                     </form>
                 </div>
             </div>
-            <hr class="separateur">
+            <div class="row">
+                <div class="col-md-12">
+                    <hr class="separateur">
+                </div>
+            </div>
             <div class="container">
-                <div class="d-flex justify-content-between">
-                    <div class="icon-footer"><img src="images/icon-footer.png" alt=""></div>
-                    <div class="d-flex flex-column">
+                <div class="d-flex justify-content-between row">
+                    <div class="d-flex flex-column col-md-3">
+                        <div class="icon-footer"><img src="images/icon-footer.png" alt=""></div>
+                    </div>
+                    <div class="d-flex flex-column col-md-3">
                         <div class="p-2 title-groupe-footer">En savoir plus</div>
                         <div class="p-2 sous-title-footer">Concept</div>
                         <div class="p-2 sous-title-footer">Zone de livraison</div>
                         <div class="p-2 sous-title-footer">FAQ</div>
                     </div>
-                    <div class="d-flex flex-column">
+                    <div class="d-flex flex-column col-md-3">
                         <div class="p-2 title-groupe-footer">Nos valeurs</div>
                         <div class="p-2 sous-title-footer">Nos engagements</div>
                         <div class="p-2 sous-title-footer">Blog</div>
                         <div class="p-2 sous-title-footer">Nos partenaires</div>
                     </div>
-                    <div class="d-flex flex-column">
+                    <div class="d-flex flex-column col-md-3">
                         <div class="p-2"><button type="button" class="btn btn-outline-primary btn-footer">Nous contacter</button></div>
                         <div class="p-2 title-groupe-footer">PARIS</div>
                         <div class="p-2 sous-title-footer">42,<br>avenue Versailles,<br> 75012</div>
@@ -221,7 +227,6 @@ if(!$_SESSION['user']){
                 </div>
                 <div class="d-flex p-2 sous-title-footer end-footer">© 2018<br>Tous droits réservés. Mentions légales</div>
             </div>
-            
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
