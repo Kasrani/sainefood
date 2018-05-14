@@ -216,7 +216,7 @@ session_start();
                                     </div>
                                 </div>
                             </div>
-                            <div class="card shadow col-md-4">
+                            <div class="card col-md-4">
                                 <div class="card-content shadow">
                                     <div class="card-img-overlay">
                                         <div class="btn-produit">
