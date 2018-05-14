@@ -169,7 +169,7 @@ session_start();
         <script src="assets/js/main.js"></script>
         <?php 
         
-            if (isset($_SESSION['user'])){
+            if (isset($_SESSION['user']) and (window.innerWidth > 960)){
                 echo "<script src='assets/js/autoLogout.js'></script>";
             }
         ?>
