@@ -49,7 +49,9 @@ if(!$_SESSION['user']){
         <nav id="nav" class="navbar navbar-fixed-top shadow container-fluid">
             <div class="container">
                 <div class="row headerow">
-                    <a href="index.php"><span class="icon-retour"></span><span class="retour">Retour</span></a>
+                    <ul>
+                        <a href="javascript:history.back()"><span class="icon-retour"></span><span class="retour">Retour</span></a>
+                    </ul>
                 </div>
             </div>
         </nav>

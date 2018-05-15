@@ -1,3 +1,8 @@
+<?php
+include("authDB.php");
+// Start the session
+session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -122,161 +127,40 @@
         </div>
         <div class="container main-content main-content-2 shadow">
             <div class="content">
-                <div class="cartouche-bloc">
-                    <div class="d-flex justify-content-start">
-                        <div class="cartouche border-bloc">
-                            <div class="cartouche-img-overlay">
-                                <div class="btn-produit">
-                                    <span class="icon-add-panier"></span>
-                                    <span class="icon-details"></span>
+                <?php
+                $rec = "SELECT * FROM `event`";
+                $result = mysqli_query($maConnexion,$rec);
+
+                while ($row = $result->fetch_assoc()) {
+                    echo "
+                    <div class='cartouche-bloc'>
+                    <div class='d-flex justify-content-start'>
+                        <div class='cartouche border-bloc'>
+                            <div class='cartouche-img-overlay'>
+                                <div class='btn-produit'>
+                                    <a class='float-left' href='#'><span class='icon-add-panier'></span></a>
+                                    <a class='float-right' href='produit.php?nom=" . $row['nom'] . "'><span class='icon-details'></span></a>
                                 </div>
                             </div>
-                            <img class="" src="images/Events/event-1.jpg" alt="Sainefood">   
+                            <img class='img-fluid' src='images/Events/" . $row['image'] . "' alt='Sainefood'>   
                         </div>
-                        <div class="cartouche-description">
-                            <h2 class="title-sf-2 semibold">Cuisiner cru en hiver</h2><hr class="separateur">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante.
-                            </p>
-                            <div class="d-flex">
-                                <div class="mr-auto p-2"><span class="icon-agenda"></span><span class="semibold">Sam, 10 février</span></div>
-                                <div class="p-2"><button type="button" class="btn btn-link">Voir plus </button></div>
-                                <div class="p-2"><span class="icon-right"></span></div>
+                        <div class='cartouche-description'>
+                            <h2 class='title-sf-2 semibold'>" . $row['nom'] . "</h2><hr class='separateur'>
+                            <p>"
+                                    . $row['details'] .
+                            "</p>
+                            <div class='d-flex'>
+                                <div class='mr-auto p-2'><span class='icon-agenda'></span><span class='semibold'>" . $row['date'] . "</span></div>
+                                <div class='p-2'><button type='button' class='btn btn-link'>Voir plus </button></div>
+                                <div class='p-2'><span class='icon-right'></span></div>
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex p-2 place-disponible-niv-1 text-center border-bloc"><span class="text-center">Plus que 5 places disponible</span></div>
+                    <div class='d-flex p-2 place-disponible-niv-1 text-center border-bloc'><span class='text-center'>Plus que " . $row['disponibilite'] . " places disponible</span></div>
                 </div>
-                
-                <div class="cartouche-bloc">
-                    <div class="d-flex justify-content-start">
-                        <div class="cartouche border-bloc">
-                            <div class="cartouche-img-overlay">
-                                <div class="btn-produit">
-                                    <span class="icon-add-panier"></span>
-                                    <span class="icon-details"></span>
-                                </div>
-                            </div>
-                            <img class="" src="images/Events/event-2.jpg" alt="Sainefood">   
-                        </div>
-                        <div class="cartouche-description">
-                            <h2 class="title-sf-2 semibold">Protéines végétales</h2><hr class="separateur">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante.
-                            </p>
-                            <div class="d-flex">
-                                <div class="mr-auto p-2"><span class="icon-agenda"></span><span class="semibold">Dim, 18 février</span></div>
-                                <div class="p-2"><button type="button" class="btn btn-link">Voir plus </button></div>
-                                <div class="p-2"><span class="icon-right"></span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex p-2 place-disponible-niv-1 text-center border-bloc"><span class="text-center">Plus que 7 places disponible</span></div>
-                </div>
-                
-                <div class="cartouche-bloc">
-                    <div class="d-flex justify-content-start">
-                        <div class="cartouche border-bloc">
-                            <div class="cartouche-img-overlay">
-                                <div class="btn-produit">
-                                    <span class="icon-add-panier"></span>
-                                    <span class="icon-details"></span>
-                                </div>
-                            </div>
-                            <img class="" src="images/Events/event-3.jpg" alt="Sainefood">   
-                        </div>
-                        <div class="cartouche-description">
-                            <h2 class="title-sf-2 semibold">Pâtisserie bio, végétale et sans gluten</h2><hr class="separateur">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante.
-                            </p>
-                            <div class="d-flex">
-                                <div class="mr-auto p-2"><span class="icon-agenda"></span><span class="semibold">Sam, 24 février</span></div>
-                                <div class="p-2"><button type="button" class="btn btn-link">Voir plus </button></div>
-                                <div class="p-2"><span class="icon-right"></span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex p-2 place-disponible-niv-1 text-center border-bloc grey-bloc"><span class="text-center">Plus que 9 places disponible</span></div>
-                </div>
-                
-                <div class="cartouche-bloc">
-                    <div class="d-flex justify-content-start">
-                        <div class="cartouche border-bloc">
-                            <div class="cartouche-img-overlay">
-                                <div class="btn-produit">
-                                    <span class="icon-add-panier"></span>
-                                    <span class="icon-details"></span>
-                                </div>
-                            </div>
-                            <img class="" src="images/Events/event-4.jpg" alt="Sainefood">   
-                        </div>
-                        <div class="cartouche-description">
-                            <h2 class="title-sf-2 semibold">Brunch « feel good »</h2><hr class="separateur">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante.
-                            </p>
-                            <div class="d-flex">
-                                <div class="mr-auto p-2"><span class="icon-agenda"></span><span class="semibold">Dim, 25 février</span></div>
-                                <div class="p-2"><button type="button" class="btn btn-link">Voir plus </button></div>
-                                <div class="p-2"><span class="icon-right"></span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex p-2 place-disponible-niv-1 text-center border-bloc grey-bloc"><span class="text-center">Plus que 9 places disponible</span></div>
-                </div>
-                
-                <div class="cartouche-bloc">
-                    <div class="d-flex justify-content-start">
-                        <div class="cartouche border-bloc">
-                            <div class="cartouche-img-overlay">
-                                <div class="btn-produit">
-                                    <span class="icon-add-panier"></span>
-                                    <span class="icon-details"></span>
-                                </div>
-                            </div>
-                            <img class="" src="images/Events/event-5.jpg" alt="Sainefood">   
-                        </div>
-                        <div class="cartouche-description">
-                            <h2 class="title-sf-2 semibold">Fromages véganes maison</h2><hr class="separateur">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante.
-                            </p>
-                            <div class="d-flex">
-                                <div class="mr-auto p-2"><span class="icon-agenda"></span><span class="semibold">Dim, 4 mars</span></div>
-                                <div class="p-2"><button type="button" class="btn btn-link">Voir plus </button></div>
-                                <div class="p-2"><span class="icon-right"></span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex p-2 place-disponible-niv-1 text-center border-bloc grey-bloc"><span class="text-center">Plus que 9 places disponible</span></div>
-                </div>
-                
-                <div class="cartouche-bloc">
-                    <div class="d-flex justify-content-start">
-                        <div class="cartouche border-bloc">
-                            <div class="cartouche-img-overlay">
-                                <div class="btn-produit">
-                                    <span class="icon-add-panier"></span>
-                                    <span class="icon-details"></span>
-                                </div>
-                            </div>
-                            <img class="" src="images/Events/event-6.jpg" alt="Sainefood">   
-                        </div>
-                        <div class="cartouche-description">
-                            <h2 class="title-sf-2 semibold">Brunch spécial hiver</h2><hr class="separateur">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante.
-                            </p>
-                            <div class="d-flex">
-                                <div class="mr-auto p-2"><span class="icon-agenda"></span><span class="semibold">Sam, 10 mars</span></div>
-                                <div class="p-2"><button type="button" class="btn btn-link">Voir plus </button></div>
-                                <div class="p-2"><span class="icon-right"></span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex p-2 place-disponible-niv-1 text-center border-bloc grey-bloc"><span class="text-center">Plus que 9 places disponible</span></div>
-                </div>
+                    ";
+                }
+                ?>
             </div>
         </div>
         <footer>
@@ -327,12 +211,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="assets/js/main.js"></script>
-        <?php 
-        
-            if (isset($_SESSION['user']) and (window.innerWidth > 960)){
-                echo "<script src='assets/js/autoLogout.js'></script>";
-            }
-        ?>
         <script type="text/javascript">
             window._chatlio = window._chatlio||[];
             !function(){ var t=document.getElementById("chatlio-widget-embed");if(t&&window.ChatlioReact&&_chatlio.init)return void _chatlio.init(t,ChatlioReact);for(var e=function(t){return function(){_chatlio.push([t].concat(arguments)) }},i=["configure","identify","track","show","hide","isShown","isOnline", "page", "open", "showOrHide"],a=0;a<i.length;a++)_chatlio[i[a]]||(_chatlio[i[a]]=e(i[a]));var n=document.createElement("script"),c=document.getElementsByTagName("script")[0];n.id="chatlio-widget-embed",n.src="https://w.chatlio.com/w.chatlio-widget.js",n.async=!0,n.setAttribute("data-embed-version","2.3");

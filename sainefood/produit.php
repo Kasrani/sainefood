@@ -47,7 +47,7 @@ $row = mysqli_fetch_assoc($result);
         <meta name="msapplication-TileColor" content="#FFFFFF">
 	</head>
 	<body class="dd">
-        <div id="header" class="navbar navbar-fixed-top">
+        <div id="header" class="navbar navbar-fixed-top container-fluid">
             <div class="container">
                 <div class="d-flex">
                     <div class="p-2"><img src="images/Logo.svg" alt="Sainefood"></div>
@@ -112,7 +112,7 @@ $row = mysqli_fetch_assoc($result);
                 </div>
             </div>
         </div>  
-        <nav id="nav" class="navbar navbar-fixed-top shadow">
+        <nav id="nav" class="navbar navbar-fixed-top shadow container-fluid">
             <div class="container">
                 <div class="row headerow">
                     <ul>
@@ -418,12 +418,6 @@ echo "
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="assets/js/content.js"></script>
         <script src="assets/js/main.js"></script>
-        <?php 
-        
-            if (isset($_SESSION['user']) and (window.innerWidth > 960)){
-                echo "<script src='assets/js/autoLogout.js'></script>";
-            }
-        ?>
         <script type="text/javascript">
             window._chatlio = window._chatlio||[];
             !function(){ var t=document.getElementById("chatlio-widget-embed");if(t&&window.ChatlioReact&&_chatlio.init)return void _chatlio.init(t,ChatlioReact);for(var e=function(t){return function(){_chatlio.push([t].concat(arguments)) }},i=["configure","identify","track","show","hide","isShown","isOnline", "page", "open", "showOrHide"],a=0;a<i.length;a++)_chatlio[i[a]]||(_chatlio[i[a]]=e(i[a]));var n=document.createElement("script"),c=document.getElementsByTagName("script")[0];n.id="chatlio-widget-embed",n.src="https://w.chatlio.com/w.chatlio-widget.js",n.async=!0,n.setAttribute("data-embed-version","2.3");

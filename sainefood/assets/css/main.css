@@ -27,6 +27,7 @@ div.baseline{font-size:12px;margin-left:10px;display:inline-block;position:relat
 #nav li:hover a, #nav li:hover span{border-bottom:2px solid #FF594F;}
 #nav li.active a, #nav li.active span{background:#C1CAC5;color:#fff;}
 #nav li.current a{border-bottom:2px solid #FF594F;font-weight:600;color:#FF594F;}
+#nav a{text-decoration: none;}
 .main-content{margin:30px 0px;padding:0px;position:relative;z-index:1;background-color:#FFF;}
 .main-content.atelier, .main-content.contact{margin-top:145px;}
 .contact.confirmation{margin-top:30px!important;}

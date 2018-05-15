@@ -121,7 +121,7 @@ session_start();
             <div class="content">
                 <h2 class="title-sf-2 semibold">L'atelier Sainefood</h2>
                 <hr class="separateur">
-                <img src="images/atelier-sainefood.png" alt="l'atelier sainefood">
+                <img class="img-fluid" src="images/atelier-sainefood.png" alt="l'atelier sainefood">
                 <p class="text-center">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante. Integer luctus tellus vel sem molestie aliquam. Suspendisse in arcu elit. Donec mattis ligula pretium, ultricies odio luctus, dictum turpis. Aenean ligula ex, lacinia at imperdiet nec, lobortis et metus. Pellentesque elementum sapien nisl, in interdum justo dictum ac. Etiam venenatis, dolor nec elementum elementum, augue mi sodales urna, ut laoreet nisi quam nec ligula. Morbi molestie nulla tellus, nec porta lorem laoreet vitae. Nibh, mollis id nibh ac, consectetur molestie urna.
                 </p>

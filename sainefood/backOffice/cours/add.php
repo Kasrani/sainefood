@@ -13,6 +13,11 @@ echo "<br><br>
                                     <input type='date' name='date' class='form-control' placeholder=''>
                                 </div>
                                 <div class='mr-auto  p-2 form-group col-md-5'>
+                                    <br>
+                                    <div class='custom-file mb-4'>
+                                        <input type='file' name='imageCours' class='custom-file-input' id='customFileCours'>
+                                        <label class='custom-file-label' for='customFileCours'>Votre image</label>
+                                    </div>
                                     <label for=''>Nombre de participants maximum  *</label>
                                     <input type='number' name='nbParticipants' value='9' class='form-control' placeholder=''>
                                 </div>
