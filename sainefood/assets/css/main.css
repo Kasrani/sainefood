@@ -50,7 +50,7 @@ hr.separateur{margin-top:10px;margin-bottom:5px;border:1px dashed #CFCBC2;max-wi
 .row-equal > div[class*='col-']{display:flex;flex:1 0 auto;}
 .row-equal .card{width:100%;}
 .carousel{height: 172px;}
-.carousel-inner{height: 172px;}
+.carousel-inner{height: 172px;overflow-x:auto!important;overflow-y:hidden!important;}
 .carousel-inner>.row-equal.active,
 .carousel-inner>.row-equal.next,
 .carousel-inner>.row-equal.prev{display:block;}
@@ -234,12 +234,6 @@ carousel-info{display: inline-block;}
     width: 0px;
 }
 
-#cadredemo {
-	height: 400px;
-	overflow: auto;
-}
-
-
 @media only screen 
     and (min-device-width : 375px) 
     and (max-device-width : 667px) 
@@ -248,9 +242,9 @@ carousel-info{display: inline-block;}
     .first-event{height:auto;margin:0px;}
     .main-content .content{padding:15px 0px;}
     .first-event-description{display:none!important;}
-    #nav ul {overflow-x:auto;overflow-y:auto;}
+    #nav ul {overflow-x:auto;overflow-y:hidden;}
     .carousel-control-next{display: none!important;}
-    .carousel-inner{height: 159px;overflow-x:auto;overflow-y:hidden;}
+    .carousel-inner{height: 172px;overflow-x:auto;overflow-y:hidden;}
     .main-content{margin:15px;width:345px!important;}
     .border-bloc{border-right:none;}
     .temoignages .border-bloc{border-left:none!important;}
