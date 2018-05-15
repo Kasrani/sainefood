@@ -222,6 +222,7 @@ footer .form-group .form-control + .btn {border: none!important;}
 body.iosBugFixCaret.modal-open {position: fixed; width: 100%;}
 .carousel-inner {overflow: visible!important;}
 carousel-info{display: inline-block;}
+.carousel{height: 172px;}
 
 .scroll {
   white-space: nowrap;

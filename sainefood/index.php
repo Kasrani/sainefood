@@ -139,7 +139,7 @@ session_start();
                     </div>
                     <h6 class="title-sf-5">Programmes à venir (9)</h6>
                     <div class="mx-auto my-auto">
-                        <div id="" class="carousel slide w-100">
+                        <div id="" class="carousel slide w-100 scroll">
                             <div class="carousel-inner w-100 scroll">
                                 <a class="carousel-control-prev active" href="#recipeCarousel" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
