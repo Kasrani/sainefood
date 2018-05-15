@@ -19,7 +19,7 @@ b.green{color:#9DD4BF;}
 div.baseline{font-size:12px;margin-left:10px;display:inline-block;position:relative;height:41px;top:4px;}
 #nav, .nav-2{position:fixed;top:45px;left:0;z-index:1002;background-color:#FFF;height:45px;line-height:45px;font-family:'Maitree', serif;cursor:default;}
 .nav-2{top:90px!important;z-index:1001!important;}
-#nav ul{position:relative;z-index:1001;margin:0 !important;height: 46px;overflow: hidden;}
+#nav ul{position:relative;z-index:1001;margin:0 !important;}
 #nav li{display:inline-block;margin-right:1em;top:0;position:relative;}
 #nav li > ul{display:none;}
 #nav li a, #nav li span{position:relative;padding-bottom:8px;text-decoration:none;color:#484848;font-size:16px;}
@@ -229,6 +229,11 @@ carousel-info{display: inline-block;}
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar; }
 
+.scroll::-webkit-scrollbar{
+    width: 0px;
+}
+
+
 @media only screen 
     and (min-device-width : 375px) 
     and (max-device-width : 667px) 
@@ -237,7 +242,8 @@ carousel-info{display: inline-block;}
     .first-event{height:auto;margin:0px;}
     .main-content .content{padding:15px 0px;}
     .first-event-description{display:none!important;}
-    #nav ul {height: 46px; overflow-x:auto;overflow-y:auto;}
+    #nav ul {overflow-x:auto;overflow-y:auto;}
+    #nav .row{margin-top: 16px!important;}
     #recipeCarousel{height: 159px;overflow-x:auto;overflow-y:hidden;}
     .carousel-inner{height: 159px;overflow-x:auto;overflow-y:hidden;}
     .main-content{margin:15px;width:345px!important;}

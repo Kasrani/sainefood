@@ -58,7 +58,7 @@ session_start();
         <nav id="nav" class="navbar navbar-fixed-top shadow container-fluid">
             <div class="container">
                 <div class="row headerow scroll">
-                    <ul>
+                    <ul class="scroll">
                         <li class="current"><a href="index.php">Home</a></li>
                         <li><a href="a%20propos.php">À propos</a></li>
                         <li><a href="cours-cuisine.php">Cours de cuisine</a></li>
