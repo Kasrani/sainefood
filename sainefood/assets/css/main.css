@@ -243,7 +243,6 @@ carousel-info{display: inline-block;}
     .main-content .content{padding:15px 0px;}
     .first-event-description{display:none!important;}
     #nav ul {overflow-x:auto;overflow-y:auto;}
-    #nav .row{margin-top: 16px!important;}
     #recipeCarousel{height: 159px;overflow-x:auto;overflow-y:hidden;}
     .carousel-inner{height: 159px;overflow-x:auto;overflow-y:hidden;}
     .main-content{margin:15px;width:345px!important;}
