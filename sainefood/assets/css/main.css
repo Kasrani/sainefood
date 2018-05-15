@@ -53,13 +53,13 @@ hr.separateur{margin-top:10px;margin-bottom:5px;border:1px dashed #CFCBC2;max-wi
 .carousel-inner>.row-equal.next,
 .carousel-inner>.row-equal.prev{display:block;}
 .carousel-inner .carousel-item.active,\n.carousel-inner .carousel-item-next,\n.carousel-inner .carousel-item-prev{display:flex;}\n\n.carousel-inner .carousel-item-right.active,\n.carousel-inner .carousel-item-next{transform:translateX(55%);}\n\n.carousel-inner .carousel-item-left.active, \n.carousel-inner .carousel-item-prev{transform:translateX(-25%);}\n \n.carousel-inner .carousel-item-right,\n.carousel-inner .carousel-item-left{transform:translateX(0);}
-.carousel-item, .d-block.col-3.img-fluid, .d-block.col-3{display:inline!important;margin:0;padding:0;}
-.carousel-item{width:168.5px!important;height:auto;float:left;}
+.carousel-item, .d-block.col-3.img-fluid, .d-block.col-3{display:inline-block!important;margin:0;padding:0;}
+.carousel-item{width:160.5px!important;height:auto;}
 .carousel-item img{width:164.2px!important;height:117px!important;}
 .title-sf-5{font-family:'Maitree', serif;font-size:14px;color:#484848;text-align:left;font-weight:600;}
-.carousel-control-next{float:right;}
 .carousel-control-prev{float:left;margin-right:5px;}
 .carousel-control-next, .carousel-control-prev{background-color:#484848;width:32px!important;line-height:117px!important;position:relative!important;display:inline-block!important;}
+.carousel-control-next {top:-88px!important;}
 .carousel-control-prev.active{opacity:1;}
 p{font-family:'Maitree', serif;font-size:14px;color:#484848;}
 p.texte{margin-bottom:0!important;}
@@ -220,6 +220,14 @@ input[value]{color:#C1CAC5 !important;}
 .atelier-description p {line-height: 24px;}
 footer .form-group .form-control + .btn {border: none!important;}
 body.iosBugFixCaret.modal-open {position: fixed; width: 100%;}
+.carousel-inner {overflow: visible!important;}
+carousel-info{display: inline-block;}
+
+.scroll {
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar; }
 
 @media only screen 
     and (min-device-width : 375px) 
@@ -230,6 +238,8 @@ body.iosBugFixCaret.modal-open {position: fixed; width: 100%;}
     .main-content .content{padding:15px 0px;}
     .first-event-description{display:none!important;}
     #nav ul {height: 46px; overflow-x:auto;overflow-y:auto;}
+    #recipeCarousel{height: 159px;overflow-x:auto;overflow-y:hidden;}
+    .carousel-inner{height: 159px;overflow-x:auto;overflow-y:hidden;}
     .main-content{margin:15px;width:345px!important;}
     .border-bloc{border-right:none;}
     .temoignages .border-bloc{border-left:none!important;}

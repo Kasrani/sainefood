@@ -17,13 +17,6 @@ session_start();
             gtag('js', new Date());
             gtag('config', 'UA-119196030-1');
         </script>
-        <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-M8B7G39');</script>
-        <!-- End Google Tag Manager -->
 		<link rel="stylesheet" href="assets/css/main.css" />
         <link rel="stylesheet" href="icons/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -64,7 +57,7 @@ session_start();
         </div>   
         <nav id="nav" class="navbar navbar-fixed-top shadow container-fluid">
             <div class="container">
-                <div class="row headerow">
+                <div class="row headerow scroll">
                     <ul>
                         <li class="current"><a href="index.php">Home</a></li>
                         <li><a href="a%20propos.php">À propos</a></li>
@@ -150,46 +143,54 @@ session_start();
                     </div>
                     <h6 class="title-sf-5">Programmes à venir (9)</h6>
                     <div class="mx-auto my-auto">
-                        <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
-                            <div class="carousel-inner w-100" role="listbox">
+                        <div id="recipeCarousel" class="carousel slide w-100 scroll" data-ride="carousel">
+                            <div class="carousel-inner w-100 scroll" role="listbox">
                                 <a class="carousel-control-prev active" href="#recipeCarousel" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
                                 </a>
                                 <div class="carousel-item active">
                                     <img class="d-block" src="images/Events/event-1.jpg">
-                                    
+                                    <div class="carousel-info">
                                         <p class="texte semibold">Cuisiner cru en hiver</p>
                                         <p class="texte">Sam, 10 février</p>
-                                    
+                                    </div>
                                 </div>
                                 <div class="carousel-item">
                                     <img class="d-block img-fluid" src="images/Events/event-2.jpg">
-                                    
+                                    <div class="carousel-info">
                                         <p class="texte semibold">Cuisiner cru en hiver</p>
                                         <p class="texte">Sam, 10 février</p>
+                                    </div>
                                     
                                 </div>
                                 <div class="carousel-item">
                                     <img class="d-block img-fluid" src="images/Events/event-3.jpg">
+                                    <div class="carousel-info">
                                         <p class="texte semibold">Cuisiner cru en hiver</p>
                                         <p class="texte">Sam, 10 février</p>
-                                    
+                                    </div>
                                 </div>
                                 <div class="carousel-item">
                                     <img class="d-block img-fluid" src="images/Events/event-4.jpg">
+                                    <div class="carousel-info">
                                         <p class="texte semibold">Cuisiner cru en hiver</p>
                                         <p class="texte">Sam, 10 février</p>
+                                    </div>
                                 </div>
                                 <div class="carousel-item">
                                     <img class="d-block img-fluid" src="images/Events/event-5.jpg">
+                                    <div class="carousel-info">
                                         <p class="texte semibold">Cuisiner cru en hiver</p>
                                         <p class="texte">Sam, 10 février</p>
+                                    </div>
                                 </div>
                                 <div class="carousel-item">
                                     <img class="d-block img-fluid" src="images/Events/event-6.jpg">
+                                    <div class="carousel-info">
                                         <p class="texte semibold">Cuisiner cru en hiver</p>
                                         <p class="texte">Sam, 10 février</p>
+                                    </div>
                                 </div>
                                 <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -399,7 +400,6 @@ session_start();
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="assets/js/main.js"></script>
         <?php 
         

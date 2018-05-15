@@ -1,1 +1,3 @@
+/*
 var height=$('.container-model > .main-content').height();console.log(height);window.onscroll=function(){if(scrollY>height-430){var element=document.getElementById("myFIXED");element.classList.remove("position-fixed");var absolu=document.getElementById("myFIX");absolu.classList.add("align-self-end");var absolu=document.getElementById("vide");absolu.classList.add("btn-commender-fixed-down");var absolu=document.getElementById("paypal-btn");absolu.classList.add("paypal-btn-fixed-down");}else{var element=document.getElementById("myFIXED");element.classList.add("position-fixed");var absolu=document.getElementById("myFIX");absolu.classList.remove("align-self-end");}}
+*/
