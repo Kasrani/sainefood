@@ -17,9 +17,9 @@ date_default_timezone_set('Etc/UTC');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
-require 'PHPMailer/src/Exception.php';
+require '../../PHPMailer/src/PHPMailer.php';
+require '../../PHPMailer/src/SMTP.php';
+require '../../PHPMailer/src/Exception.php';
 //Create a new PHPMailer instance
 $mail = new PHPMailer;
 //Tell PHPMailer to use SMTP
@@ -77,7 +77,7 @@ if (!$mail->send()) {
     #if (save_mail($mail)) {
     #    echo "Message saved!";
     #}
-    header('Location: confirmation-ouverture-compte.php');
+    header('Location: ../../confirmation-ouverture-compte.php');
 }
 //Section 2: IMAP
 //IMAP commands requires the PHP IMAP Extension, found at: https://php.net/manual/en/imap.setup.php

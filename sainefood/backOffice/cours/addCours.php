@@ -16,10 +16,10 @@ $details = null;
 
 
 
-include("authDB.php");
+include("../../authDB.php");
 
 mysqli_query($maConnexion,"INSERT INTO event (nom,date,disponibilite,details) VALUES ('$intitule','$date','$nbParticipants','$details')") 
 or die(mysqli_error($maConnexion));
-header('Location: account.php');
+header('Location: ../../account.php');
 
 ?>

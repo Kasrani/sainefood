@@ -49,6 +49,8 @@ hr.separateur{margin-top:10px;margin-bottom:5px;border:1px dashed #CFCBC2;max-wi
 .btn.sf-button-3:hover{background-color:#FF594F;color:#FFF;border-color:#FF594F;}
 .row-equal > div[class*='col-']{display:flex;flex:1 0 auto;}
 .row-equal .card{width:100%;}
+.carousel{height: 172px;}
+.carousel-inner{height: 172px;}
 .carousel-inner>.row-equal.active,
 .carousel-inner>.row-equal.next,
 .carousel-inner>.row-equal.prev{display:block;}
@@ -220,9 +222,7 @@ input[value]{color:#C1CAC5 !important;}
 .atelier-description p {line-height: 24px;}
 footer .form-group .form-control + .btn {border: none!important;}
 body.iosBugFixCaret.modal-open {position: fixed; width: 100%;}
-.carousel-inner {overflow: visible!important;}
 carousel-info{display: inline-block;}
-.carousel{height: 172px;}
 
 .scroll {
   white-space: nowrap;
@@ -234,6 +234,11 @@ carousel-info{display: inline-block;}
     width: 0px;
 }
 
+#cadredemo {
+	height: 400px;
+	overflow: auto;
+}
+
 
 @media only screen 
     and (min-device-width : 375px) 
@@ -243,7 +248,7 @@ carousel-info{display: inline-block;}
     .first-event{height:auto;margin:0px;}
     .main-content .content{padding:15px 0px;}
     .first-event-description{display:none!important;}
-    #nav ul {overflow-x:auto;overflow-y:hidden;}
+    #nav ul {overflow-x:auto;overflow-y:auto;}
     .carousel-control-next{display: none!important;}
     .carousel-inner{height: 159px;overflow-x:auto;overflow-y:hidden;}
     .main-content{margin:15px;width:345px!important;}

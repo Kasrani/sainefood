@@ -32,12 +32,12 @@ if(isset($_FILES['image'])){
     echo $image;
 
 
-include("authDB.php");
+include("../../authDB.php");
 
 mysqli_query($maConnexion,"INSERT INTO plat (nom,prix,details,image,ingredients,nutrition,sourcing) VALUES ('$intitule','$prix','$details','$image','$ingredients','$nutrition','$sourcing')") 
 or die(mysqli_error($maConnexion));
 
-header('Location: account.php');
+header('Location: ../../account.php');
 //$rec = "SELECT nutrition FROM `plat`";
 //$nutrition = rec['nutrition'];
 //$choix = "A louer,A vendre" ou "A louer" ou "A vendre"

@@ -60,7 +60,58 @@ $row = mysqli_fetch_assoc($result);
                 </div>
             </div>
         </div>
-            
+        <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <!--<div class="g-signin2" data-onsuccess="onSignIn"></div>-->
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid bd-example-row">
+                            <div id="connexion" class="">
+                                <form action="backOffice/user/auth.php" method="post">
+                                  <div class="form-group">
+                                      <input type="email" class="form-control" name="email" value="<?php if(!empty($_POST['email'])) { echo htmlspecialchars($_POST['email'], ENT_QUOTES); } ?>" placeholder="Adresse e-mail">
+                                  </div>
+                                  <div class="form-group">
+                                      <input type="password" class="form-control" name="password" value="" id="inputPassword3" placeholder="Password">
+                                  </div>
+                                  <div class="form-group">
+                                      <button type="submit" class="btn btn-primary btn-lg btn-block">Connexion</button>
+                                  </div>
+                                </form>
+                                <span class="text-center"><a href="">Mot de passe oublié ?</a></span>
+                            </div>
+                            <div id="inscription" class="">
+                                <form action="backOffice/user/signUp.php" method="POST">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" name="email" placeholder="Adresse e-mail">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="prenom" placeholder="Prénom">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="nom" placeholder="Nom">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" name="password" placeholder="Créer un mot de passe">
+                                    </div>
+                                    <div class="form-group">
+                                      <button type="submit" class="btn btn-primary btn-lg btn-block">Inscription</button>
+                                  </div>
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <span id="inscription-link" class="text-center">Vous n'avez pas de compte ?&nbsp;<button class="btn btn-link" onclick="show()">Inscription</button></span>
+                        <span id="connexion-link" class="text-center">Vous avez déjà un compte Sainefood ?&nbsp;<button class="btn btn-link" onclick="hide()">Connexion</button></span>
+                    </div>
+                </div>
+            </div>
+        </div>  
         <nav id="nav" class="navbar navbar-fixed-top shadow">
             <div class="container">
                 <div class="row headerow">

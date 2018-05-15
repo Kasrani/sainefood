@@ -9,6 +9,3 @@ Header always set X-XSS-Protection "1; mode=block"
 <IfModule mod_headers.c>
 Header always set X-Content-Type-Options "nosniff"
 </IfModule>
-<IfModule mod_headers.c>
-Header set Set-Cookie HttpOnly;Secure
-</IfModule>

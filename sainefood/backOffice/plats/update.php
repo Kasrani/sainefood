@@ -6,20 +6,20 @@ $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
 $row = mysqli_fetch_assoc($result);
 
 if ($plat <> "choisir un plat") {
-echo "<form action='updatePlat.php' method='get'>
+echo "<form action='backOffice/plats/updatePlat.php' method='get'>
                             <div class='d-flex form-row'>
                                 <div class='mr-auto p-2 form-group col-md-5'>
                                     <label for=''>Intitulé  *</label>
                                     <input type='hidden' name='plat' value='" . $plat . "'>
-                                    <input type='text' name='intitule' value='" . $row['nom'] . "' class='form-control' id='' placeholder=''>
+                                    <input type='text' name='intitule' value='" . $row['nom'] . "' class='form-control' placeholder=''>
                                 </div>
                                 <div class='p-2 form-group col-md-5'>
                                     <label for=''>Prix  *</label>
-                                    <input type='text' name='prix' class='form-control' id='' value='" . $row['prix'] . "'>
+                                    <input type='text' name='prix' class='form-control' value='" . $row['prix'] . "'>
                                 </div>
                                 <div class='p-2 form-group col-md-5'>
                                     <label for=''>Détails  *</label>
-                                    <textarea name='details' class='form-control' id='' value='' rows='3'>" . $row['details'] . "</textarea>
+                                    <textarea name='details' class='form-control' value='' rows='3'>" . $row['details'] . "</textarea>
                                 </div>
                                 <div class='ml-auto p-2 form-group col-md-5'>
                                     <br>
@@ -28,7 +28,7 @@ echo "<form action='updatePlat.php' method='get'>
                                         <label class='custom-file-label' for='customFile'>" . $row['image'] . "</label>
                                     </div>
                                     <label for=''>Ingrédients : *</label>
-                                    <input name='ingredients' class='form-control' value='" . $row['ingredients'] . "' id=''>
+                                    <input name='ingredients' class='form-control' value='" . $row['ingredients'] . "'>
                                 </div>
                                 <div class='mr-auto p-2 form-group col-md-5'>
                                     <label>Nutrition :</label>

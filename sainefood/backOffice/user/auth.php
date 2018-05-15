@@ -1,5 +1,5 @@
 <?php  //Start the Session
-include("authDB.php");
+include("../../authDB.php");
 session_start();
 //3. If the form is submitted or not.
 //3.1 If the form is submitted
@@ -34,10 +34,10 @@ echo "Hi " . $user . "";
 echo "This is the Members Area";
 echo "<a href='logout.php'>Logout</a>";
     //header('Location: index.php');
-    header('Location: account.php');
+    header('Location: ../../account.php');
  
 }else{
-    echo "grrr";
+    echo "error de connexion";
 }
 //3.2 When the user visits the page first time, simple login form will be displayed.
 ?>

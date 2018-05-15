@@ -46,8 +46,8 @@
         </div>    
         <nav id="nav" class="navbar navbar-fixed-top shadow container-fluid">
             <div class="container">
-                <div class="row headerow">
-                    <ul>
+                <div class="row headerow scroll">
+                    <ul class="scroll">
                         <li class=""><a href="index.php">Home</a></li>
                         <li class=""><a href="a%20propos.php">À propos</a></li>
                         <li class=""><a href="cours-cuisine.php">Cours de cuisine</a></li>
@@ -68,7 +68,7 @@
                     <div class="modal-body">
                         <div class="container-fluid bd-example-row">
                             <div id="connexion" class="">
-                                <form action="check.php" method="post">
+                                <form action="backOffice/user/auth.php" method="post">
                                   <div class="form-group">
                                       <input type="email" class="form-control" name="email" value="<?php if(!empty($_POST['email'])) { echo htmlspecialchars($_POST['email'], ENT_QUOTES); } ?>" placeholder="Adresse e-mail">
                                   </div>
@@ -82,7 +82,7 @@
                                 <span class="text-center"><a href="">Mot de passe oublié ?</a></span>
                             </div>
                             <div id="inscription" class="">
-                                <form action="create.php" method="POST">
+                                <form action="backOffice/user/signUp.php" method="POST">
                                     <div class="form-group">
                                         <input type="email" class="form-control" name="email" placeholder="Adresse e-mail">
                                     </div>

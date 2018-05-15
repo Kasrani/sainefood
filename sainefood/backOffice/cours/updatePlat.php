@@ -1,5 +1,5 @@
 <?php
-include("authDB.php");
+include("../../authDB.php");
 $plat = $_GET['plat'];
 $query = "SELECT * FROM `plat` WHERE nom='$plat'";
 $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
@@ -23,6 +23,6 @@ $row = mysqli_fetch_assoc($result);
     var_dump($sourcingUp);
 
 mysqli_query($maConnexion,"UPDATE plat SET nom='$nomUp', prix='$prixUp', details='$detailsUp', image='$imageUp', nutrition='$nutritionUp', ingredients='$ingredientsUp', sourcing='$sourcingUp' WHERE nom='$plat'") or die(mysqli_error($maConnexion));
- header('Location: account.php');
+ header('Location: ../../account.php');
 
 ?>

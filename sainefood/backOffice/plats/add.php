@@ -1,6 +1,6 @@
 <?php
 
-echo "<form action='addPlat.php' method='post'>
+echo "<form action='backOffice/plats/addPlat.php' method='post'>
                             <div class='d-flex form-row'>
                                 <div class='mr-auto p-2 form-group col-md-5'>
                                     <label for=''>Intitulé  *</label>

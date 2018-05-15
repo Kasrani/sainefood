@@ -1,5 +1,5 @@
 <?php
-include("authDB.php");
+include("../../authDB.php");
 session_start();
 
 $emailUp = null;
@@ -25,7 +25,7 @@ if (isset($_SESSION['user'])) {
     $user = $row['prenom'];
     $_SESSION['user'] = $user;
     echo $_SESSION['user'];
-    header('Location: account.php');
+    header('Location: ../../account.php');
     /*
     $rec = "SELECT prenom FROM `user`";
     $result = mysqli_query($maConnexion, $rec) or die(mysqli_error($maConnexion));

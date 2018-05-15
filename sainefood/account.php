@@ -62,7 +62,7 @@ if(!$_SESSION['user']){
                     echo "<h3 class='title-sf-3 text-center'>Bienvenue sur votre espace Administrateur</h3><br><br>";
                     echo "
                     <div class='contact'>
-                        <form action='updateProfil.php' method='post'>
+                        <form action='backOffice/user/updateProfil.php' method='post'>
                             <div class='d-flex form-row'>
                                 <div class='mr-auto p-2 form-group col-md-5'>
                                     <label for=''>Nom</label>
@@ -86,34 +86,43 @@ if(!$_SESSION['user']){
                             </div>
                         </form>
                     </div>";
-                    echo "<br><br><br><hr class='separateur'>";
+                    echo "<br><br><br><hr id='gestionCours' class='separateur'>";
                     echo "<br><h4 class='title-sf-4 semibold'>Gestion des cours de cuisine :</h4>";
-                    echo "<br><br>
-                    <div class='contact'>
-                        <form action='addEvent.php' method='post'>
+                    echo "<br>";
+                            $rec = "SELECT * FROM `event`";
+                            $result = mysqli_query($maConnexion,$rec);
+                            $selectOptionCours = null;
+                            $test = null;
+                    echo "
+                            <div class='contact'>
+                            <form method='GET' action='#gestionCours'>
+                            <div class='d-flex contact'>
+                                <button type='submit' name='addCours' class='p-2 mr-2 btn btn-primary shadow'>Ajouter</button>
+                                <button type='submit' name='updateCours' class='p-2 mr-2 btn btn-primary shadow'>Modifier</button>
+                                <button type='submit' name='deleteCours' class='p-2 mr-2 btn btn-primary shadow'>Supprimer</button>
+                              </div><br>
                             <div class='d-flex form-row'>
-                                <div class='mr-auto p-2 form-group col-md-5'>
-                                    <label for=''>Intitulé  *</label>
-                                    <input type='text' name='intitule' class='form-control' placeholder=''>
-                                </div>
-                                <div class='p-2 form-group col-md-5'>
-                                    <label for=''>Date  *</label>
-                                    <input type='date' name='date' class='form-control' placeholder=''>
-                                </div>
-                                <div class='mr-auto  p-2 form-group col-md-5'>
-                                    <label for=''>Nombre de participants maximum  *</label>
-                                    <input type='number' name='nbParticipants' value='9' class='form-control' placeholder=''>
-                                </div>
-                                <div class='ml-auto p-2 form-group col-md-5'>
-                                    <label for=''>Détails  *</label>
-                                    <textarea name='details' class='form-control' rows='3'></textarea>
-                                </div>
+                            <div class='p-2 form-group col-md-5'>
+                            <select class='form-control' name='selectOptionCours'>
+                                        <option>choisir un cours de cuisine</option>";
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo "<option>" . $row['nom'] . "</option>";
+                                        }             
+                            echo " </select>
                             </div>
-                            <div class='p-2'>
-                                <button type='submit' class='btn btn-primary float-right shadow'>Ajouter</button><br>
-                            </div>
-                        </form>
-                    </div><br><br><br><hr id='gestion' class='separateur'>";
+                            </form>
+                        </div>";
+
+                        if (isset($_GET['addCours'])) {
+                            require('backOffice/cours/add.php');
+                        } else if (isset($_GET['updateCours'])){
+                            require('backOffice/cours/update.php');
+                        } else if (isset($_GET['deleteCours'])) {
+                            require('backOffice/cours/delete.php');
+                        }
+                         //require('add.php');
+                        
+                    echo "</div><br><br><hr id='gestionPlat' class='separateur'>";
                     echo "<br><h4 class='title-sf-4 semibold'>Gestion des plats :</h4>";
                     echo "<br>";
                             $rec = "SELECT * FROM `plat`";
@@ -122,7 +131,7 @@ if(!$_SESSION['user']){
                             $test = null;
                     echo "
                             <div class='contact'>
-                            <form method='GET' action='#gestion'>
+                            <form method='GET' action='#gestionPlat'>
                             <div class='d-flex contact'>
                                 <button type='submit' name='add' class='p-2 mr-2 btn btn-primary shadow'>Ajouter</button>
                                 <button type='submit' name='update' class='p-2 mr-2 btn btn-primary shadow'>Modifier</button>
@@ -141,11 +150,11 @@ if(!$_SESSION['user']){
                         </div>";
 
                         if (isset($_GET['add'])) {
-                            require('add.php');
+                            require('backOffice/plats/add.php');
                         } else if (isset($_GET['update'])){
-                            require('update.php');
+                            require('backOffice/plats/update.php');
                         } else if (isset($_GET['delete'])) {
-                            require('delete.php');
+                            require('backOffice/plats/delete.php');
                         }
                          //require('add.php');
                         
@@ -233,12 +242,6 @@ if(!$_SESSION['user']){
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="assets/js/content.js"></script>
         <script src="assets/js/main.js"></script>
-        <?php 
-        
-            if (isset($_SESSION['user']) and (window.innerWidth > 960)){
-                echo "<script src='assets/js/autoLogout.js'></script>";
-            }
-        ?>
     </body>
     
 </html>
