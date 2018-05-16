@@ -13,6 +13,29 @@ $("#inscription-link").show()}$('td.delete-block').addClass('hover');$(function(
 $('.border-panier .quantite').addClass('hover');$(function(){$('tr.border-panier').hover(function(){$('.border-panier .quantite').removeClass('hover');},function(){$('.border-panier .quantite').addClass('hover');})})
 
 
+var height = $('.container-model > .main-content').height();
+console.log(height);
+window.onscroll = function() {
+
+if (scrollY > height-430) {
+
+var element = document.getElementById("myFIXED");
+    element.classList.remove("position-fixed");
+    
+var absolu = document.getElementById("myFIX");
+    absolu.classList.add("align-self-end");
+
+
+} else {
+
+var element = document.getElementById("myFIXED");
+    element.classList.add("position-fixed");
+    
+var absolu = document.getElementById("myFIX");
+    absolu.classList.remove("align-self-end");
+
+}}
+
 $(document).ready(function() {
 
     // Detect ios 11_x_x affected  
