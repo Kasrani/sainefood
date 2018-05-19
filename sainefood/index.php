@@ -127,6 +127,14 @@ session_start();
             <div class="content">
                 <div class="cours-cuisne-home">
                     <div class="first-event border-bloc">
+                        <div class="event-info">
+                            <h1 class="semibold">Cuisiner cru en hiver</h1>
+                            <h2>Sam. 10 février à partir de 16h30</h2>
+                            <h3>42, avenue de Versailles 75012 Paris</h3>
+                        </div>
+                        <div class="event-btn-res">
+                            <button type="button" class="btn btn-primary sf-button-3">je réserve ma place</button>
+                        </div>
                         <img class="img-fluid" src="images/Events/event-1.jpg" alt="Sainefood">
                     </div>
                     <div class="first-event-description">

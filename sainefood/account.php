@@ -9,7 +9,7 @@ if(!$_SESSION['user']){
 }
 ?>
 <!DOCTYPE HTML>
-<html>
+<html lang="fr">
 	<head>
 		<title>Saine-Food</title>
 		<meta charset="utf-8" />

@@ -25,11 +25,18 @@ var element = document.getElementById("myFIXED");
 var absolu = document.getElementById("myFIX");
     absolu.classList.add("align-self-end");
 
+var element = document.getElementById("vide");
+    element.classList.add("margin-fix");
+
 
 } else {
 
 var element = document.getElementById("myFIXED");
     element.classList.add("position-fixed");
+    
+var element = document.getElementById("vide");
+    element.classList.remove("margin-fix");
+    
     
 var absolu = document.getElementById("myFIX");
     absolu.classList.remove("align-self-end");

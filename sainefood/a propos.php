@@ -1,10 +1,10 @@
 <?php
+// Database Authentication
 include("authDB.php");
-// Start the session
 session_start();
 ?>
 <!DOCTYPE HTML>
-<html>
+<html lang="fr">
 	<head>
 		<title>Saine-Food</title>
 		<meta charset="utf-8" />
