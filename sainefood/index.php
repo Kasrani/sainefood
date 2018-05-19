@@ -128,19 +128,36 @@ session_start();
                 <div class="cours-cuisne-home">
                     <div class="first-event border-bloc">
                         <div class="event-info">
-                            <h1 class="semibold">Cuisiner cru en hiver</h1>
-                            <h2>Sam. 10 février à partir de 16h30</h2>
+                            <?php
+                            $rec = "SELECT * FROM `event` LIMIT 1";
+                            $result = mysqli_query($maConnexion,$rec);
+                            $row = $result->fetch_assoc();
+                            setlocale(LC_TIME, 'french');
+                            echo "
+                            <h1 class='semibold'>" . $row['nom'] . "</h1>
+                            <h2>". strftime('%a %d %B', strtotime($row['date'])) ." à partir de " . strftime('%Hh%M', strtotime($row['heure'])) . "</h2>
                             <h3>42, avenue de Versailles 75012 Paris</h3>
                         </div>
-                        <div class="event-btn-res">
-                            <button type="button" class="btn btn-primary sf-button-3">je réserve ma place</button>
+                        <div class='event-btn-res'>
+                            <button type='button' class='btn btn-primary sf-button-3'>je réserve ma place</button>
                         </div>
-                        <img class="img-fluid" src="images/Events/event-1.jpg" alt="Sainefood">
+                        <img class='img-fluid' src='images/Events/" . $row['image'] . "' alt='Sainefood'>
+                        ";  
+                        ?>
                     </div>
                     <div class="first-event-description">
                         <h3 class="title-sf-3">Description</h3><hr class="separateur">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur accumsan tincidunt. Duis facilisis orci sit amet nisi vestibulum, dapibus feugiat ex blandit. Cras vel fermentum neque. Aenean at ultricies justo. Maecenas sagittis dui cursus ultrices sollicitudin. Suspendisse blandit ex dolor, non ultricies odio aliquam eget.
+                            <?php
+                                $rec = "SELECT * FROM `event` LIMIT 1";
+                                $result = mysqli_query($maConnexion,$rec);
+                                setlocale(LC_TIME, 'french');
+                                while ($row = $result->fetch_assoc()) {    
+                                echo "
+                                    <p style='height:152px;overflow:hidden;'>" . $row['details'] . "</p>
+                                ";
+                                }
+                                ?>
                         </p>
                         <div class="sf-button-3"><span>Voir plus</span></div>
                         <button type="button" class="btn btn-outline-primary sf-button-3">je réserve ma place</button>
@@ -153,159 +170,58 @@ session_start();
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
                                 </a>
-                                <div class="carousel-item active">
-                                    <img class="d-block" src="images/Events/event-1.jpg">
-                                    <div class="carousel-info">
-                                        <p class="texte semibold">Cuisiner cru en hiver</p>
-                                        <p class="texte">Sam, 10 février</p>
+                                
+                                <?php
+                                $rec = "SELECT * FROM `event` LIMIT 10";
+                                $result = mysqli_query($maConnexion,$rec);
+                                setlocale(LC_TIME, 'french');
+                                while ($row = $result->fetch_assoc()) {    
+                                echo "
+                                    <div class='carousel-item active'>
+                                    <img class='d-block' src='images/Events/" . $row['image'] . "'>
+                                    <div class='carousel-info'>
+                                        <p class='texte semibold'>" . $row['nom'] . "</p>
+                                        <p class='texte'>". strftime('%a %d %B', strtotime($row['date'])) ."</p>
                                     </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block img-fluid" src="images/Events/event-2.jpg">
-                                    <div class="carousel-info">
-                                        <p class="texte semibold">Cuisiner cru en hiver</p>
-                                        <p class="texte">Sam, 10 février</p>
                                     </div>
-                                    
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block img-fluid" src="images/Events/event-3.jpg">
-                                    <div class="carousel-info">
-                                        <p class="texte semibold">Cuisiner cru en hiver</p>
-                                        <p class="texte">Sam, 10 février</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block img-fluid" src="images/Events/event-4.jpg">
-                                    <div class="carousel-info">
-                                        <p class="texte semibold">Cuisiner cru en hiver</p>
-                                        <p class="texte">Sam, 10 février</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block img-fluid" src="images/Events/event-5.jpg">
-                                    <div class="carousel-info">
-                                        <p class="texte semibold">Cuisiner cru en hiver</p>
-                                        <p class="texte">Sam, 10 février</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block img-fluid" src="images/Events/event-6.jpg">
-                                    <div class="carousel-info">
-                                        <p class="texte semibold">Cuisiner cru en hiver</p>
-                                        <p class="texte">Sam, 10 février</p>
-                                    </div>
-                                </div>
+                                ";
+                                }
+                                ?>
                                 <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
                             </div>
-                            
                         </div>
                     </div>
                     <hr class="separateur">
                     <div class="producteur">
                         <h2 class="title-sf-2 semibold">Du producteur à l’assiette</h2>
                         <div class="d-flex justify-content-between row">
-                            <div class="card col-md-4">
-                                <div class="card-content shadow">
-                                    <div class="card-img-overlay">
-                                        <div class="btn-produit">
-                                            <a class="float-left" href="panier.php?action=ajout&amp;l=LIBELLEPRODUIT&amp;q=QUANTITEPRODUIT&amp;p=PRIXPRODUIT"><span class="icon-add-panier"></span></a>
-                                            <a class="float-right" href="produit.php?nom=Salade+bio"><span class="icon-details"></span></a>
+                            <?php
+                                $rec = "SELECT * FROM `plat` LIMIT 6";
+                                $result = mysqli_query($maConnexion,$rec);
+                                while ($row = $result->fetch_assoc()) {   
+                                echo "
+                                <div class='card col-md-4'>
+                                    <div class='card-content shadow'>
+                                        <div class='card-img-overlay'>
+                                            <div class='btn-produit'>
+                                            <a class='float-left' href=''><span class='icon-add-panier'></span></a>
+                                            <a class='float-right' href='produit.php?id=" . $row['id'] . "'><span class='icon-details'></span></a>
+                                        </div>
+                                        </div>
+                                        <img class='card-img-top' src='images/Plats/" . $row['image'] . "' alt='Card image cap'>
+                                        <div class='card-body'>
+                                            <h4 class='card-title title-sf-4'>" . $row['nom'] . "</h4>
+                                            <span class='card-prix title-sf-4'>" . $row['prix'] . " €</span>
+                                            <p class='card-text'>" . $row['details'] . "</p>
                                         </div>
                                     </div>
-                                    <img class="card-img-top" src="images/Plats/plat-1.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h4 class="card-title title-sf-4">Seasonal pasta bowl</h4>
-                                        <span class="card-prix title-sf-4">6,90 €</span>
-                                        <p class="card-text">Un plat végétarien généreux..</p>
-                                    </div>
                                 </div>
-                            </div>
-                            <div class="card col-md-4">
-                                <div class="card-content shadow">
-                                    <div class="card-img-overlay">
-                                        <div class="btn-produit">
-                                            <span class="icon-add-panier"></span>
-                                            <span class="icon-details"></span>
-                                        </div>
-                                    </div>
-                                    <img class="card-img-top" src="images/Plats/plat-2.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h4 class="card-title title-sf-4">Linguine IGP al ragu</h4>
-                                        <span class="card-prix title-sf-4">8,95 €</span>
-                                        <p class="card-text">Un plat végétarien généreux..</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card col-md-4">
-                                <div class="card-content shadow">
-                                    <div class="card-img-overlay">
-                                        <div class="btn-produit">
-                                            <span class="icon-add-panier"></span>
-                                            <span class="icon-details"></span>
-                                        </div>
-                                    </div>
-                                    <img class="card-img-top" src="images/Plats/plat-3.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h4 class="card-title title-sf-4">Curry veggie</h4>
-                                        <span class="card-prix title-sf-4">6,90 €</span>
-                                        <p class="card-text">Un plat végétarien généreux..</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- d-flex justify-content-between -->
-                        <div class="d-flex justify-content-between row">
-                            <div class="card col-md-4">
-                                <div class="card-content shadow">
-                                    <div class="card-img-overlay">
-                                        <div class="btn-produit">
-                                            <span class="icon-add-panier"></span>
-                                            <span class="icon-details"></span>
-                                        </div>
-                                    </div>
-                                    <img class="card-img-top" src="images/Plats/plat-4.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h4 class="card-title title-sf-4">Risotto au potimarron</h4>
-                                        <span class="card-prix title-sf-4">6,90 €</span>
-                                        <p class="card-text">Un plat végétarien généreux..</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card col-md-4">
-                                <div class="card-content shadow">
-                                    <div class="card-img-overlay">
-                                        <div class="btn-produit">
-                                            <span class="icon-add-panier"></span>
-                                            <span class="icon-details"></span>
-                                        </div>
-                                    </div>
-                                    <img class="card-img-top" src="images/Plats/plat-5.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h4 class="card-title title-sf-4">Salade healthy</h4>
-                                        <span class="card-prix title-sf-4">8,50 €</span>
-                                        <p class="card-text">Un plat végétarien généreux..</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card col-md-4">
-                                <div class="card-content shadow">
-                                    <div class="card-img-overlay">
-                                        <div class="btn-produit">
-                                            <span class="icon-add-panier"></span>
-                                            <span class="icon-details"></span>
-                                        </div>
-                                    </div>
-                                    <img class="card-img-top" src="images/Plats/plat-6.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h4 class="card-title title-sf-4">Salade de choul</h4>
-                                        <span class="card-prix title-sf-4">8,20 €</span>
-                                        <p class="card-text">Un plat végétarien généreux..</p>
-                                    </div>
-                                </div>
-                            </div>
+                                ";
+                                }
+                            ?>
                         </div><!-- d-flex justify-content-between -->
                         <div class="d-flex justify-content-end">
                             <button type="button" class="btn btn-link">Voir plus</button>
@@ -406,12 +322,6 @@ session_start();
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="assets/js/main.js"></script>
-        <?php 
-        
-            if (isset($_SESSION['user']) and (window.innerWidth > 960)){
-                echo "<script src='assets/js/autoLogout.js'></script>";
-            }
-        ?>
         <script type="text/javascript">
             window._chatlio = window._chatlio||[];
             !function(){ var t=document.getElementById("chatlio-widget-embed");if(t&&window.ChatlioReact&&_chatlio.init)return void _chatlio.init(t,ChatlioReact);for(var e=function(t){return function(){_chatlio.push([t].concat(arguments)) }},i=["configure","identify","track","show","hide","isShown","isOnline", "page", "open", "showOrHide"],a=0;a<i.length;a++)_chatlio[i[a]]||(_chatlio[i[a]]=e(i[a]));var n=document.createElement("script"),c=document.getElementsByTagName("script")[0];n.id="chatlio-widget-embed",n.src="https://w.chatlio.com/w.chatlio-widget.js",n.async=!0,n.setAttribute("data-embed-version","2.3");

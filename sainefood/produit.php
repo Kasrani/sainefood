@@ -2,13 +2,13 @@
 // Start the session
 include("authDB.php");
 session_start();
-if (isset($_GET['nom'])) {
-    $plat = $_GET['nom'];
+if (isset($_GET['id'])) {
+    $plat = $_GET['id'];
 }
 if (isset($_GET['l'])) {
     $plat = $_GET['l'];
 }
-$query = "SELECT * FROM `plat` WHERE nom='$plat'";
+$query = "SELECT * FROM `plat` WHERE id='$plat'";
 $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
 $row = mysqli_fetch_assoc($result);
 

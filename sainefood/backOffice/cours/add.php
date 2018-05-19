@@ -9,8 +9,14 @@ echo "<br><br>
                                     <input type='text' name='intitule' class='form-control' placeholder=''>
                                 </div>
                                 <div class='p-2 form-group col-md-5'>
-                                    <label for=''>Date  *</label>
-                                    <input type='date' name='date' class='form-control' placeholder=''>
+                                    <div class='col-md-5 inline'>
+                                        <label for=''>Date  *</label>
+                                        <input type='date' name='date' class='form-control' placeholder=''>
+                                    </div>
+                                    <div class='col-md-5 inline'>
+                                        <label for=''>Heure  *</label>
+                                        <input type='time' name='heure' class='form-control' placeholder=''>
+                                    </div>
                                 </div>
                                 <div class='mr-auto  p-2 form-group col-md-5'>
                                     <br>

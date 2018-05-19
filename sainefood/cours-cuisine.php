@@ -130,7 +130,7 @@ session_start();
                 <?php
                 $rec = "SELECT * FROM `event`";
                 $result = mysqli_query($maConnexion,$rec);
-
+                setlocale(LC_TIME, 'french');
                 while ($row = $result->fetch_assoc()) {
                     echo "
                     <div class='cartouche-bloc'>
@@ -139,7 +139,7 @@ session_start();
                             <div class='cartouche-img-overlay'>
                                 <div class='btn-produit'>
                                     <a class='float-left' href='#'><span class='icon-add-panier'></span></a>
-                                    <a class='float-right' href='produit.php?nom=" . $row['nom'] . "'><span class='icon-details'></span></a>
+                                    <a class='float-right' href='produit.php?id=" . $row['id'] . "'><span class='icon-details'></span></a>
                                 </div>
                             </div>
                             <img class='img-fluid' src='images/Events/" . $row['image'] . "' alt='Sainefood'>   
@@ -150,7 +150,7 @@ session_start();
                                     . $row['details'] .
                             "</p>
                             <div class='d-flex'>
-                                <div class='mr-auto p-2'><span class='icon-agenda'></span><span class='semibold'>" . $row['date'] . "</span></div>
+                                <div class='mr-auto p-2'><span class='icon-agenda'></span><span class='semibold'>" . strftime('%a %d %B', strtotime($row['date'])) . "</span></div>
                                 <div class='p-2'><button type='button' class='btn btn-link'>Voir plus </button></div>
                                 <div class='p-2'><span class='icon-right'></span></div>
                             </div>
