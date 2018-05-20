@@ -126,21 +126,20 @@ session_start();
         </div>
         <div class="container main-content shadow atelier">
             <div class="content">
-                <h2 class="title-sf-2 semibold">L'atelier Sainefood</h2>
+                <h1 class="title-sf-1 semibold">Sainefood : Le plaisir sain et inconditionnel</h1>
                 <hr class="separateur">
                 <img class="img-fluid" src="images/atelier-sainefood.png" alt="l'atelier sainefood">
                 <br><br><br>
-                <h1 class="title-sf-1 semibold">Sainefood : Le plaisir sain et inconditionnel</h1>
-                <h2 class="title-sf-2 semibold">Le concept Healty food : la cuisine au service de la santé. </h2>
+                <h2 class="title-sf-2 semibold red_sf">Le concept Healty food : la cuisine au service de la santé. </h2>
                 <p class="text">
                     Savoir prendre soin de son alimentation est depuis longtemps au centre de nos préoccupations. Chez Sainefood nous avons parfaitement compris le challenge que cela représente et la difficulté de parvenir à manger sainement tous les jours. A l’heure où il est de plus en plus difficile de bien manger et où <a href="https://www.saine-food.fr/recettes-bio">cuisiner quotidiennement des aliments sains</a> et variés relève du véritable défi, accompagner nos clients est une nécessité absolue. Aussi nous vous proposons la possibilité d’apprendre à préparer sans efforts de vrais plats bio et sains, en utilisant une large gamme de produits frais. Si vous êtes soucieux de la qualité de votre alimentation, notre but est de vous proposer des <strong>ateliers/cours de cuisine</strong> simples et accessibles à tous. De nombreux conseils sur la préparation des aliments ainsi que sur les ingrédients à privilégier seront fournis au cours des différentes sessions à thèmes.
                     Si malgré tout vous n’avez pas envie de cuisiner, vous n’avez pas le temps ou que vous ne vous sentez pas encore prêt, pas de panique. Vous pouvez goûter au plaisir de la cuisine bio sans avoir à sortir une poêle en utilisant notre <strong>service de livraison de plats traiteur à domicile</strong>. Nous vous garantissons la même fraîcheur et le même plaisir qu’un petit plat fait maison, car nous préparons chacunes de nos assiettes en travaillant les meilleurs produits pour vos papilles et pour votre santé.
                 </p>
-                <h2 class="title-sf-2 semibold">Pierre Duclass, un chef étoilé et engagé</h2>
+                <h2 class="title-sf-2 semibold red_sf red_sf">Pierre Duclass, un chef étoilé et engagé</h2>
                 <p class="text">
                     A l’origine du concept Sainefood, Pierre Duclass a toujours eu à coeur de proposer une cuisine de qualité en s’attachant à travailler des produits issu de l’agriculture biologique. Un engagement qui a fait sa renommée et sa marque de fabrique. Avec Sainefood, il souhaite partager sa passion et son savoir faire avec le plus grand nombre. Cuisiniers aguerris ou du dimanche, chacun peut trouver en Sainefood un compagnon pour adopter une alimentation saine et gourmande. De quoi se régaler au quotidien ! 
                 </p>
-                <h2 class="title-sf-2 semibold">D.I.Y. : Cuisiner soi-même devient un jeu d’enfant</h2>
+                <h2 class="title-sf-2 semibold red_sf">D.I.Y. : Cuisiner soi-même devient un jeu d’enfant</h2>
                 <p class="text">
                     « Quand un homme a faim, mieux vaut lui apprendre à pêcher que de lui donner un poisson » -Proverbe de Confucius-
                     Telle est notre devise car chez Sainefood, le « Homemade » est à l’honneur. Au cours des différents ateliers proposés vous pourrez vous essayer à la cuisine, apprendre à travailler les aliments, recréer les nombreuses textures et saveurs rencontrées à la maison pour régaler toute la famille. Les cours interactifs et le suivi personnalisé apporté par notre équipe permettra de guider soigneusement chacun de vos pas dans le monde si délicat de la cuisine bio.
