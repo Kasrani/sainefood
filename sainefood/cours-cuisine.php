@@ -6,8 +6,9 @@ session_start();
 <!DOCTYPE HTML>
 <html lang="fr">
 	<head>
-		<title>Saine-Food</title>
+		<title>Atelier de cours de cuisine Bio - Sainefood Paris</title>
 		<meta charset="utf-8" />
+        <meta name="description" content="Sainefood, spécialisé dans les cours de cuisine à Paris, vous propose d'assister à ses ateliers originaux pour découvrir des recettes aux produits provenant uniquement de l'agriculture biologique">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119196030-1"></script>
@@ -144,7 +145,7 @@ session_start();
                         <div class='cartouche border-bloc'>
                             <div class='cartouche-img-overlay'>
                                 <div class='btn-produit'>
-                                    <a class='float-left' href='#'><span class='icon-add-panier'></span></a>
+                                    <a class='float-left' href='produit.php?idCours=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'><span class='icon-add-panier'></span></a>
                                     <a class='float-right' href='produit.php?idCours=" . $row['id'] . "'><span class='icon-details'></span></a>
                                 </div>
                             </div>

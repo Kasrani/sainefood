@@ -9,8 +9,9 @@ if (isset($_GET['id'])) {
 <!DOCTYPE HTML>
 <html lang="fr">
 	<head>
-		<title>Saine-Food</title>
+		<title>Cours de cuisine et Livraison de plats préparés bio à Paris</title>
 		<meta charset="utf-8" />
+        <meta name="description" content="L’Atelier de Pierre Duclass vous accueille pour des cours de cuisine bio. Avec le service traiteur bio : commandez vos plats cuisinés bio issus des recettes du Chef !">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119196030-1"></script>
@@ -51,9 +52,9 @@ if (isset($_GET['id'])) {
                     <div class="ml-auto p-2 connecter" data-toggle="modal" data-target="#gridSystemModal"><?php if (isset($_SESSION['user'])){echo "Bonjour ";}else {echo "Se connecter";}?></div>
                     <a href="account.php" class="user">&nbsp;<?php if (isset($_SESSION['user'])){echo $_SESSION['user'];}   else {echo "";}?></a>
                     <div class="ml-auto p-2"><span class="icon-panier"></span></div>
-                    <?php 
+                    <?php
                     $nbArticle = count($_SESSION['panier']['libelleProduit']);
-                    if ($nbArticle > 0) {
+                    if (count($_SESSION['panier']['libelleProduit']) > 0) {
                         echo "<div id='totalProduct'><span>" . count($_SESSION['panier']['libelleProduit']) . "</span></div>";
                         }
                     ?>
@@ -148,7 +149,7 @@ if (isset($_GET['id'])) {
                             <h3>42, avenue de Versailles 75012 Paris</h3>
                         </div>
                         <div class='event-btn-res'>
-                            <button type='button' class='btn btn-primary sf-button-3'>je réserve ma place</button>
+                            <button type='button' onclick=\"location.href='produit.php?idCours=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "';\" class='btn btn-primary sf-button-3'>je réserve ma place</button>
                         </div>
                         <img class='img-fluid' src='images/Events/" . $row['image'] . "' alt='Sainefood'>
                         ";  
@@ -166,10 +167,15 @@ if (isset($_GET['id'])) {
                                     <p style='height:152px;overflow:hidden;'>" . $row['details'] . "</p>
                                 ";
                                 }
-                                ?>
-                        </p>
-                        <div class="sf-button-3"><span>Voir plus</span></div>
-                        <button type="button" class="btn btn-outline-primary sf-button-3">je réserve ma place</button>
+                        $query = "SELECT * FROM `event` LIMIT 1";
+                        $result = mysqli_query($maConnexion,$query);
+                        $row = $result->fetch_assoc();
+                        echo "</p>
+                        <div class='sf-button-3' onclick=\"location.href='produit.php?idCours=" . $row['id'] . "';\"><span>Voir plus</span><span class='icon-right'></span></div>
+                        <button type='button' onclick=\"location.href='produit.php?idCours=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "';\" class='btn btn-outline-primary sf-button-3'>je réserve ma place</button>
+                        ";
+                            
+                        ?>
                     </div>
                     <h6 class="title-sf-5">Programmes à venir (9)</h6>
                     <div class="mx-auto my-auto">
@@ -232,8 +238,8 @@ if (isset($_GET['id'])) {
                                 }
                             ?>
                         </div><!-- d-flex justify-content-between -->
-                        <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-link">Voir plus</button>
+                        <div class="d-flex justify-content-end" style="margin-top:15px;">
+                            <button type="button" class="btn btn-link">Voir plus<span class="icon-right"></span></button>
                         </div>
                     </div>
                     <hr class="separateur">
@@ -245,10 +251,10 @@ if (isset($_GET['id'])) {
                         <div class="atelier-description col-md-7">
                             <h2 class="title-sf-2 semibold title-block">L'atelier Sainefood</h2><hr class="separateur">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante. Integer luctus tellus vel sem molestie aliquam. Suspendisse in arcu elit. Donec mattis ligula pretium, ultricies odio luctus, dictum turpis. Aenean ligula ex, lacinia at imperdiet nec, lobortis et metus.
+                                Savoir prendre soin de son alimentation est depuis longtemps au centre de nos préoccupations. Chez Sainefood nous avons parfaitement compris le challenge que cela représente et la difficulté de parvenir à manger sainement tous les jours. A l’heure où il est de plus en plus difficile de bien manger et où <a href="https://www.saine-food.fr/recettes-bio">cuisiner quotidiennement des aliments sains</a> et variés relève du véritable défi, accompagner nos clients est une nécessité absolue. Aussi nous vous proposons la possibilité d’apprendre à préparer sans efforts de vrais plats bio et sains, en utilisant une large gamme de produits frais.
                             </p>
                             <div class="d-flex align-items-end">
-                                <button type="button" class="btn btn-link">Voir plus</button>
+                                <button type="button" class="btn btn-link">Voir plus<span class="icon-right"></span></button>
                             </div>
                         </div>
                     </div>

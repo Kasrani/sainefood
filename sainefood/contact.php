@@ -6,8 +6,9 @@ session_start();
 <!DOCTYPE HTML>
 <html lang="fr">
 	<head>
-		<title>Saine-Food</title>
+		<title>Contactez-nous pour des cours de cuisine bio personnalisés </title>
 		<meta charset="utf-8" />
+        <meta name="description" content="Vous êtes une entreprise ? Un particulier qui cherche à organiser un évènement étonnant ? Contactez-nous pour plus d’informations sur nos offres de cours de cuisine bio">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119196030-1"></script>

@@ -45,9 +45,9 @@ img.absolute{top:-24%;width:100%;position:absolute;}
 h3.title-sf-3{font-family:'Maitree', serif;font-size:18px;text-transform:uppercase;color:#CFCBC2;padding-left:10px;}
 hr.separateur{margin-top:10px;margin-bottom:5px;border:1px dashed #CFCBC2;max-width:1140px;}
 .first-event-description p{padding:5px 0 0 10px;margin:0;font-family:'Maitree', serif;font-size:13px;color:#484848;text-align:left;line-height:24px;}
-.sf-button-3{padding-left:10px;font-size:14px;font-family:'Maitree', serif;color:#9DD4BF;font-weight:600;}
+.sf-button-3{padding-left:10px;font-size:14px;font-family:'Maitree', serif;color:#9DD4BF;font-weight:600;cursor: pointer;}
 .btn.sf-button-3{margin-left:10px;border-color:#FF594F;border-radius:0;color:#FF594F;font-family:'Maitree', serif;font-weight:700;margin-top:9px;}
-.btn.sf-button-3:hover{background-color:#FF594F;color:#FFF;border-color:#FF594F;}
+.btn.sf-button-3:hover{background-color:#FF594F;color:#FFF;border-color:#FF594F;cursor: pointer;}
 .row-equal > div[class*='col-']{display:flex;flex:1 0 auto;}
 .row-equal .card{width:100%;}
 .carousel{height: 172px;}
@@ -69,6 +69,7 @@ p.texte{margin-bottom:0!important;}
 .cours-infos{display:inline-block;}
 .semibold{font-weight:600;}
 .title-sf-2{font-family:'Maitree', serif;font-size:28px;color:#484848;padding-left:10px;text-align:center;line-height:initial;}
+.title-sf-1{font-family:'Maitree', serif;font-size:38px;color:#484848;padding-left:10px;text-align:center;line-height:initial;}
 .card{width:336px;border:0!important;border-radius:0!important;padding:5px;display:inline-block!important;}
 .card-img-top{border-radius:0!important;}
 .card-body{background:#484848;margin-top:5px;}
@@ -110,7 +111,7 @@ p.texte{margin-bottom:0!important;}
 .atelier-description .title-sf-2, .temoignages-avis .title-sf-2, .cartouche-description .title-sf-2{text-align:left;margin-bottom:0px;padding-left:0px!important;}
 .temoignages-avis p{font-size:26px;}
 .temoignages-avis .icon-avis{color:#9DD4BF;font-size:32px;line-height:2;}
-.atelier-description p, .cartouche-description p{font-size:13px;padding:5px 0 0 10px;line-height:18px;}
+.atelier-description p, .cartouche-description p{font-size:18px;padding:5px 0 0 10px;line-height:28px!important;height: 197px;overflow:hidden;}
 .temoignages .border-bloc{border-left:8px solid #F2F2F2!important;border-right:none!important;}
 .align-items-end.temoignages span{font-family:'Maitree', serif;font-size:26px;text-align:left;}
 .align-items-end.temoignages .poste{color:#BCBCBC!important;}
@@ -236,6 +237,7 @@ body.iosBugFixCaret.modal-open {position: fixed; width: 100%;}
 .inline{display:inline-block;padding-left: 0px!important;}
 #totalProduct{background-color:#FF594F;color:#FFF;font-size:10px;font-family:'Maitree', serif;position: relative;right: 5px;top: 5px;height: 15px;width: 15px;border-radius: 20px;}
 #totalProduct span {position:relative;bottom:15px;left:5px;font-weight: 600;}
+.first-event-description .icon-right, .atelier-description .icon-right, .justify-content-end .icon-right{margin-left: 4px;font-size: 12px;color: #484848;vertical-align: middle;}
 
 @media only screen 
     and (min-device-width : 375px) 

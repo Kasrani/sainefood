@@ -6,8 +6,9 @@ session_start();
 <!DOCTYPE HTML>
 <html lang="fr">
 	<head>
-		<title>Saine-Food</title>
+		<title>Découvrez le concept Sainefood</title>
 		<meta charset="utf-8" />
+        <meta name="description" content="Sainefood vous propose des cours de cuisine et des plats cuisinés en livraison qui mettent en avant l’utilisation de produits bio">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119196030-1"></script>
@@ -128,9 +129,24 @@ session_start();
                 <h2 class="title-sf-2 semibold">L'atelier Sainefood</h2>
                 <hr class="separateur">
                 <img class="img-fluid" src="images/atelier-sainefood.png" alt="l'atelier sainefood">
-                <p class="text-center">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper. Proin eget lorem velit. Mauris at ex in ligula aliquet dictum et in ex. In in magna efficitur orci pharetra euismod id sed elit. Donec et dui in massa aliquet laoreet et ac lorem. In ut sollicitudin ligula. Sed erat sem, efficitur vel consectetur at, dignissim nec ante. Integer luctus tellus vel sem molestie aliquam. Suspendisse in arcu elit. Donec mattis ligula pretium, ultricies odio luctus, dictum turpis. Aenean ligula ex, lacinia at imperdiet nec, lobortis et metus. Pellentesque elementum sapien nisl, in interdum justo dictum ac. Etiam venenatis, dolor nec elementum elementum, augue mi sodales urna, ut laoreet nisi quam nec ligula. Morbi molestie nulla tellus, nec porta lorem laoreet vitae. Nibh, mollis id nibh ac, consectetur molestie urna.
+                <br><br><br>
+                <h1 class="title-sf-1 semibold">Sainefood : Le plaisir sain et inconditionnel</h1>
+                <h2 class="title-sf-2 semibold">Le concept Healty food : la cuisine au service de la santé. </h2>
+                <p class="text">
+                    Savoir prendre soin de son alimentation est depuis longtemps au centre de nos préoccupations. Chez Sainefood nous avons parfaitement compris le challenge que cela représente et la difficulté de parvenir à manger sainement tous les jours. A l’heure où il est de plus en plus difficile de bien manger et où <a href="https://www.saine-food.fr/recettes-bio">cuisiner quotidiennement des aliments sains</a> et variés relève du véritable défi, accompagner nos clients est une nécessité absolue. Aussi nous vous proposons la possibilité d’apprendre à préparer sans efforts de vrais plats bio et sains, en utilisant une large gamme de produits frais. Si vous êtes soucieux de la qualité de votre alimentation, notre but est de vous proposer des <strong>ateliers/cours de cuisine</strong> simples et accessibles à tous. De nombreux conseils sur la préparation des aliments ainsi que sur les ingrédients à privilégier seront fournis au cours des différentes sessions à thèmes.
+                    Si malgré tout vous n’avez pas envie de cuisiner, vous n’avez pas le temps ou que vous ne vous sentez pas encore prêt, pas de panique. Vous pouvez goûter au plaisir de la cuisine bio sans avoir à sortir une poêle en utilisant notre <strong>service de livraison de plats traiteur à domicile</strong>. Nous vous garantissons la même fraîcheur et le même plaisir qu’un petit plat fait maison, car nous préparons chacunes de nos assiettes en travaillant les meilleurs produits pour vos papilles et pour votre santé.
                 </p>
+                <h2 class="title-sf-2 semibold">Pierre Duclass, un chef étoilé et engagé</h2>
+                <p class="text">
+                    A l’origine du concept Sainefood, Pierre Duclass a toujours eu à coeur de proposer une cuisine de qualité en s’attachant à travailler des produits issu de l’agriculture biologique. Un engagement qui a fait sa renommée et sa marque de fabrique. Avec Sainefood, il souhaite partager sa passion et son savoir faire avec le plus grand nombre. Cuisiniers aguerris ou du dimanche, chacun peut trouver en Sainefood un compagnon pour adopter une alimentation saine et gourmande. De quoi se régaler au quotidien ! 
+                </p>
+                <h2 class="title-sf-2 semibold">D.I.Y. : Cuisiner soi-même devient un jeu d’enfant</h2>
+                <p class="text">
+                    « Quand un homme a faim, mieux vaut lui apprendre à pêcher que de lui donner un poisson » -Proverbe de Confucius-
+                    Telle est notre devise car chez Sainefood, le « Homemade » est à l’honneur. Au cours des différents ateliers proposés vous pourrez vous essayer à la cuisine, apprendre à travailler les aliments, recréer les nombreuses textures et saveurs rencontrées à la maison pour régaler toute la famille. Les cours interactifs et le suivi personnalisé apporté par notre équipe permettra de guider soigneusement chacun de vos pas dans le monde si délicat de la cuisine bio.
+                    Les sessions auront lieu en plein coeur de Paris (XIIème arrondissement). Pour les raisons évoquées plus haut et pour une expérience optimale le nombre de participants n'excédera pas le nombre de 9 à chaque cours. Des <a href="https://www.saine-food.fr/reservations">réservations au préalable</a> seront donc nécessaires et permettront à tous de passer un délicieux moment.
+                </p>
+
             </div>
         </div>
         <footer>

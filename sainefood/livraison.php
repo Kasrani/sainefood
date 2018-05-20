@@ -6,8 +6,9 @@ session_start();
 <!DOCTYPE HTML>
 <html lang="fr">
 	<head>
-		<title>Saine-Food</title>
+		<title>Livraison de plats bio - Sainefood Paris</title>
 		<meta charset="utf-8" />
+        <meta name="description" content="Sainefood vous propose une cuisine de qualité avec des ingrédients bio à déguster depuis chez vous grâce à son service de livraison à domicile sur Paris">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119196030-1"></script>
