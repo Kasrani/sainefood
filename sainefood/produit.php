@@ -8,7 +8,7 @@ if (isset($_GET['id'])) {
 if (isset($_GET['l'])) {
     $plat = $_GET['l'];
 }
-$query = "SELECT * FROM `plat` WHERE id='$plat'";
+$query = "SELECT * FROM `plat` WHERE id='$plat' or nom='$plat'";
 $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
 $row = mysqli_fetch_assoc($result);
 
@@ -260,7 +260,7 @@ if (!$erreur){
 
 ?>
 
-<form class="panier d-flex align-items-start flex-column" method="get" action="produit.php">
+<form name="panier" class="panier d-flex align-items-start flex-column" method="get" action="produit.php">
 <table class="commande mb-auto p-2">
 	<!--<tr>
         <td>Quantité</td>
@@ -280,7 +280,7 @@ if (!$erreur){
 	      for ($i=0 ;$i < $nbArticles ; $i++)
 	      {
 	         echo "<tr class='border-panier'>";
-              echo "<td><div class='quantite'><input style='display:none;' type=\"text\" name=\"q[]\" value=\"".htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."\"/><input type=\"button\" value=\"-\" onclick=\"document.forms[0].elements[".(3 * $i)."].value = parseFloat(document.forms[0].elements[".(3 * $i)."].value) - 1; document.forms[0].submit();\"><input type=\"button\" value=\"+\" onclick=\"document.forms[0].elements[".(3 * $i)."].value = parseFloat(document.forms[0].elements[".(3 * $i)."].value) + 1; document.forms[0].submit();\"></div></td>";
+              echo "<td><div class='quantite'><input style='display:none;' type=\"text\" name=\"q[]\" value=\"".htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."\"/><input type=\"button\" value=\"-\" onclick=\"document.forms['panier'].elements[".(3 * $i)."].value = parseFloat(document.forms['panier'].elements[".(3 * $i)."].value) - 1; document.forms['panier'].submit();\"><input type=\"button\" value=\"+\" onclick=\"document.forms['panier'].elements[".(3 * $i)."].value = parseFloat(document.forms['panier'].elements[".(3 * $i)."].value) + 1; document.forms['panier'].submit();\"></div></td>";
             echo "<td><span>".htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."</span></td>";
               echo "<td><span>x</span></td>";
 	         echo "<td class='red_sf'>".htmlspecialchars($_SESSION['panier']['libelleProduit'][$i])."</ td>";
@@ -295,7 +295,7 @@ if (!$erreur){
 	      echo "<tr><td colspan=\"4\">";
 	      //echo "<input class='btn btn-link' type=\"submit\" value=\"Calculer\"/>";
 	      echo "<input type=\"hidden\" name=\"action\" value=\"refresh\"/>";
-           echo "<input type=\"hidden\" name=\"nom\" value='" . $row['nom'] . "'/>";
+           echo "<input type=\"hidden\" name=\"id\" value='" . $row['id'] . "'/>";
 	      echo "</td></tr>";
            echo "<div id='vide' class='btn-commander' style='width: calc(100% - 60px);'><div class='btn btn-primary btn-block shadow semibold'><a href='#paypal-button'>Finaliser votre commande</div></a></div>";
            echo "<center id='paypal-btn' class='' style='position: absolute;left: 50%;-webkit-transform: translateX(-50%);transform: translateX(-50%); top:300px;'><div id='paypal-button'></div></center>";
@@ -308,7 +308,7 @@ if (!$erreur){
 </table>
     
     <?php
-echo "<a class='btn btn-link' style='width:100%;' href='produit.php?nom=" . $row['nom'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter ce produit à votre panier</a>";
+echo "<a class='btn btn-link' style='width:100%;' href='produit.php?id=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter ce produit à votre panier</a>";
     
 
     ?>
