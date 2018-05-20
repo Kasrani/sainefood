@@ -36,6 +36,10 @@ div.baseline{font-size:12px;margin-left:10px;display:inline-block;position:relat
 .bandeau{width:100%;height:550px;position:absolute;z-index:-1;background-image:url(../../images/bg-carousel.png);background-size:cover;}
 .bandeau.bandeau-atelier{height:226px;background-image:url(../../images/bg-atelier.png);}
 .red_sf{color:#FF594F!important;}
+.center{display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;}
 .bandeau.bandeau-contact{height:226px;background-image:url(../../images/bg-contact.png);}
 .cours-cuisne-home{width:100%;height:auto;}
 .first-event{height:267px;margin:0 0 5px 0;overflow:hidden;position:relative;display:inline-block;}

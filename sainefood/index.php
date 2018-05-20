@@ -258,6 +258,9 @@ if (isset($_GET['id'])) {
                             </div>
                         </div>
                     </div>
+                    <div class="d-flex justify-content-center" style="margin-bottom:20px;">
+                        <img src="images/icons-atelier.svg" class="img-fluid center">
+                    </div>
                     <hr class="separateur">
                     <div class="livraison">
                         <h2 class="title-sf-2 semibold">Zone de Livraison</h2>
