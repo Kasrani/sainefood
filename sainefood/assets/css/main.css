@@ -235,7 +235,7 @@ body.iosBugFixCaret.modal-open {position: fixed; width: 100%;}
 .event-btn-res .sf-button-3 {background-color: #FF594F;color: #FFF;}
 .inline{display:inline-block;padding-left: 0px!important;}
 #totalProduct{background-color:#FF594F;color:#FFF;font-size:10px;font-family:'Maitree', serif;position: relative;right: 5px;top: 5px;height: 15px;width: 15px;border-radius: 20px;}
-#totalProduct span {position: relative;bottom: 15px;left: 5px;}
+#totalProduct span {position:relative;bottom:15px;left:5px;font-weight: 600;}
 
 @media only screen 
     and (min-device-width : 375px) 
