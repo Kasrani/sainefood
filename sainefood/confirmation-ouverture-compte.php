@@ -39,13 +39,19 @@ session_start();
         <div id="header" class="navbar navbar-fixed-top container-fluid">
             <div class="container">
                 <div class="d-flex">
-                    <div class="p-2"><img src="images/Logo.svg" alt="Sainefood"></div>
+                    <div class="p-2"><a href="index.php"><img src="images/Logo.svg" alt="Sainefood"></a></div>
                     <div class="p-2 baseline">Cours de cuisine & traiteur <b class="green">bio</b></div>
                 </div>
                 <div class="d-flex">
                     <div class="ml-auto p-2 connecter" data-toggle="modal" data-target="#gridSystemModal"><?php if (isset($_SESSION['user'])){echo "Bonjour ";}else {echo "Se connecter";}?></div>
                     <a href="account.php" class="user">&nbsp;<?php if (isset($_SESSION['user'])){echo $_SESSION['user'];}   else {echo "";}?></a>
                     <div class="ml-auto p-2"><span class="icon-panier"></span></div>
+                    <?php 
+                    $nbArticle = count($_SESSION['panier']['libelleProduit']);
+                    if ($nbArticle > 0) {
+                        echo "<div id='totalProduct'><span>" . count($_SESSION['panier']['libelleProduit']) . "</span></div>";
+                        }
+                    ?>
                 </div>
             </div>
         </div>

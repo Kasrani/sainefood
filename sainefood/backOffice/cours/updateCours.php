@@ -7,6 +7,7 @@ $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
 $row = mysqli_fetch_assoc($result);
 
 $intituleUp = $_GET['intitule'];
+$prixUp = $_GET['prix'];
 $dateUp = $_GET['date'];
 $heureUp = $_GET['heure'];
 $nbParticipantsUp = $_GET['nbParticipants'];
@@ -14,7 +15,7 @@ $detailsUp = $_GET['details'];
 $imageUp = $_GET['imageCours'];
 
 
-mysqli_query($maConnexion,"UPDATE event SET nom='$intituleUp', date='$dateUp', heure='$heureUp', disponibilite='$nbParticipantsUp', details='$detailsUp', image='$imageUp' WHERE nom='$cours'") or die(mysqli_error($maConnexion));
+mysqli_query($maConnexion,"UPDATE event SET nom='$intituleUp', prix='$prixUp', date='$dateUp', heure='$heureUp', disponibilite='$nbParticipantsUp', details='$detailsUp', image='$imageUp' WHERE nom='$cours'") or die(mysqli_error($maConnexion));
  header('Location: ../../account.php');
 
 ?>

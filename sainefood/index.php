@@ -2,6 +2,9 @@
 // Database Authentication
 include("authDB.php");
 session_start();
+if (isset($_GET['id'])) {
+    $plat = $_GET['id'];
+}
 ?>
 <!DOCTYPE HTML>
 <html lang="fr">
@@ -41,13 +44,19 @@ session_start();
         <div id="header" class="navbar navbar-fixed-top container-fluid">
             <div class="container">
                 <div class="d-flex">
-                    <div class="p-2"><img src="images/Logo.svg" alt="Sainefood"></div>
+                    <div class="p-2"><a href="index.php"><img src="images/Logo.svg" alt="Sainefood"></a></div>
                     <div class="p-2 baseline">Cours de cuisine & traiteur <b class="green">bio</b></div>
                 </div>
                 <div class="d-flex">
                     <div class="ml-auto p-2 connecter" data-toggle="modal" data-target="#gridSystemModal"><?php if (isset($_SESSION['user'])){echo "Bonjour ";}else {echo "Se connecter";}?></div>
                     <a href="account.php" class="user">&nbsp;<?php if (isset($_SESSION['user'])){echo $_SESSION['user'];}   else {echo "";}?></a>
                     <div class="ml-auto p-2"><span class="icon-panier"></span></div>
+                    <?php 
+                    $nbArticle = count($_SESSION['panier']['libelleProduit']);
+                    if ($nbArticle > 0) {
+                        echo "<div id='totalProduct'><span>" . count($_SESSION['panier']['libelleProduit']) . "</span></div>";
+                        }
+                    ?>
                 </div>
             </div>
         </div>   
@@ -207,8 +216,8 @@ session_start();
                                     <div class='card-content shadow'>
                                         <div class='card-img-overlay'>
                                             <div class='btn-produit'>
-                                            <a class='float-left' href=''><span class='icon-add-panier'></span></a>
-                                            <a class='float-right' href='produit.php?id=" . $row['id'] . "'><span class='icon-details'></span></a>
+                                            <a class='float-left' href='produit.php?idPlats=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'><span class='icon-add-panier'></span></a>
+                                            <a class='float-right' href='produit.php?idPlats=" . $row['id'] . "'><span class='icon-details'></span></a>
                                         </div>
                                         </div>
                                         <img class='card-img-top' src='images/Plats/" . $row['image'] . "' alt='Card image cap'>

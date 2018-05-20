@@ -37,7 +37,7 @@ if(!$_SESSION['user']){
         <div id="header" class="navbar navbar-fixed-top container-fluid">
             <div class="container">
                 <div class="d-flex">
-                    <div class="p-2"><img src="images/Logo.svg" alt="Sainefood"></div>
+                    <div class="p-2"><a href="index.php"><img src="images/Logo.svg" alt="Sainefood"></a></div>
                     <div class="p-2 baseline">Cours de cuisine & traiteur <b class="green">bio</b></div>
                 </div>
                 <div class="d-flex">

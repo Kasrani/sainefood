@@ -2,16 +2,18 @@
 // Start the session
 include("authDB.php");
 session_start();
-if (isset($_GET['id'])) {
-    $plat = $_GET['id'];
+if (isset($_GET['idPlats'])) {
+    $plat = $_GET['idPlats'];
+    $query = "SELECT * FROM `plat` WHERE id='$plat' or nom='$plat'";
+    $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
+    $row = mysqli_fetch_assoc($result);
 }
-if (isset($_GET['l'])) {
-    $plat = $_GET['l'];
+if (isset($_GET['idCours'])) {
+    $cours = $_GET['idCours'];
+    $query = "SELECT * FROM `event` WHERE id='$cours' or nom='$cours'";
+    $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
+    $row = mysqli_fetch_assoc($result);
 }
-$query = "SELECT * FROM `plat` WHERE id='$plat' or nom='$plat'";
-$result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
-$row = mysqli_fetch_assoc($result);
-
 ?>
 <!DOCTYPE HTML>
 <html lang="fr">
@@ -50,13 +52,19 @@ $row = mysqli_fetch_assoc($result);
         <div id="header" class="navbar navbar-fixed-top container-fluid">
             <div class="container">
                 <div class="d-flex">
-                    <div class="p-2"><img src="images/Logo.svg" alt="Sainefood"></div>
+                    <div class="p-2"><a href="index.php"><img src="images/Logo.svg" alt="Sainefood"></a></div>
                     <div class="p-2 baseline">Cours de cuisine & traiteur <b class="green">bio</b></div>
                 </div>
                 <div class="d-flex">
                     <div class="ml-auto p-2 connecter" data-toggle="modal" data-target="#gridSystemModal"><?php if (isset($_SESSION['user'])){echo "Bonjour ";}else {echo "Se connecter";}?></div>
                     <a href="account.php" class="user">&nbsp;<?php if (isset($_SESSION['user'])){echo $_SESSION['user'];}   else {echo "";}?></a>
                     <div class="ml-auto p-2"><span class="icon-panier"></span></div>
+                    <?php 
+                    $nbArticle = count($_SESSION['panier']['libelleProduit']);
+                    if ($nbArticle > 0) {
+                        echo "<div id='totalProduct'><span>" . count($_SESSION['panier']['libelleProduit']) . "</span></div>";
+                        }
+                    ?>
                 </div>
             </div>
         </div>
@@ -125,6 +133,7 @@ $row = mysqli_fetch_assoc($result);
             <div  class="col-md-7 main-content shadow p-2 position-relative">
                 <div class="content">
                     <?php
+                    if (isset($_GET['idPlats'])){
                     echo "
                     <h2 class='title-sf-2 semibold text-left'>" . $row['nom'] . "</h2>
                     <img class='img-fluid' src='images/Plats/" . $row['image'] . "' alt=''><br><br>
@@ -193,6 +202,21 @@ $row = mysqli_fetch_assoc($result);
                     </table>
                     <h4 class='title-sf-4'>Avis clients</h4>
                     ";
+                        }else if (isset($_GET['idCours'])) {
+                        echo "
+                    <h2 class='title-sf-2 semibold text-left'>" . $row['nom'] . "</h2>
+                    <img class='img-fluid' src='images/Events/" . $row['image'] . "' alt=''><br><br>
+                    <h4 class='title-sf-4'>Détails</h4>
+                    <p>
+                        " . $row['details'] . "
+                    </p>
+                    <h4 class='title-sf-4'>Prix</h4>
+                    <p class='semibold'>" . $row['prix'] . " €</p>
+                    <h4 class='title-sf-4'>Comment y aller ?</h4>
+                    <p class='semibold'>Transport public<p/>
+                    <p>Métro Franklin D. Roosevelt (M1, m9)<p/>
+                    ";
+                    }
                     ?>
                 </div>
             </div>
@@ -285,7 +309,12 @@ if (!$erreur){
               echo "<td><span>x</span></td>";
 	         echo "<td class='red_sf'>".htmlspecialchars($_SESSION['panier']['libelleProduit'][$i])."</ td>";
 	         echo "<td class='' style='text-align: right;' colspan='2'>".htmlspecialchars($_SESSION['panier']['prixProduit'][$i])."  €</td>";
-	         echo "<td class='delete-block'><a style='font-size:12px;' class='delete semibold' href=\"".htmlspecialchars("produit.php?action=suppression&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">x</a></td>";
+              if (isset($_GET['idPlats'])) {
+	         echo "<td class='delete-block'><a style='font-size:12px;' class='delete semibold' href=\"".htmlspecialchars("produit.php?action=suppression&idPlats=" . $row['id'] . "&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">x</a></td>";
+              }
+              if (isset($_GET['idCours'])) {
+	         echo "<td class='delete-block'><a style='font-size:12px;' class='delete semibold' href=\"".htmlspecialchars("produit.php?action=suppression&idCours=" . $row['id'] . "&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">x</a></td>";
+              }
 	         echo "</tr>";
 	      }
 	      echo "<tr class='total-panier'>";
@@ -295,7 +324,12 @@ if (!$erreur){
 	      echo "<tr><td colspan=\"4\">";
 	      //echo "<input class='btn btn-link' type=\"submit\" value=\"Calculer\"/>";
 	      echo "<input type=\"hidden\" name=\"action\" value=\"refresh\"/>";
-           echo "<input type=\"hidden\" name=\"id\" value='" . $row['id'] . "'/>";
+           if (isset($_GET['idPlats'])) {
+           echo "<input type=\"hidden\" name=\"idPlats\" value='" . $row['id'] . "'/>";
+               }
+           if (isset($_GET['idCours'])) {
+           echo "<input type=\"hidden\" name=\"idCours\" value='" . $row['id'] . "'/>";
+               }
 	      echo "</td></tr>";
            echo "<div id='vide' class='btn-commander' style='width: calc(100% - 60px);'><div class='btn btn-primary btn-block shadow semibold'><a href='#paypal-button'>Finaliser votre commande</div></a></div>";
            echo "<center id='paypal-btn' class='' style='position: absolute;left: 50%;-webkit-transform: translateX(-50%);transform: translateX(-50%); top:300px;'><div id='paypal-button'></div></center>";
@@ -308,9 +342,12 @@ if (!$erreur){
 </table>
     
     <?php
-echo "<a class='btn btn-link' style='width:100%;' href='produit.php?id=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter ce produit à votre panier</a>";
-    
-
+    if (isset($_GET['idPlats'])) {
+        echo "<a class='btn btn-link' style='width:100%;' href='produit.php?idPlats=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter ce produit à votre panier</a>";
+        }
+    if (isset($_GET['idCours'])) {
+        echo "<a class='btn btn-link' style='width:100%;' href='produit.php?idCours=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter ce cours à votre panier</a>";
+        }
     ?>
 </form>
                         

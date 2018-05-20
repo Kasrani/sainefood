@@ -18,9 +18,13 @@ echo "<form action='backOffice/cours/updateCours.php' method='get'>
                                         <label for=''>Date  *</label>
                                         <input type='date' value='" . $row['date'] . "' name='date' class='form-control' placeholder=''>
                                     </div>
-                                    <div class='col-md-5 inline'>
+                                    <div class='col-md-3 inline'>
                                         <label for=''>Heure  *</label>
                                         <input type='time' value='" . $row['heure'] . "' name='heure' class='form-control' placeholder=''>
+                                    </div>
+                                    <div class='col-md-3 inline'>
+                                        <label for=''>Prix  *</label>
+                                        <input type='text' value='" . $row['prix'] . "' name='prix' class='form-control' placeholder=''>
                                     </div>
                                 </div>
                                 <div class='mr-auto  p-2 form-group col-md-5'>
