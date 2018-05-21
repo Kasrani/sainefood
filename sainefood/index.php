@@ -284,8 +284,8 @@ if (isset($_GET['id'])) {
                     </div>
                     <div class="d-flex row">
                         <div class="mr-auto p-2 social">Suivez-nous sur les réseaux sociaux !</div>
-                        <div class="p-2 fb"><span class="icon-facebook2"></span></div>
-                        <div class="p-2 insta"><span class="icon-instagram"></span></div>
+                        <div class="p-2 fb"><span class="icon-facebook22"></span></div>
+                        <div class="p-2 insta"><span class="icon-instagram2"></span></div>
                     </div>
                     
                 </div>
