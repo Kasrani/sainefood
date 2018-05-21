@@ -443,7 +443,7 @@ echo "
                     <div class="d-flex flex-column col-md-3">
                         <div class="p-2"><button type="button" class="btn btn-outline-primary btn-footer">Nous contacter</button></div>
                         <div class="p-2 title-groupe-footer">PARIS</div>
-                        <div class="p-2 sous-title-footer">42,<br>avenue Versailles,<br> 75012</div>
+                        <div class="p-2 sous-title-footer">52,<br>avenue Daumesnil,<br> 75012</div>
                     </div>
                 </div>
                 <div class="d-flex p-2 sous-title-footer end-footer">© 2018<br>Tous droits réservés. Mentions légales</div>

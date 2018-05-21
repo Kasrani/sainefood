@@ -130,7 +130,7 @@ session_start();
                 <hr class="separateur">
                 <img class="img-fluid" src="images/atelier-sainefood.png" alt="l'atelier sainefood">
                 <br><br><br>
-                <h2 class="title-sf-2 semibold red_sf">Le concept Healty food : la cuisine au service de la santé. </h2>
+                <h2 class="title-sf-2 semibold red_sf">Le concept Healthy food : la cuisine au service de la santé. </h2>
                 <p class="text">
                     Savoir prendre soin de son alimentation est depuis longtemps au centre de nos préoccupations. Chez Sainefood nous avons parfaitement compris le challenge que cela représente et la difficulté de parvenir à manger sainement tous les jours. A l’heure où il est de plus en plus difficile de bien manger et où <a href="https://www.saine-food.fr/recettes-bio">cuisiner quotidiennement des aliments sains</a> et variés relève du véritable défi, accompagner nos clients est une nécessité absolue. Aussi nous vous proposons la possibilité d’apprendre à préparer sans efforts de vrais plats bio et sains, en utilisant une large gamme de produits frais. Si vous êtes soucieux de la qualité de votre alimentation, notre but est de vous proposer des <strong>ateliers/cours de cuisine</strong> simples et accessibles à tous. De nombreux conseils sur la préparation des aliments ainsi que sur les ingrédients à privilégier seront fournis au cours des différentes sessions à thèmes.
                     Si malgré tout vous n’avez pas envie de cuisiner, vous n’avez pas le temps ou que vous ne vous sentez pas encore prêt, pas de panique. Vous pouvez goûter au plaisir de la cuisine bio sans avoir à sortir une poêle en utilisant notre <strong>service de livraison de plats traiteur à domicile</strong>. Nous vous garantissons la même fraîcheur et le même plaisir qu’un petit plat fait maison, car nous préparons chacunes de nos assiettes en travaillant les meilleurs produits pour vos papilles et pour votre santé.
@@ -186,7 +186,7 @@ session_start();
                     <div class="d-flex flex-column col-md-3">
                         <div class="p-2"><button type="button" class="btn btn-outline-primary btn-footer">Nous contacter</button></div>
                         <div class="p-2 title-groupe-footer">PARIS</div>
-                        <div class="p-2 sous-title-footer">42,<br>avenue Versailles,<br> 75012</div>
+                        <div class="p-2 sous-title-footer">52,<br>avenue Daumesnil,<br> 75012</div>
                     </div>
                 </div>
                 <div class="d-flex p-2 sous-title-footer end-footer">© 2018<br>Tous droits réservés. Mentions légales</div>

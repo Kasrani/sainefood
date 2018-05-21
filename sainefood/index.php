@@ -265,6 +265,9 @@ if (isset($_GET['id'])) {
                     <div class="livraison">
                         <h2 class="title-sf-2 semibold">Zone de Livraison</h2>
                         <img src="images/zone-de-livraison.png" class="img-fluid" alt="zone de livraison">
+                        <p>
+                            Nous vous livrons dans un rayon de 10 km depuis nos locaux situés au 52, avenue Daumesnil dans le 12è arrondissement de Paris. Cela nous permet de vous garantir une livraison dans un délai d’attente de 45 minutes maximum. Si vous souhaitez être livré sur Paris au-delà de notre zone de livraison, merci de nous prévenir minimum 2h à l’avance.
+                        </p>
                     </div>
                     <div class="d-flex justify-content-start sf reco row">
                         <div class="temoignages-avis col-md-5">
@@ -330,7 +333,7 @@ if (isset($_GET['id'])) {
                     <div class="d-flex flex-column col-md-3">
                         <div class="p-2"><button type="button" class="btn btn-outline-primary btn-footer">Nous contacter</button></div>
                         <div class="p-2 title-groupe-footer">PARIS</div>
-                        <div class="p-2 sous-title-footer">42,<br>avenue Versailles,<br> 75012</div>
+                        <div class="p-2 sous-title-footer">52,<br>avenue Daumesnil,<br> 75012</div>
                     </div>
                 </div>
                 <div class="d-flex p-2 sous-title-footer end-footer">© 2018<br>Tous droits réservés. Mentions légales</div>
