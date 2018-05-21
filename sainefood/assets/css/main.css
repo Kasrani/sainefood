@@ -112,7 +112,7 @@ p.texte{margin-bottom:0!important;}
 .atelier-description .title-sf-2, .temoignages-avis .title-sf-2, .cartouche-description .title-sf-2{text-align:left;margin-bottom:0px;padding-left:0px!important;}
 .temoignages-avis p{font-size:26px;}
 .temoignages-avis .icon-avis{color:#9DD4BF;font-size:32px;line-height:2;}
-.atelier-description p, .cartouche-description p{font-size:18px;padding:5px 0 0 10px;line-height:28px!important;height: 197px;overflow:hidden;}
+.atelier-description p, .cartouche-description p{font-size:16px;padding:5px 0 0 10px;line-height:28px!important;height: 197px;overflow:hidden;}
 .temoignages .border-bloc{border-left:8px solid #F2F2F2!important;border-right:none!important;}
 .align-items-end.temoignages span{font-family:'Maitree', serif;font-size:26px;text-align:left;}
 .align-items-end.temoignages .poste{color:#BCBCBC!important;}
