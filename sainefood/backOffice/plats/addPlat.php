@@ -12,7 +12,7 @@ $image = null;
 
     //On récupère les variables 
     
-	$intitule=$_POST['intitule'];
+	$intitule = $_POST['intitule'];
     $prix = $_POST['prix'];
     $details = $_POST['details'];
     $ingredients = $_POST['ingredients'];

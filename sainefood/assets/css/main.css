@@ -212,6 +212,7 @@ input[value]{color:#C1CAC5 !important;}
 .border-panier .quantite input{background:none;border:none;cursor:pointer;color:#FF594F!important;font-weight:600;}
 .btn-commander{position:absolute;top:370px;}
 .margin-fix{top:340px;}
+.margin-fix-cord{top:205px!important;}
 #recipeCarousel{height: 159px;overflow:hidden;}
 .btn-commender-fixed-down{top:calc(100% - 60px);}
 .paypal-btn-fixed-down{top:calc(100% - 125px)!important;}
@@ -241,6 +242,10 @@ body.iosBugFixCaret.modal-open {position: fixed; width: 100%;}
 #totalProduct span {position:relative;bottom:15px;left:5px;font-weight: 600;}
 .first-event-description .icon-right, .atelier-description .icon-right, .justify-content-end .icon-right{margin-left: 4px;font-size: 12px;color: #484848;vertical-align: middle;}
 .livraison p{font-size: 16px;text-align: center;line-height: 2; margin-top: 20px;}
+.disponibilite{background:rgba(57, 53, 50, 0.6);width:175px;color:#FF594F;position: absolute;top:84px;padding-left: 30px;height: 62px;padding-top: 5px;}
+.none{display:none!important;visibility:hidden;}
+#coordonnees {position: relative;top: -230px;}
+#coordonnees .btn-primary{position: absolute;top: 235px;}
 
 @media only screen 
 and (min-device-width : 375px) 

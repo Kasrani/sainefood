@@ -9,6 +9,16 @@ $("#connexion-link").hide()
 $("#inscription-link").show()}$('td.delete-block').addClass('hover');$(function(){$('tr.border-panier').hover(function(){$('td.delete-block').removeClass('hover');},function(){$('td.delete-block').addClass('hover');})})
 $('.border-panier .quantite').addClass('hover');$(function(){$('tr.border-panier').hover(function(){$('.border-panier .quantite').removeClass('hover');},function(){$('.border-panier .quantite').addClass('hover');})})
 
+$(document).ready(function () {
+    $("#etapes").click(function () {
+        $('#coordonnees').removeClass('none');
+        $('.border-panier').addClass('none');
+        $('.total-panier').addClass('none');
+        $('#vide').addClass('none');
+        $('#ajout-article').addClass('none');
+        $('#paypal-btn').addClass('none');
+    });
+});
 
 var height = $('.container-model > .main-content').height();
 console.log(height);
@@ -24,6 +34,9 @@ var absolu = document.getElementById("myFIX");
 
 var element = document.getElementById("vide");
     element.classList.add("margin-fix");
+    
+var element = document.getElementById("btn-coordonnees");
+    element.classList.add("margin-fix-cord");
 
 
 } else {
@@ -33,12 +46,15 @@ var element = document.getElementById("myFIXED");
     
 var element = document.getElementById("vide");
     element.classList.remove("margin-fix");
-    
-    
+
+var element = document.getElementById("btn-coordonnees");
+    element.classList.remove("margin-fix-cord");
+     
 var absolu = document.getElementById("myFIX");
     absolu.classList.remove("align-self-end");
 
 }}
+
 
 $(document).ready(function() {
 

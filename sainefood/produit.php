@@ -80,7 +80,7 @@ if (isset($_GET['idCours'])) {
                             <div id="connexion" class="">
                                 <form action="backOffice/user/auth.php" method="post">
                                   <div class="form-group">
-                                      <input type="email" class="form-control" name="email" value="<?php if(!empty($_POST['email'])) { echo htmlspecialchars($_POST['email'], ENT_QUOTES); } ?>" placeholder="Adresse e-mail">
+                                      <input type="email" class="form-control" name="email" value="" placeholder="Adresse e-mail">
                                   </div>
                                   <div class="form-group">
                                       <input type="password" class="form-control" name="password" value="" id="inputPassword3" placeholder="Password">
@@ -206,6 +206,7 @@ if (isset($_GET['idCours'])) {
                         echo "
                     <h2 class='title-sf-2 semibold text-left'>" . $row['nom'] . "</h2>
                     <img class='img-fluid' src='images/Events/" . $row['image'] . "' alt=''><br><br>
+                    <div class='disponibilite'>Plus que " . $row['disponibilite'] . " places disponibles</div>
                     <h4 class='title-sf-4'>Détails</h4>
                     <p>
                         " . $row['details'] . "
@@ -331,10 +332,9 @@ if (!$erreur){
            echo "<input type=\"hidden\" name=\"idCours\" value='" . $row['id'] . "'/>";
                }
 	      echo "</td></tr>";
-           echo "<div id='vide' class='btn-commander' style='width: calc(100% - 60px);'><div class='btn btn-primary btn-block shadow semibold'><a href='#paypal-button'>Finaliser votre commande</div></a></div>";
+           echo "<div id='vide' class='btn-commander' style='width: calc(100% - 60px);'><div class='btn btn-primary btn-block shadow semibold'><a href='#' id='etapes'>Commander</div></a></div>";
            echo "<center id='paypal-btn' class='' style='position: absolute;left: 50%;-webkit-transform: translateX(-50%);transform: translateX(-50%); top:300px;'><div id='paypal-button'></div></center>";
 	   }
-        
 	}
     
 	?>
@@ -343,13 +343,49 @@ if (!$erreur){
     
     <?php
     if (isset($_GET['idPlats'])) {
-        echo "<a class='btn btn-link' style='width:100%;' href='produit.php?idPlats=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter ce produit à votre panier</a>";
+        echo "<a id='ajout-article' class='btn btn-link' style='width:100%;' href='produit.php?idPlats=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter ce produit à votre panier</a>";
         }
     if (isset($_GET['idCours'])) {
-        echo "<a class='btn btn-link' style='width:100%;' href='produit.php?idCours=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter ce cours à votre panier</a>";
+        echo "<a id='ajout-article' class='btn btn-link' style='width:100%;' href='produit.php?idCours=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter ce cours à votre panier</a>";
         }
     ?>
 </form>
+<form id='coordonnees' action="#" class='none contact' method="get">
+    <div class='mr-auto p-2 form-group'>
+        <input type='text' name='nom' value='' class='form-control' placeholder='Nom'>
+    </div>
+    <div class='mr-auto p-2 form-group'>
+        <input type='text' name='prenom' value='' class='form-control' placeholder='Prenom'>
+    </div>
+    <div class='p-2 form-group'>
+        <input type='email' name='email' value='' class='form-control' placeholder='Email'>
+    </div>
+    <?php
+    if (isset($_GET['idPlats'])) {
+        echo "<input type=\"hidden\" name=\"idPlats\" value='" . $row['id'] . "'/>";
+    }
+    if (isset($_GET['idCours'])) {
+        echo "<input type=\"hidden\" name=\"idCours\" value='" . $row['id'] . "'/>";
+    }
+    ?>
+    <button id='btn-coordonnees' class='btn btn-primary btn-block shadow semibold'>Finaliser votre commande</button>
+</form> 
+   <?php 
+$nom = null;
+$prenom = null;
+$email = null;
+$produit = null;
+  if ((isset($_GET['nom'])) and (isset($_GET['prenom'])) and (isset($_GET['email']))) {
+      $nom = $_GET['nom'];
+      $prenom = $_GET['prenom'];
+      $email = $_GET['email'];
+      mysqli_query($maConnexion,"INSERT INTO commande (nom,prenom,email) VALUES ('$nom','$prenom','$email')") 
+or die(mysqli_error($maConnexion));
+       session_destroy();
+      include_once("fonctions-panier.php");
+}
+
+?>
                         
 
 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
