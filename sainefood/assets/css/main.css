@@ -71,7 +71,7 @@ p.texte{margin-bottom:0!important;}
 .cours-infos{display:inline-block;}
 .semibold{font-weight:600;}
 .title-sf-2{font-family:'Maitree', serif;font-size:28px;color:#484848;padding-left:10px;text-align:center;line-height:initial;}
-.title-sf-1{font-family:'Maitree', serif;font-size:38px;color:#484848;padding-left:10px;text-align:center;line-height:initial;}
+.title-sf-1{font-family:'Maitree', serif;font-size:34px;color:#484848;padding-left:10px;text-align:center;line-height:initial;}
 .card{width:336px;border:0!important;border-radius:0!important;padding:5px;display:inline-block!important;}
 .card-img-top{border-radius:0!important;}
 .card-body{background:#484848;margin-top:5px;}
@@ -93,7 +93,7 @@ p.texte{margin-bottom:0!important;}
 .cartouche-bloc .d-flex .p-2{padding-top:0px!important;}
 .cartouche-bloc .btn-link{padding-top:0px;padding-bottom:0px;}
 .cartouche-bloc .justify-content-start{height:165px;}
-.place-disponible-niv-1{background-color:#FF594F;width:266px;height:35px;color:#FFF;font-family:'Maitree', serif;font-size:12px;position:relative;}
+.place-disponible-niv-1{background-color:rgba(255, 89, 79, 0.9);;width:266px;height:35px;color:#FFF;font-family:'Maitree', serif;font-size:12px;position:relative;}
 .place-disponible-niv-1 span{margin:0;width:100%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);}
 .cartouche-bloc:hover{-webkit-box-shadow:0 0px 4px rgba(57, 63, 72, 0.15);-moz-box-shadow:0 0px 4px rgba(57, 63, 72, 0.15);box-shadow:0 0px 4px rgba(57, 63, 72, 0.15);background-color:#FFF;}
 .cartouche-bloc:hover .cartouche-description .d-flex .p-2:nth-of-type(2), .cartouche-bloc:hover .cartouche-description .d-flex .p-2:last-child{display:block!important;}
@@ -145,7 +145,7 @@ footer .form-inline .form-control::placeholder{color:#CFCBC2;font-family:'Maitre
 .cartouche-description .d-flex .p-2:nth-of-type(2), .cartouche-description .d-flex .p-2:last-child{display:none!important;}
 .cartouche-bloc .grey-bloc{background:rgba(72, 72, 72, 0.9)!important;}
 .atelier .separateur{margin-bottom:30px;}
-.atelier p{margin:40px 0px 30px 0px;line-height:2;font-size:18px;text-align:center;}
+.atelier p{margin:20px 0px 20px 0px;line-height:2;font-size:18px;text-align:center;}
 .contact h3.title-sf-3:nth-of-type(1){color:#FF594F;text-transform:initial;margin-bottom:20px;}
 .contact h4.title-sf-4{display:block;}
 .contact .separateur{margin-top:48px;}
@@ -314,4 +314,6 @@ footer .form-group .form-control + .btn {border:none!important;margin-left:-4px;
     .plats-bloc .cartouche-img-overlay .btn-produit {padding: 45px 40px 15px 40px;}
     .cartouche-bloc .cartouche-img-overlay .btn-produit > a:first-child {padding-right: 25%;}
     .cartouche-description .d-flex .p-2:nth-of-type(2), .cartouche-description .d-flex .p-2:last-child{display: inline-block!important;padding-right: 0px!important;}
+    .atelier .title-sf-1{font-size:22px;}
+    .main-content.atelier, .main-content.contact{margin-top:15px;}
 }

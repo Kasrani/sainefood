@@ -181,7 +181,7 @@ session_start();
                     </div>
                     <div class="d-flex form-row">
                         <div class="mr-auto p-2 form-group col-md-5">
-                            <img src="images/mail.png">
+                            <img class="img-fluid" src="images/mail.png">
                         </div>
                         <div class="p-2 form-group col-md-5">
                             <div class="g-recaptcha" data-sitekey="6LclnlMUAAAAAKN_lXJnPRaHzfKLtjYiD8il_dGy"></div>

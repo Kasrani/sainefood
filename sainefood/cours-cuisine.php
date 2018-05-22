@@ -162,10 +162,20 @@ session_start();
                                 <div class='p-2' style='vertical-align:middle;'><span class='icon-right'></span></div>
                             </div>
                         </div>
-                    </div>
+                    </div>";
+                    if ($row['disponibilite'] > 5){ 
+                        echo "
+                    <div class='d-flex p-2 place-disponible-niv-1 text-center border-bloc grey-bloc'><span class='text-center'>Plus que " . $row['disponibilite'] . " places disponible</span></div>
+                        ";
+                        }else {
+                        
+                         echo "
                     <div class='d-flex p-2 place-disponible-niv-1 text-center border-bloc'><span class='text-center'>Plus que " . $row['disponibilite'] . " places disponible</span></div>
-                </div>
-                    ";
+                        ";
+                        
+                    }
+                echo "</div>";
+                    
                 }
                 ?>
             </div>

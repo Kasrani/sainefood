@@ -129,7 +129,7 @@ session_start();
                 <h1 class="title-sf-1 semibold">Sainefood : Le plaisir sain et inconditionnel</h1>
                 <hr class="separateur">
                 <img class="img-fluid" src="images/atelier-sainefood.png" alt="l'atelier sainefood">
-                <br><br><br>
+                <br><br>
                 <h2 class="title-sf-2 semibold red_sf">Le concept Healthy food : la cuisine au service de la santé. </h2>
                 <p class="text">
                     Savoir prendre soin de son alimentation est depuis longtemps au centre de nos préoccupations. Chez Sainefood nous avons parfaitement compris le challenge que cela représente et la difficulté de parvenir à manger sainement tous les jours. A l’heure où il est de plus en plus difficile de bien manger et où <a href="https://www.saine-food.fr/recettes-bio">cuisiner quotidiennement des aliments sains</a> et variés relève du véritable défi, accompagner nos clients est une nécessité absolue. Aussi nous vous proposons la possibilité d’apprendre à préparer sans efforts de vrais plats bio et sains, en utilisant une large gamme de produits frais. Si vous êtes soucieux de la qualité de votre alimentation, notre but est de vous proposer des <strong>ateliers/cours de cuisine</strong> simples et accessibles à tous. De nombreux conseils sur la préparation des aliments ainsi que sur les ingrédients à privilégier seront fournis au cours des différentes sessions à thèmes.
