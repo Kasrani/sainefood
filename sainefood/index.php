@@ -39,7 +39,7 @@ if (isset($_GET['id'])) {
         <link rel="apple-touch-icon" sizes="144x144" href="icons/favicon/apple-touch-icon-144x144.png">
         <meta name="msapplication-TileImage" content="favicon-144.png">
         <meta name="msapplication-TileColor" content="#FFFFFF">
-        
+        <meta name="google-site-verification" content="nDG1ybiooS1jbgJstYyNh48ecgPAsmk5jcBbfRRNc5c" />
 	</head>
 	<body class="dd">
         <div id="header" class="navbar navbar-fixed-top container-fluid">
