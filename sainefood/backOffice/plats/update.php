@@ -25,7 +25,7 @@ echo "<form action='backOffice/plats/updatePlat.php' method='get'>
                                     <br>
                                     <div class='custom-file mb-4'>
                                         <input type='file' name='image' class='custom-file-input' id='customFile'>
-                                        <label class='custom-file-label' for='customFile'>" . $row['image'] . "</label>
+                                        <label class='custom-file-label' for='customFile'>Votre image</label>
                                     </div>
                                     <label for=''>Ingrédients : *</label>
                                     <input name='ingredients' class='form-control' value='" . $row['ingredients'] . "'>

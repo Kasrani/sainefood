@@ -30,8 +30,8 @@ echo "<form action='backOffice/cours/updateCours.php' method='get'>
                                 <div class='mr-auto  p-2 form-group col-md-5'>
                                     <br>
                                     <div class='custom-file mb-4'>
-                                        <input type='file' name='imageCours' value='" . $row['image'] . "' class='custom-file-input' id='customFileCours'>
-                                        <label class='custom-file-label' for='customFileCours'>Votre image</label>
+                                        <input type='file' name='imageCours' value='' class='custom-file-input' id='customFileCours'>
+                                        <label class='custom-file-label' value='' for='customFileCours'>Votre image</label>
                                     </div>
                                     <label for=''>Nombre de participants maximum  *</label>
                                     <input type='number' name='nbParticipants' value='" . $row['disponibilite'] . "' class='form-control' placeholder=''>

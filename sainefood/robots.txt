@@ -1,6 +1,16 @@
 User-agent : Googlebot
 Disallow : /nongooglebot/
 
+User-agent: Googlebot
+Disallow: /backOffice
+Disallow: /backOffice/cours
+Disallow: /backOffice/plats
+Disallow: /backOffice/user
+Disallow: /logout
+Disallow: /confirmation-demande-contact
+Disallow: /confirmation-ouverture-compte
+
+
 User-agent : *
 Allow : /
 
