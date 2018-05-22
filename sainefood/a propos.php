@@ -143,7 +143,7 @@ session_start();
                 <p class="text">
                     « Quand un homme a faim, mieux vaut lui apprendre à pêcher que de lui donner un poisson » -Proverbe de Confucius-
                     Telle est notre devise car chez Sainefood, le « Homemade » est à l’honneur. Au cours des différents ateliers proposés vous pourrez vous essayer à la cuisine, apprendre à travailler les aliments, recréer les nombreuses textures et saveurs rencontrées à la maison pour régaler toute la famille. Les cours interactifs et le suivi personnalisé apporté par notre équipe permettra de guider soigneusement chacun de vos pas dans le monde si délicat de la cuisine bio.
-                    Les sessions auront lieu en plein coeur de Paris (XIIème arrondissement). Pour les raisons évoquées plus haut et pour une expérience optimale le nombre de participants n'excédera pas le nombre de 9 à chaque cours. Des <a href="https://www.saine-food.fr/reservations">réservations au préalable</a> seront donc nécessaires et permettront à tous de passer un délicieux moment.
+                    Les sessions auront lieu en plein coeur de Paris (XIIème arrondissement). Pour les raisons évoquées plus haut et pour une expérience optimale le nombre de participants n'excédera pas le nombre de 9 à chaque cours. Des <a href="cours-cuisine.php">réservations au préalable</a> seront donc nécessaires et permettront à tous de passer un délicieux moment.
                 </p>
 
             </div>
