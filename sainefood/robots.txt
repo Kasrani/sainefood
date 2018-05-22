@@ -1,0 +1,7 @@
+User-agent : Googlebot
+Disallow : /nongooglebot/
+
+User-agent : *
+Allow : /
+
+Sitemap : http://www.saine-food.fr/sitemap.xml
