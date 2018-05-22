@@ -16,7 +16,7 @@ $row = mysqli_fetch_assoc($result);
     $nutritionUp = $_GET['nutrition'];
     $image = $row['image'];
     $imageUp = $_GET['image'];
-    if (($imageUp != '') or ($image = '')){
+    if ($imageUp != ''){
     $image = $imageUp;
     }
     $sourcingUp = $_GET['sourcing'];

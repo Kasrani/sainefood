@@ -14,10 +14,9 @@ $nbParticipantsUp = $_GET['nbParticipants'];
 $detailsUp = $_GET['details'];
 $image = $row['image'];
 $imageUp = $_GET['imageCours'];
-if (($imageUp != '') or ($image = '')){
+if ($imageUp != ''){
     $image = $imageUp;
 }
-
 
 mysqli_query($maConnexion,"UPDATE event SET nom='$intituleUp', prix='$prixUp', date='$dateUp', heure='$heureUp', disponibilite='$nbParticipantsUp', details='$detailsUp', image='$image' WHERE nom='$cours'") or die(mysqli_error($maConnexion));
  header('Location: ../../account.php');
