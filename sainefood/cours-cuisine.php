@@ -35,7 +35,7 @@ session_start();
         <meta name="msapplication-TileImage" content="favicon-144.png">
         <meta name="msapplication-TileColor" content="#FFFFFF">
 	</head>
-	<body class="dd">
+	<body class="cours">
         <div id="header" class="navbar navbar-fixed-top container-fluid">
             <div class="container">
                 <div class="d-flex">

@@ -41,7 +41,7 @@ if (isset($_GET['id'])) {
         <meta name="msapplication-TileColor" content="#FFFFFF">
         <meta name="google-site-verification" content="nDG1ybiooS1jbgJstYyNh48ecgPAsmk5jcBbfRRNc5c" />
 	</head>
-	<body class="dd">
+	<body class="index">
         <div id="header" class="navbar navbar-fixed-top container-fluid">
             <div class="container">
                 <div class="d-flex">
