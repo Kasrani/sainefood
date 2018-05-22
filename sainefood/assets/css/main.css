@@ -202,17 +202,17 @@ input[value]{color:#C1CAC5 !important;}
 .total-panier > td{padding-top:10px;}
 .total-panier > td:last-child, .border-panier > td:last-child{text-align:right;}
 .total-panier > td:first-child, .border-panier > td:first-child{text-align:left;}
-.border-panier > td:nth-of-type(2){width:24px;}
+.border-panier > td:nth-of-type(2){width:40px;position:relative;left:10px;}
 .total-panier span{color:#cfcbc2;font-weight:400;font-size:12px;}
 .panier .delete{color:#FF594F;text-decoration:none;font-size:14px;}
-.delete-block{position:absolute;right:70px;padding:0px 4px 0px 4px;}
+.delete-block{position:absolute;right:45px;padding:0px 4px 0px 4px;}
 .hover{display:none;}
 .border-panier .quantite{position:absolute;left:15px}
-.border-panier .quantite input{padding-right:10px;}
+.border-panier .quantite input{position: relative;left:-20px;}
 .border-panier .quantite input{background:none;border:none;cursor:pointer;color:#FF594F!important;font-weight:600;}
 .btn-commander{position:absolute;top:370px;}
 .margin-fix{top:340px;}
-.margin-fix-cord{top:205px!important;}
+.margin-fix-cord{top:114px!important;}
 #recipeCarousel{height: 159px;overflow:hidden;}
 .btn-commender-fixed-down{top:calc(100% - 60px);}
 .paypal-btn-fixed-down{top:calc(100% - 125px)!important;}
@@ -244,8 +244,14 @@ body.iosBugFixCaret.modal-open {position: fixed; width: 100%;}
 .livraison p{font-size: 16px;text-align: center;line-height: 2; margin-top: 20px;}
 .disponibilite{background:rgba(57, 53, 50, 0.6);width:175px;color:#FF594F;position: absolute;top:84px;padding-left: 30px;height: 62px;padding-top: 5px;}
 .none{display:none!important;visibility:hidden;}
-#coordonnees {position: relative;top: -230px;}
-#coordonnees .btn-primary{position: absolute;top: 235px;}
+#coordonnees {position: relative;top: -145px;}
+#coordonnees .btn-primary{position: absolute;top: 144px;}
+.nav-panier{position: absolute;top:110px;display:block;width:calc(100% - 60px);}
+.nav-element{position: relative;top:-17px;float:left;width:31%;}
+.nav-element.active label, .nav-element.active span{color:#FF594F!important;}
+.nav-element label{font-family:'Maitree', serif;font-size:14px;position: relative;top: -35px;left: 39px;color:#CFCBC2;}
+.nav-element span{font-size:27px;}
+.cercle-nav-panier{width:30px;height:30px;border:1px dashed #CFCBC2;background-color:#FFF;border-radius:20px;position: relative;top: -36px;left: 41px;}
 
 @media only screen 
 and (min-device-width : 375px) 

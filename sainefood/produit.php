@@ -293,22 +293,40 @@ if (!$erreur){
 		<td colspan="2">Prix/U</td>
 		<td>Action</td>
 	</tr>-->
-    <tbody class="commande-block-max">
+    <tbody class="commande-block-max" style="position:relative;top:65px;">
 	<?php
 	if (creationPanier())
 	{
 	   $nbArticles=count($_SESSION['panier']['libelleProduit']);
-	   if ($nbArticles <= 0)
+	   if ($nbArticles <= 0){
 	   echo "<div id='vide' class='btn-commander' style='width: calc(100% - 60px);'><button class='btn btn-primary btn-block shadow semibold'><a href=''>Votre panier est vide</a></button></div>";
+        echo "
+           <div class='nav-panier'>
+            <hr class='separateur'>
+            <div class='nav-element'>
+            <label style='position:relative;top:26px;'>Panier</label>
+            <div class='cercle-nav-panier'></div>
+            </div>
+            <div class='nav-element'>
+            <label style='position:relative;top:26px;left:16px;'>Coordonnées</label>
+            <div class='cercle-nav-panier'></div>
+            </div>
+            <div class='nav-element'>
+            <label style='position:relative;top:26px;left:28px;'>Paiement</label>
+            <div class='cercle-nav-panier'></div>
+            </div>
+            </div>
+           ";
+        }
 	   else
 	   {
 	      for ($i=0 ;$i < $nbArticles ; $i++)
 	      {
 	         echo "<tr class='border-panier'>";
-              echo "<td><div class='quantite'><input style='display:none;' type=\"text\" name=\"q[]\" value=\"".htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."\"/><input type=\"button\" value=\"-\" onclick=\"document.forms['panier'].elements[".(3 * $i)."].value = parseFloat(document.forms['panier'].elements[".(3 * $i)."].value) - 1; document.forms['panier'].submit();\"><input type=\"button\" value=\"+\" onclick=\"document.forms['panier'].elements[".(3 * $i)."].value = parseFloat(document.forms['panier'].elements[".(3 * $i)."].value) + 1; document.forms['panier'].submit();\"></div></td>";
+              echo "<td><div class='quantite'><input style='display:none;' type=\"text\" name=\"q[]\" value=\"".htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."\"/><input type=\"button\" value=\"-\" onclick=\"document.forms['panier'].elements[".(3 * $i)."].value = parseFloat(document.forms['panier'].elements[".(3 * $i)."].value) - 1; document.forms['panier'].submit();\"><input style='z-index: 1000;position:relative;left:-16px;' type=\"button\" value=\"+\" onclick=\"document.forms['panier'].elements[".(3 * $i)."].value = parseFloat(document.forms['panier'].elements[".(3 * $i)."].value) + 1; document.forms['panier'].submit();\"></div></td>";
             echo "<td><span>".htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."</span></td>";
               echo "<td><span>x</span></td>";
-	         echo "<td class='red_sf'>".htmlspecialchars($_SESSION['panier']['libelleProduit'][$i])."</ td>";
+	         echo "<td class='red_sf' style='padding-left:5px;'>".htmlspecialchars($_SESSION['panier']['libelleProduit'][$i])."</ td>";
 	         echo "<td class='' style='text-align: right;' colspan='2'>".htmlspecialchars($_SESSION['panier']['prixProduit'][$i])."  €</td>";
               if (isset($_GET['idPlats'])) {
 	         echo "<td class='delete-block'><a style='font-size:12px;' class='delete semibold' href=\"".htmlspecialchars("produit.php?action=suppression&idPlats=" . $row['id'] . "&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">x</a></td>";
@@ -332,9 +350,27 @@ if (!$erreur){
            echo "<input type=\"hidden\" name=\"idCours\" value='" . $row['id'] . "'/>";
                }
 	      echo "</td></tr>";
-           echo "<div id='vide' class='btn-commander' style='width: calc(100% - 60px);'><div class='btn btn-primary btn-block shadow semibold'><a href='#' id='etapes'>Commander</div></a></div>";
-           echo "<center id='paypal-btn' class='' style='position: absolute;left: 50%;-webkit-transform: translateX(-50%);transform: translateX(-50%); top:300px;'><div id='paypal-button'></div></center>";
+           echo "<div id='vide' class='btn-commander' style='width: calc(100% - 60px);z-index:1000;'><div class='btn btn-primary btn-block shadow semibold'><a href='#' id='etapes'>Commander</div></a></div>";
+           echo "<center class='none' id='paypal-btn' class='' style='position: absolute;left: 50%;-webkit-transform: translateX(-50%);transform: translateX(-50%); top:300px;z-index:1000;'><div id='paypal-button'></div></center>";
+           echo "
+           <div class='nav-panier nav-panier-panier'>
+            <hr class='separateur'>
+            <div class='nav-element active'>
+            <label>Panier</label>
+            <span class='icon-panier'></span>
+            </div>
+            <div class='nav-element'>
+            <label style='position:relative;top:26px;left:16px;'>Coordonnées</label>
+            <div class='cercle-nav-panier'></div>
+            </div>
+            <div class='nav-element'>
+            <label style='position:relative;top:26px;left:28px;'>Paiement</label>
+            <div class='cercle-nav-panier'></div>
+            </div>
+            </div>
+           ";
 	   }
+        
 	}
     
 	?>
@@ -343,22 +379,53 @@ if (!$erreur){
     
     <?php
     if (isset($_GET['idPlats'])) {
-        echo "<a id='ajout-article' class='btn btn-link' style='width:100%;' href='produit.php?idPlats=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter ce produit à votre panier</a>";
+        echo "<a id='ajout-article' class='btn btn-link' style='width:100%;z-index: 10000;' href='produit.php?idPlats=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter ce produit à votre panier</a>";
         }
     if (isset($_GET['idCours'])) {
-        echo "<a id='ajout-article' class='btn btn-link' style='width:100%;' href='produit.php?idCours=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter ce cours à votre panier</a>";
+        echo "<a id='ajout-article' class='btn btn-link' style='width:100%;z-index: 10000;' href='produit.php?idCours=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter ce cours à votre panier</a>";
         }
     ?>
 </form>
-<form id='coordonnees' action="#" class='none contact' method="get">
+<div class='nav-panier nav-panier-coordonnees none'>
+<hr class='separateur'>
+<div class='nav-element active'>
+<label>Panier</label>
+<span class='icon-panier'></span>
+</div>
+<div class='nav-element active'>
+<label style='position:relative;top:-27px;left:16px;'>Coordonnées</label>
+<span class='icon-user' style='position:relative;top:-33px;left:42px;'></span>
+</div>
+<div class='nav-element'>
+<label style='position:relative;top:26px;left:28px;'>Paiement</label>
+<div class='cercle-nav-panier'></div>
+</div>
+</div>
+<div class='nav-panier nav-panier-payment none'>
+<hr class='separateur'>
+<div class='nav-element active'>
+<label>Panier</label>
+<span class='icon-panier'></span>
+</div>
+<div class='nav-element active'>
+<label style='position:relative;top:-27px;left:16px;'>Coordonnées</label>
+<span class='icon-user' style='position:relative;top:-33px;left:42px;'></span>
+</div>
+<div class='nav-element active'>
+<label style='position:relative;top:-33px;left:28px;'>Paiement</label>
+<span class='icon-payment' style='position:relative;top:0px;left:-20px;'></span>
+</div>
+</div>
+                        
+<form id='coordonnees' action="#nav" class='none contact' method="get">
     <div class='mr-auto p-2 form-group'>
-        <input type='text' name='nom' value='' class='form-control' placeholder='Nom'>
+        <input type='text' name='nom' value='' style='height:34px;' class='form-control' placeholder='Nom'>
     </div>
     <div class='mr-auto p-2 form-group'>
-        <input type='text' name='prenom' value='' class='form-control' placeholder='Prenom'>
+        <input type='text' name='prenom' value='' style='height:34px;' class='form-control' placeholder='Prenom'>
     </div>
     <div class='p-2 form-group'>
-        <input type='email' name='email' value='' class='form-control' placeholder='Email'>
+        <input type='email' name='email' value='' style='height:34px;' class='form-control' placeholder='Email'>
     </div>
     <?php
     if (isset($_GET['idPlats'])) {
@@ -369,7 +436,8 @@ if (!$erreur){
     }
     ?>
     <button id='btn-coordonnees' class='btn btn-primary btn-block shadow semibold'>Finaliser votre commande</button>
-</form> 
+</form>
+
    <?php 
 $nom = null;
 $prenom = null;
@@ -381,8 +449,6 @@ $produit = null;
       $email = $_GET['email'];
       mysqli_query($maConnexion,"INSERT INTO commande (nom,prenom,email) VALUES ('$nom','$prenom','$email')") 
 or die(mysqli_error($maConnexion));
-       session_destroy();
-      include_once("fonctions-panier.php");
 }
 
 ?>

@@ -17,6 +17,16 @@ $(document).ready(function () {
         $('#vide').addClass('none');
         $('#ajout-article').addClass('none');
         $('#paypal-btn').addClass('none');
+        $('.nav-panier-panier').addClass('none');
+        $('.nav-panier-coordonnees').removeClass('none');
+    });
+});
+$(document).ready(function () {
+    $("#btn-coordonnees").click(function () {
+        $('.nav-panier-coordonnees').addClass('none');
+        $('.nav-panier-payment').removeClass('none');
+        $('#coordonnees').addClass('none');
+        $('#paypal-btn').removeClass('none');
     });
 });
 
