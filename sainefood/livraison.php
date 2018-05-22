@@ -148,7 +148,7 @@ session_start();
                                 "</p>
                                 <div class='d-flex mt-auto p-2'>
                                     <div class='mr-auto p-2'><span class='icon-price'></span><span class='semibold'>" . $row['prix'] . " €</span></div>
-                                    <div class='p-2'><a href='produit.php?nom=" . $row['nom'] . "' class='btn-link'>Voir plus </a></div>
+                                    <div class='p-2'><a href='produit.php?idPlats=" . $row['id'] . "' class='btn-link'>Voir plus </a></div>
                                     <div class='p-2'><span class='icon-right'></span></div>
                                 </div>
                             </div>
