@@ -26,7 +26,7 @@ $row = mysqli_fetch_assoc($result);
     $sourcingUp = implode(',' , $sourcingUp);
     var_dump($sourcingUp);
 
-mysqli_query($maConnexion,"UPDATE plat SET nom=`$nomUp`, prix=`$prixUp`, details=`$detailsUp`, image=`$image`, nutrition=`$nutritionUp`, ingredients=`$ingredientsUp`, sourcing=`$sourcingUp` WHERE nom=`$plat`") or die(mysqli_error($maConnexion));
+mysqli_query($maConnexion,"UPDATE `plat` SET `nom`='$nomUp', `prix`='$prixUp', `details`='$detailsUp', `image`='$image', `nutrition`='$nutritionUp', `ingredients`='$ingredientsUp', `sourcing`='$sourcingUp' WHERE `nom`='$plat'") or die(mysqli_error($maConnexion));
  header('Location: ../../account.php');
 
 ?>
