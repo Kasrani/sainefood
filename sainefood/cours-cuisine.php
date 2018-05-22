@@ -159,7 +159,7 @@ session_start();
                             <div class='d-flex'>
                                 <div class='mr-auto p-2'><span class='icon-agenda'></span><span class='semibold'>" . strftime('%a %d %B', strtotime($row['date'])) . "</span></div>
                                 <div class='p-2'><a href='produit.php?idCours=" . $row['id'] . "' class='btn-link'>Voir plus </a></div>
-                                <div class='p-2' style='vertical-align:middle;'><span class='icon-right'></span></div>
+                                <div class='p-2' style='vertical-align:middle;float: right;'><span class='icon-right'></span></div>
                             </div>
                         </div>
                     </div>";

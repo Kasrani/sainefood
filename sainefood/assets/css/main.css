@@ -303,7 +303,7 @@ footer .form-group .form-control + .btn {border:none!important;margin-left:-4px;
     .atelier-description .btn-link, .justify-content-end .btn-link, .d-flex .btn-link{display:block;margin-left:auto;margin-right:auto;}
     .title-sf-2{font-size:20px;display:block;margin-left:auto;margin-right:auto;text-align:center!important;margin-top:15px;}
     .propos img{margin-top:10px;}
-    .cartouche-bloc{height:440px;}
+    .cartouche-bloc{height:408px;}
     .cartouche-bloc .d-flex{display:block!important;}
     .main-content-2{margin-top:60px;}
     .cartouche, .cartouche img{width:100%;}
@@ -316,8 +316,10 @@ footer .form-group .form-control + .btn {border:none!important;margin-left:-4px;
     .plats-bloc .cartouche-img-overlay .btn-produit {padding: 45px 40px 15px 40px;}
     .cartouche-bloc .cartouche-img-overlay .btn-produit > a:first-child {padding-right: 25%;}
     .cartouche-description .d-flex .p-2:nth-of-type(2), .cartouche-description .d-flex .p-2:last-child{display: inline-block!important;padding-right: 0px!important;}
+    .cartouche-description .d-flex .p-2:nth-of-type(2){margin-left: 24%;}
     .atelier .title-sf-1{font-size:22px;}
     .main-content.atelier, .main-content.contact{margin-top:15px;}
     .index .btn-produit{padding: 28px 28px 28px 28px;}
     .index .btn-produit > a:first-child{padding-right:25%;}
+    .cartouche-bloc .d-flex .p-2 {display:initial;}
 }
