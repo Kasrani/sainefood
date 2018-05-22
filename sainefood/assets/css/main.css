@@ -216,6 +216,7 @@ input[value]{color:#C1CAC5 !important;}
 #recipeCarousel{height: 159px;overflow:hidden;}
 .btn-commender-fixed-down{top:calc(100% - 60px);}
 .paypal-btn-fixed-down{top:calc(100% - 125px)!important;}
+#paypal-button {position: relative;top:60px;}
 .commande-block-max tr{display:table;width:100%;}
 .commande-block-max{display:block;height:220px!important;overflow:auto;}
 .custom-404{background-color:#f5f5f5;}
@@ -252,7 +253,7 @@ body.iosBugFixCaret.modal-open {position: fixed; width: 100%;}
 .nav-element label{font-family:'Maitree', serif;font-size:14px;position: relative;top: -35px;left: 39px;color:#CFCBC2;}
 .nav-element span{font-size:27px;}
 .cercle-nav-panier{width:30px;height:30px;border:1px dashed #CFCBC2;background-color:#FFF;border-radius:20px;position: relative;top: -36px;left: 41px;}
-
+.recapulatif {position:relative;top:-154px;text-align:center;}
 @media only screen 
 and (min-device-width : 375px) 
 and (max-device-width : 667px) 
@@ -299,6 +300,4 @@ footer .form-group .form-control + .btn {border:none!important;margin-left:-4px;
     .atelier-description .btn-link, .justify-content-end .btn-link, .d-flex .btn-link{display:block;margin-left:auto;margin-right:auto;}
     .title-sf-2{font-size:20px;display:block;margin-left:auto;margin-right:auto;text-align:center!important;margin-top:15px;}
     .propos img{margin-top:10px;}
-
-    
 }

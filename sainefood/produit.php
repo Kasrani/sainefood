@@ -416,26 +416,36 @@ if (!$erreur){
 <span class='icon-payment' style='position:relative;top:0px;left:-20px;'></span>
 </div>
 </div>
-                        
-<form id='coordonnees' action="#nav" class='none contact' method="get">
+ <div class='recapulatif none'>
+     <p>
+        Vous allez recevoir un email récapitulatif aprés le paiement de votre commande
+     </p>
+    <p>
+        A bientôt
+    </p>
+    <p class="semibold red_sf">
+        L'équipe sainefood
+    </p>
+</div>                       
+<form id='coordonnees' name="coordonnees" action="" class='none contact' method="GET">
     <div class='mr-auto p-2 form-group'>
-        <input type='text' name='nom' value='' style='height:34px;' class='form-control' placeholder='Nom'>
+        <input type='text' name='nom' id='nom' value='' style='height:34px;' class='form-control' placeholder='Nom'>
     </div>
     <div class='mr-auto p-2 form-group'>
-        <input type='text' name='prenom' value='' style='height:34px;' class='form-control' placeholder='Prenom'>
+        <input type='text' id='prenom' name='prenom' value='' style='height:34px;' class='form-control' placeholder='Prenom'>
     </div>
     <div class='p-2 form-group'>
-        <input type='email' name='email' value='' style='height:34px;' class='form-control' placeholder='Email'>
+        <input type='email' id='email' name='email' value='' style='height:34px;' class='form-control' placeholder='Email'>
     </div>
     <?php
     if (isset($_GET['idPlats'])) {
-        echo "<input type=\"hidden\" name=\"idPlats\" value='" . $row['id'] . "'/>";
+        echo "<input type=\"hidden\" id='idPlats' name=\"idPlats\" value='" . $row['id'] . "'/>";
     }
     if (isset($_GET['idCours'])) {
-        echo "<input type=\"hidden\" name=\"idCours\" value='" . $row['id'] . "'/>";
+        echo "<input id='idCours' type=\"hidden\" name=\"idCours\" value='" . $row['id'] . "'/>";
     }
     ?>
-    <button id='btn-coordonnees' class='btn btn-primary btn-block shadow semibold'>Finaliser votre commande</button>
+    <input id='btn-coordonnees' class='btn btn-primary btn-block shadow semibold' type="button" value="Finaliser votre commande" onclick="submitForm()" name="submit"/>
 </form>
 
    <?php 
@@ -551,8 +561,8 @@ echo "
                 <div class="d-flex p-2 sous-title-footer end-footer">© 2018<br>Tous droits réservés. Mentions légales</div>
             </div>
         </footer>
-        <script src="assets/js/main.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="assets/js/main.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="assets/js/content.js"></script>
@@ -564,5 +574,6 @@ echo "
                c.parentNode.insertBefore(n,c);
             }();
         </script>
-    </body> 
+    </body>
+    <div id="printResult"></div>
 </html>

@@ -27,6 +27,7 @@ $(document).ready(function () {
         $('.nav-panier-payment').removeClass('none');
         $('#coordonnees').addClass('none');
         $('#paypal-btn').removeClass('none');
+        $('.recapulatif').removeClass('none');
     });
 });
 
@@ -83,3 +84,50 @@ $(document).ready(function() {
     }
 
 });
+
+
+function getXMLHttpRequest() {
+    var xhr = null;
+     
+    if (window.XMLHttpRequest || window.ActiveXObject) {
+        if (window.ActiveXObject) {
+            try {
+                xhr = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch(e) {
+                xhr = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+        } else {
+                        xhr = new XMLHttpRequest();
+                    }
+    } else {
+        alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
+        return null;
+    }
+     
+    return xhr;
+}
+             
+function AJAX(url){
+    xhr_object = getXMLHttpRequest();
+     
+    xhr_object.open("GET", url, false);
+    xhr_object.send(null);
+    if(xhr_object.readyState == 4){
+        return xhr_object.responseText;
+    }else return(false);
+}
+ 
+             
+function submitForm(){
+    var form = document.forms["coordonnees"];
+    var nom = form.nom.value;
+    var prenom = form.prenom.value;
+    var email = form.email.value;
+    var url = "produit.php?nom="+nom+"&prenom="+prenom+"&email="+email;           
+    document.getElementById('printResult').innerHTML = AJAX(url);
+}
+
+
+
+
+
