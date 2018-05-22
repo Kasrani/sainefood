@@ -2,13 +2,16 @@
 // Database Authentication
 include("authDB.php");
 session_start();
+if (isset($_GET['id'])) {
+    $plat = $_GET['id'];
+}
 ?>
 <!DOCTYPE HTML>
 <html lang="fr">
 	<head>
-		<title>Atelier de cours de cuisine Bio - Sainefood Paris</title>
+		<title>Cours de cuisine et Livraison de plats préparés bio à Paris</title>
 		<meta charset="utf-8" />
-        <meta name="description" content="Sainefood, spécialisé dans les cours de cuisine à Paris, vous propose d'assister à ses ateliers originaux pour découvrir des recettes aux produits provenant uniquement de l'agriculture biologique">
+        <meta name="description" content="L’Atelier de Pierre Duclass vous accueille pour des cours de cuisine bio. Avec le service traiteur bio : commandez vos plats cuisinés bio issus des recettes du Chef !">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119196030-1"></script>
@@ -21,6 +24,8 @@ session_start();
 		<link rel="stylesheet" href="assets/css/main.css" />
         <link rel="stylesheet" href="icons/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <meta name="google-signin-client_id" content="1096698373393-dam69ls1b1i2lamshtia49h7ensvn2au.apps.googleusercontent.com">
         <link rel="icon" href="favicon.png" type="image/png">
         <link rel="icon" sizes="32x32" href="icons/favicon/favicon-32.png" type="image/png">
         <link rel="icon" sizes="64x64" href="icons/favicon/favicon-64.png" type="image/png">
@@ -34,8 +39,9 @@ session_start();
         <link rel="apple-touch-icon" sizes="144x144" href="icons/favicon/apple-touch-icon-144x144.png">
         <meta name="msapplication-TileImage" content="favicon-144.png">
         <meta name="msapplication-TileColor" content="#FFFFFF">
+        <meta name="google-site-verification" content="nDG1ybiooS1jbgJstYyNh48ecgPAsmk5jcBbfRRNc5c" />
 	</head>
-	<body class="dd">
+	<body class="signIn">
         <div id="header" class="navbar navbar-fixed-top container-fluid">
             <div class="container">
                 <div class="d-flex">
@@ -43,44 +49,22 @@ session_start();
                     <div class="p-2 baseline">Cours de cuisine & traiteur <b class="green">bio</b></div>
                 </div>
                 <div class="d-flex">
-                    <div class="ml-auto p-2 connecter" data-toggle="modal" data-target="#gridSystemModal"><?php if (isset($_SESSION['user'])){echo "Bonjour ";}else {echo "Se connecter";}?></div>
+                    <div class="ml-auto p-2 connecter"><?php if (isset($_SESSION['user'])){echo "Bonjour ";}?></div>
                     <a href="account.php" class="user">&nbsp;<?php if (isset($_SESSION['user'])){echo $_SESSION['user'];}   else {echo "";}?></a>
                     <div class="ml-auto p-2"><span class="icon-panier"></span></div>
-                    <?php 
+                    <?php
                     $nbArticle = count($_SESSION['panier']['libelleProduit']);
-                    if ($nbArticle > 0) {
+                    if (count($_SESSION['panier']['libelleProduit']) > 0) {
                         echo "<div id='totalProduct'><span>" . count($_SESSION['panier']['libelleProduit']) . "</span></div>";
                         }
                     ?>
                 </div>
             </div>
+        </div>   
+        <div class="bandeau">
         </div>
-            
-        <nav id="nav" class="navbar navbar-fixed-top shadow container-fluid">
-            <div class="container">
-                <div class="row headerow scroll">
-                    <ul class="scroll">
-                        <li class=""><a href="index.php">Home</a></li>
-                        <li><a href="a%20propos.php">À propos</a></li>
-                        <li class="current"><a href="cours-cuisine.html">Cours de cuisine</a></li>
-                        <li><a href="livraison.php">Livraison</a></li>
-                        <li><a href="no-sidebar.php">Actualités</a></li>
-                        <li><a href="contact.php">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <nav id="nav" class="navbar navbar-fixed-top shadow nav-2 container-fluid">
-            <div class="container">
-                <div class="row headerow scroll">
-                    <ul class="scroll">
-                        <li class="current"><a href="index.html">À venir</a></li>
-                        <li><a href="left-sidebar.html">Déja passé</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
+            <div class="content">
+                <div id="gridSystemModal" >
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -131,89 +115,8 @@ session_start();
                     </div>
                 </div>
             </div>
+        </div>  
         </div>
-        <div class="container main-content main-content-2 shadow">
-            <div class="content">
-                <?php
-                $rec = "SELECT * FROM `event`";
-                $result = mysqli_query($maConnexion,$rec);
-                setlocale(LC_TIME, 'french');
-                while ($row = $result->fetch_assoc()) {
-                    echo "
-                    <div class='cartouche-bloc'>
-                    <div class='d-flex justify-content-start'>
-                        <div class='cartouche border-bloc'>
-                            <div class='cartouche-img-overlay'>
-                                <div class='btn-produit'>
-                                    <a class='float-left' href='produit.php?idCours=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'><span class='icon-add-panier'></span></a>
-                                    <a class='float-right' href='produit.php?idCours=" . $row['id'] . "'><span class='icon-details'></span></a>
-                                </div>
-                            </div>
-                            <img class='img-fluid' src='images/Events/" . $row['image'] . "' alt='Sainefood'>   
-                        </div>
-                        <div class='cartouche-description'>
-                            <h2 class='title-sf-2 semibold'>" . $row['nom'] . "</h2><hr class='separateur'>
-                            <p>"
-                                    . $row['details'] .
-                            "</p>
-                            <div class='d-flex'>
-                                <div class='mr-auto p-2'><span class='icon-agenda'></span><span class='semibold'>" . strftime('%a %d %B', strtotime($row['date'])) . "</span></div>
-                                <div class='p-2'><a href='produit.php?idCours=" . $row['id'] . "' class='btn-link'>Voir plus </a></div>
-                                <div class='p-2' style='vertical-align:middle;'><span class='icon-right'></span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='d-flex p-2 place-disponible-niv-1 text-center border-bloc'><span class='text-center'>Plus que " . $row['disponibilite'] . " places disponible</span></div>
-                </div>
-                    ";
-                }
-                ?>
-            </div>
-        </div>
-        <footer>
-            <div class="container">
-                <div class="d-flex justify-content-between row">
-                    <div class="logo-2 col-md-5"><img src="images/Logo-2.svg" alt="Sainefood"></div>
-                    <form class="form-inline col-md-7">
-                        <div class="form-group">
-                            <label>Recevez notre Newsletter !</label>
-                            <input type="text" class="form-control" id="staticEmail2" value="" placeholder="Votre e-mail">
-                            <button type="submit" class="btn btn-primary">S’inscrire</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <hr class="separateur">
-                </div>
-            </div>
-            <div class="container">
-                <div class="d-flex justify-content-between row">
-                    <div class="d-flex flex-column col-md-3">
-                        <div class="icon-footer"><img src="images/icon-footer.png" alt=""></div>
-                    </div>
-                    <div class="d-flex flex-column col-md-3">
-                        <div class="p-2 title-groupe-footer">En savoir plus</div>
-                        <div class="p-2 sous-title-footer">Concept</div>
-                        <div class="p-2 sous-title-footer">Zone de livraison</div>
-                        <div class="p-2 sous-title-footer">FAQ</div>
-                    </div>
-                    <div class="d-flex flex-column col-md-3">
-                        <div class="p-2 title-groupe-footer">Nos valeurs</div>
-                        <div class="p-2 sous-title-footer">Nos engagements</div>
-                        <div class="p-2 sous-title-footer">Blog</div>
-                        <div class="p-2 sous-title-footer">Nos partenaires</div>
-                    </div>
-                    <div class="d-flex flex-column col-md-3">
-                        <div class="p-2"><button type="button" class="btn btn-outline-primary btn-footer">Nous contacter</button></div>
-                        <div class="p-2 title-groupe-footer">PARIS</div>
-                        <div class="p-2 sous-title-footer">52,<br>avenue Daumesnil,<br> 75012</div>
-                    </div>
-                </div>
-                <div class="d-flex p-2 sous-title-footer end-footer">© 2018<br>Tous droits réservés. Mentions légales</div>
-            </div>
-        </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -225,6 +128,6 @@ session_start();
                c.parentNode.insertBefore(n,c);
             }();
         </script>
+        <noscript>Your browser does not support JavaScript!</noscript>
     </body>
-    
 </html>

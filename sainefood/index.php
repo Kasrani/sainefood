@@ -79,8 +79,8 @@ if (isset($_GET['id'])) {
         <div class="bandeau">
         </div>
         
-        
-        <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
+
+        <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" style="" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -293,6 +293,7 @@ if (isset($_GET['id'])) {
                     
                 </div>
                 
+            </div>
             </div>
         </div>
         <footer>

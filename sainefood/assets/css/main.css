@@ -33,6 +33,7 @@ div.baseline{font-size:12px;margin-left:10px;display:inline-block;position:relat
 .contact.confirmation{margin-top:30px!important;}
 .main-content-2{margin:75px 0px 30px 0px;}
 .main-content .content{padding:30px 15px;}
+.signIn .bandeau{width:100%;height:100vh;position:absolute;top: 0; z-index:-1;background-image:url(../../images/bg-carousel.png);background-size:cover;}
 .bandeau{width:100%;height:550px;position:absolute;z-index:-1;background-image:url(../../images/bg-carousel.png);background-size:cover;}
 .bandeau.bandeau-atelier{height:226px;background-image:url(../../images/bg-atelier.png);}
 .red_sf{color:#FF594F!important;}
@@ -138,7 +139,7 @@ footer .form-inline .form-control::placeholder{color:#CFCBC2;font-family:'Maitre
 .cartouche-description{padding:0px 30px 15px 0;height:200px;width:75%;}
 .cartouche-description p{height:87px;}
 .cartouche-description .p-2:last-child{padding-right:0px!important;padding-left:0px!important;padding-bottom:0px!important;margin-bottom:0px;}
-.cartouche-description .p-2 .icon-right{line-height:2.2;}
+.cartouche-description .p-2 .icon-right{line-height:2.2;color:#484848;}
 .cartouche-description .p-2 .icon-agenda, .cartouche-description .p-2 .icon-price{margin-right:8px;}
 .cartouche-description .d-flex span{font-family:'Maitree', serif;font-size:14px;color:#FF594F;}
 .cartouche-description .d-flex .p-2:nth-of-type(2), .cartouche-description .d-flex .p-2:last-child{display:none!important;}
@@ -300,4 +301,17 @@ footer .form-group .form-control + .btn {border:none!important;margin-left:-4px;
     .atelier-description .btn-link, .justify-content-end .btn-link, .d-flex .btn-link{display:block;margin-left:auto;margin-right:auto;}
     .title-sf-2{font-size:20px;display:block;margin-left:auto;margin-right:auto;text-align:center!important;margin-top:15px;}
     .propos img{margin-top:10px;}
+    .cartouche-bloc{height:440px;}
+    .cartouche-bloc .d-flex{display:block!important;}
+    .main-content-2{margin-top:60px;}
+    .cartouche, .cartouche img{width:100%;}
+    .place-disponible-niv-1{width: 100%;}
+    .cartouche-bloc .justify-content-start{max-height: initial;}
+    .cartouche-description {width: 100%;}
+    .cartouche-description h2 {text-align: left!important;}
+    .cartouche-bloc:hover .cartouche-description .d-flex .p-2:nth-of-type(2), .cartouche-bloc:hover .cartouche-description .d-flex .p-2:last-child{display:inline-block!important;}
+    .cartouche-bloc .cartouche-img-overlay .btn-produit {padding: 25px 40px 15px 40px;}
+    .plats-bloc .cartouche-img-overlay .btn-produit {padding: 45px 40px 15px 40px;}
+    .cartouche-bloc .cartouche-img-overlay .btn-produit > a:first-child {padding-right: 25%;}
+    .cartouche-description .d-flex .p-2:nth-of-type(2), .cartouche-description .d-flex .p-2:last-child{display: inline-block!important;padding-right: 0px!important;}
 }

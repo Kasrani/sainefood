@@ -1,14 +1,16 @@
-$("#inscription").hide()
-$("#connexion-link").hide()
-function show(){$("#connexion").hide()
-$("#inscription").show()
-$("#connexion-link").show()
-$("#inscription-link").hide()}function hide(){$("#connexion").show()
-$("#inscription").hide()
-$("#connexion-link").hide()
+$("#inscription").hide();
+$("#connexion-link").hide();
+function show(){$("#connexion").hide();
+$("#inscription").show();
+$("#connexion-link").show();
+$("#inscription-link").hide()}function hide(){$("#connexion").show();
+$("#inscription").hide();
+$("#connexion-link").hide();
 $("#inscription-link").show()}$('td.delete-block').addClass('hover');$(function(){$('tr.border-panier').hover(function(){$('td.delete-block').removeClass('hover');},function(){$('td.delete-block').addClass('hover');})})
 $('.border-panier .quantite').addClass('hover');$(function(){$('tr.border-panier').hover(function(){$('.border-panier .quantite').removeClass('hover');},function(){$('.border-panier .quantite').addClass('hover');})})
-
+$(window).on('load',function(){
+        $('#gridSystemModall').modal('show');
+    });
 $(document).ready(function () {
     $("#etapes").click(function () {
         $('#coordonnees').removeClass('none');
