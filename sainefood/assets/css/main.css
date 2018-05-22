@@ -139,7 +139,7 @@ footer .form-inline .form-control::placeholder{color:#CFCBC2;font-family:'Maitre
 .cartouche-description{padding:0px 30px 15px 0;height:200px;width:75%;}
 .cartouche-description p{height:87px;}
 .cartouche-description .p-2:last-child{padding-right:0px!important;padding-left:0px!important;padding-bottom:0px!important;margin-bottom:0px;}
-.cartouche-description .p-2 .icon-right{line-height:2.2;color:#484848;}
+.cartouche-description .p-2 .icon-right{line-height:0;font-size:12px;color:#484848;}
 .cartouche-description .p-2 .icon-agenda, .cartouche-description .p-2 .icon-price{margin-right:8px;}
 .cartouche-description .d-flex span{font-family:'Maitree', serif;font-size:14px;color:#FF594F;}
 .cartouche-description .d-flex .p-2:nth-of-type(2), .cartouche-description .d-flex .p-2:last-child{display:none!important;}
