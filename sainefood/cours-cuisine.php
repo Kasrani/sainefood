@@ -75,7 +75,7 @@ session_start();
                 <div class="row headerow scroll">
                     <ul class="scroll">
                         <li class="current"><a href="index.html">À venir</a></li>
-                        <li><a href="left-sidebar.html">Déja passée</a></li>
+                        <li><a href="left-sidebar.html">Déja passé</a></li>
                     </ul>
                 </div>
             </div>
