@@ -482,6 +482,7 @@ function generer_mot_de_passe()
 
         return $mot_de_passe;   
 }
+      function envoie_mail($mot_de_passe) {
       if ($row['email'] = $email) {
       
       //On envoie un mail de cofirmation
@@ -563,7 +564,7 @@ function generer_mot_de_passe()
 }
   }
     
-      
+    }  
 
 
 ?>
