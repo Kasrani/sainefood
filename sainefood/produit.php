@@ -466,6 +466,22 @@ or die(mysqli_error($maConnexion));
     $query = "SELECT * FROM `commande` WHERE email='$email'";
       $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
       $row = mysqli_fetch_assoc($result);
+
+function generer_mot_de_passe()
+{
+        $mot_de_passe = "";
+       
+        $chaine = "abcdefghjkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ023456789+@!$%?&";
+        $longeur_chaine = strlen($chaine);
+       
+        for($i = 1; $i <= $nb_caractere; $i++)
+        {
+            $place_aleatoire = mt_rand(0,($longeur_chaine-1));
+            $mot_de_passe .= $chaine[$place_aleatoire];
+        }
+
+        return $mot_de_passe;   
+}
       if ($row['email'] = $email) {
       
       //On envoie un mail de cofirmation
@@ -501,14 +517,14 @@ or die(mysqli_error($maConnexion));
     //Set who the message is to be sent to
     $mail->addAddress($email, $prenom);
     //Set the subject line
-    $mail->Subject = 'Confirmation de creation de votre compte';
+    $mail->Subject = 'Récapulatif de votre commande';
     $mail->Body = "<body style='width:612px; margin:auto; text-align:center;'>
     <img src='https://sainefood.herokuapp.com/images/mail-en-tete.png' alt='Sainefood'>
     <br><br><br>
-    <h1 style='color:#ff594f; font-size:22px;'>Confirmation demande d'ouverture de compte</h1>
+    <h1 style='color:#ff594f; font-size:22px;'>Votre commande</h1>
     <br><br><br>
     <h3 style='color:#484848;text-align:left;'>Cher(e) " .$prenom. "</h3><br>
-    <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>Votre demande d'ouverture de compte est terminée.</p>
+    <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>les plats : " .$mot_de_passe. "</p>
     <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>A bientôt sur votre Espace Client,</p>
     <h3 style='color:#484848;text-align:left;'>L'équipe Sainefood</h3>
     </body>
