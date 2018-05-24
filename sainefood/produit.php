@@ -487,7 +487,7 @@ or die(mysqli_error($maConnexion));
       $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
       $row = mysqli_fetch_assoc($result);
       $emailExist = $row['email'];
-      if ($emailExist != $email) {
+      if ($emailExist != $_GET['email']) {
       mysqli_query($maConnexion,"INSERT INTO user (email,prenom,nom,password) VALUES ('$email','$prenom','$nom','$password')") 
 or die(mysqli_error($maConnexion));
       //On envoie un mail de cofirmation
@@ -551,7 +551,6 @@ or die(mysqli_error($maConnexion));
         #if (save_mail($mail)) {
         #    echo "Message saved!";
         #}
-        header('Location: confirmation-ouverture-compte.php');
     }
     //Section 2: IMAP
     //IMAP commands requires the PHP IMAP Extension, found at: https://php.net/manual/en/imap.setup.php
