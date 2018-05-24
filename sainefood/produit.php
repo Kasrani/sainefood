@@ -437,6 +437,24 @@ if (!$erreur){
     <div class='p-2 form-group'>
         <input type='email' id='email' name='email' value='' style='height:34px;' class='form-control' placeholder='Email'>
     </div>
+    <div class='p-2 form-group'>
+        <?php
+        function chaine_aleatoire($nb_car, $chaine = 'azertyuiopqsdfghjklmwxcvbn123456789')
+        {
+            $nb_lettres = strlen($chaine) - 1;
+            $generation = '';
+            for($i=0; $i < $nb_car; $i++)
+            {
+                $pos = mt_rand(0, $nb_lettres);
+                $car = $chaine[$pos];
+                $generation .= $car;
+            }
+            return $generation;
+            echo "<input type='hidden' id='password' value='" . $generation . "' name='password' class='form-control'>";
+        }
+        
+        ?>
+    </div>
     <?php
     if (isset($_GET['idPlats'])) {
         echo "<input type=\"hidden\" id='idPlats' name=\"idPlats\" value='" . $row['id'] . "'/>";
@@ -457,32 +475,17 @@ require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 require 'PHPMailer/src/Exception.php';
 
-  if ((isset($_GET['nom'])) and (isset($_GET['prenom'])) and (isset($_GET['email']))) {
+  if ((isset($_GET['nom'])) and (isset($_GET['prenom'])) and (isset($_GET['email'])) and (isset($_GET['password']))) {
       $nom = $_GET['nom'];
       $prenom = $_GET['prenom'];
       $email = $_GET['email'];
+      $password = $_GET['password'];
       mysqli_query($maConnexion,"INSERT INTO commande (nom,prenom,email) VALUES ('$nom','$prenom','$email')") 
 or die(mysqli_error($maConnexion));
     $query = "SELECT * FROM `commande` WHERE email='$email'";
       $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
       $row = mysqli_fetch_assoc($result);
-
-function generer_mot_de_passe()
-{
-        $mot_de_passe = "";
-       
-        $chaine = "abcdefghjkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ023456789+@!$%?&";
-        $longeur_chaine = strlen($chaine);
-       
-        for($i = 1; $i <= $nb_caractere; $i++)
-        {
-            $place_aleatoire = mt_rand(0,($longeur_chaine-1));
-            $mot_de_passe .= $chaine[$place_aleatoire];
-        }
-
-        return $mot_de_passe;   
-}
-      function envoie_mail($mot_de_passe) {
+      
       if ($row['email'] = $email) {
       
       //On envoie un mail de cofirmation
@@ -524,8 +527,8 @@ function generer_mot_de_passe()
     <br><br><br>
     <h1 style='color:#ff594f; font-size:22px;'>Votre commande</h1>
     <br><br><br>
-    <h3 style='color:#484848;text-align:left;'>Cher(e) " .$prenom. "</h3><br>
-    <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>les plats : " .$mot_de_passe. "</p>
+    <h3 style='color:#484848;text-align:left;'>Cher(e) " .$password. "</h3><br>
+    <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>les plats :</p>
     <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>A bientôt sur votre Espace Client,</p>
     <h3 style='color:#484848;text-align:left;'>L'équipe Sainefood</h3>
     </body>
@@ -564,7 +567,7 @@ function generer_mot_de_passe()
 }
   }
     
-    }  
+      
 
 
 ?>
