@@ -483,14 +483,13 @@ require 'PHPMailer/src/Exception.php';
       $password = $_GET['password'];
       mysqli_query($maConnexion,"INSERT INTO commande (nom,prenom,email) VALUES ('$nom','$prenom','$email')") 
 or die(mysqli_error($maConnexion));
-      mysqli_query($maConnexion,"INSERT INTO user (email,prenom,nom,password) VALUES ('$email','$prenom','$nom','$password')") 
-or die(mysqli_error($maConnexion));
     $query = "SELECT * FROM `user`";
       $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
       $row = mysqli_fetch_assoc($result);
       
       if ($row['email'] != $email) {
-      
+      mysqli_query($maConnexion,"INSERT INTO user (email,prenom,nom,password) VALUES ('$email','$prenom','$nom','$password')") 
+or die(mysqli_error($maConnexion));
       //On envoie un mail de cofirmation
     
     //Create a new PHPMailer instance
