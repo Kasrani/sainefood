@@ -522,14 +522,16 @@ or die(mysqli_error($maConnexion));
     //Set who the message is to be sent to
     $mail->addAddress($email, $prenom);
     //Set the subject line
-    $mail->Subject = 'Récapulatif de votre commande';
+    $mail->Subject = 'Création de votre espace utilisateur';
     $mail->Body = "<body style='width:612px; margin:auto; text-align:center;'>
     <img src='https://sainefood.herokuapp.com/images/mail-en-tete.png' alt='Sainefood'>
     <br><br><br>
-    <h1 style='color:#ff594f; font-size:22px;'>Votre commande</h1>
+    <h1 style='color:#ff594f; font-size:22px;'>Votre espace utilisateur</h1>
     <br><br><br>
     <h3 style='color:#484848;text-align:left;'>Cher(e) " .$prenom. "</h3><br>
-    <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>Mot de passe : " .$password. "</p>
+     <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>Vous pouvez acceder a votre compte utilisateur a l'aide des identifiants suivants</p><br>
+     <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;font-weight:600;'>Identifiant : " .$email. "</p>
+    <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;font-weight:600;'>Mot de passe : " .$password. "</p>
     <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>A bientôt sur votre Espace Client,</p>
     <h3 style='color:#484848;text-align:left;'>L'équipe Sainefood</h3>
     </body>
