@@ -483,6 +483,8 @@ require 'PHPMailer/src/Exception.php';
       $password = $_GET['password'];
       mysqli_query($maConnexion,"INSERT INTO commande (nom,prenom,email) VALUES ('$nom','$prenom','$email')") 
 or die(mysqli_error($maConnexion));
+      mysqli_query($maConnexion,"INSERT INTO user (email,prenom,nom,password) VALUES ('$email','$prenom','$nom','$password')") 
+or die(mysqli_error($maConnexion));
     $query = "SELECT * FROM `commande` WHERE email='$email'";
       $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
       $row = mysqli_fetch_assoc($result);
@@ -522,7 +524,7 @@ or die(mysqli_error($maConnexion));
     //Set who the message is to be sent to
     $mail->addAddress($email, $prenom);
     //Set the subject line
-    $mail->Subject = 'Création de votre espace utilisateur';
+    $mail->Subject = 'Creation de votre espace utilisateur';
     $mail->Body = "<body style='width:612px; margin:auto; text-align:center;'>
     <img src='https://sainefood.herokuapp.com/images/mail-en-tete.png' alt='Sainefood'>
     <br><br><br>
@@ -531,7 +533,7 @@ or die(mysqli_error($maConnexion));
     <h3 style='color:#484848;text-align:left;'>Cher(e) " .$prenom. "</h3><br>
      <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>Vous pouvez acceder a votre compte utilisateur a l'aide des identifiants suivants</p><br>
      <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;font-weight:600;'>Identifiant : " .$email. "</p>
-    <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;font-weight:600;'>Mot de passe : " .$password. "</p>
+    <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;font-weight:600;'>Mot de passe : " .$password. "</p><br>
     <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>A bientôt sur votre Espace Client,</p>
     <h3 style='color:#484848;text-align:left;'>L'équipe Sainefood</h3>
     </body>
