@@ -485,11 +485,11 @@ require 'PHPMailer/src/Exception.php';
 or die(mysqli_error($maConnexion));
       mysqli_query($maConnexion,"INSERT INTO user (email,prenom,nom,password) VALUES ('$email','$prenom','$nom','$password')") 
 or die(mysqli_error($maConnexion));
-    $query = "SELECT * FROM `commande` WHERE email='$email'";
+    $query = "SELECT * FROM `user`";
       $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
       $row = mysqli_fetch_assoc($result);
       
-      if ($row['email'] = $email) {
+      if ($row['email'] != $email) {
       
       //On envoie un mail de cofirmation
     
