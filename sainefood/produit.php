@@ -439,10 +439,12 @@ if (!$erreur){
     </div>
     <div class='p-2 form-group'>
         <?php
+        
         function chaine_aleatoire($nb_car, $chaine = 'azertyuiopqsdfghjklmwxcvbn123456789')
         {
             $nb_lettres = strlen($chaine) - 1;
             $generation = '';
+            
             for($i=0; $i < $nb_car; $i++)
             {
                 $pos = mt_rand(0, $nb_lettres);
@@ -450,9 +452,8 @@ if (!$erreur){
                 $generation .= $car;
             }
             return $generation;
-            echo "<input type='hidden' id='password' value='" . $generation . "' name='password' class='form-control'>";
-        }
-        
+            }
+            echo "<input type='hidden' id='password' value='" . chaine_aleatoire(8) . "' name='password' class='form-control'>";
         ?>
     </div>
     <?php
@@ -527,8 +528,8 @@ or die(mysqli_error($maConnexion));
     <br><br><br>
     <h1 style='color:#ff594f; font-size:22px;'>Votre commande</h1>
     <br><br><br>
-    <h3 style='color:#484848;text-align:left;'>Cher(e) " .$password. "</h3><br>
-    <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>les plats :</p>
+    <h3 style='color:#484848;text-align:left;'>Cher(e) " .$prenom. "</h3><br>
+    <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>Mot de passe : " .$password. "</p>
     <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>A bientôt sur votre Espace Client,</p>
     <h3 style='color:#484848;text-align:left;'>L'équipe Sainefood</h3>
     </body>

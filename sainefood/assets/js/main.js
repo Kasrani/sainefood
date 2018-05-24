@@ -125,7 +125,8 @@ function submitForm(){
     var nom = form.nom.value;
     var prenom = form.prenom.value;
     var email = form.email.value;
-    var url = "produit.php?nom="+nom+"&prenom="+prenom+"&email="+email;           
+    var password = form.password.value;
+    var url = "produit.php?nom="+nom+"&prenom="+prenom+"&email="+email+"&password="+password;           
     document.getElementById('printResult').innerHTML = AJAX(url);
 }
 
