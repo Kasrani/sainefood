@@ -487,7 +487,7 @@ or die(mysqli_error($maConnexion));
       $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
       $row = mysqli_fetch_assoc($result);
       $emailExist = $row['email'];
-      if ($emailExist = $email) {
+      if ($emailExist != $email) {
       mysqli_query($maConnexion,"INSERT INTO user (email,prenom,nom,password) VALUES ('$email','$prenom','$nom','$password')") 
 or die(mysqli_error($maConnexion));
       //On envoie un mail de cofirmation
