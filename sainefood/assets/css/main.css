@@ -324,9 +324,9 @@ footer .form-group .form-control + .btn {border:none!important;margin-left:-4px;
     .cartouche-bloc .d-flex .p-2 {display:initial;}
     .cartouche-description .d-flex .p-2:last-child {display:none!important;}
     .cartouche-description {padding: 0px 15px 15px 0;}
-    #myFIX{width:100%;position: fixed!important;z-index: 111;bottom: 0;height: 380px;border-top:1px solid #CFCBC2;overflow-y: scroll;overflow-x:hidden;}
+    #myFIX{width:100%;position: fixed!important;z-index: 111;bottom: 0;height: 300px;border-top:1px solid #CFCBC2;overflow-y: scroll;overflow-x:hidden;bottom: 0;}
     #myFIX .main-content{width:calc(100% + 15px)!important;margin:0;}
-    #myFIX .main-content  .content{padding: 15px 30px 15px 15px;}
+    #myFIX .main-content  .content{padding: 15px 30px 15px 15px;background-color: #fbfbfb;}
     #myFIX h2{display:none;}
     .nav-panier{width: calc(100% - 45px);top:70px;}
     .margin-fix{top:240px;}
@@ -345,4 +345,5 @@ footer .form-group .form-control + .btn {border:none!important;margin-left:-4px;
     #paypal-button {position: relative;top:160px;}
     #paypal-btn{top:0px!important; left: calc(50% - 10px)!important;}
     .btn-commander {top: 240px!important;}
+    .cercle-nav-panier{background-color:#fbfbfb;}
 }
