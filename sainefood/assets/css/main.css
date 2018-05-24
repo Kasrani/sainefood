@@ -324,7 +324,8 @@ footer .form-group .form-control + .btn {border:none!important;margin-left:-4px;
     .cartouche-bloc .d-flex .p-2 {display:initial;}
     .cartouche-description .d-flex .p-2:last-child {display:none!important;}
     .cartouche-description {padding: 0px 15px 15px 0;}
-    #myFIX{width:100%;position: fixed!important;z-index: 111;bottom: 0;height: 300px;border-top:1px solid #CFCBC2;overflow-y: scroll;overflow-x:hidden;bottom: 0;}
+    #myFIX{width:100%;position: fixed!important;z-index: 111;bottom: 0;height: 35px;border-top:1px solid #CFCBC2;overflow-y: scroll;overflow-x:hidden;bottom: 0;}
+    #myFIX:hover{height: 45vh;}
     #myFIX .main-content{width:calc(100% + 15px)!important;margin:0;}
     #myFIX .main-content  .content{padding: 15px 30px 15px 15px;background-color: #fbfbfb;}
     #myFIX h2{display:none;}
@@ -336,7 +337,7 @@ footer .form-group .form-control + .btn {border:none!important;margin-left:-4px;
     #ajout-article {position:absolute;top:0;left:0;background:#FF594F;color:#FFF!important;border-radius: 0;width: calc(100% - 15px)!important;}
     .commande-block-max {top:90px!important;height: 105px!important;}
     .container-model .main-content .content{padding:0px 15px;}
-    #myFIXED {height:300px;}
+    #myFIXED {height:45vh;}
     .nav-panier.nav-panier-coordonnees {top:35px;}
     .nav-panier.nav-panier-payment {top:35px;}
     #coordonnees {top:-45px;}
