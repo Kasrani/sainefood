@@ -82,13 +82,13 @@ if ($row['email'] != $email) {
     if (!$mail->send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
     } else {
-        echo "<script type='text/javascript'>document.location.replace('saine-food.fr/confirmation-ouverture-compte.php');</script>";
+        echo "<script type='text/javascript'>document.location.replace('www.saine-food.fr/confirmation-ouverture-compte.php');</script>";
         //Section 2: IMAP
         //Uncomment these to save your message in the 'Sent Mail' folder.
         #if (save_mail($mail)) {
         #    echo "Message saved!";
         #}
-        header('Location: ../../confirmation-ouverture-compte.php');
+        //header('Location: ../../confirmation-ouverture-compte.php');
     }
     //Section 2: IMAP
     //IMAP commands requires the PHP IMAP Extension, found at: https://php.net/manual/en/imap.setup.php
