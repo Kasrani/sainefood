@@ -352,4 +352,5 @@ footer .form-group .form-control + .btn {border:none!important;margin-left:-4px;
     .plus{display:block;}
     .panier .btn-primary{font-weight:600;height:45px;line-height:1.9;}
     .container-model .title-sf-4{font-size: 23px!important;}
+    .margin-fix-cord{top: initial!important;}
 }
