@@ -69,8 +69,8 @@ if ($row['email'] != $email) {
     <a style='display:block;background: #FF594F;width: 170px;padding: .8rem;color: #FFF;text-decoration: none;margin-left: auto;margin-right: auto;margin-bottom: 20px;font-weight: 600;text-align: center;' href='http://www.saine-food.fr/cours-cuisine.php'>Réservez un cours</a>
     <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>N’hésitez pas à nous suivre sur les réseaux sociaux pour ne louper aucune de nos nouveautés </p>
     <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>A bientôt sur votre Espace Client,</p>
-    <h3 style='color:#484848;text-align:left;'>L'équipe Sainefood</h3><br>br>
-    <p style='color:#CFCBC2;font-size:12px;text-align:left;line-height:20px;>Sainefood s’engage à : Garder confidentielles vos informations personnelles. Selon la loi en vigueur, les participants disposent d'un droit d'accès, de modification, de rectification et de suppression des données personnelles. Politique de confidentialité
+    <h3 style='color:#484848;text-align:left;'>L'équipe Sainefood</h3>
+    <p style='color:#CFCBC2;font-size:12px;text-align:left;line-height:20px;'>Sainefood s’engage à : Garder confidentielles vos informations personnelles. Selon la loi en vigueur, les participants disposent d'un droit d'accès, de modification, de rectification et de suppression des données personnelles. Politique de confidentialité
     </p>
     </body>
     ";
