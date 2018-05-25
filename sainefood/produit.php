@@ -221,7 +221,7 @@ if (isset($_GET['idCours'])) {
                     ?>
                 </div>
             </div>
-            <div class="plus" id="plus" onclick="change(this)">Voir plus</div>
+            <div class="plus" id="plus" onclick="change(this)">Voir le panier</div>
             <div id="myFIX" class="col-md-4 p-2 commande-block position-relative">
                 <div id="myFIXED" class="main-content p-2 shadow position-fixed">
                     <div class="content">
@@ -402,7 +402,7 @@ if (!$erreur){
 <div class='cercle-nav-panier'></div>
 </div>
 </div>
-<div class='nav-panier nav-panier-payment none'>
+<div id='nav-panier-payment' class='nav-panier nav-panier-payment none'>
 <hr class='separateur'>
 <div class='nav-element active'>
 <label>Panier</label>
@@ -419,11 +419,9 @@ if (!$erreur){
 </div>
  <div class='recapulatif none'>
      <p>
-        Finalisez votre commande avec un paiement via paypal (ne nécessite pas la création d’un compte)
-     </p>
-     <p>
+        <strong>Finalisez votre commande avec un paiement via paypal (ne nécessite pas la création d’un compte)</strong>
         Vous allez recevoir un email récapitulatif après le paiement de votre commande
-    </p>
+     </p>
      <p>A bientôt</p>
     <p class="semibold red_sf">
         L'équipe sainefood

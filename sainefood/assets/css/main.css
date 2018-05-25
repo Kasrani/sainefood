@@ -345,7 +345,7 @@ footer .form-group .form-control + .btn {border:none!important;margin-left:-4px;
     #coordonnees .mr-auto {margin-bottom: .9rem;}
     .recapulatif {top:-105px;}
     .paypal-btn-fixed-down{top:calc(100% - 125px)!important;}
-    #paypal-button {position: relative;top:260px;}
+    #paypal-button {position: relative;top:250px;}
     #paypal-btn{top:0px!important; left: calc(50% - 10px)!important;}
     .btn-commander {position: fixed;bottom:0;left:0;top:inherit;}
     .cercle-nav-panier{background-color:#FFF;}
