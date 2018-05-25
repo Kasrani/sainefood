@@ -134,16 +134,19 @@ function change()
 {
     var changer = document.getElementById("myFIX");
     var changerPlus = document.getElementById("plus");
+    var changerAdd = document.getElementById("ajout-article");
   
     if (changer.style.height == '45px')
     {
         changer.style.height = '45vh';
-        changerPlus.style.bottom = 'calc(45vh - 1px)';
+        changerPlus.style.bottom = '45vh';
+        changerAdd.style.display = 'none';
     }
     else                                     
     {
         changer.style.height = '45px';
-        changerPlus.style.bottom = '45px';
+        changerPlus.style.bottom = '44px';
+        changerAdd.style.display = 'block';
     }
 };
 
