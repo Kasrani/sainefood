@@ -82,7 +82,7 @@ if ($row['email'] != $email) {
     if (!$mail->send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
     } else {
-        echo "<script type='text/javascript'>document.location.replace('http://www.saine-food.fr/confirmation-ouverture-compte.php');</script>";";
+        echo "<script type='text/javascript'>document.location.replace('saine-food.fr/confirmation-ouverture-compte.php');</script>";
         //Section 2: IMAP
         //Uncomment these to save your message in the 'Sent Mail' folder.
         #if (save_mail($mail)) {
