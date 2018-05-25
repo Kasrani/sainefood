@@ -140,12 +140,14 @@ function change()
     {
         changer.style.height = '45vh';
         changerPlus.style.bottom = 'calc(45vh - 2px)';
+        changerPlus.innerHTML = "Voir moin";
         changerAdd.style.display = 'none';
     }
     else                                     
     {
         changer.style.height = '45px';
         changerPlus.style.bottom = '44px';
+        changerPlus.innerHTML = "Voir plus";
         changerAdd.style.display = 'block';
     }
 };
