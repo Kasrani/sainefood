@@ -80,7 +80,7 @@ if ($row['email'] != $email) {
     $mail->AltBody = 'This is a plain-text message body';
     //Attach an image file
     if (!$mail->send()) {
-        //echo "Mailer Error: " . $mail->ErrorInfo;
+        echo "Mailer Error: " . $mail->ErrorInfo;
     } else {
         echo "<script type='text/javascript'>document.location.replace('http://www.saine-food.fr/confirmation-ouverture-compte.php');</script>";
         //Section 2: IMAP
