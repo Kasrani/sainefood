@@ -257,7 +257,7 @@ body.iosBugFixCaret.modal-open {position: fixed; width: 100%;}
 .nav-element span{font-size:27px;}
 .cercle-nav-panier{width:30px;height:30px;border:1px dashed #CFCBC2;background-color:#FFF;border-radius:20px;position: relative;top: -36px;left: 41px;}
 .recapulatif {position:relative;top:-154px;text-align:center;}
-.plus{font-size:18px;color:#484848;font-weight:600;position: fixed; z-index: 1000;bottom: 44px;display:none;background-color:#484848;background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(243,243,243,1));width:100%;height:45px;text-align:center;line-height: 2.4;}
+.plus{font-size:18px;color:#484848;font-weight:600;position: fixed; z-index: 1000;bottom: 44px;display:none;background-color:#484848;background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(243,243,243,0.4), rgba(243,243,243,1));width:100%;height:45px;text-align:center;line-height: 2.4;}
 @media only screen 
 and (min-device-width : 375px) 
 and (max-device-width : 667px) 
@@ -348,6 +348,6 @@ footer .form-group .form-control + .btn {border:none!important;margin-left:-4px;
     #paypal-button {position: relative;top:160px;}
     #paypal-btn{top:0px!important; left: calc(50% - 10px)!important;}
     .btn-commander {top: 240px!important;}
-    .cercle-nav-panier{background-color:#fbfbfb;}
+    .cercle-nav-panier{background-color:#f3f3f3;}
     .plus{display:block;}
 }
