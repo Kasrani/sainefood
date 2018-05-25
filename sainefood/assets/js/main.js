@@ -139,7 +139,7 @@ function change()
     if (changer.style.height == '45px')
     {
         changer.style.height = '45vh';
-        changerPlus.style.bottom = '45vh';
+        changerPlus.style.bottom = 'calc(45vh - 2px)';
         changerAdd.style.display = 'none';
     }
     else                                     
