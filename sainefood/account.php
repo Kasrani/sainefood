@@ -189,8 +189,40 @@ if(!$_SESSION['user']){
                                 <button type='submit' class='btn btn-primary float-right shadow'>Modifier mes informations</button><br>
                             </div>
                         </form>
-                    </div><br><br>";
+                    </div><br><br><br><hr id='gestionCours' class='separateur'>";
+                    echo "<br><h4 class='title-sf-4 semibold'>Historique de commande :</h4><br><br>";
+                    $email = $_SESSION['email'];
+                    $query = "SELECT * FROM `commande` WHERE email='$email'";
+                    $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
+                    echo "
+                    <table class='table table-striped'>
+                        <thead>
+                        <tr class='semibold'>
+                          <th scope='col'>Nom</th>
+                          <th scope='col'>Commande</th>
+                          <th scope='col'>Adresse de livraison</th>
+                          <th scope='col'>Montant global</th>
+                          <th scope='col'>Commande finalisée ?</th>
+                        </tr>
+                      </thead>
+                        <tbody>";
+                            while ($row = $result->fetch_assoc()) {
+                                            echo "
+                                            <tr>
+                                              <th scope='row'>" . $row['nom'] . "</th>
+                                              <td>" . $row['liste'] . "</td>
+                                              <td>" . $row['adresseLivraison'] . "</td>
+                                              <td>" . $row['montant'] . " €</td>
+                                              <td>" . $row['vente'] . "</td>
+                                            </tr>
+                                            ";
+                                        } 
+                          echo "</tbody>
+                        </table>
+                    </table>
+                    ";
                 }
+                    
             ?>
                 
             </div>

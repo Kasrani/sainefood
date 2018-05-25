@@ -432,11 +432,28 @@ if (!$erreur){
         <input type='text' name='nom' id='nom' value='' style='height:34px;' class='form-control' placeholder='Nom'>
     </div>
     <div class='mr-auto p-2 form-group'>
-        <input type='text' id='prenom' name='prenom' value='' style='height:34px;' class='form-control' placeholder='Prenom'>
+        <input type='hidden' id='prenom' name='prenom' value='Toto' style='height:34px;' class='form-control' placeholder='Prenom'>
     </div>
     <div class='p-2 form-group'>
         <input type='email' id='email' name='email' value='' style='height:34px;' class='form-control' placeholder='Email'>
     </div>
+    <div class='p-2 form-group'>
+        <input type='text' id='adresse' name='adresse' value='' style='height:34px;' class='form-control' placeholder='Adresse de livraison'>
+    </div>
+    <?php
+    echo "<input id='montant' name='montant' type='hidden' value='". MontantGlobal() . "'>";
+    ?>
+    <?php
+    function listeProduits(){
+   $liste="";
+   for($i = 0; $i < count($_SESSION['panier']['libelleProduit']); $i++)
+   {
+      $liste .= $_SESSION['panier']['libelleProduit'][$i] . ", ";
+   }
+   return $liste;
+}
+    echo "<input id='liste' name='liste' type='hidden' value='". listeProduits() . "'>";
+    ?>
     <div class='p-2 form-group'>
         <?php
         
@@ -476,18 +493,21 @@ require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 require 'PHPMailer/src/Exception.php';
 
-  if ((isset($_GET['nom'])) and (isset($_GET['prenom'])) and (isset($_GET['email'])) and (isset($_GET['password']))) {
+  if ((isset($_GET['nom'])) and (isset($_GET['prenom'])) and (isset($_GET['email'])) and (isset($_GET['password'])) and (isset($_GET['adresse'])) and (isset($_GET['montant']))) {
       $nom = $_GET['nom'];
       $prenom = $_GET['prenom'];
       $email = $_GET['email'];
       $password = $_GET['password'];
-      mysqli_query($maConnexion,"INSERT INTO commande (nom,prenom,email) VALUES ('$nom','$prenom','$email')") 
+      $adresse = $_GET['adresse'];
+      $montant = $_GET['montant'];
+      $liste = $_GET['liste'];
+      mysqli_query($maConnexion,"INSERT INTO commande (nom,prenom,email,adresseLivraison,montant,liste) VALUES ('$nom','$prenom','$email','$adresse','$montant','$liste')") 
 or die(mysqli_error($maConnexion));
-    $query = "SELECT * FROM `user`";
+    $query = "SELECT * FROM `user` WHERE email=$email";
       $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
       $row = mysqli_fetch_assoc($result);
-      $emailExist = $row['email'];
-      if ($emailExist != $_GET['email']) {
+      $email = $row['email'];
+      if ($email !='') {
       mysqli_query($maConnexion,"INSERT INTO user (email,prenom,nom,password) VALUES ('$email','$prenom','$nom','$password')") 
 or die(mysqli_error($maConnexion));
       //On envoie un mail de cofirmation
@@ -530,7 +550,7 @@ or die(mysqli_error($maConnexion));
     <h1 style='color:#ff594f; font-size:22px;'>Votre espace utilisateur</h1>
     <br><br><br>
     <h3 style='color:#484848;text-align:left;'>Cher(e) " .$prenom. "</h3><br>
-     <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>Vous pouvez acceder a votre compte utilisateur a l'aide des identifiants suivants</p><br>
+     <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>Vous pouvez acceder a votre compte utilisateur a l'aide des identifiants suivants :</p><br>
      <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;font-weight:600;'>Identifiant : " .$email. "</p>
     <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;font-weight:600;'>Mot de passe : " .$password. "</p><br>
     <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>A bientôt sur votre Espace Client,</p>

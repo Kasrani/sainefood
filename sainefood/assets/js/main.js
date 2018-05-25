@@ -126,7 +126,10 @@ function submitForm(){
     var prenom = form.prenom.value;
     var email = form.email.value;
     var password = form.password.value;
-    var url = "produit.php?nom="+nom+"&prenom="+prenom+"&email="+email+"&password="+password;           
+    var adresse = form.adresse.value;
+    var montant = form.montant.value;
+    var liste = form.liste.value;
+    var url = "produit.php?nom="+nom+"&prenom="+prenom+"&email="+email+"&password="+password+"&adresse="+adresse+"&montant="+montant+"&liste="+liste;           
     document.getElementById('printResult').innerHTML = AJAX(url);
 }
 
