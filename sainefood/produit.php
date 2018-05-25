@@ -419,8 +419,12 @@ if (!$erreur){
 </div>
  <div class='recapulatif none'>
      <p>
-        Vous allez recevoir un email récapitulatif aprés le paiement de votre commande
+        Finalisez votre commande avec un paiement via paypal (ne nécessite pas la création d’un compte)
      </p>
+     <p>
+        Vous allez recevoir un email récapitulatif après le paiement de votre commande
+    </p>
+     <p>A bientôt</p>
     <p class="semibold red_sf">
         L'équipe sainefood
     </p>

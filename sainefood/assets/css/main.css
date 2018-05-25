@@ -340,10 +340,10 @@ footer .form-group .form-control + .btn {border:none!important;margin-left:-4px;
     #myFIXED {height:45vh;}
     .nav-panier.nav-panier-coordonnees {top:40px;}
     .nav-panier.nav-panier-payment {top:35px;}
-    #coordonnees {top:-70px;}
+    #coordonnees {top:-77px;}
     #coordonnees input {height: 36px!important;}
     #coordonnees .mr-auto {margin-bottom: .9rem;}
-    .recapulatif {top:-40px;}
+    .recapulatif {top:-105px;}
     .paypal-btn-fixed-down{top:calc(100% - 125px)!important;}
     #paypal-button {position: relative;top:260px;}
     #paypal-btn{top:0px!important; left: calc(50% - 10px)!important;}
