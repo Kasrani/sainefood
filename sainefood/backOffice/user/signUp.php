@@ -64,13 +64,13 @@ if ($row['email'] != $email) {
     <br><br><br>
     <h3 style='color:#484848;text-align:left;'>Cher(e) " .$prenom. "</h3><br>
     <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>Votre demande d'ouverture de compte est terminée.</p>
-    <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>Vous pouvez à présent commander des plats grâce à notre service de livraison ou vous inscrire à l’un de nos cours de cuisine.</p>
+    <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>Vous pouvez à présent commander des plats grâce à notre service de livraison ou vous inscrire à l’un de nos cours de cuisine.</p><br><br>
     <a style='display:block;background: #FF594F;width: 170px;padding: .8rem;color: #FFF;text-decoration: none;margin-left: auto;margin-right: auto;margin-bottom: 20px;font-weight: 600;text-align: center;' href='http://www.saine-food.fr/livraison.php'>Commandez</a>
-    <a style='display:block;background: #FF594F;width: 170px;padding: .8rem;color: #FFF;text-decoration: none;margin-left: auto;margin-right: auto;margin-bottom: 20px;font-weight: 600;text-align: center;' href='http://www.saine-food.fr/cours-cuisine.php'>Réservez un cours</a>
+    <a style='display:block;background: #FF594F;width: 170px;padding: .8rem;color: #FFF;text-decoration: none;margin-left: auto;margin-right: auto;margin-bottom: 20px;font-weight: 600;text-align: center;' href='http://www.saine-food.fr/cours-cuisine.php'>Réservez un cours</a><br><br>
     <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>N’hésitez pas à nous suivre sur les réseaux sociaux pour ne louper aucune de nos nouveautés </p>
     <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>A bientôt sur votre Espace Client,</p>
-    <h3 style='color:#484848;text-align:left;'>L'équipe Sainefood</h3>
-    <p style='color:#CFCBC2;font-size:12px;text-align:left;line-height:20px;'>Sainefood s’engage à : Garder confidentielles vos informations personnelles. Selon la loi en vigueur, les participants disposent d'un droit d'accès, de modification, de rectification et de suppression des données personnelles. Politique de confidentialité
+    <h3 style='color:#484848;text-align:left;'>L'équipe Sainefood</h3><br><br>
+    <p style='color:#CFCBC2;font-size:12px;text-align:center;line-height:20px;'>Sainefood s’engage à : Garder confidentielles vos informations personnelles. Selon la loi en vigueur, les participants disposent d'un droit d'accès, de modification, de rectification et de suppression des données personnelles. Politique de confidentialité
     </p>
     </body>
     ";
@@ -82,7 +82,7 @@ if ($row['email'] != $email) {
     if (!$mail->send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
     } else {
-        echo "Message sent!";
+        echo "<script type='text/javascript'>document.location.replace('http://www.saine-food.fr/confirmation-ouverture-compte.php');</script>";";
         //Section 2: IMAP
         //Uncomment these to save your message in the 'Sent Mail' folder.
         #if (save_mail($mail)) {
