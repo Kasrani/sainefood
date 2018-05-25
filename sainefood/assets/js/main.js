@@ -130,7 +130,22 @@ function submitForm(){
     document.getElementById('printResult').innerHTML = AJAX(url);
 }
 
-
+function change()
+{
+    var changer = document.getElementById("myFIX");
+    var changerPlus = document.getElementById("plus");
+  
+    if (changer.style.height == '45px')
+    {
+        changer.style.height = '45vh';
+        changerPlus.style.bottom = 'calc(45vh - 1px)';
+    }
+    else                                     
+    {
+        changer.style.height = '45px';
+        changerPlus.style.bottom = '45px';
+    }
+};
 
 
 

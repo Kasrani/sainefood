@@ -257,6 +257,7 @@ body.iosBugFixCaret.modal-open {position: fixed; width: 100%;}
 .nav-element span{font-size:27px;}
 .cercle-nav-panier{width:30px;height:30px;border:1px dashed #CFCBC2;background-color:#FFF;border-radius:20px;position: relative;top: -36px;left: 41px;}
 .recapulatif {position:relative;top:-154px;text-align:center;}
+.plus{font-size:18px;color:#484848;font-weight:600;position: fixed; z-index: 1000;bottom: 45px;display:none;background-color:#484848;background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(206,206,206,0.9));width:100%;height:45px;text-align:center;line-height: 2.4;}
 @media only screen 
 and (min-device-width : 375px) 
 and (max-device-width : 667px) 
@@ -324,8 +325,7 @@ footer .form-group .form-control + .btn {border:none!important;margin-left:-4px;
     .cartouche-bloc .d-flex .p-2 {display:initial;}
     .cartouche-description .d-flex .p-2:last-child {display:none!important;}
     .cartouche-description {padding: 0px 15px 15px 0;}
-    #myFIX{width:100%;position: fixed!important;z-index: 111;bottom: 0;height: 35px;border-top:1px solid #CFCBC2;overflow-y: scroll;overflow-x:hidden;bottom: 0;}
-    #myFIX:hover{height: 45vh;}
+    #myFIX{width:100%;position: fixed!important;z-index: 111;bottom: 0;height:45px;border-top:1px solid #CFCBC2;overflow-y: scroll;overflow-x:hidden;bottom: 0;}
     #myFIX .main-content{width:calc(100% + 15px)!important;margin:0;}
     #myFIX .main-content  .content{padding: 15px 30px 15px 15px;background-color: #fbfbfb;}
     #myFIX h2{display:none;}
@@ -334,7 +334,7 @@ footer .form-group .form-control + .btn {border:none!important;margin-left:-4px;
     .btn-commander{width: calc(100% - 45px)!important;}
     .p-2.commande-block .content{height: 300px;}
     #coordonnees .btn-primary{top: 115px!important;}
-    #ajout-article {position:absolute;top:0;left:0;background:#FF594F;color:#FFF!important;border-radius: 0;width: calc(100% - 15px)!important;}
+    #ajout-article {position:absolute;top:0;left:0;background:#FF594F;color:#FFF!important;border-radius: 0;width: calc(100% - 15px)!important;height: 45px;line-height:2;font-size:16px;}
     .commande-block-max {top:90px!important;height: 105px!important;}
     .container-model .main-content .content{padding:0px 15px;}
     #myFIXED {height:45vh;}
@@ -347,4 +347,5 @@ footer .form-group .form-control + .btn {border:none!important;margin-left:-4px;
     #paypal-btn{top:0px!important; left: calc(50% - 10px)!important;}
     .btn-commander {top: 240px!important;}
     .cercle-nav-panier{background-color:#fbfbfb;}
+    .plus{display:block;}
 }

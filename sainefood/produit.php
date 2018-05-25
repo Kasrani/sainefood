@@ -221,6 +221,7 @@ if (isset($_GET['idCours'])) {
                     ?>
                 </div>
             </div>
+            <div class="plus" id="plus" onclick="change(this)">Votre commande</div>
             <div id="myFIX" class="col-md-4 p-2 commande-block position-relative">
                 <div id="myFIXED" class="main-content p-2 shadow position-fixed">
                     <div class="content">
