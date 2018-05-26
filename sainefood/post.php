@@ -129,7 +129,7 @@ session_start();
       <div class="row">
         <!-- Latest Posts -->
         <main class="post blog-post col-lg-8"> 
-          <div class="container">
+          <div class="">
             <div class="post-single">
               <div class="post-thumbnail"><img src="images/img-blog/blog-post-3.jpeg" alt="..." class="img-fluid"></div>
               <div class="post-details">
