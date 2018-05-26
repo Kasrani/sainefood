@@ -69,7 +69,7 @@ if (isset($_GET['id'])) {
                         <li><a href="a%20propos.php">À propos</a></li>
                         <li><a href="cours-cuisine.php">Cours de cuisine</a></li>
                         <li><a href="livraison.php">Livraison</a></li>
-                        <li><a href="no-sidebar.php">Actualités</a></li>
+                        <li><a href="actualites.php">Actualités</a></li>
                         <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>

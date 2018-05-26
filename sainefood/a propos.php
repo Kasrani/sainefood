@@ -64,7 +64,7 @@ session_start();
                         <li class="current"><a href="a%20propos.php">À propos</a></li>
                         <li class=""><a href="cours-cuisine.php">Cours de cuisine</a></li>
                         <li class=""><a href="livraison.php">Livraison</a></li>
-                        <li><a href="#">Actualités</a></li>
+                        <li><a href="actualites.php">Actualités</a></li>
                         <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>

@@ -160,7 +160,32 @@ if(!$_SESSION['user']){
                         }
                          //require('add.php');
                         
-                    echo "</div><br><br>";
+                    // Gestion des articles
+                    
+                    echo "</div><br><br><hr id='gestionArticle' class='separateur'>";
+                    echo "<br><h4 class='title-sf-4 semibold'>Gestion des articles :</h4>";
+                    echo "<br>";
+                            $rec = "SELECT * FROM `plat`";
+                            $result = mysqli_query($maConnexion,$rec);
+                            $selectOption = null;
+                            $test = null;
+                    echo "
+                            <div class='contact'>
+                            <form method='GET' action='#gestionArticle'>
+                            <div class='d-flex contact'>
+                                <button type='submit' name='add' class='p-2 mr-2 btn btn-primary shadow'>Nouveau article</button>
+                              </div>
+                            </form>
+                            ";
+
+                        if (isset($_GET['add'])) {
+                            require('backOffice/articles/add.php');
+                        }
+                         //require('add.php');
+                    
+                    // END Gestion des articles
+                    
+                    echo "</div>";
                 }else {
                 echo "<h2 class='title-sf-2 text-center'>Bonjour  " . $_SESSION['user'] . "</h2> ";
                     echo "<h3 class='title-sf-3 text-center'>Bienvenue sur votre espace utilisateur</h3><br><br>";

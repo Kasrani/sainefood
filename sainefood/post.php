@@ -6,9 +6,8 @@ session_start();
 <!DOCTYPE HTML>
 <html lang="fr">
 	<head>
-		<title>Contactez-nous pour des cours de cuisine bio personnalisés </title>
+		<title>Saine-Food</title>
 		<meta charset="utf-8" />
-        <meta name="description" content="Vous êtes une entreprise ? Un particulier qui cherche à organiser un évènement étonnant ? Contactez-nous pour plus d’informations sur nos offres de cours de cuisine bio">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119196030-1"></script>
@@ -22,11 +21,11 @@ session_start();
         <link rel="stylesheet" href="icons/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src='https://www.google.com/recaptcha/api.js'></script>
-        <link rel="icon" href="favicon.png" type="image/png">
-        <link rel="icon" sizes="32x32" href="icons/favicon/favicon-32.png" type="image/png">
-        <link rel="icon" sizes="64x64" href="icons/favicon/favicon-64.png" type="image/png">
-        <link rel="icon" sizes="96x96" href="icons/favicon/favicon-96.png" type="image/png">
-        <link rel="icon" sizes="196x196" href="icons/favicon/favicon-196.png" type="image/png">
+        <link rel="icon" href="favicon.png" type="images/png">
+        <link rel="icon" sizes="32x32" href="icons/favicon/favicon-32.png" type="images/png">
+        <link rel="icon" sizes="64x64" href="icons/favicon/favicon-64.png" type="images/png">
+        <link rel="icon" sizes="96x96" href="icons/favicon/favicon-96.png" type="images/png">
+        <link rel="icon" sizes="196x196" href="icons/favicon/favicon-196.png" type="images/png">
         <link rel="apple-touch-icon" sizes="152x152" href="icons/favicon/apple-touch-icon.png">
         <link rel="apple-touch-icon" sizes="60x60" href="icons/favicon/apple-touch-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="76x76" href="icons/favicon/apple-touch-icon-76x76.png">
@@ -35,8 +34,10 @@ session_start();
         <link rel="apple-touch-icon" sizes="144x144" href="icons/favicon/apple-touch-icon-144x144.png">
         <meta name="msapplication-TileImage" content="favicon-144.png">
         <meta name="msapplication-TileColor" content="#FFFFFF">
+        <!-- theme blog stylesheet-->
+        <link rel="stylesheet" href="assets/css/style.blog.css" id="theme-stylesheet">
 	</head>
-	<body class="dd">
+	<body class="blog">
         <div id="header" class="navbar navbar-fixed-top container-fluid">
             <div class="container">
                 <div class="d-flex">
@@ -65,14 +66,12 @@ session_start();
                         <li class=""><a href="a%20propos.php">À propos</a></li>
                         <li class=""><a href="cours-cuisine.php">Cours de cuisine</a></li>
                         <li class=""><a href="livraison.php">Livraison</a></li>
-                        <li><a href="actualites.php">Actualités</a></li>
-                        <li class="current"><a href="contact.php">Contact</a></li>
+                        <li class="current"><a href="actualites.php">Actualités</a></li>
+                        <li class=""><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <div class="bandeau bandeau-contact">
-        </div>
         <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -125,77 +124,132 @@ session_start();
                 </div>
             </div>
         </div>
-        <div class="container main-content shadow contact">
+        <div class="container main-content shadow blog contact">
             <div class="content">
-                <h2 class="title-sf-2 semibold">Comment pouvons-nous vous aider ?</h2>
-                <h3 class="title-sf-3 text-center">Vous êtes une entreprise ou un groupe de particuliers ?</h3>
-                <h4 class="title-sf-4 text-center">
-                    Vous souhaitez obtenir un devis ? Une demande spécifiques ?
-                </h4>
-                <h4 class="title-sf-4 text-center">
-                    Merci de nous adresser votre demande via le formulaire ci-dessous
-                </h4>
-                <hr class="separateur">
-                <p class="text-right">* Obligatoire</p>
-                <form action="mailContact.php" method="post">
-                    <div class="d-flex form-row">
-                        <div class="mr-auto p-2 form-group col-md-5">
-                            <label for="">Nom / Prénom  *</label>
-                            <input type="text" name="nomPrenom" class="form-control" id="" placeholder="">
-                        </div>
-                        <div class="p-2 form-group col-md-5">
-                            <label for="">Sujet de la demande *</label>
-                            <select class="form-control" id="">
-                                <option>Choix 1</option>
-                                <option>Choix 2</option>
-                            </select>
-                        </div>
-                        <div class="mr-auto p-2 form-group col-md-5">
-                            <label for="">Raison social *</label>
-                            <input type="text" name="raisonSocial" class="form-control" id="" placeholder="">
-                        </div>
-                        <div class="p-2 form-group col-md-5">
-                            <label for="">Nombre de participants *</label>
-                            <select class="form-control" id="">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                            </select>
-                        </div>
-                        <div class="mr-auto p-2 form-group col-md-5">
-                            <label for="">E-mail *</label>
-                            <input type="email" name="email" class="form-control" id="" placeholder="">
-                            <label for="">Téléphone *</label>
-                            <input type="text" name="telephone" class="form-control" id="" placeholder="">
-                        </div>
-                        <div class="p-2 form-group col-md-5">
-                            <label for="">Message *</label>
-                            <textarea class="form-control" name="message" id="" rows="3"></textarea>
-                        </div>
+      <div class="row">
+        <!-- Latest Posts -->
+        <main class="post blog-post col-lg-8"> 
+          <div class="container">
+            <div class="post-single">
+              <div class="post-thumbnail"><img src="images/img-blog/blog-post-3.jpeg" alt="..." class="img-fluid"></div>
+              <div class="post-details">
+                <div class="post-meta d-flex justify-content-between">
+                  <div class="category"><a href="#">Business</a><a href="#">Financial</a></div>
+                </div>
+                <h1>Diversity in Engineering: The Effect on Questions<a href="#"><i class="fa fa-bookmark-o"></i></a></h1>
+                <div class="post-footer d-flex align-items-center flex-column flex-sm-row"><a href="#" class="author d-flex align-items-center flex-wrap">
+                    <div class="avatar"><img src="images/img-blog/avatar-1.jpg" alt="..." class="img-fluid"></div>
+                    <div class="title"><span>John Doe</span></div></a>
+                  <div class="d-flex align-items-center flex-wrap">       
+                    <div class="date"><i class="icon-clock"></i> 2 months ago</div>
+                    <div class="views"><i class="icon-eye"></i> 500</div>
+                    <div class="comments meta-last"><i class="icon-comment"></i>12</div>
+                  </div>
+                </div>
+                <div class="post-body">
+                  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="post-comments">
+                  <header>
+                    <h3 class="h6">Post Comments<span class="no-of-comments">(3)</span></h3>
+                  </header>
+                  <div class="comment">
+                    <div class="comment-header d-flex justify-content-between">
+                      <div class="user d-flex align-items-center">
+                        <div class="image"><img src="images/img-blog/user.svg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="title"><strong>Jabi Hernandiz</strong><span class="date">May 2016</span></div>
+                      </div>
                     </div>
-                    <div class="d-flex form-row">
-                        <div class="mr-auto p-2 form-group col-md-5">
-                            <img class="img-fluid" src="images/mail.png">
-                        </div>
-                        <div class="p-2 form-group col-md-5">
-                            <div class="g-recaptcha" data-sitekey="6LclnlMUAAAAAKN_lXJnPRaHzfKLtjYiD8il_dGy"></div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                <label class="custom-control-label" for="customCheck1">
-                                    Oui, je souhaite recevoir les communications commerciales concernant les produits, services, publications et, événements de SaineFood.<br><br>
-                                    En vous enregistrant, vous confirmez que vous consentez à l'hébergement et au traitement de vos données à caractère personnel par SaineFood dans les conditions décrites dans notre <a href="#">politique de confidentialité</a>.
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-primary mb-2 float-right shadow">Envoyer</button>
-                        </div>
+                    <div class="comment-body">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                     </div>
-                </form>
+                  </div>
+                  <div class="comment">
+                    <div class="comment-header d-flex justify-content-between">
+                      <div class="user d-flex align-items-center">
+                        <div class="image"><img src="images/img-blog/user.svg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="title"><strong>Nikolas</strong><span class="date">May 2016</span></div>
+                      </div>
+                    </div>
+                    <div class="comment-body">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    </div>
+                  </div>
+                  <div class="comment">
+                    <div class="comment-header d-flex justify-content-between">
+                      <div class="user d-flex align-items-center">
+                        <div class="image"><img src="images/img-blog/user.svg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="title"><strong>John Doe</strong><span class="date">May 2016</span></div>
+                      </div>
+                    </div>
+                    <div class="comment-body">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="add-comment">
+                  <header>
+                    <h3 class="h6">Leave a reply</h3>
+                  </header>
+                  <form action="#" class="commenting-form">
+                    <div class="row">
+                      <div class="form-group col-md-6">
+                        <input type="text" name="username" id="username" placeholder="Name" class="form-control">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <input type="email" name="username" id="useremail" placeholder="Email Address (will not be published)" class="form-control">
+                      </div>
+                      <div class="form-group col-md-12">
+                        <textarea name="usercomment" id="usercomment" placeholder="Type your comment" class="form-control"></textarea>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <button type="submit" class="btn btn-secondary">Submit Comment</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <aside class="col-lg-4">
+          <!-- Widget [Latest Posts Widget]        -->
+          <div class="widget latest-posts">
+            <header>
+              <h3 class="h6">Latest Posts</h3>
+            </header>
+            <div class="blog-posts"><a href="#">
+                <div class="item d-flex align-items-center">
+                  <div class="image"><img src="images/img-blog/small-thumbnail-1.jpg" alt="..." class="img-fluid"></div>
+                  <div class="title"><strong>Alberto Savoia Can Teach You About</strong>
+                    <div class="d-flex align-items-center">
+                      <div class="views"><i class="icon-eye"></i> 500</div>
+                      <div class="comments"><i class="icon-comment"></i>12</div>
+                    </div>
+                  </div>
+                </div></a><a href="#">
+                <div class="item d-flex align-items-center">
+                  <div class="image"><img src="images/img-blog/small-thumbnail-2.jpg" alt="..." class="img-fluid"></div>
+                  <div class="title"><strong>Alberto Savoia Can Teach You About</strong>
+                    <div class="d-flex align-items-center">
+                      <div class="views"><i class="icon-eye"></i> 500</div>
+                      <div class="comments"><i class="icon-comment"></i>12</div>
+                    </div>
+                  </div>
+                </div></a><a href="#">
+                <div class="item d-flex align-items-center">
+                  <div class="image"><img src="images/img-blog/small-thumbnail-3.jpg" alt="..." class="img-fluid"></div>
+                  <div class="title"><strong>Alberto Savoia Can Teach You About</strong>
+                    <div class="d-flex align-items-center">
+                      <div class="views"><i class="icon-eye"></i> 500</div>
+                      <div class="comments"><i class="icon-comment"></i>12</div>
+                    </div>
+                  </div>
+                </div></a></div>
+          </div>
+        </aside>
+      </div>
             </div>
         </div>
         <footer>

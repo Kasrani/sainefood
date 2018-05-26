@@ -548,7 +548,7 @@ or die(mysqli_error($maConnexion));
     <br><br><br>
     <h1 style='color:#ff594f; font-size:22px;'>Votre espace utilisateur</h1>
     <br><br><br>
-    <h3 style='color:#484848;text-align:left;'>Cher(e) " .$prenom. "</h3><br>
+    <h3 style='color:#484848;text-align:left;'>Cher(e) " .$nom. "</h3><br>
      <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>Vous pouvez acceder a votre compte utilisateur a l'aide des identifiants suivants :</p><br>
      <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;font-weight:600;'>Identifiant : " .$email. "</p>
     <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;font-weight:600;'>Mot de passe : " .$password. "</p><br>

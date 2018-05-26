@@ -23,6 +23,7 @@ div.baseline{font-size:12px;margin-left:10px;display:inline-block;position:relat
 #nav li{display:inline-block;margin-right:1em;top:0;position:relative;}
 #nav li > ul{display:none;}
 #nav li a, #nav li span{position:relative;padding-bottom:8px;text-decoration:none;color:#484848;font-size:16px;}
+.blog #nav li a,.blog #nav li span{padding-bottom:0px!important;}
 #nav li:hover, #nav li.active{}
 #nav li:hover a, #nav li:hover span{border-bottom:2px solid #FF594F;}
 #nav li.active a, #nav li.active span{background:#C1CAC5;color:#fff;}
@@ -30,7 +31,7 @@ div.baseline{font-size:12px;margin-left:10px;display:inline-block;position:relat
 #nav a{text-decoration: none;}
 .main-content{margin:30px 0px;padding:0px;position:relative;z-index:1;background-color:#FFF;}
 .main-content.atelier, .main-content.contact{margin-top:145px;}
-.contact.confirmation{margin-top:30px!important;}
+.contact.confirmation, .blog{margin-top:30px!important;}
 .main-content-2{margin:75px 0px 30px 0px;}
 .main-content .content{padding:30px 15px;}
 .signIn .bandeau{width:100%;height:100vh;position:absolute;top: 0; z-index:-1;background-image:url(../../images/bg-carousel.png);background-size:cover;}
@@ -258,6 +259,7 @@ body.iosBugFixCaret.modal-open {position: fixed; width: 100%;}
 .cercle-nav-panier{width:30px;height:30px;border:1px dashed #CFCBC2;background-color:#FFF;border-radius:20px;position: relative;top: -36px;left: 41px;}
 .recapulatif {position:relative;top:-154px;text-align:center;}
 .plus{font-size:16px;color:#FFF;font-weight:600;position: fixed; z-index: 1000;bottom: 44px;display:none;background-color:#484848;width:100%;height:45px;text-align:center;line-height: 2.5;}
+.blog .content, .posts-listing .container{padding-left:0px;!important;padding-right:0px;!important;}
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 667px) 
@@ -353,4 +355,5 @@ footer .form-group .form-control + .btn {border:none!important;margin-left:-4px;
     .panier .btn-primary{font-weight:600;height:45px;line-height:1.9;}
     .container-model .title-sf-4{font-size: 23px!important;}
     .margin-fix-cord{top: initial!important;}
+    .contact.confirmation, .blog {margin-top:10px!important;}
 }
