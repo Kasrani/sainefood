@@ -166,7 +166,7 @@ if(!$_SESSION['user']){
                     echo "<h3 class='title-sf-3 text-center'>Bienvenue sur votre espace utilisateur</h3><br><br>";
                     echo "
                     <div class='contact'>
-                        <form action='updateProfil.php' method='post'>
+                        <form action='backOffice/user/updateProfil.php' method='post'>
                             <div class='d-flex form-row'>
                                 <div class='mr-auto p-2 form-group col-md-5'>
                                     <label for=''>Nom</label>
@@ -195,6 +195,7 @@ if(!$_SESSION['user']){
                     $query = "SELECT * FROM `commande` WHERE email='$email'";
                     $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
                     echo "
+                    <div class='table-responsive'>
                     <table class='table table-striped'>
                         <thead>
                         <tr class='semibold'>
@@ -202,6 +203,7 @@ if(!$_SESSION['user']){
                           <th scope='col'>Commande</th>
                           <th scope='col'>Adresse de livraison</th>
                           <th scope='col'>Montant global</th>
+                          <th scope='col'>Date</th>
                           <th scope='col'>Commande finalisée ?</th>
                         </tr>
                       </thead>
@@ -213,6 +215,7 @@ if(!$_SESSION['user']){
                                               <td>" . $row['liste'] . "</td>
                                               <td>" . $row['adresseLivraison'] . "</td>
                                               <td>" . $row['montant'] . " €</td>
+                                              <td>" . $row['date'] . "</td>
                                               <td>" . $row['vente'] . "</td>
                                             </tr>
                                             ";
@@ -220,6 +223,7 @@ if(!$_SESSION['user']){
                           echo "</tbody>
                         </table>
                     </table>
+                    </div>
                     ";
                 }
                     

@@ -503,13 +503,12 @@ require 'PHPMailer/src/Exception.php';
       $liste = $_GET['liste'];
       mysqli_query($maConnexion,"INSERT INTO commande (nom,prenom,email,adresseLivraison,montant,liste) VALUES ('$nom','$prenom','$email','$adresse','$montant','$liste')") 
 or die(mysqli_error($maConnexion));
-    $query = "SELECT * FROM `user` WHERE email=$email";
+    $query = "SELECT * FROM `user` WHERE email='$email'";
       $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
-      $row = mysqli_fetch_assoc($result);
-      $email = $row['email'];
-      if ($email !='') {
-      mysqli_query($maConnexion,"INSERT INTO user (email,prenom,nom,password) VALUES ('$email','$prenom','$nom','$password')") 
-or die(mysqli_error($maConnexion));
+      //$row = mysqli_fetch_assoc($result);
+      $count = mysqli_num_rows($result);
+      if ($count < 1) {
+      mysqli_query($maConnexion,"INSERT IGNORE INTO user (email,prenom,nom,password) VALUES ('$email','$prenom','$nom','$password')") or die(mysqli_error($maConnexion));
       //On envoie un mail de cofirmation
     
     //Create a new PHPMailer instance
