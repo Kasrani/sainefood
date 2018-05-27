@@ -132,77 +132,32 @@ session_start();
           <div class="container">
             <div class="row">
               <!-- post -->
-              <div class="post col-xl-6">
-                <div class="post-thumbnail"><a href="post.php"><img src="images/img-blog/blog-post-1.jpeg" alt="..." class="img-fluid"></a></div>
-                <div class="post-details">
-                  <div class="post-meta d-flex justify-content-between">
-                    <div class="date meta-last">20 May | 2016</div>
-                    <div class="category"><a href="#">Business</a></div>
-                  </div><a href="post.php">
-                    <h3 class="h4">Alberto Savoia Can Teach You About Interior</h3></a>
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                  <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
-                      <div class="avatar"><img src="images/img-blog/avatar-3.jpg" alt="..." class="img-fluid"></div>
-                      <div class="title"><span>John Doe</span></div></a>
-                    <div class="date"><i class="icon-clock"></i> 2 months ago</div>
-                    <div class="comments meta-last"><i class="icon-comment"></i>12</div>
+                <?php
+                $rec = "SELECT * FROM `article`";
+                $result = mysqli_query($maConnexion,$rec);
+                setlocale(LC_TIME, 'french');
+                while ($row = $result->fetch_assoc()) {
+                echo "
+              <div class='post col-xl-6'>
+                <div class='post-thumbnail'><a href='post.php'><img src='images/articles/" . $row['image'] . "' alt='...' class='img-fluid'></a></div>
+                <div class='post-details'>
+                  <div class='post-meta d-flex justify-content-between'>
+                    <div class='date meta-last'>". strftime('%a %d %B', strtotime($row['date'])) ."</div>
+                    <div class='category'><a href='#'>Business</a></div>
+                  </div><a href='post.php'>
+                    <h3 class='h4'>" . $row['titre'] . "</h3></a>
+                  <p class='text-muted'>" . $row['details'] . "</p>
+                  <footer class='post-footer d-flex align-items-center'><a href='#' class='author d-flex align-items-center flex-wrap'>
+                      <div class='avatar'><img src='images/img-blog/avatar-3.jpg' alt='...' class='img-fluid'></div>
+                      <div class='title'><span>Pierre Duclass</span></div></a>
+                    <div class='date'><i class='icon-clock'></i> 2 months ago</div>
+                    <div class='comments meta-last'><i class='icon-comment'></i>12</div>
                   </footer>
                 </div>
-              </div>
+              </div>";
+                }
+                ?>
               <!-- post             -->
-              <div class="post col-xl-6">
-                <div class="post-thumbnail"><a href="post.php"><img src="images/img-blog/blog-post-2.jpg" alt="..." class="img-fluid"></a></div>
-                <div class="post-details">
-                  <div class="post-meta d-flex justify-content-between">
-                    <div class="date meta-last">20 May | 2016</div>
-                    <div class="category"><a href="#">Business</a></div>
-                  </div><a href="post.php">
-                    <h3 class="h4">Alberto Savoia Can Teach You About Interior</h3></a>
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                  <div class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
-                      <div class="avatar"><img src="images/img-blog/avatar-2.jpg" alt="..." class="img-fluid"></div>
-                      <div class="title"><span>John Doe</span></div></a>
-                    <div class="date"><i class="icon-clock"></i> 2 months ago</div>
-                    <div class="comments meta-last"><i class="icon-comment"></i>12</div>
-                  </div>
-                </div>
-              </div>
-              <!-- post             -->
-              <div class="post col-xl-6">
-                <div class="post-thumbnail"><a href="post.php"><img src="images/img-blog/blog-post-3.jpeg" alt="..." class="img-fluid"></a></div>
-                <div class="post-details">
-                  <div class="post-meta d-flex justify-content-between">
-                    <div class="date meta-last">20 May | 2016</div>
-                    <div class="category"><a href="#">Business</a></div>
-                  </div><a href="post.php">
-                    <h3 class="h4">Alberto Savoia Can Teach You About Interior</h3></a>
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                  <div class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
-                      <div class="avatar"><img src="images/img-blog/avatar-3.jpg" alt="..." class="img-fluid"></div>
-                      <div class="title"><span>John Doe</span></div></a>
-                    <div class="date"><i class="icon-clock"></i> 2 months ago</div>
-                    <div class="comments meta-last"><i class="icon-comment"></i>12</div>
-                  </div>
-                </div>
-              </div>
-              <!-- post -->
-              <div class="post col-xl-6">
-                <div class="post-thumbnail"><a href="post.php"><img src="images/img-blog/blog-post-4.jpeg" alt="..." class="img-fluid"></a></div>
-                <div class="post-details">
-                  <div class="post-meta d-flex justify-content-between">
-                    <div class="date meta-last">20 May | 2016</div>
-                    <div class="category"><a href="#">Business</a></div>
-                  </div><a href="post.php">
-                    <h3 class="h4">Alberto Savoia Can Teach You About Interior</h3></a>
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                  <div class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
-                      <div class="avatar"><img src="images/img-blog/avatar-1.jpg" alt="..." class="img-fluid"></div>
-                      <div class="title"><span>John Doe</span></div></a>
-                    <div class="date"><i class="icon-clock"></i> 2 months ago</div>
-                    <div class="comments meta-last"><i class="icon-comment"></i>12</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </main>
@@ -212,34 +167,25 @@ session_start();
             <header>
               <h3 class="h6">Latest Posts</h3>
             </header>
-            <div class="blog-posts"><a href="#">
-                <div class="item d-flex align-items-center">
-                  <div class="image"><img src="images/img-blog/small-thumbnail-1.jpg" alt="..." class="img-fluid"></div>
-                  <div class="title"><strong>Alberto Savoia Can Teach You About</strong>
-                    <div class="d-flex align-items-center">
-                      <div class="views"><i class="icon-eye"></i> 500</div>
-                      <div class="comments"><i class="icon-comment"></i>12</div>
+            <div class="blog-posts">
+                <?php
+                $rec = "SELECT * FROM `article`";
+                $result = mysqli_query($maConnexion,$rec);
+                while ($row = $result->fetch_assoc()) {
+                echo"
+                <a href='#'>
+                <div class='item d-flex align-items-center'>
+                  <div class='image'><img src='images/articles/" . $row['image'] . "' alt='...' class='img-fluid'></div>
+                  <div class='title'><strong>" . $row['titre'] . "</strong>
+                    <div class='d-flex align-items-center'>
+                      <div class='views'><i class='icon-eye'></i> 500</div>
+                      <div class='comments'><i class='icon-comment'></i>12</div>
                     </div>
                   </div>
-                </div></a><a href="#">
-                <div class="item d-flex align-items-center">
-                  <div class="image"><img src="images/img-blog/small-thumbnail-2.jpg" alt="..." class="img-fluid"></div>
-                  <div class="title"><strong>Alberto Savoia Can Teach You About</strong>
-                    <div class="d-flex align-items-center">
-                      <div class="views"><i class="icon-eye"></i> 500</div>
-                      <div class="comments"><i class="icon-comment"></i>12</div>
-                    </div>
-                  </div>
-                </div></a><a href="#">
-                <div class="item d-flex align-items-center">
-                  <div class="image"><img src="images/img-blog/small-thumbnail-3.jpg" alt="..." class="img-fluid"></div>
-                  <div class="title"><strong>Alberto Savoia Can Teach You About</strong>
-                    <div class="d-flex align-items-center">
-                      <div class="views"><i class="icon-eye"></i> 500</div>
-                      <div class="comments"><i class="icon-comment"></i>12</div>
-                    </div>
-                  </div>
-                </div></a></div>
+                </div></a>
+                ";
+                }
+                ?></div>
           </div>
         </aside>
       </div>
