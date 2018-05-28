@@ -2,7 +2,6 @@
 // Database Authentication
 include("authDB.php");
 session_start();
-ob_start("ob_gzhandler");
 if (isset($_GET['idArticle'])) {
     $article = $_GET['idArticle'];
     $query = "SELECT * FROM `article` WHERE id='$article'";

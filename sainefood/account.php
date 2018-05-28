@@ -2,7 +2,6 @@
 include("authDB.php");
 // Start the session
 session_start();
-ob_start("ob_gzhandler");
 //if  authentication successful 
 if(!$_SESSION['user']){
    header("location:index.php");

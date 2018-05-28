@@ -2,7 +2,6 @@
 // Start the session
 include("authDB.php");
 session_start();
-ob_start("ob_gzhandler");
 if (isset($_GET['idPlats'])) {
     $plat = $_GET['idPlats'];
     $query = "SELECT * FROM `plat` WHERE id='$plat' or nom='$plat'";
