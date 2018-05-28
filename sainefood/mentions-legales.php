@@ -6,8 +6,7 @@ session_start();
 <!DOCTYPE HTML>
 <html lang="fr">
 	<head>
-		<title>Recettes et conseils cuisine bio - Sainefood</title>
-        <meta name="description" content="Recettes, conseils, anecdotes, retrouvez toutes les astuces du chef Duclass et des nouveautés du monde de la cuisine bio">
+		<title>Saine-Food</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -22,11 +21,11 @@ session_start();
         <link rel="stylesheet" href="icons/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src='https://www.google.com/recaptcha/api.js'></script>
-        <link rel="icon" href="favicon.png" type="images/png">
-        <link rel="icon" sizes="32x32" href="icons/favicon/favicon-32.png" type="images/png">
-        <link rel="icon" sizes="64x64" href="icons/favicon/favicon-64.png" type="images/png">
-        <link rel="icon" sizes="96x96" href="icons/favicon/favicon-96.png" type="images/png">
-        <link rel="icon" sizes="196x196" href="icons/favicon/favicon-196.png" type="images/png">
+        <link rel="icon" href="favicon.png" type="image/png">
+        <link rel="icon" sizes="32x32" href="icons/favicon/favicon-32.png" type="image/png">
+        <link rel="icon" sizes="64x64" href="icons/favicon/favicon-64.png" type="image/png">
+        <link rel="icon" sizes="96x96" href="icons/favicon/favicon-96.png" type="image/png">
+        <link rel="icon" sizes="196x196" href="icons/favicon/favicon-196.png" type="image/png">
         <link rel="apple-touch-icon" sizes="152x152" href="icons/favicon/apple-touch-icon.png">
         <link rel="apple-touch-icon" sizes="60x60" href="icons/favicon/apple-touch-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="76x76" href="icons/favicon/apple-touch-icon-76x76.png">
@@ -35,8 +34,6 @@ session_start();
         <link rel="apple-touch-icon" sizes="144x144" href="icons/favicon/apple-touch-icon-144x144.png">
         <meta name="msapplication-TileImage" content="favicon-144.png">
         <meta name="msapplication-TileColor" content="#FFFFFF">
-        <!-- theme blog stylesheet-->
-        <link rel="stylesheet" href="assets/css/style.blog.css" id="theme-stylesheet">
         <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
         <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
         <script>
@@ -61,7 +58,7 @@ session_start();
         })});
         </script>
 	</head>
-	<body class="blog">
+	<body class="mentions">
         <div id="header" class="navbar navbar-fixed-top container-fluid">
             <div class="container">
                 <div class="d-flex">
@@ -80,8 +77,7 @@ session_start();
                     ?>
                 </div>
             </div>
-        </div>
-            
+        </div>    
         <nav id="nav" class="navbar navbar-fixed-top shadow container-fluid">
             <div class="container">
                 <div class="row headerow scroll">
@@ -90,7 +86,7 @@ session_start();
                         <li class=""><a href="a%20propos.php">À propos</a></li>
                         <li class=""><a href="cours-cuisine.php">Cours de cuisine</a></li>
                         <li class=""><a href="livraison.php">Livraison</a></li>
-                        <li class="current"><a href="actualites.php">Actualités</a></li>
+                        <li><a href="actualites.php">Actualités</a></li>
                         <li class=""><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>
@@ -148,71 +144,49 @@ session_start();
                 </div>
             </div>
         </div>
-        <div class="container main-content shadow blog contact">
+        <div class="container main-content shadow confirmation contact">
             <div class="content">
-      <div class="row">
-        <!-- Latest Posts -->
-        <main class="posts-listing col-lg-8"> 
-          <div class="container">
-            <div class="row">
-              <!-- post -->
-                <?php
-                $rec = "SELECT * FROM `article`";
-                $result = mysqli_query($maConnexion,$rec);
-                setlocale(LC_TIME, 'fr_FR.utf8','fra');
-                while ($row = $result->fetch_assoc()) {
-                echo "
-              <div class='post col-xl-6'>
-                <div class='post-thumbnail'><a href='post.php?idArticle=" . $row['id'] . "'><img src='images/articles/" . $row['image'] . "' alt='" . $row['titre'] . "' class='img-fluid'></a></div>
-                <div class='post-details'>
-                  <div class='post-meta d-flex justify-content-between'>
-                    <div class='date meta-last'>". strftime('%a %d %B', strtotime($row['date'])) ."&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;". strftime('%Hh %Mmn', strtotime($row['date'])) . "</div>
-                    <div class='category'><a href='#'>NOUVEAUTÉ</a></div>
-                  </div><a href='post.php'>
-                    <h3 class='h4'>" . $row['titre'] . "</h3></a>
-                  <p class='text-muted'>" . $row['details'] . "</p>
-                  <footer class='post-footer d-flex align-items-center'><a href='#' class='author d-flex align-items-center flex-wrap'>
-                      <div class='avatar'><img src='images/img-blog/avatar-2.jpg' alt='...' class='img-fluid'></div>
-                      <div class='title'><span>Pierre Duclass</span></div></a>
-                    <div class='date'><i class='icon-clock'></i>". strftime('%a %d %B', strtotime($row['date'])) ."</div>
-                    <div class='comments meta-last'><i class='icon-comment'></i>12</div>
-                  </footer>
-                </div>
-              </div>";
-                }
-                ?>
-              <!-- post             -->
-            </div>
-          </div>
-        </main>
-        <aside class="col-lg-4">
-          <!-- Widget [Latest Posts Widget]        -->
-          <div class="widget latest-posts">
-            <header>
-              <h3 class="h6">Derniers articles</h3>
-            </header>
-            <div class="blog-posts">
-                <?php
-                $rec = "SELECT * FROM `article`";
-                $result = mysqli_query($maConnexion,$rec);
-                while ($row = $result->fetch_assoc()) {
-                echo"
-                <a href='#'>
-                <div class='item d-flex align-items-center'>
-                  <div class='image'><img src='images/articles/" . $row['image'] . "' alt='" . $row['titre'] . "' class='img-fluid'></div>
-                  <div class='title'><strong>" . $row['titre'] . "</strong>
-                    <div class='d-flex align-items-center'>
-                      <div class='views' style='text-transform: capitalize;'><i class='icon-eye'></i>". strftime('%a %d %B', strtotime($row['date'])) ."</div>
-                      <div class='comments'><i class='icon-comment'></i>12</div>
-                    </div>
-                  </div>
-                </div></a>
-                ";
-                }
-                ?></div>
-          </div>
-        </aside>
-      </div>
+                <h1 class="title-sf-1">Mentions légales</h1>
+                <p></p>
+                <p class="text-center" style="color:#CFCBC2;">
+                    Le site saine-food.fr est édité par l'entreprise individuelle (EURL) Sainefood dont le siège
+                    social est 52 rue Daumesnil 75012 - Paris, inscrite au Registre du Commerce de Paris sous
+                    le numéro 79017694500018.
+                    Le directeur de la publication : Pierre Duclass.
+                    Le site est hébergé par la société OVH
+                    2 rue Kellerman 59100 ROUBAIX - France
+                    <a href="www.ovh.com">www.ovh.com</a>
+                </p>
+                <h2 class="title-sf-2">Données personnelles</h2>
+                <p class="text-center">
+                    Conformément à la loi « Informatique et Libertés » N° 78-17 du 6 Janvier 1978, vous avez
+                    la liberté d’accéder à vos informations et de les rectifier en vous adressant à :
+                    contact@saine-food.fr ou par courrier à l’adresse suivante :
+                    Société Sainefood
+                    52 avenue Daumesnil
+                    75012 – Paris
+                </p>
+                <h2 class="title-sf-2">La propriété intellectuelle</h2>
+                <p class="text-center">
+                    La présentation et la reproduction de chacun des éléments, y compris les marques et logos
+                    qui apparaissent sur le site www.saine-food.fr sont protégées par les lois en vigueur sur la
+                    propriété intellectuelle.
+                </p>
+                <p class="text-center">
+                    Aucun élément composant le site www.saine-food.fr ne peut être copié, reproduit modifié,
+                    réédité, dénaturé ou distribué de quelques manières que ce soit sous quelque support que
+                    ce soit même de façon partielle ou intégrale, sans l’autorisation préalable du réalisateur à
+                    l’exception d’une stricte utilisation pour les besoins de la presse et sous réserve du respect
+                    des droits de propriété intellectuelle et de tout autre droit de propriété dont il est fait mention.
+                </p>
+                <p class="text-center">
+                    Toute représentation totale ou partielle du site, par quelque procédé que ce soit sans
+                    l’autorisation expresse de la société Sainefood est interdite et constituerait une contrefaçon
+                    sanctionnée par les articles L335-2 et suivants du code de la propriété intellectuelle. La
+                    société Sainefood se réserve le droit de poursuivre tout acte de contrefaçon de ses droits
+                    de propriété intellectuelle.
+                </p>
+
             </div>
         </div>
         <footer>
@@ -263,6 +237,12 @@ session_start();
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="assets/js/main.js"></script>
+        <?php 
+        
+            if (isset($_SESSION['user']) and (window.innerWidth > 960)){
+                echo "<script src='assets/js/autoLogout.js'></script>";
+            }
+        ?>
         <script type="text/javascript">
             window._chatlio = window._chatlio||[];
             !function(){ var t=document.getElementById("chatlio-widget-embed");if(t&&window.ChatlioReact&&_chatlio.init)return void _chatlio.init(t,ChatlioReact);for(var e=function(t){return function(){_chatlio.push([t].concat(arguments)) }},i=["configure","identify","track","show","hide","isShown","isOnline", "page", "open", "showOrHide"],a=0;a<i.length;a++)_chatlio[i[a]]||(_chatlio[i[a]]=e(i[a]));var n=document.createElement("script"),c=document.getElementsByTagName("script")[0];n.id="chatlio-widget-embed",n.src="https://w.chatlio.com/w.chatlio-widget.js",n.async=!0,n.setAttribute("data-embed-version","2.3");

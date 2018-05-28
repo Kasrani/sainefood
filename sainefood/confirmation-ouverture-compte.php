@@ -177,25 +177,25 @@ session_start();
                     <div class="d-flex flex-column col-md-3">
                         <div class="icon-footer"><img src="images/icon-footer.png" alt=""></div>
                     </div>
-                    <div class="d-flex flex-column col-md-3">
+                    <div class="d-flex flex-column col-md-3" style="padding-left:40px;">
                         <div class="p-2 title-groupe-footer">En savoir plus</div>
-                        <div class="p-2 sous-title-footer">Concept</div>
-                        <div class="p-2 sous-title-footer">Zone de livraison</div>
-                        <div class="p-2 sous-title-footer">FAQ</div>
+                        <div class="p-2 sous-title-footer"><a href="a%20propos.php">Concept</a></div>
+                        <div class="p-2 sous-title-footer"><a href="#livraison">Zone de livraison</a></div>
+                        <div class="p-2 sous-title-footer"><a href="not-exist.php">FAQ</a></div>
                     </div>
                     <div class="d-flex flex-column col-md-3">
                         <div class="p-2 title-groupe-footer">Nos valeurs</div>
-                        <div class="p-2 sous-title-footer">Nos engagements</div>
-                        <div class="p-2 sous-title-footer">Blog</div>
-                        <div class="p-2 sous-title-footer">Nos partenaires</div>
+                        <div class="p-2 sous-title-footer"><a href="a%20propos.php">Nos engagements</a></div>
+                        <div class="p-2 sous-title-footer"><a href="actualites.php">Blog</a></div>
+                        <div class="p-2 sous-title-footer"><a href="not-exist.php">Nos partenaires</a></div>
                     </div>
                     <div class="d-flex flex-column col-md-3">
-                        <div class="p-2"><button type="button" class="btn btn-outline-primary btn-footer">Nous contacter</button></div>
+                        <div class="p-2"><button type="button" onclick="location.href='contact.php'" class="btn btn-outline-primary btn-footer">Nous contacter</button></div>
                         <div class="p-2 title-groupe-footer">PARIS</div>
                         <div class="p-2 sous-title-footer">52,<br>avenue Daumesnil,<br> 75012</div>
                     </div>
                 </div>
-                <div class="d-flex p-2 sous-title-footer end-footer">© 2018<br>Tous droits réservés. Mentions légales</div>
+                <div class="d-flex p-2 sous-title-footer end-footer">© 2018 par Mintea<br>Tous droits réservés.&nbsp;<a href="mentions-legales.php" style="line-height: 4.5;color:#CFCBC2;">Mentions légales.</a>&nbsp;<a href="CGV-CGU.php" style="line-height: 4.5;color:#CFCBC2;">CGV - CGV.</a></div>
             </div>
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
