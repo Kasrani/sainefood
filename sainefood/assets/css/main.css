@@ -289,6 +289,8 @@ and (orientation : portrait) {
 .main-content .content{padding:15px 0px;}
 .first-event-description{display:none!important;}
 #nav ul {overflow-x:auto;overflow-y:hidden;margin-top: -8px!important;}
+.blog #nav ul {overflow-x:auto;overflow-y:hidden;margin-top: 14px!important;}
+.produit #nav ul, .account #nav ul{margin-top: 0px!important;}
 .carousel-control-next{display: none!important;}
 .carousel-inner{height: 172px;overflow-x:auto;overflow-y:hidden;}
 .main-content{margin:15px;width:345px!important;}
@@ -378,4 +380,5 @@ footer .form-group .form-control + .btn {border:none!important;margin-left:-4px;
     .contact.confirmation, .blog {margin-top:10px!important;}
     .blog-post{padding-left: 0px!important;}
     .widget {margin-top: 30px;}
+    .end-footer a{line-height:inherit!important;}
 }
