@@ -232,7 +232,7 @@ input[value]{color:#C1CAC5 !important;}
 .card-content{width: 100%;padding: 5px;}
 .title-hidden{display: none;}
 .atelier-description p {line-height: 24px;}
-footer .form-group .form-control + .btn {border: solid 1px #FF594F!important;}
+footer .form-group .form-control + .btn {border: none!important;}
 body.iosBugFixCaret.modal-open {position: fixed; width: 100%;}
 .carousel-info{overflow: hidden;}
 .scroll{white-space: nowrap;overflow-x: auto;-webkit-overflow-scrolling: touch;-ms-overflow-style: -ms-autohiding-scrollbar; }
@@ -305,8 +305,8 @@ and (orientation : portrait) {
 .atelier-description p{text-align: center;margin-top:20px;}
 .icon-footer{display:none!important;}
 footer .justify-content-between .logo-2{text-align: center;margin-bottom: 35px!important;}
-footer .form-group .form-control{display: inline;width: inherit;}
-footer .form-group .form-control + .btn {margin-left:-4px;margin-top:-4px;}
+footer .form-group .form-control{display: inline;width: 220px;}
+footer .form-group .form-control + .btn {border:none!important;margin-left:-5px;margin-top:-3px;}
 .event-info{top:30px;padding:10px 20px 5px 20px;}
 .event-info h1 {font-size: 18px;}
 .event-info h2 {font-size: 12px;}
