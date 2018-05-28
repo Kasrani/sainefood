@@ -288,7 +288,7 @@ and (orientation : portrait) {
 .first-event{height:auto;margin:0px;}
 .main-content .content{padding:15px 0px;}
 .first-event-description{display:none!important;}
-#nav ul {overflow-x:auto;overflow-y:hidden;}
+#nav ul {overflow-x:auto;overflow-y:hidden;margin-top: -8px!important;}
 .carousel-control-next{display: none!important;}
 .carousel-inner{height: 172px;overflow-x:auto;overflow-y:hidden;}
 .main-content{margin:15px;width:345px!important;}
