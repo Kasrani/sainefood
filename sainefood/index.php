@@ -40,6 +40,8 @@ if (isset($_GET['id'])) {
         <meta name="msapplication-TileImage" content="favicon-144.png">
         <meta name="msapplication-TileColor" content="#FFFFFF">
         <meta name="google-site-verification" content="nDG1ybiooS1jbgJstYyNh48ecgPAsmk5jcBbfRRNc5c" />
+        
+        <script src="http://www.saine-food.fr//cookiechoices.js"></script><script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'http://www.example.com/mentions-legales/');});</script>
 	</head>
 	<body class="index">
         <div id="header" class="navbar navbar-fixed-top container-fluid">
