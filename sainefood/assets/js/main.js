@@ -32,7 +32,20 @@ $(document).ready(function () {
         $('.recapulatif').removeClass('none');
     });
 });
-
+$(document).ready(function () {
+    $("#acces-on").click(function () {
+        $('body').addClass('contrast');
+        $('#acces-on').addClass('none');
+        $('#acces-off').removeClass('none');
+    });
+});
+$(document).ready(function () {
+    $("#acces-off").click(function () {
+        $('body').removeClass('contrast');
+        $('#acces-off').addClass('none');
+        $('#acces-on').removeClass('none');
+    });
+});
 var height = $('.container-model > .main-content').height();
 console.log(height);
 window.onscroll = function() {

@@ -265,7 +265,22 @@ body.iosBugFixCaret.modal-open {position: fixed; width: 100%;}
 .post footer {background-color:#FFF!important;}
 .btn-footer:hover{background:#FF594F!important;color:#FFF!important;}
 footer .d-flex a{color:#CFCBC2!important;}
-
+.acces{display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}
+#acces-on .btn-outline-primary{border-color:#FFF!important;color:#FFF!important;}
+#acces-on .btn-outline-primary:hover{background:#FFF!important;color:#484848!important;}
+#acces-off .btn-outline-primary{border-color:#FF594F!important;color:#FF594F!important;}
+#acces-off .btn-outline-primary:hover{background:#FF594F!important;color:#FFF!important;}
+/* Contrast */
+.contrast .main-content{background:#000!important;}
+.contrast #nav, .contrast #header{background:#000!important;}
+.contrast #nav li a{color:#FFF!important;}
+.contrast h1, .contrast h2, .contrast h3, .contrast h4, .contrast h5, .contrast h6, .contrast p, .contrast span{color:#FFF!important;}
+.contrast .event-info h1, .contrast .event-info h2, .contrast .event-info h3 {color:#000!important;}
+.contrast footer{background:#000!important;color:#FFF!important;}
+.contrast footer a{color:#FFF!important;}
+.contrast .btn-link{color:#FFF!important;}
+.contrast .card-body {background:#000!important;}
+.contrast .social {color:#FFF!important;}
 /* Mobile */
 
 @media only screen 
