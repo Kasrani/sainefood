@@ -2,6 +2,7 @@
 // Database Authentication
 include("authDB.php");
 session_start();
+ob_start("ob_gzhandler");
 ?>
 <!DOCTYPE HTML>
 <html lang="fr">

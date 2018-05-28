@@ -2,6 +2,7 @@
 // Database Authentication
 include("authDB.php");
 session_start();
+ob_start("ob_gzhandler");
 if (isset($_GET['id'])) {
     $plat = $_GET['id'];
 }
