@@ -145,7 +145,7 @@ if (isset($_GET['id'])) {
                             setlocale(LC_TIME, 'fr_FR.utf8','fra');
                             echo "
                             <h1 class='semibold'>" . $row['nom'] . "</h1>
-                            <h2>". strftime('%a %d %B', strtotime($row['date'])) ." à partir de " . strftime('%Hh%M', strtotime($row['heure'])) . "</h2>
+                            <h2 style='text-transform: capitalize;'>". strftime('%a %d %B', strtotime($row['date'])) ." à partir de " . strftime('%Hh%M', strtotime($row['heure'])) . "</h2>
                             <h3>42, avenue de Versailles 75012 Paris</h3>
                         </div>
                         <div class='event-btn-res'>
@@ -196,7 +196,7 @@ if (isset($_GET['id'])) {
                                     <img class='d-block' src='images/Events/" . $row['image'] . "'>
                                     <div class='carousel-info'>
                                         <p class='texte semibold'>" . $row['nom'] . "</p>
-                                        <p class='texte'>". strftime('%a %d %B', strtotime($row['date'])) ."</p>
+                                        <p class='texte' style='text-transform: capitalize;'>". strftime('%a %d %B', strtotime($row['date'])) ."</p>
                                     </div>
                                     </div>
                                 ";

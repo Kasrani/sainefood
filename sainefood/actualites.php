@@ -140,7 +140,7 @@ session_start();
                 while ($row = $result->fetch_assoc()) {
                 echo "
               <div class='post col-xl-6'>
-                <div class='post-thumbnail'><a href='post.php'><img src='images/articles/" . $row['image'] . "' alt='" . $row['titre'] . "' class='img-fluid'></a></div>
+                <div class='post-thumbnail'><a href='post.php?idArticle=" . $row['id'] . "'><img src='images/articles/" . $row['image'] . "' alt='" . $row['titre'] . "' class='img-fluid'></a></div>
                 <div class='post-details'>
                   <div class='post-meta d-flex justify-content-between'>
                     <div class='date meta-last'>". strftime('%a %d %B', strtotime($row['date'])) ."&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;". strftime('%Hh %Mmn', strtotime($row['date'])) . "</div>
@@ -149,9 +149,9 @@ session_start();
                     <h3 class='h4'>" . $row['titre'] . "</h3></a>
                   <p class='text-muted'>" . $row['details'] . "</p>
                   <footer class='post-footer d-flex align-items-center'><a href='#' class='author d-flex align-items-center flex-wrap'>
-                      <div class='avatar'><img src='images/img-blog/avatar-3.jpg' alt='...' class='img-fluid'></div>
+                      <div class='avatar'><img src='images/img-blog/avatar-2.jpg' alt='...' class='img-fluid'></div>
                       <div class='title'><span>Pierre Duclass</span></div></a>
-                    <div class='date'><i class='icon-clock'></i> 2 months ago</div>
+                    <div class='date'><i class='icon-clock'></i>". strftime('%a %d %B', strtotime($row['date'])) ."</div>
                     <div class='comments meta-last'><i class='icon-comment'></i>12</div>
                   </footer>
                 </div>
@@ -176,10 +176,10 @@ session_start();
                 echo"
                 <a href='#'>
                 <div class='item d-flex align-items-center'>
-                  <div class='image'><img src='images/articles/" . $row['image'] . "' alt='...' class='img-fluid'></div>
+                  <div class='image'><img src='images/articles/" . $row['image'] . "' alt='" . $row['titre'] . "' class='img-fluid'></div>
                   <div class='title'><strong>" . $row['titre'] . "</strong>
                     <div class='d-flex align-items-center'>
-                      <div class='views'><i class='icon-eye'></i> 500</div>
+                      <div class='views' style='text-transform: capitalize;'><i class='icon-eye'></i>". strftime('%a %d %B', strtotime($row['date'])) ."</div>
                       <div class='comments'><i class='icon-comment'></i>12</div>
                     </div>
                   </div>

@@ -2,11 +2,17 @@
 // Database Authentication
 include("authDB.php");
 session_start();
+if (isset($_GET['idArticle'])) {
+    $article = $_GET['idArticle'];
+    $query = "SELECT * FROM `article` WHERE id='$article'";
+    $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
+    $row = mysqli_fetch_assoc($result);
+}
 ?>
 <!DOCTYPE HTML>
 <html lang="fr">
 	<head>
-		<title>Saine-Food</title>
+		<?php if (isset($_GET['idArticle'])) {echo"<title>Sainefood - " . $row['titre'] . "</title>"; }?>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -124,6 +130,7 @@ session_start();
                 </div>
             </div>
         </div>
+        
         <div class="container main-content shadow blog contact">
             <div class="content">
       <div class="row">
@@ -131,80 +138,76 @@ session_start();
         <main class="post blog-post col-lg-8"> 
           <div class="">
             <div class="post-single">
-              <div class="post-thumbnail"><img src="images/img-blog/blog-post-3.jpeg" alt="..." class="img-fluid"></div>
+              <div class="post-thumbnail"><?php echo"<img src='images/articles/" . $row['image'] . "' alt='" . $row['titre'] . "' class='img-fluid'>";?></div>
               <div class="post-details">
                 <div class="post-meta d-flex justify-content-between">
-                  <div class="category"><a href="#">Business</a><a href="#">Financial</a></div>
+                  <div class="category"><a href="#">NOUVEAUTÉ</a></div>
                 </div>
-                <h1>Diversity in Engineering: The Effect on Questions<a href="#"><i class="fa fa-bookmark-o"></i></a></h1>
+                <?php echo "<h1>" . $row['titre'] . "</h1>"; ?>
                 <div class="post-footer d-flex align-items-center flex-column flex-sm-row"><a href="#" class="author d-flex align-items-center flex-wrap">
-                    <div class="avatar"><img src="images/img-blog/avatar-1.jpg" alt="..." class="img-fluid"></div>
-                    <div class="title"><span>John Doe</span></div></a>
+                    <div class="avatar"><img src="images/img-blog/avatar-2.jpg" alt="..." class="img-fluid"></div>
+                    <div class="title"><span>Pierre Duclass</span></div></a>
                   <div class="d-flex align-items-center flex-wrap">       
-                    <div class="date"><i class="icon-clock"></i> 2 months ago</div>
-                    <div class="views"><i class="icon-eye"></i> 500</div>
-                    <div class="comments meta-last"><i class="icon-comment"></i>12</div>
+                    <?php echo"<div class='date'><i class='icon-clock'></i>". strftime('%a %d %B', strtotime($row['date'])) ."&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;". strftime('%Hh %Mmn', strtotime($row['date'])) . "</div>"; ?>
+                    <?php 
+                      $rec = "SELECT * FROM `comment` WHERE id='$article'";
+                    $res = mysqli_query($maConnexion, $rec) or die(mysqli_error($maConnexion));
+                      $count = mysqli_num_rows($res);
+                      echo" <div class='comments meta-last'><i class='icon-comment'></i>".$count." Commentaires</div>";
+                      ?>
                   </div>
                 </div>
                 <div class="post-body">
-                  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <?php echo"<p>" . $row['details'] . "</p>"; ?>
                 </div>
                 <div class="post-comments">
                   <header>
-                    <h3 class="h6">Post Comments<span class="no-of-comments">(3)</span></h3>
+                    <?php 
+                      $rec = "SELECT * FROM `comment` WHERE id='$article'";
+                    $res = mysqli_query($maConnexion, $rec) or die(mysqli_error($maConnexion));
+                      $count = mysqli_num_rows($res);
+                      echo" <h3 class='h6'>Commentaires<span class='no-of-comments'>(".$count.")</span></h3> ";
+                      ?>
                   </header>
-                  <div class="comment">
-                    <div class="comment-header d-flex justify-content-between">
-                      <div class="user d-flex align-items-center">
-                        <div class="image"><img src="images/img-blog/user.svg" alt="..." class="img-fluid rounded-circle"></div>
-                        <div class="title"><strong>Jabi Hernandiz</strong><span class="date">May 2016</span></div>
+                    <?php
+                    $rec = "SELECT * FROM `comment` WHERE id='$article'";
+                    $res = mysqli_query($maConnexion, $rec) or die(mysqli_error($maConnexion));
+                    setlocale(LC_TIME, 'french');
+                    while ($roww = $res->fetch_assoc()) {
+                    echo"
+                  <div class='comment'>
+                    <div class='comment-header d-flex justify-content-between'>
+                      <div class='user d-flex align-items-center'>
+                        <div class='image'><img src='images/img-blog/user.svg' alt='...' class='img-fluid rounded-circle'></div>
+                        <div class='title'><strong>" . $roww['nom'] . "</strong><span class='date'>". strftime('%a %d %B', strtotime($row['date'])) . "</span></div>
                       </div>
                     </div>
-                    <div class="comment-body">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    <div class='comment-body'>
+                      <p>" . $roww['details'] . "</p>
                     </div>
                   </div>
-                  <div class="comment">
-                    <div class="comment-header d-flex justify-content-between">
-                      <div class="user d-flex align-items-center">
-                        <div class="image"><img src="images/img-blog/user.svg" alt="..." class="img-fluid rounded-circle"></div>
-                        <div class="title"><strong>Nikolas</strong><span class="date">May 2016</span></div>
-                      </div>
-                    </div>
-                    <div class="comment-body">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                    </div>
-                  </div>
-                  <div class="comment">
-                    <div class="comment-header d-flex justify-content-between">
-                      <div class="user d-flex align-items-center">
-                        <div class="image"><img src="images/img-blog/user.svg" alt="..." class="img-fluid rounded-circle"></div>
-                        <div class="title"><strong>John Doe</strong><span class="date">May 2016</span></div>
-                      </div>
-                    </div>
-                    <div class="comment-body">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                    </div>
-                  </div>
+                  ";
+                    }
+                    ?>
                 </div>
                 <div class="add-comment">
                   <header>
-                    <h3 class="h6">Leave a reply</h3>
+                    <h3 class="h6">Laissez une réponse</h3>
                   </header>
-                  <form action="#" class="commenting-form">
+                  <form action="#" class="commenting-form" method="get">
                     <div class="row">
+                        <?php echo "<input type='hidden' name='idArticle' id='idArticle' value='" . $row['id'] . "'>"; ?>
                       <div class="form-group col-md-6">
-                        <input type="text" name="username" id="username" placeholder="Name" class="form-control">
+                        <input type="text" name="nom" id="nom" placeholder="Nom" class="form-control">
                       </div>
                       <div class="form-group col-md-6">
-                        <input type="email" name="username" id="useremail" placeholder="Email Address (will not be published)" class="form-control">
+                        <input type="email" name="email" id="email" placeholder="Email" class="form-control">
                       </div>
                       <div class="form-group col-md-12">
-                        <textarea name="usercomment" id="usercomment" placeholder="Type your comment" class="form-control"></textarea>
+                        <textarea name="details" id="details" placeholder="Votre commentaire ici.." class="form-control"></textarea>
                       </div>
                       <div class="form-group col-md-12">
-                        <button type="submit" class="btn btn-secondary">Submit Comment</button>
+                        <button type="submit" class="btn btn-secondary">Envoyer</button>
                       </div>
                     </div>
                   </form>
@@ -217,41 +220,42 @@ session_start();
           <!-- Widget [Latest Posts Widget]        -->
           <div class="widget latest-posts">
             <header>
-              <h3 class="h6">Latest Posts</h3>
+              <h3 class="h6">Derniers articles</h3>
             </header>
-            <div class="blog-posts"><a href="#">
-                <div class="item d-flex align-items-center">
-                  <div class="image"><img src="images/img-blog/small-thumbnail-1.jpg" alt="..." class="img-fluid"></div>
-                  <div class="title"><strong>Alberto Savoia Can Teach You About</strong>
-                    <div class="d-flex align-items-center">
-                      <div class="views"><i class="icon-eye"></i> 500</div>
-                      <div class="comments"><i class="icon-comment"></i>12</div>
+            <div class="blog-posts">
+                <?php
+                $rec = "SELECT * FROM `article`";
+                $result = mysqli_query($maConnexion,$rec);
+                while ($row = $result->fetch_assoc()) {
+                echo"
+                <a href='#'>
+                <div class='item d-flex align-items-center'>
+                  <div class='image'><img src='images/articles/" . $row['image'] . "' alt='" . $row['titre'] . "' class='img-fluid'></div>
+                  <div class='title'><strong>" . $row['titre'] . "</strong>
+                    <div class='d-flex align-items-center'>
+                      <div class='views' style='text-transform: capitalize;'><i class='icon-eye'></i>". strftime('%a %d %B', strtotime($row['date'])) ."</div>
+                      <div class='comments'><i class='icon-comment'></i>12</div>
                     </div>
                   </div>
-                </div></a><a href="#">
-                <div class="item d-flex align-items-center">
-                  <div class="image"><img src="images/img-blog/small-thumbnail-2.jpg" alt="..." class="img-fluid"></div>
-                  <div class="title"><strong>Alberto Savoia Can Teach You About</strong>
-                    <div class="d-flex align-items-center">
-                      <div class="views"><i class="icon-eye"></i> 500</div>
-                      <div class="comments"><i class="icon-comment"></i>12</div>
-                    </div>
-                  </div>
-                </div></a><a href="#">
-                <div class="item d-flex align-items-center">
-                  <div class="image"><img src="images/img-blog/small-thumbnail-3.jpg" alt="..." class="img-fluid"></div>
-                  <div class="title"><strong>Alberto Savoia Can Teach You About</strong>
-                    <div class="d-flex align-items-center">
-                      <div class="views"><i class="icon-eye"></i> 500</div>
-                      <div class="comments"><i class="icon-comment"></i>12</div>
-                    </div>
-                  </div>
-                </div></a></div>
+                </div></a>
+                ";
+                }
+                ?></div>
           </div>
         </aside>
       </div>
             </div>
         </div>
+        <?php
+        if ((isset($_GET['idArticle'])) and (isset($_GET['nom'])) and (isset($_GET['email'])) and (isset($_GET['details'])) ) {
+        $id = $_GET['idArticle'];
+        $nom = $_GET['nom'];
+        $email = $_GET['email'];
+        $details = $_GET['details'];
+        mysqli_query($maConnexion,"INSERT INTO comment (id,nom,email,details) VALUES ('$id','$nom','$email','$details')") or die(mysqli_error($maConnexion));
+        echo "<script type='text/javascript'>document.location.replace('http://www.saine-food.fr/post.php?idArticle=" . $id . "');</script>";
+        }
+        ?>
         <footer>
             <div class="container">
                 <div class="d-flex justify-content-between row">
