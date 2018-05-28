@@ -6,7 +6,8 @@ session_start();
 <!DOCTYPE HTML>
 <html lang="fr">
 	<head>
-		<title>Saine-Food</title>
+		<title>Recettes et conseils cuisine bio - Sainefood</title>
+        <meta name="description" content="Recettes, conseils, anecdotes, retrouvez toutes les astuces du chef Duclass et des nouveautés du monde de la cuisine bio">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -135,15 +136,15 @@ session_start();
                 <?php
                 $rec = "SELECT * FROM `article`";
                 $result = mysqli_query($maConnexion,$rec);
-                setlocale(LC_TIME, 'french');
+                setlocale(LC_TIME, 'fr_FR.utf8','fra');
                 while ($row = $result->fetch_assoc()) {
                 echo "
               <div class='post col-xl-6'>
-                <div class='post-thumbnail'><a href='post.php'><img src='images/articles/" . $row['image'] . "' alt='...' class='img-fluid'></a></div>
+                <div class='post-thumbnail'><a href='post.php'><img src='images/articles/" . $row['image'] . "' alt='" . $row['titre'] . "' class='img-fluid'></a></div>
                 <div class='post-details'>
                   <div class='post-meta d-flex justify-content-between'>
-                    <div class='date meta-last'>". strftime('%a %d %B', strtotime($row['date'])) ."</div>
-                    <div class='category'><a href='#'>Business</a></div>
+                    <div class='date meta-last'>". strftime('%a %d %B', strtotime($row['date'])) ."&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;". strftime('%Hh %Mmn', strtotime($row['date'])) . "</div>
+                    <div class='category'><a href='#'>NOUVEAUTÉ</a></div>
                   </div><a href='post.php'>
                     <h3 class='h4'>" . $row['titre'] . "</h3></a>
                   <p class='text-muted'>" . $row['details'] . "</p>
@@ -165,7 +166,7 @@ session_start();
           <!-- Widget [Latest Posts Widget]        -->
           <div class="widget latest-posts">
             <header>
-              <h3 class="h6">Latest Posts</h3>
+              <h3 class="h6">Derniers articles</h3>
             </header>
             <div class="blog-posts">
                 <?php

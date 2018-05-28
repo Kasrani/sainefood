@@ -142,7 +142,7 @@ if (isset($_GET['id'])) {
                             $rec = "SELECT * FROM `event` LIMIT 1";
                             $result = mysqli_query($maConnexion,$rec);
                             $row = $result->fetch_assoc();
-                            setlocale(LC_TIME, 'french');
+                            setlocale(LC_TIME, 'fr_FR.utf8','fra');
                             echo "
                             <h1 class='semibold'>" . $row['nom'] . "</h1>
                             <h2>". strftime('%a %d %B', strtotime($row['date'])) ." à partir de " . strftime('%Hh%M', strtotime($row['heure'])) . "</h2>

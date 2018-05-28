@@ -18,7 +18,10 @@ if (isset($_GET['idCours'])) {
 <!DOCTYPE HTML>
 <html lang="fr">
 	<head>
-		<title>Saine-Food</title>
+        <?php if (isset($_GET['idPlats'])) {echo"<title>Plats bio | " . $row['nom'] . "</title>"; }?>
+        <?php if (isset($_GET['idPlats'])) {echo"<meta name='description' content='Sainefood, spécialisé dans les cours de cuisine à Paris, vous propose d'assister à ses ateliers originaux pour découvrir des recettes aux produits provenant uniquement de l'agriculture biologique'>"; }?>
+        <?php if (isset($_GET['idCours'])) {echo"<title>Cours de cuisine bio | " . $row['nom'] . "</title>"; }?>
+        <?php if (isset($_GET['idCours'])) {echo"<meta name='description' content='Sainefood vous propose une cuisine de qualité avec des ingrédients bio à déguster depuis chez vous grâce à son service de livraison à domicile sur Paris'>"; }?>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Global site tag (gtag.js) - Google Analytics -->
