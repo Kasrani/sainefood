@@ -37,6 +37,29 @@ session_start();
         <meta name="msapplication-TileColor" content="#FFFFFF">
         <!-- theme blog stylesheet-->
         <link rel="stylesheet" href="assets/css/style.blog.css" id="theme-stylesheet">
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+        <script>
+        window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+          "palette": {
+            "popup": {
+              "background": "#cfcbc2",
+              "text": "#484848"
+            },
+            "button": {
+              "background": "#ff594f",
+              "text": "#484848"
+            }
+          },
+          "content": {
+            "message": "En poursuivant votre navigation, vous acceptez le dépôt de cookies destinés à améliorer votre expérience sur le site.",
+            "dismiss": "Oui, j'accepte",
+            "link": "En savoir plus",
+            "href": "www.saine-food.fr/cookiespolicy"
+          }
+        })});
+        </script>
 	</head>
 	<body class="blog">
         <div id="header" class="navbar navbar-fixed-top container-fluid">

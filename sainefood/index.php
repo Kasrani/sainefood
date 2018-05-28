@@ -40,8 +40,29 @@ if (isset($_GET['id'])) {
         <meta name="msapplication-TileImage" content="favicon-144.png">
         <meta name="msapplication-TileColor" content="#FFFFFF">
         <meta name="google-site-verification" content="nDG1ybiooS1jbgJstYyNh48ecgPAsmk5jcBbfRRNc5c" />
-        
-        <script src="http://www.saine-food.fr//cookiechoices.js"></script><script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'http://www.example.com/mentions-legales/');});</script>
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+        <script>
+        window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+          "palette": {
+            "popup": {
+              "background": "#cfcbc2",
+              "text": "#484848"
+            },
+            "button": {
+              "background": "#ff594f",
+              "text": "#484848"
+            }
+          },
+          "content": {
+            "message": "En poursuivant votre navigation, vous acceptez le dépôt de cookies destinés à améliorer votre expérience sur le site.",
+            "dismiss": "Oui, j'accepte",
+            "link": "En savoir plus",
+            "href": "www.saine-food.fr/cookiespolicy"
+          }
+        })});
+        </script>
 	</head>
 	<body class="index">
         <div id="header" class="navbar navbar-fixed-top container-fluid">

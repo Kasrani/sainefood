@@ -32,6 +32,29 @@ if(!$_SESSION['user']){
         <link rel="apple-touch-icon" sizes="144x144" href="icons/favicon/apple-touch-icon-144x144.png">
         <meta name="msapplication-TileImage" content="favicon-144.png">
         <meta name="msapplication-TileColor" content="#FFFFFF">
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+        <script>
+        window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+          "palette": {
+            "popup": {
+              "background": "#cfcbc2",
+              "text": "#484848"
+            },
+            "button": {
+              "background": "#ff594f",
+              "text": "#484848"
+            }
+          },
+          "content": {
+            "message": "En poursuivant votre navigation, vous acceptez le dépôt de cookies destinés à améliorer votre expérience sur le site.",
+            "dismiss": "Oui, j'accepte",
+            "link": "En savoir plus",
+            "href": "www.saine-food.fr/cookiespolicy"
+          }
+        })});
+        </script>
 	</head>
 	<body class="dd">
         <div id="header" class="navbar navbar-fixed-top container-fluid">
