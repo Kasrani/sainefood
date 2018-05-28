@@ -265,11 +265,8 @@ body.iosBugFixCaret.modal-open {position: fixed; width: 100%;}
 .post footer {background-color:#FFF!important;}
 .btn-footer:hover{background:#FF594F!important;color:#FFF!important;}
 footer .d-flex a{color:#CFCBC2!important;}
-.acces{display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}
-#acces-on .btn-outline-primary{border-color:#FFF!important;color:#FFF!important;}
-#acces-on .btn-outline-primary:hover{background:#FFF!important;color:#484848!important;}
-#acces-off .btn-outline-primary{border-color:#FF594F!important;color:#FF594F!important;}
-#acces-off .btn-outline-primary:hover{background:#FF594F!important;color:#FFF!important;}
+.acces{background:#CFCBC2;width: 30px;height: 30px;border-radius: 100%;}
+.acces span{display: block;width: 50%;margin:auto;font-size: 16px;line-height: 2;position: relative;top:-1px;}
 /* Contrast */
 .contrast .main-content{background:#000!important;}
 .contrast #nav, .contrast #header{background:#000!important;}

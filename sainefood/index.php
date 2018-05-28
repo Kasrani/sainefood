@@ -97,6 +97,8 @@ if (isset($_GET['id'])) {
                     </ul>
                 </div>
             </div>
+            <div id="acces-on" class="acces"><span class="icon-acces-on"></span></div>
+            <div id="acces-off" class="acces none"><span class="icon-acces-off"></span></div>
         </nav>
         
         <div class="bandeau">
@@ -361,8 +363,6 @@ if (isset($_GET['id'])) {
                     </div>
                 </div>
                 <div class="d-flex p-2 sous-title-footer end-footer">© 2018 par Mintea<br>Tous droits réservés.&nbsp;<a href="mentions-legales.php" style="line-height: 4.5;color:#CFCBC2;">Mentions légales.</a>&nbsp;<a href="CGV-CGU.php" style="line-height: 4.5;color:#CFCBC2;">CGV - CGV.</a></div>
-                <div id="acces-on" class="acces"><div class="p-2"><button type="button" class="btn btn-outline-primary">VERSION CONTRASTÉE</button></div></div>
-                <div id="acces-off" class="acces none"><div class="p-2"><button type="button" class="btn btn-outline-primary">VERSION STANDARD</button></div></div>
             </div>
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
