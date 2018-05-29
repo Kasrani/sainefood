@@ -210,7 +210,7 @@ if (!$erreur){
 
 ?>
 
-<form name="panier" class="panier d-flex align-items-start flex-column" method="get" action="produit.php">
+<form name="panier" class="panier d-flex align-items-start flex-column" method="get" action="panier.php">
 <table class="commande mb-auto p-2">
 	<!--<tr>
         <td>Quantité</td>
@@ -224,7 +224,7 @@ if (!$erreur){
 	{
 	   $nbArticles=count($_SESSION['panier']['libelleProduit']);
 	   if ($nbArticles <= 0){
-	   echo "<div id='vide' class='btn-commander'><button class='btn btn-primary btn-block shadow semibold'><a href=''>Votre panier est vide</a></button></div>";
+	   echo "<div id='vide' class='btn-commander' style='width: calc(100% - 60px);z-index:1000;'><button class='btn btn-primary btn-block shadow semibold'><a href=''>Votre panier est vide</a></button></div>";
         echo "
            <div class='nav-panier'>
             <hr class='separateur'>
@@ -296,14 +296,6 @@ if (!$erreur){
     </tbody>
 </table>
     
-    <?php
-    if (isset($_GET['idPlats'])) {
-        echo "<a id='ajout-article' class='btn btn-link' style='width:100%;z-index: 10000;' href='produit.php?idPlats=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter ce produit à votre panier</a>";
-        }
-    if (isset($_GET['idCours'])) {
-        echo "<a id='ajout-article' class='btn btn-link' style='width:100%;z-index: 10000;' href='produit.php?idCours=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter ce cours à votre panier</a>";
-        }
-    ?>
 </form>
 <div class='nav-panier nav-panier-coordonnees none'>
 <hr class='separateur'>
