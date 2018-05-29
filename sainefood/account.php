@@ -65,7 +65,7 @@ if(!$_SESSION['user']){
                 </div>
                 <div class="d-flex">
                     <div class="ml-auto p-2 connecter" data-toggle="modal" data-target="#gridSystemModal"><?php echo "<a style='color:#FFF;' href='logout.php'>Se deconnecter</a>"; ?></div>
-                    <div class="ml-auto p-2"><span class="icon-panier"></span></div>
+                    <div class="ml-auto p-2"><a style="color:#FFF;text-decoration:none;" href="panier.php"><span class="icon-panier"></span></a></div>
                 </div>
             </div>
         </div>   
@@ -188,7 +188,7 @@ if(!$_SESSION['user']){
                     echo "</div><br><br><hr id='gestionArticle' class='separateur'>";
                     echo "<br><h4 class='title-sf-4 semibold'>Gestion des articles :</h4>";
                     echo "<br>";
-                            $rec = "SELECT * FROM `plat`";
+                            $rec = "SELECT * FROM `article`";
                             $result = mysqli_query($maConnexion,$rec);
                             $selectOption = null;
                             $test = null;
@@ -196,19 +196,67 @@ if(!$_SESSION['user']){
                             <div class='contact'>
                             <form method='GET' action='#gestionArticle'>
                             <div class='d-flex contact'>
-                                <button type='submit' name='add' class='p-2 mr-2 btn btn-primary shadow'>Nouveau article</button>
-                              </div>
+                                <button type='submit' name='addArticle' class='p-2 mr-2 btn btn-primary shadow'>Ajouter</button>
+                                <button type='submit' name='updateArticle' class='p-2 mr-2 btn btn-primary shadow'>Modifier</button>
+                                <button type='submit' name='deleteArticle' class='p-2 mr-2 btn btn-primary shadow'>Supprimer</button>
+                              </div><br>
+                            <div class='d-flex form-row'>
+                            <div class='p-2 form-group col-md-5'>
+                            <select class='form-control' name='selectOptionArticle'>
+                                        <option>choisir un article</option>";
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo "<option>" . $row['titre'] . "</option>";
+                                        }             
+                            echo " </select>
+                            </div>
                             </form>
-                            ";
+                        </div>";
 
-                        if (isset($_GET['add'])) {
+                        if (isset($_GET['addArticle'])) {
                             require('backOffice/articles/add.php');
+                        }else if (isset($_GET['updateArticle'])){
+                            require('backOffice/articles/update.php');
+                        } else if (isset($_GET['deleteArticle'])) {
+                            require('backOffice/articles/delete.php');
                         }
                          //require('add.php');
                     
                     // END Gestion des articles
                     
                     echo "</div>";
+                    echo "<br><h4 class='title-sf-4 semibold'>Lise des commandes :</h4><br><br>";
+                    $email = $_SESSION['email'];
+                    $query = "SELECT * FROM `commande`";
+                    $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
+                    echo "
+                    <div class='table-responsive'>
+                    <table class='table table-striped'>
+                        <thead>
+                        <tr class='semibold'>
+                          <th scope='col'>Email</th>
+                          <th scope='col'>Commande</th>
+                          <th scope='col'>Montant global</th>
+                          <th scope='col'>Date</th>
+                          <th scope='col'>Commande finalisée ?</th>
+                        </tr>
+                      </thead>
+                        <tbody>";
+                            while ($row = $result->fetch_assoc()) {
+                                            echo "
+                                            <tr>
+                                              <th scope='row'>" . $row['email'] . "</th>
+                                              <td>" . $row['liste'] . "</td>
+                                              <td>" . $row['montant'] . " €</td>
+                                              <td>" . $row['date'] . "</td>
+                                              <td>" . $row['vente'] . "</td>
+                                            </tr>
+                                            ";
+                                        } 
+                          echo "</tbody>
+                        </table>
+                    </table>
+                    </div>
+                    ";
                 }else {
                 echo "<h2 class='title-sf-2 text-center'>Bonjour  " . $_SESSION['user'] . "</h2> ";
                     echo "<h3 class='title-sf-3 text-center'>Bienvenue sur votre espace utilisateur</h3><br><br>";
@@ -249,7 +297,7 @@ if(!$_SESSION['user']){
                         <tr class='semibold'>
                           <th scope='col'>Nom</th>
                           <th scope='col'>Commande</th>
-                          <th scope='col'>Adresse de livraison</th>
+                          <th scope='col'>Adresse de commande</th>
                           <th scope='col'>Montant global</th>
                           <th scope='col'>Date</th>
                           <th scope='col'>Commande finalisée ?</th>

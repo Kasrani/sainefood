@@ -278,6 +278,8 @@ footer .d-flex a{color:#CFCBC2!important;}
 .contrast .btn-link{color:#FFF!important;}
 .contrast .card-body {background:#000!important;}
 .contrast .social {color:#FFF!important;}
+.connecter-panier{text-align:center;margin-top:10px;color:#FF594F;cursor:pointer;font-size: 14px;}
+
 /* Mobile */
 
 @media only screen 
@@ -288,7 +290,9 @@ and (orientation : portrait) {
 .first-event{height:auto;margin:0px;}
 .main-content .content{padding:15px 0px;}
 .first-event-description{display:none!important;}
-#nav ul {overflow-x:auto;overflow-y:hidden;margin-top: -8px!important;}
+.index #nav ul {overflow-x:auto;overflow-y:hidden;margin-top: -8px!important;}
+#nav ul{margin-top: 16px!important;}
+#nav + #nav ul{margin-top: 0px!important;}
 .blog #nav ul {overflow-x:auto;overflow-y:hidden;margin-top: 14px!important;}
 .produit #nav ul, .account #nav ul{margin-top: 0px!important;}
 .carousel-control-next{display: none!important;}
@@ -349,32 +353,34 @@ footer .form-group .form-control + .btn {border:none!important;margin-left:-5px;
     .cartouche-bloc .d-flex .p-2 {display:initial;}
     .cartouche-description .d-flex .p-2:last-child {display:none!important;}
     .cartouche-description {padding: 0px 15px 15px 0;}
-    #myFIX{width:100%;position: fixed!important;z-index: 111;bottom: 0;height:45px;border-top:1px solid #f3f3f3;bottom: 0;}
-    #myFIX .main-content{width:calc(100% + 15px)!important;margin:0;}
-    #myFIX .main-content  .content{padding: 15px 30px 15px 15px;background-color: #FFF;}
-    #myFIX h2{display:none;}
-    .nav-panier{width: calc(100% - 45px);top:40px;}
+    .produit #myFIX{width:100%;position: fixed!important;z-index: 111;bottom: 0;height:45px;border-top:1px solid #f3f3f3;bottom: 0;}
+    .produit #myFIX .main-content{width:calc(100% + 15px)!important;margin:0;}
+    .produit #myFIX .main-content  .content{padding: 15px 30px 15px 15px;background-color: #FFF;}
+    .produit #myFIX h2{display:none;}
+    .produit .nav-panier{width: calc(100% - 45px);top:40px;}
     .margin-fix{top:240px;}
     .btn-commander{width:100%!important;}
     .p-2.commande-block .content{height: 45vh;}
     #coordonnees .btn-primary{position:fixed;bottom:0;left:0;top:initial;height: 45px!important;font-weight:600;}
     #ajout-article {position:absolute;top:0;left:0;background:#FF594F;color:#FFF!important;border-radius: 0;width: calc(100% - 15px)!important;height: 45px;line-height:2;font-size:16px;}
-    .commande-block-max {top:60px!important;height: 140px!important;overflow: scroll;}
+    .produit .commande-block-max {top:60px!important;height: 140px!important;overflow: scroll;}
     .container-model .main-content .content{padding:0px 15px;}
-    #myFIXED {height:45vh;}
-    .nav-panier.nav-panier-coordonnees {top:40px;}
-    .nav-panier.nav-panier-payment {top:35px;}
-    #coordonnees {top:-77px;}
-    #coordonnees input {height: 36px!important;}
-    #coordonnees .mr-auto {margin-bottom: .9rem;}
-    .recapulatif {top:-105px;}
-    .paypal-btn-fixed-down{top:calc(100% - 125px)!important;}
-    #paypal-button {position: relative;top:250px;}
-    #paypal-btn{top:0px!important; left: calc(50% - 10px)!important;}
+    .produit #myFIXED {height:45vh;}
+    .produit .nav-panier.nav-panier-coordonnees {top:40px;}
+    .produit .nav-panier.nav-panier-payment {top:35px;}
+    .produit #coordonnees {top:-77px;}
+    .produit #coordonnees input {height: 36px!important;}
+    .produit #coordonnees .mr-auto {margin-bottom: .9rem;}
+    .produit .recapulatif {top:-105px;}
+    .produit .paypal-btn-fixed-down{top:calc(100% - 125px)!important;}
+    .produit #paypal-button {position: relative;top:250px;}
+    .produit #paypal-btn{top:0px!important; left: calc(50% - 10px)!important;}
+    .page-panier .nav-panier{top: 86px;width: calc(100% - 30px);}
+    .page-panier .commande-block .position-fixed{height:76vh;}
     .btn-commander {position: fixed;bottom:0;left:0;top:inherit;}
     .cercle-nav-panier{background-color:#FFF;}
     .plus{display:block;}
-    .panier .btn-primary{font-weight:600;height:45px;line-height:1.9;}
+    .produit .panier .btn-primary{font-weight:600;height:45px;line-height:1.9;}
     .container-model .title-sf-4{font-size: 23px!important;}
     .margin-fix-cord{top: initial!important;}
     .contact.confirmation, .blog {margin-top:10px!important;}

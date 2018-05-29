@@ -1,5 +1,157 @@
 <?php
+// Start the session
+include("authDB.php");
 session_start();
+?>
+<!DOCTYPE HTML>
+<html lang="fr">
+	<head>
+        <title>Saienfood - panier</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119196030-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-119196030-1');
+        </script>
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="icons/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+        <link rel="icon" href="favicon.png" type="image/png">
+        <link rel="icon" sizes="32x32" href="icons/favicon/favicon-32.png" type="image/png">
+        <link rel="icon" sizes="64x64" href="icons/favicon/favicon-64.png" type="image/png">
+        <link rel="icon" sizes="96x96" href="icons/favicon/favicon-96.png" type="image/png">
+        <link rel="icon" sizes="196x196" href="icons/favicon/favicon-196.png" type="image/png">
+        <link rel="apple-touch-icon" sizes="152x152" href="icons/favicon/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="icons/favicon/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="icons/favicon/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="icons/favicon/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="icons/favicon/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="icons/favicon/apple-touch-icon-144x144.png">
+        <meta name="msapplication-TileImage" content="favicon-144.png">
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+        <script>
+        window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+          "palette": {
+            "popup": {
+              "background": "#cfcbc2",
+              "text": "#484848"
+            },
+            "button": {
+              "background": "#ff594f",
+              "text": "#484848"
+            }
+          },
+          "content": {
+            "message": "En poursuivant votre navigation, vous acceptez le dépôt de cookies destinés à améliorer votre expérience sur le site.",
+            "dismiss": "Oui, j'accepte",
+            "link": "En savoir plus",
+            "href": "www.saine-food.fr/cookiespolicy"
+          }
+        })});
+        </script>
+	</head>
+	<body class="page-panier">
+        <div id="header" class="navbar navbar-fixed-top container-fluid">
+            <div class="container">
+                <div class="d-flex">
+                    <div class="p-2"><a href="index.php"><img src="images/Logo.svg" alt="Sainefood"></a></div>
+                    <div class="p-2 baseline">Cours de cuisine & traiteur <b class="green">bio</b></div>
+                </div>
+                <div class="d-flex">
+                    <div class="ml-auto p-2 connecter" data-toggle="modal" data-target="#gridSystemModal"><?php if (isset($_SESSION['user'])){echo "Bonjour ";}else {echo "Se connecter";}?></div>
+                    <a href="account.php" class="user">&nbsp;<?php if (isset($_SESSION['user'])){echo $_SESSION['user'];}   else {echo "";}?></a>
+                    <div class="ml-auto p-2"><a style="color:#FFF;text-decoration:none;" href="panier.php"><span class="icon-panier"></span></a></div>
+                    <?php 
+                    $nbArticle = count($_SESSION['panier']['libelleProduit']);
+                    if ($nbArticle > 0) {
+                        echo "<div id='totalProduct'><span>" . count($_SESSION['panier']['libelleProduit']) . "</span></div>";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <!--<div class="g-signin2" data-onsuccess="onSignIn"></div>-->
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid bd-example-row">
+                            <div id="connexion" class="">
+                                <form action="backOffice/user/auth.php" method="post">
+                                  <div class="form-group">
+                                      <input type="email" class="form-control" name="email" value="" placeholder="Adresse e-mail">
+                                  </div>
+                                  <div class="form-group">
+                                      <input type="password" class="form-control" name="password" value="" id="inputPassword3" placeholder="Password">
+                                  </div>
+                                  <div class="form-group">
+                                      <button type="submit" class="btn btn-primary btn-lg btn-block">Connexion</button>
+                                  </div>
+                                </form>
+                                <span class="text-center"><a href="">Mot de passe oublié ?</a></span>
+                            </div>
+                            <div id="inscription" class="">
+                                <form action="backOffice/user/signUp.php" method="POST">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" name="email" placeholder="Adresse e-mail">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="prenom" placeholder="Prénom">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="nom" placeholder="Nom">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" name="password" placeholder="Créer un mot de passe">
+                                    </div>
+                                    <div class="form-group">
+                                      <button type="submit" class="btn btn-primary btn-lg btn-block">Inscription</button>
+                                  </div>
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <span id="inscription-link" class="text-center">Vous n'avez pas de compte ?&nbsp;<button class="btn btn-link" onclick="show()">Inscription</button></span>
+                        <span id="connexion-link" class="text-center">Vous avez déjà un compte Sainefood ?&nbsp;<button class="btn btn-link" onclick="hide()">Connexion</button></span>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <nav id="nav" class="navbar navbar-fixed-top shadow container-fluid">
+            <div class="container">
+                <div class="row headerow scroll">
+                    <ul class="scroll">
+                        <li class=""><a href="index.php">Home</a></li>
+                        <li class=""><a href="a%20propos.php">À propos</a></li>
+                        <li class=""><a href="cours-cuisine.php">Cours de cuisine</a></li>
+                        <li class=""><a href="livraison.php">Livraison</a></li>
+                        <li><a href="actualites.php">Actualités</a></li>
+                        <li><a href="contact.php">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container d-flex container-model position-relative ">
+            <div id="myFIX" style="margin-left:auto!important;margin-right:auto!important;" class="col-md-4 p-2 commande-block position-relative">
+                <div id="myFIXED" class="main-content p-2 shadow position-fixed">
+                    <div class="content">
+                        <h2 class="title-sf-2 semibold">Votre commande</h2><br>
+                        <?php
+//session_start();
 include_once("fonctions-panier.php");
 
 $erreur = false;
@@ -56,59 +208,378 @@ if (!$erreur){
    }
 }
 
-echo '<?xml version="1.0" encoding="utf-8"?>';?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
-<head>
-<title>Votre panier</title>
-</head>
-<body>
+?>
 
-<form method="post" action="panier.php">
-<table style="width: 400px">
-	<tr>
-		<td colspan="4">Votre panier</td>
-	</tr>
-	<tr>
+<form name="panier" class="panier d-flex align-items-start flex-column" method="get" action="produit.php">
+<table class="commande mb-auto p-2">
+	<!--<tr>
+        <td>Quantité</td>
 		<td>Libellé</td>
-		<td>Quantité</td>
-		<td>Prix Unitaire</td>
+		<td colspan="2">Prix/U</td>
 		<td>Action</td>
-	</tr>
-
-
+	</tr>-->
+    <tbody class="commande-block-max" style="position:relative;top:65px;">
 	<?php
 	if (creationPanier())
 	{
 	   $nbArticles=count($_SESSION['panier']['libelleProduit']);
-	   if ($nbArticles <= 0)
-	   echo "<tr><td>Votre panier est vide </ td></tr>";
+	   if ($nbArticles <= 0){
+	   echo "<div id='vide' class='btn-commander'><button class='btn btn-primary btn-block shadow semibold'><a href=''>Votre panier est vide</a></button></div>";
+        echo "
+           <div class='nav-panier'>
+            <hr class='separateur'>
+            <div class='nav-element'>
+            <label style='position:relative;top:26px;'>Panier</label>
+            <div class='cercle-nav-panier'></div>
+            </div>
+            <div class='nav-element'>
+            <label style='position:relative;top:26px;left:16px;'>Coordonnées</label>
+            <div class='cercle-nav-panier'></div>
+            </div>
+            <div class='nav-element'>
+            <label style='position:relative;top:26px;left:28px;'>Paiement</label>
+            <div class='cercle-nav-panier'></div>
+            </div>
+            </div>
+           ";
+        }
 	   else
 	   {
 	      for ($i=0 ;$i < $nbArticles ; $i++)
 	      {
-	         echo "<tr>";
-	         echo "<td>".htmlspecialchars($_SESSION['panier']['libelleProduit'][$i])."</ td>";
-	         echo "<td><input type=\"text\" size=\"4\" name=\"q[]\" value=\"".htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."\"/></td>";
-	         echo "<td>".htmlspecialchars($_SESSION['panier']['prixProduit'][$i])."</td>";
-	         echo "<td><a href=\"".htmlspecialchars("panier.php?action=suppression&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">XX</a></td>";
-	         echo "</tr>";
+	         echo "<tr class='border-panier'>";
+              echo "<td><div class='quantite'><input style='display:none;' type=\"text\" name=\"q[]\" value=\"".htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."\"/><input type=\"button\" value=\"-\" onclick=\"document.forms['panier'].elements[".(3 * $i)."].value = parseFloat(document.forms['panier'].elements[".(3 * $i)."].value) - 1; document.forms['panier'].submit();\"><input style='z-index: 1000;position:relative;left:-16px;' type=\"button\" value=\"+\" onclick=\"document.forms['panier'].elements[".(3 * $i)."].value = parseFloat(document.forms['panier'].elements[".(3 * $i)."].value) + 1; document.forms['panier'].submit();\"></div></td>";
+            echo "<td><span>".htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."</span></td>";
+              echo "<td><span>x</span></td>";
+	         echo "<td class='red_sf' style='padding-left:5px;'>".htmlspecialchars($_SESSION['panier']['libelleProduit'][$i])."</ td>";
+	         echo "<td class='' style='text-align: right;' colspan='2'>".htmlspecialchars($_SESSION['panier']['prixProduit'][$i])."  €</td>";
+	         echo "<td class='delete-block'><a style='font-size:12px;' class='delete semibold' href=\"".htmlspecialchars("panier.php?action=suppression&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">x</a></td>";
 	      }
-
-	      echo "<tr><td colspan=\"2\"> </td>";
-	      echo "<td colspan=\"2\">";
-	      echo "Total : ".MontantGlobal();
-	      echo "</td></tr>";
-
+	      echo "<tr class='total-panier'>";
+	      echo "<td class='semibold' colspan=\"4\">Total <span>(TVA incl.)</span></td>";
+	      echo "<td class='semibold' colspan=\"1\">". MontantGlobal() . " € </td>";
+	      echo "</tr>";
 	      echo "<tr><td colspan=\"4\">";
-	      echo "<input type=\"submit\" value=\"Rafraichir\"/>";
+	      //echo "<input class='btn btn-link' type=\"submit\" value=\"Calculer\"/>";
 	      echo "<input type=\"hidden\" name=\"action\" value=\"refresh\"/>";
-
+           if (isset($_GET['idPlats'])) {
+           echo "<input type=\"hidden\" name=\"idPlats\" value='" . $row['id'] . "'/>";
+               }
+           if (isset($_GET['idCours'])) {
+           echo "<input type=\"hidden\" name=\"idCours\" value='" . $row['id'] . "'/>";
+               }
 	      echo "</td></tr>";
+           echo "<div id='vide' class='btn-commander' style='width: calc(100% - 60px);z-index:1000;'><div class='btn btn-primary btn-block shadow semibold'><a href='#' id='etapes'>Commander</div></a></div>";
+           echo "<center class='none' id='paypal-btn' class='' style='position: absolute;left: 50%;-webkit-transform: translateX(-50%);transform: translateX(-50%); top:300px;z-index:1000;'><div id='paypal-button'></div></center>";
+           echo "
+           <div class='nav-panier nav-panier-panier'>
+            <hr class='separateur'>
+            <div class='nav-element active'>
+            <label>Panier</label>
+            <span class='icon-panier'></span>
+            </div>
+            <div class='nav-element'>
+            <label style='position:relative;top:26px;left:16px;'>Coordonnées</label>
+            <div class='cercle-nav-panier'></div>
+            </div>
+            <div class='nav-element'>
+            <label style='position:relative;top:26px;left:28px;'>Paiement</label>
+            <div class='cercle-nav-panier'></div>
+            </div>
+            </div>
+           ";
 	   }
+        
 	}
+    
 	?>
+    </tbody>
 </table>
+    
+    <?php
+    if (isset($_GET['idPlats'])) {
+        echo "<a id='ajout-article' class='btn btn-link' style='width:100%;z-index: 10000;' href='produit.php?idPlats=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter ce produit à votre panier</a>";
+        }
+    if (isset($_GET['idCours'])) {
+        echo "<a id='ajout-article' class='btn btn-link' style='width:100%;z-index: 10000;' href='produit.php?idCours=" . $row['id'] . "&amp;action=ajout&amp;l=" . $row['nom'] . "&amp;q=QUANTITEPRODUIT&amp;p=" . $row['prix'] . "'>Ajouter ce cours à votre panier</a>";
+        }
+    ?>
 </form>
-</body>
+<div class='nav-panier nav-panier-coordonnees none'>
+<hr class='separateur'>
+<div class='nav-element active'>
+<label>Panier</label>
+<span class='icon-panier'></span>
+</div>
+<div class='nav-element active'>
+<label style='position:relative;top:-27px;left:16px;'>Coordonnées</label>
+<span class='icon-user' style='position:relative;top:-33px;left:42px;'></span>
+</div>
+<div class='nav-element'>
+<label style='position:relative;top:26px;left:28px;'>Paiement</label>
+<div class='cercle-nav-panier'></div>
+</div>
+</div>
+<div id='nav-panier-payment' class='nav-panier nav-panier-payment none'>
+<hr class='separateur'>
+<div class='nav-element active'>
+<label>Panier</label>
+<span class='icon-panier'></span>
+</div>
+<div class='nav-element active'>
+<label style='position:relative;top:-27px;left:16px;'>Coordonnées</label>
+<span class='icon-user' style='position:relative;top:-33px;left:42px;'></span>
+</div>
+<div class='nav-element active'>
+<label style='position:relative;top:-33px;left:28px;'>Paiement</label>
+<span class='icon-payment' style='position:relative;top:0px;left:-20px;'></span>
+</div>
+</div>
+ <div class='recapulatif none'>
+     <p>
+        <strong>Finalisez votre commande avec un paiement via paypal (ne nécessite pas la création d’un compte)</strong>
+        Vous allez recevoir un email récapitulatif après le paiement de votre commande
+     </p>
+     <p>A bientôt</p>
+    <p class="semibold red_sf">
+        L'équipe sainefood
+    </p>
+</div>                       
+<form id='coordonnees' name="coordonnees" action="" class='none contact' method="GET">
+    <div class='mr-auto p-2 form-group'>
+        <?php if (isset($_SESSION['user'])){echo "<input type='text' name='nom' id='nom' value='".$_SESSION['user']."' style='height:34px;' class='form-control'>";} else { echo"
+        <input type='text' name='nom' id='nom' value='' style='height:34px;' class='form-control' placeholder='Nom'>
+        ";} ?>
+        
+    </div>
+    <div class='mr-auto p-2 form-group'>
+        <?php if (isset($_SESSION['user'])){echo "<input type='hidden' id='prenom' name='prenom' value='".$_SESSION['name']."' style='height:34px;' class='form-control'>";} else { echo"
+        <input type='hidden' id='prenom' name='prenom' value='Toto' style='height:34px;' class='form-control'>
+        ";} ?>
+    </div>
+    <div class='p-2 form-group'>
+        <?php if (isset($_SESSION['user'])){echo "<input type='email' id='email' name='email' value='".$_SESSION['email']."' style='height:34px;' class='form-control'>";} else { echo"
+        <input type='email' id='email' name='email' value='' style='height:34px;' class='form-control' placeholder='Email'>
+        ";} ?>
+    </div>
+    <div class='p-2 form-group'>
+        <input type='text' id='adresse' name='adresse' value='' style='height:34px;' class='form-control' placeholder='Adresse de commande'>
+        <div class="ml-auto p-2 connecter-panier semibold" data-toggle="modal" data-target="#gridSystemModal"><?php if (isset($_SESSION['user'])){echo "";}else {echo "Vous avez un compte ?";}?></div>
+    </div>
+    <?php
+    echo "<input id='montant' name='montant' type='hidden' value='". MontantGlobal() . "'>";
+    ?>
+    <?php
+    function listeProduits(){
+   $liste="";
+   for($i = 0; $i < count($_SESSION['panier']['libelleProduit']); $i++)
+   {
+      $liste .= $_SESSION['panier']['libelleProduit'][$i] . ", ";
+   }
+   return $liste;
+}
+    echo "<input id='liste' name='liste' type='hidden' value='". listeProduits() . "'>";
+    ?>
+    <div class='p-2 form-group'>
+        <?php
+        
+        function chaine_aleatoire($nb_car, $chaine = 'azertyuiopqsdfghjklmwxcvbn123456789')
+        {
+            $nb_lettres = strlen($chaine) - 1;
+            $generation = '';
+            
+            for($i=0; $i < $nb_car; $i++)
+            {
+                $pos = mt_rand(0, $nb_lettres);
+                $car = $chaine[$pos];
+                $generation .= $car;
+            }
+            return $generation;
+            }
+            echo "<input type='hidden' id='password' value='" . chaine_aleatoire(8) . "' name='password' class='form-control'>";
+        ?>
+    </div>
+    <?php
+    if (isset($_GET['idPlats'])) {
+        echo "<input type=\"hidden\" id='idPlats' name=\"idPlats\" value='" . $row['id'] . "'/>";
+    }
+    if (isset($_GET['idCours'])) {
+        echo "<input id='idCours' type=\"hidden\" name=\"idCours\" value='" . $row['id'] . "'/>";
+    }
+    ?>
+    <input id='btn-coordonnees' class='btn btn-primary btn-block shadow semibold' type="button" value="Finaliser votre commande" onclick="submitForm()" name="submit"/>
+</form>
+
+   <?php 
+date_default_timezone_set('Etc/UTC');
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+require 'PHPMailer/src/Exception.php';
+
+  if ((isset($_GET['nom'])) and (isset($_GET['prenom'])) and (isset($_GET['email'])) and (isset($_GET['password'])) and (isset($_GET['adresse'])) and (isset($_GET['montant']))) {
+      $nom = $_GET['nom'];
+      $prenom = $_GET['prenom'];
+      $email = $_GET['email'];
+      $password = $_GET['password'];
+      $adresse = $_GET['adresse'];
+      $montant = $_GET['montant'];
+      $liste = $_GET['liste'];
+      mysqli_query($maConnexion,"INSERT INTO commande (nom,prenom,email,adresseLivraison,montant,liste) VALUES ('$nom','$prenom','$email','$adresse','$montant','$liste')") 
+or die(mysqli_error($maConnexion));
+    $query = "SELECT * FROM `user` WHERE email='$email'";
+      $result = mysqli_query($maConnexion, $query) or die(mysqli_error($maConnexion));
+      //$row = mysqli_fetch_assoc($result);
+      $count = mysqli_num_rows($result);
+      if ($count < 1) {
+      mysqli_query($maConnexion,"INSERT IGNORE INTO user (email,prenom,nom,password) VALUES ('$email','$prenom','$nom','$password')") or die(mysqli_error($maConnexion));
+      //On envoie un mail de cofirmation
+    
+    //Create a new PHPMailer instance
+    $mail = new PHPMailer;
+    //Tell PHPMailer to use SMTP
+    $mail->isSMTP();
+    //Enable SMTP debugging
+    // 0 = off (for production use)
+    // 1 = client messages
+    // 2 = client and server messages
+    $mail->SMTPDebug = 1;
+    //Set the hostname of the mail server
+    $mail->Host = 'smtp.gmail.com';
+    // use
+    // $mail->Host = gethostbyname('smtp.gmail.com');
+    // if your network does not support SMTP over IPv6
+    //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
+    $mail->Port = 465;
+    //Set the encryption system to use - ssl (deprecated) or tls
+    $mail->SMTPSecure = 'ssl';
+    //Whether to use SMTP authentication
+    $mail->SMTPAuth = true;
+    //Username to use for SMTP authentication - use full email address for gmail
+    $mail->Username = "kasrani.mourad@gmail.com";
+    //Password to use for SMTP authentication
+    $mail->Password = "aqwzsxedc123";
+    //Set who the message is to be sent from
+    $mail->setFrom('kasrani.mourad@gmail.com', "L'equipe sainefood");
+    //Set an alternative reply-to address
+    $mail->addReplyTo('kasrani.mourad@gmail.com', "L'equipe sainefood");
+    //Set who the message is to be sent to
+    $mail->addAddress($email, $prenom);
+    //Set the subject line
+    $mail->Subject = 'Creation de votre espace utilisateur';
+    $mail->Body = "<body style='width:612px; margin:auto; text-align:center;'>
+    <img src='https://sainefood.herokuapp.com/images/mail-en-tete.png' alt='Sainefood'>
+    <br><br><br>
+    <h1 style='color:#ff594f; font-size:22px;'>Votre espace utilisateur</h1>
+    <br><br><br>
+    <h3 style='color:#484848;text-align:left;'>Cher(e) " .$nom. "</h3><br>
+     <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>Vous pouvez acceder a votre compte utilisateur a l'aide des identifiants suivants :</p><br>
+     <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;font-weight:600;'>Identifiant : " .$email. "</p>
+    <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;font-weight:600;'>Mot de passe : " .$password. "</p><br>
+    <p style='color:#484848;font-size:14px;text-align:left;line-height:20px;'>A bientôt sur votre Espace Client,</p>
+    <h3 style='color:#484848;text-align:left;'>L'équipe Sainefood</h3>
+    </body>
+    ";
+    //Read an HTML message body from an external file, convert referenced images to embedded,
+    //convert HTML into a basic plain-text alternative body
+    //Replace the plain text body with one created manually
+    $mail->AltBody = 'This is a plain-text message body';
+    //Attach an image file
+    if (!$mail->send()) {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    } else {
+        echo "Message sent!";
+        //Section 2: IMAP
+        //Uncomment these to save your message in the 'Sent Mail' folder.
+        #if (save_mail($mail)) {
+        #    echo "Message saved!";
+        #}
+    }
+    //Section 2: IMAP
+    //IMAP commands requires the PHP IMAP Extension, found at: https://php.net/manual/en/imap.setup.php
+    //Function to call which uses the PHP imap_*() functions to save messages: https://php.net/manual/en/book.imap.php
+    //You can use imap_getmailboxes($imapStream, '/imap/ssl') to get a list of available folders or labels, this can
+    //be useful if you are trying to get this working on a non-Gmail IMAP server.
+    function save_mail($mail)
+    {
+        //You can change 'Sent Mail' to any other folder or tag
+        $path = "{imap.gmail.com:993/imap/ssl}[Gmail]/Sent Mail";
+        //Tell your server to open an IMAP connection using the same username and password as you used for SMTP
+        $imapStream = imap_open($path, $mail->Username, $mail->Password);
+        $result = imap_append($imapStream, $path, $mail->getSentMIMEMessage());
+        imap_close($imapStream);
+        return $result;
+    }   
+}
+  }
+    
+      
+
+
+?>
+                        
+
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<?php
+echo "
+<script>
+    paypal.Button.render({
+
+        env: 'production', // Or 'sandbox'
+        
+        commit: true, // Show a 'Pay Now' button
+
+      style: {
+        color: 'silver',
+        size: 'small',
+      },
+
+        client: {
+            sandbox:    'Afl68vN8kFWHLxiJcpXUDPJ6iPiMcyoHt5Zl_cB7IC4tKhMCRglROaNeQ4dmxLVLeW7ehK3JkCVNRXHE',
+            production: 'AWdrr0AhrLc8S2cPbWJRc3yE7tOs-fo-MUuROSa6oHUufYLHU-1mblbSSoZKHaypdrOVi3Q9yWMa_o76'
+        },
+
+        commit: true, // Show a 'Pay Now' button
+
+        payment: function(data, actions) {
+            return actions.payment.create({
+                payment: {
+                    transactions: [
+                        {
+                            amount: { total: '" . MontantGlobal() . "', currency: 'EUR' }
+                        }
+                    ]
+                }
+            });
+        },
+
+        onAuthorize: function(data, actions) {
+            return actions.payment.execute().then(function(payment) {
+
+                // The payment is complete!
+                // You can now show a confirmation message to the customer
+            });
+        }
+
+    }, '#paypal-button');
+</script>
+";
+    ?>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="assets/js/content.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+    
 </html>
+<div style="position:absolute;top:0;z-index:-10000000;visibility:hidden;" id="printResult"></div>

@@ -59,7 +59,7 @@ session_start();
         })});
         </script>
 	</head>
-	<body class="dd">
+	<body class="page-contact">
         <div id="header" class="navbar navbar-fixed-top container-fluid">
             <div class="container">
                 <div class="d-flex">
@@ -69,7 +69,7 @@ session_start();
                 <div class="d-flex">
                     <div class="ml-auto p-2 connecter" data-toggle="modal" data-target="#gridSystemModal"><?php if (isset($_SESSION['user'])){echo "Bonjour ";}else {echo "Se connecter";}?></div>
                     <a href="account.php" class="user">&nbsp;<?php if (isset($_SESSION['user'])){echo $_SESSION['user'];}   else {echo "";}?></a>
-                    <div class="ml-auto p-2"><span class="icon-panier"></span></div>
+                    <div class="ml-auto p-2"><a style="color:#FFF;text-decoration:none;" href="panier.php"><span class="icon-panier"></span></a></div>
                     <?php 
                     $nbArticle = count($_SESSION['panier']['libelleProduit']);
                     if ($nbArticle > 0) {

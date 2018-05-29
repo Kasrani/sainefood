@@ -84,7 +84,7 @@ if (isset($_GET['idCours'])) {
                 <div class="d-flex">
                     <div class="ml-auto p-2 connecter" data-toggle="modal" data-target="#gridSystemModal"><?php if (isset($_SESSION['user'])){echo "Bonjour ";}else {echo "Se connecter";}?></div>
                     <a href="account.php" class="user">&nbsp;<?php if (isset($_SESSION['user'])){echo $_SESSION['user'];}   else {echo "";}?></a>
-                    <div class="ml-auto p-2"><span class="icon-panier"></span></div>
+                    <div class="ml-auto p-2"><a style="color:#FFF;text-decoration:none;" href="panier.php"><span class="icon-panier"></span></a></div>
                     <?php 
                     $nbArticle = count($_SESSION['panier']['libelleProduit']);
                     if ($nbArticle > 0) {
@@ -148,9 +148,14 @@ if (isset($_GET['idCours'])) {
         </div>  
         <nav id="nav" class="navbar navbar-fixed-top shadow container-fluid">
             <div class="container">
-                <div class="row headerow">
-                    <ul>
-                        <a href="javascript:history.back()"><span class="icon-retour"></span><span class="retour">Retour</span></a>
+                <div class="row headerow scroll">
+                    <ul class="scroll">
+                        <li class=""><a href="index.php">Home</a></li>
+                        <li class=""><a href="a%20propos.php">À propos</a></li>
+                        <li class=""><a href="cours-cuisine.php">Cours de cuisine</a></li>
+                        <li class="current"><a href="livraison.php">Livraison</a></li>
+                        <li><a href="actualites.php">Actualités</a></li>
+                        <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -455,16 +460,24 @@ if (!$erreur){
 </div>                       
 <form id='coordonnees' name="coordonnees" action="" class='none contact' method="GET">
     <div class='mr-auto p-2 form-group'>
+        <?php if (isset($_SESSION['user'])){echo "<input type='text' name='nom' id='nom' value='".$_SESSION['user']."' style='height:34px;' class='form-control'>";} else { echo"
         <input type='text' name='nom' id='nom' value='' style='height:34px;' class='form-control' placeholder='Nom'>
+        ";} ?>
+        
     </div>
     <div class='mr-auto p-2 form-group'>
-        <input type='hidden' id='prenom' name='prenom' value='Toto' style='height:34px;' class='form-control' placeholder='Prenom'>
+        <?php if (isset($_SESSION['user'])){echo "<input type='hidden' id='prenom' name='prenom' value='".$_SESSION['name']."' style='height:34px;' class='form-control'>";} else { echo"
+        <input type='hidden' id='prenom' name='prenom' value='Toto' style='height:34px;' class='form-control'>
+        ";} ?>
     </div>
     <div class='p-2 form-group'>
+        <?php if (isset($_SESSION['user'])){echo "<input type='email' id='email' name='email' value='".$_SESSION['email']."' style='height:34px;' class='form-control'>";} else { echo"
         <input type='email' id='email' name='email' value='' style='height:34px;' class='form-control' placeholder='Email'>
+        ";} ?>
     </div>
     <div class='p-2 form-group'>
-        <input type='text' id='adresse' name='adresse' value='' style='height:34px;' class='form-control' placeholder='Adresse de livraison'>
+        <input type='text' id='adresse' name='adresse' value='' style='height:34px;' class='form-control' placeholder='Adresse de commande'>
+        <div class="ml-auto p-2 connecter-panier semibold" data-toggle="modal" data-target="#gridSystemModal"><?php if (isset($_SESSION['user'])){echo "";}else {echo "Vous avez un compte ?";}?></div>
     </div>
     <?php
     echo "<input id='montant' name='montant' type='hidden' value='". MontantGlobal() . "'>";
