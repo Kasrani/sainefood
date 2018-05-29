@@ -295,11 +295,11 @@ if (isset($_GET['id'])) {
                         </p>
                     </div>
                     <div class="d-flex justify-content-start sf reco row">
-                        <div class="temoignages-avis col-md-5">
+                        <div class="temoignages-avis col-md-5" style="padding-right: 0px;">
                             <h2 class="title-sf-2 semibold">Ils recommandent Sainefood</h2><hr class="separateur">
                             <span class="icon-avis"></span>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum est at tortor sodales, sit amet vestibulum elit ullamcorper.
+                                Le curry veggie est un des meilleurs que j’ai mangé, on sent que les produits sont frais et de bonne qualité. Je sens que je vais commander souvent sur Sainefood ! 
                             </p>
                             <hr class="separateur">
                             <div class="d-flex align-items-end temoignages">

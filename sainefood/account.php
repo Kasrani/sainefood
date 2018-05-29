@@ -66,6 +66,12 @@ if(!$_SESSION['user']){
                 <div class="d-flex">
                     <div class="ml-auto p-2 connecter" data-toggle="modal" data-target="#gridSystemModal"><?php echo "<a style='color:#FFF;' href='logout.php'>Se deconnecter</a>"; ?></div>
                     <div class="ml-auto p-2"><a style="color:#FFF;text-decoration:none;" href="panier.php"><span class="icon-panier"></span></a></div>
+                    <?php
+                    $nbArticle = count($_SESSION['panier']['libelleProduit']);
+                    if (count($_SESSION['panier']['libelleProduit']) > 0) {
+                        echo "<div id='totalProduct'><span>" . count($_SESSION['panier']['libelleProduit']) . "</span></div>";
+                        }
+                    ?>
                 </div>
             </div>
         </div>   
